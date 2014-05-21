@@ -45,17 +45,17 @@ Unlike Arduino, _arbitros_ incorporates Linux inspired function calls such as op
 
 As seen in the putty window, _abitros_ offers a rich set of Linux inspired console commands. The first directive ’ls’, outputs a list of all directories and files currently stored on the SD card. In this example, only the 'LOGS' directory with the file 'DMSG.TXT' is present. These particular files are created during system initialization and used by the kernel for logging debug ‘printf’ messages. Looking closely at the terminal output, one can see that directories are traversed in a familiar way via the ‘cd’ command. In order to promote readability, the root directory is highlighted green and all subsequent directories are highlighted red. The third directive ’help’ tells the system to display a list of the sytem commands recognized by the kernel. Finally, the instruction ’dev’, displays a list of device drivers registered with the kernel and their corresponding number of open handles. In this example only the  status (LED controller), console, and SD drivers have been registered.
 
-[[https://github.com/rmmurphy/arbitros/raw/master/ref/images/console1.png]]
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/console1.png>
 
 Looking closely at the second figure below, the command ’top’ displays metrics describing the size of various memory sections (.data, .bss, and .heap) including the amount RAM left on the system. Additionally, ’top’ shows an estimate of processor loading, which is comprised of metrics averaged over a one and five minute interval. This feature allows an _abitros_ developer to tune the performance of a particular thread or collection of threads in order to minimize the burden on the system. The instruction ’sdl’ with argument 0,1, or 2 turns on one of the kernel’s three prioritized debug levels. As seen in the example, ’sdl 0’ enables the lowest priority debug level, displaying a message every time the ‘idle’ thread resets the system watchdog timer. Increasing the debug level, such as configuring ’sdl 1’ (or 2), will tell the kernel to print all messages with the same or higher priority. The ability to display debug messages based on priority eases software integration, allowing a developer to "de-clutter" the terminal output by informing the kernel to highlight the most important information. The final command ’head’, tells the kernel to print the contents of one of the files stored on the SD card. As seen in the example, the debug log was displayed ( ‘/logs/dmsg.txt’), showing the results from the previous ‘sdl 0’ debug session.
 
-[[https://github.com/rmmurphy/arbitros/raw/master/ref/images/console2.png]]
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/console2.png>
 
 ## Attitude Heading Reference System Sensor Fusion
 
 As part of the core ‘DRIVERS’ package, _abitros_ offers a device driver designed to fuse the measurements from Sparkfun’s 9DOF sensor module using a 9-state fixed-point error-state Kalman filter. Unlike other hobbyist sensor fusion systems available on the market , _abitros‘_ Kalman filter was designed using fixed-point rather than floating point notation. This methodology decreases processor loading enabling the algorithm to update at rates in excess of 50msec—vastly improving  the tracking capability of fast maneuvering objects. Moreover, the Kalman filter not only corrects for attitude and heading error, but it corrects gyro  bias and axis misalignment as well. In addition to the nominal filtering operations, the device driver performs magnetometer and accelerometer calibration using a ellipsoid fitting routine. Again, unlike other open source AHRS systems that perform calibration external to the microcontroller (using Matlab); _abitros‘_ AHRS performs the calibration natively using matrix operations from its built in math library (utl_math.c) provided in the ‘UTILITIES’ package. 
 
-[[https://github.com/rmmurphy/arbitros/raw/master/ref/images/ahrs.png]]
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/ahrs.png>
 
 ## Interactive AHRS GUI (arhsGui.py)
 
