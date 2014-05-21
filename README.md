@@ -28,3 +28,15 @@ External open source libraries such as libfat32, modified to operate within the 
 ## Designed with Portability in Mind
 
 Although _arbitros_ currently works with the Atmel atxmega128A1, the software was designed to be completely portable—simply modify the contents of the ‘HAL’ layer in order to port the core components to a multitude of processor architectures.
+
+## Easy to use and rich in capability
+
+_Abitros_ was created to fit a gap in the hobbyist market. Development platforms such as Arduino were originally designed for individuals with minimal or no programming experience. As a result, their monolithic software architecture is limiting—lacking many of the features of a higher level multi-threaded operating environment. Conversely, single board computers like Raspberry Pi’s were intended for experienced programmers providing a richer set of capability; however, setting up the build environment (installing the root file system and cross compilation tools) to run Linux is a daunting task—even for seasoned professionals. 
+_Arbitros_ combines the best attributes of Arduino—simplicity—with that of Linux based systems—capability—in one easy to use package. 
+
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/complexity.png width=350 height=350>
+
+## Standardized Software Interfaces
+Unlike Arduino, _arbitros_ incorporates Linux inspired function calls such as open, close, read, write, and ioctl in order to abstract–from the user–the intricate details that define how a driver communicates with an off-chip device (such as a shield). As seen in the example below, this framework allows a user-space application to interact with a particular entity–for instance a WIFI module–without having to know the specific details about how the device is controlled (such as the particular UART and GPIO ports used). Furthermore, this driver "blue print" makes it easier for a hobbyist to upgrade external hardware capability without effecting existing _arbitros_ user-space software applications. For example, imagine that a hobbyist has developed an _arbitros_ application that controls an autonomous vehicle using inputs from Sparkfun’s 9DOF sensor module . At a future date the hobbyist decides to upgrade the IMU to a newer more capable model. With _arbitros_ this is easy, the hobbyist simply swaps the old device driver for the new one–without requiring changes to his/her user-space application software. 
+
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbdeviceTopLevel.png width=600 height=200>
