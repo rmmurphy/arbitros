@@ -1,4 +1,5 @@
-<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbitros.jpg> # Introduction
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbitros.jpg> 
+# Introduction
 _Arbitros_ (pronounced are-bee-trose) is a lightweight real time operating system developed initially—but not solely— for the Atmel XMEGA 8/16-bit series microcontroller. The name _arbitros_ is a fusion between the Latin arbitror (meaning to judge or decide) and OS (operating system). The software was developed over three years of meticulous work and is comprised of five thoroughly tested modular core components named **RTOS**, **HAL**, **UTILITIES**, **DRIVERS**, and **PACKAGES**. These components were designed to abstract common functionality, providing a user-space application with a modular, readable, layered architecture as seen in the figure below.
 
 <img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbLayers.png width=450 height=400>
