@@ -70,3 +70,9 @@ As part of the core ‘DRIVERS’ package, _abitros_ offers a device driver desi
 ## Interactive AHRS GUI (arhsGui.py)
 
 In order to demonstrate the capability of _abitros’_ sensor fusion system, an interactive graphical user interface was created using a combination of Pyqt and Pyopengl. As seen in the figure, the GUI displays three main views. The first view (‘3D’), shows a 3D orientation of the sensor along with heading (i.e. compass) and roll/pitch instrumentation. The second view (‘XY’), displays real-time plots of the roll, pitch, and yaw. Colors are used to differentiate measurement types  with green representing raw meter readings, yellow representing Kalman filtered readings, and red highlighting the difference between filtered and non-filtered measurements. The final view ‘Calibration’, controls calibration of the magnetometer and accelerometer showing the pre and post calibration data by way of the green and red point cloud.
+
+# Getting started
+
+## Getting Started
+
+The examples directory (https://github.com/rmmurphy/arbitros/raw/master/boards/primus/examples) has three folders containing software–with accompanying Atmel Studio 6 projects (http://www.atmel.com/microsite/atmel_studio6) —that demonstrate the capability of the _abitros_ operating system and _Primus_ development board. The first folder, ‘ins’, contains the AHRS software and Python GUI discussed in detail in the section titled, *What Can Arbitros Do?*. The second folder, ‘mathEval’, provides software comparing the performance differences between _abitros’_ native math library (utl_math.c) and the standard ANSII mathematics library (math.h). The final folder, ‘primusEval’, provides examples on using various _abitros_ software components such as semaphores, mailbox modules, and peripherals.
