@@ -44,7 +44,7 @@ Unlike Arduino, _arbitros_ incorporates Linux inspired function calls such as op
 <img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbdeviceTopLevel.png width=600 height=200>
 
 # What Runs _arbitros_?
-## Sparkfun XMega100 Breakout, Atmel XMEGA-A1 Xplained and Primus Development Board
+## Sparkfun XMega100 Breakout, Atmel XMEGA-A1 Xplained, and Primus Development Board
 
 In order to highlight the capability of _arbitros_ a development board named _Primus_ was created. As seen in the picture, _Primus_ evolved from Sparkfun’s XMega100 Breakout board (https://www.sparkfun.com/products/9546) and the architecture was designed using Sparkfun’s design rules and Eagle parts library. Although _Primus_ is a more robust solution (offering PDI debugging, USB console, and a fat32 filesystem) _arbitros_ can still operate on Sparkfun's XMega100 Breakout and Atmel's XMEGA-A1 Xplained (http://www.atmel.com/tools/XMEGA-A1XPLAINED.aspx).
 
