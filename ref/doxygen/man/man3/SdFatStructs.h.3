@@ -1,0 +1,571 @@
+.TH "C:/arbitros/trunk/libraries/sd/SdFat/SdFatStructs.h" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/arbitros/trunk/libraries/sd/SdFat/SdFatStructs.h \- 
+.PP
+FAT file structures\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBpartitionTable\fP"
+.br
+.RI "\fIMBR partition table entry\&. \fP"
+.ti -1c
+.RI "struct \fBmasterBootRecord\fP"
+.br
+.RI "\fIMaster Boot Record\&. \fP"
+.ti -1c
+.RI "struct \fBfat_boot\fP"
+.br
+.RI "\fIBoot sector for a FAT12/FAT16 volume\&. \fP"
+.ti -1c
+.RI "struct \fBfat32_boot\fP"
+.br
+.RI "\fIBoot sector for a FAT32 volume\&. \fP"
+.ti -1c
+.RI "struct \fBfat32_fsinfo\fP"
+.br
+.RI "\fIFSINFO sector for a FAT32 volume\&. \fP"
+.ti -1c
+.RI "struct \fBdirectoryEntry\fP"
+.br
+.RI "\fIFAT short directory entry\&. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBpartitionTable\fP \fBpart_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBmasterBootRecord\fP \fBmbr_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBfat_boot\fP \fBfat_boot_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBfat32_boot\fP \fBfat32_boot_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBfat32_fsinfo\fP \fBfat32_fsinfo_t\fP"
+.br
+.ti -1c
+.RI "typedef struct \fBdirectoryEntry\fP \fBdir_t\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBpartitionTable\fP \fB__attribute__\fP ((packed))"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint8_t const \fBBOOTSIG0\fP = 0X55"
+.br
+.ti -1c
+.RI "uint8_t const \fBBOOTSIG1\fP = 0XAA"
+.br
+.ti -1c
+.RI "uint8_t const \fBEXTENDED_BOOT_SIG\fP = 0X29"
+.br
+.ti -1c
+.RI "uint8_t \fBboot\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBbeginHead\fP"
+.br
+.ti -1c
+.RI "unsigned \fBbeginSector\fP"
+.br
+.ti -1c
+.RI "unsigned \fBbeginCylinderHigh\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBbeginCylinderLow\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBtype\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBendHead\fP"
+.br
+.ti -1c
+.RI "unsigned \fBendSector\fP"
+.br
+.ti -1c
+.RI "unsigned \fBendCylinderHigh\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBendCylinderLow\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfirstSector\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBtotalSectors\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBcodeArea\fP [440]"
+.br
+.ti -1c
+.RI "uint32_t \fBdiskSignature\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBusuallyZero\fP"
+.br
+.ti -1c
+.RI "\fBpart_t\fP \fBpart\fP [4]"
+.br
+.ti -1c
+.RI "uint8_t \fBmbrSig0\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBmbrSig1\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBjump\fP [3]"
+.br
+.ti -1c
+.RI "char \fBoemId\fP [8]"
+.br
+.ti -1c
+.RI "uint16_t \fBbytesPerSector\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBsectorsPerCluster\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBreservedSectorCount\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBfatCount\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBrootDirEntryCount\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBtotalSectors16\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBmediaType\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBsectorsPerFat16\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBsectorsPerTrack\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBheadCount\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBhidddenSectors\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBtotalSectors32\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBdriveNumber\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBreserved1\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBbootSignature\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBvolumeSerialNumber\fP"
+.br
+.ti -1c
+.RI "char \fBvolumeLabel\fP [11]"
+.br
+.ti -1c
+.RI "char \fBfileSystemType\fP [8]"
+.br
+.ti -1c
+.RI "uint8_t \fBbootCode\fP [448]"
+.br
+.ti -1c
+.RI "uint8_t \fBbootSectorSig0\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBbootSectorSig1\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBsectorsPerFat32\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfat32Flags\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfat32Version\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfat32RootCluster\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfat32FSInfo\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfat32BackBootBlock\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBfat32Reserved\fP [12]"
+.br
+.ti -1c
+.RI "uint32_t const \fBFSINFO_LEAD_SIG\fP = 0x41615252"
+.br
+.ti -1c
+.RI "uint32_t const \fBFSINFO_STRUCT_SIG\fP = 0x61417272"
+.br
+.ti -1c
+.RI "uint32_t \fBleadSignature\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBstructSignature\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfreeCount\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBnextFree\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBreserved2\fP [12]"
+.br
+.ti -1c
+.RI "uint8_t \fBtailSignature\fP [4]"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT12EOC\fP = 0XFFF"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT12EOC_MIN\fP = 0XFF8"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT16EOC\fP = 0XFFFF"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT16EOC_MIN\fP = 0XFFF8"
+.br
+.ti -1c
+.RI "uint32_t const \fBFAT32EOC\fP = 0X0FFFFFFF"
+.br
+.ti -1c
+.RI "uint32_t const \fBFAT32EOC_MIN\fP = 0X0FFFFFF8"
+.br
+.ti -1c
+.RI "uint32_t const \fBFAT32MASK\fP = 0X0FFFFFFF"
+.br
+.ti -1c
+.RI "uint8_t \fBname\fP [11]"
+.br
+.ti -1c
+.RI "uint8_t \fBattributes\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBreservedNT\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBcreationTimeTenths\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBcreationTime\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBcreationDate\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBlastAccessDate\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfirstClusterHigh\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBlastWriteTime\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBlastWriteDate\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBfirstClusterLow\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfileSize\fP"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_NAME_0XE5\fP = 0X05"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_NAME_DELETED\fP = 0XE5"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_NAME_FREE\fP = 0X00"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_READ_ONLY\fP = 0X01"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_HIDDEN\fP = 0X02"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_SYSTEM\fP = 0X04"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_VOLUME_ID\fP = 0X08"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_DIRECTORY\fP = 0X10"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_ARCHIVE\fP = 0X20"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_LONG_NAME\fP = 0X0F"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_LONG_NAME_MASK\fP = 0X3F"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_DEFINED_BITS\fP = 0X3F"
+.br
+.ti -1c
+.RI "uint8_t const \fBDIR_ATT_FILE_TYPE_MASK\fP = (\fBDIR_ATT_VOLUME_ID\fP | \fBDIR_ATT_DIRECTORY\fP)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+FAT file structures\&. 
+
+
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBdirectoryEntry\fP \fBdir_t\fP"
+Type name for \fBdirectoryEntry\fP 
+.SS "typedef struct \fBfat32_boot\fP \fBfat32_boot_t\fP"
+Type name for FAT32 Boot Sector 
+.SS "typedef struct \fBfat32_fsinfo\fP \fBfat32_fsinfo_t\fP"
+Type name for FAT32 FSINFO Sector 
+.SS "typedef struct \fBfat_boot\fP \fBfat_boot_t\fP"
+Type name for FAT Boot Sector 
+.SS "typedef struct \fBmasterBootRecord\fP \fBmbr_t\fP"
+Type name for \fBmasterBootRecord\fP 
+.SS "typedef struct \fBpartitionTable\fP \fBpart_t\fP"
+Type name for \fBpartitionTable\fP 
+.SH "Variable Documentation"
+.PP 
+.SS "uint8_t attributes"
+Entry attributes\&.
+.PP
+The upper two bits of the attribute byte are reserved and should always be set to 0 when a file is created and never modified or looked at after that\&. See defines that begin with DIR_ATT_\&. 
+.SS "unsigned beginCylinderHigh"
+High bits cylinder for first block in partition\&. 
+.SS "uint8_t beginCylinderLow"
+Combine beginCylinderLow with beginCylinderHigh\&. Legal values are 0-1023\&. Only used in old PC BIOS\&. 
+.SS "uint8_t beginHead"
+Head part of Cylinder-head-sector address of the first block in the partition\&. Legal values are 0-255\&. Only used in old PC BIOS\&. 
+.SS "unsigned beginSector"
+Sector part of Cylinder-head-sector address of the first block in the partition\&. Legal values are 1-63\&. Only used in old PC BIOS\&. 
+.SS "uint8_t boot"
+Boot Indicator \&. Indicates whether the volume is the active partition\&. Legal values include: 0X00\&. Do not use for booting\&. 0X80 Active partition\&. 
+.SS "uint8_t bootCode"
+X86 boot code 
+.SS "uint8_t bootSectorSig0"
+must be 0X55 
+.SS "uint8_t bootSectorSig1"
+must be 0XAA 
+.SS "uint8_t const BOOTSIG0 = 0X55"
+Value for byte 510 of boot block or MBR 
+.SS "uint8_t const BOOTSIG1 = 0XAA"
+Value for byte 511 of boot block or MBR 
+.SS "uint8_t bootSignature"
+0X29 if next three fields are valid 
+.SS "uint16_t bytesPerSector"
+The size of a hardware sector\&. Valid decimal values for this field are 512, 1024, 2048, and 4096\&. For most disks used in the United States, the value of this field is 512\&. 
+.SS "uint8_t codeArea[440]"
+Code Area for master boot program\&. 
+.SS "uint16_t creationDate"
+Date file was created\&. 
+.SS "uint16_t creationTime"
+Time file was created\&. 
+.SS "uint8_t creationTimeTenths"
+The granularity of the seconds part of creationTime is 2 seconds so this field is a count of tenths of a second and its valid value range is 0-199 inclusive\&. (WHG note - seems to be hundredths) 
+.SS "uint8_t const DIR_ATT_ARCHIVE = 0X20"
+Old DOS archive bit for backup support 
+.SS "uint8_t const DIR_ATT_DEFINED_BITS = 0X3F"
+defined attribute bits 
+.SS "uint8_t const DIR_ATT_DIRECTORY = 0X10"
+Entry is for a directory 
+.SS "uint8_t const DIR_ATT_FILE_TYPE_MASK = (\fBDIR_ATT_VOLUME_ID\fP | \fBDIR_ATT_DIRECTORY\fP)"
+Mask for file/subdirectory tests 
+.SS "uint8_t const DIR_ATT_HIDDEN = 0X02"
+\fBFile\fP should hidden in directory listings 
+.SS "uint8_t const DIR_ATT_LONG_NAME = 0X0F"
+Test value for long name entry\&. Test is (d->attributes & DIR_ATT_LONG_NAME_MASK) == DIR_ATT_LONG_NAME\&. 
+.SS "uint8_t const DIR_ATT_LONG_NAME_MASK = 0X3F"
+Test mask for long name entry 
+.SS "uint8_t const DIR_ATT_READ_ONLY = 0X01"
+file is read-only 
+.SS "uint8_t const DIR_ATT_SYSTEM = 0X04"
+Entry is for a system file 
+.SS "uint8_t const DIR_ATT_VOLUME_ID = 0X08"
+Directory entry contains the volume label 
+.SS "uint8_t const DIR_NAME_0XE5 = 0X05"
+escape for name[0] = 0XE5 
+.SS "uint8_t const DIR_NAME_DELETED = 0XE5"
+name[0] value for entry that is free after being 'deleted' 
+.SS "uint8_t const DIR_NAME_FREE = 0X00"
+name[0] value for entry that is free and no allocated entries follow 
+.SS "uint32_t diskSignature"
+Optional Windows NT disk signature\&. May contain boot code\&. 
+.SS "uint8_t driveNumber"
+Related to the BIOS physical drive number\&. Floppy drives are identified as 0x00 and physical hard disks are identified as 0x80, regardless of the number of physical disk drives\&. Typically, this value is set prior to issuing an INT 13h BIOS call to specify the device to access\&. The value is only relevant if the device is a boot device\&. 
+.SS "unsigned endCylinderHigh"
+High bits of end cylinder 
+.SS "uint8_t endCylinderLow"
+Combine endCylinderLow with endCylinderHigh\&. Legal values are 0-1023\&. Only used in old PC BIOS\&. 
+.SS "uint8_t endHead"
+head part of cylinder-head-sector address of the last sector in the partition\&. Legal values are 0-255\&. Only used in old PC BIOS\&. 
+.SS "unsigned endSector"
+Sector part of cylinder-head-sector address of the last sector in the partition\&. Legal values are 1-63\&. Only used in old PC BIOS\&. 
+.SS "uint8_t const EXTENDED_BOOT_SIG = 0X29"
+Value for bootSignature field int FAT/FAT32 boot sector 
+.SS "uint16_t const FAT12EOC = 0XFFF"
+FAT12 end of chain value used by Microsoft\&. 
+.SS "uint16_t const FAT12EOC_MIN = 0XFF8"
+Minimum value for FAT12 EOC\&. Use to test for EOC\&. 
+.SS "uint16_t const FAT16EOC = 0XFFFF"
+FAT16 end of chain value used by Microsoft\&. 
+.SS "uint16_t const FAT16EOC_MIN = 0XFFF8"
+Minimum value for FAT16 EOC\&. Use to test for EOC\&. 
+.SS "uint16_t fat32BackBootBlock"
+If nonzero, indicates the sector number in the reserved area of the volume of a copy of the boot record\&. Usually 6\&. No value other than 6 is recommended\&. 
+.SS "uint32_t const FAT32EOC = 0X0FFFFFFF"
+FAT32 end of chain value used by Microsoft\&. 
+.SS "uint32_t const FAT32EOC_MIN = 0X0FFFFFF8"
+Minimum value for FAT32 EOC\&. Use to test for EOC\&. 
+.SS "uint16_t fat32Flags"
+This field is only defined for FAT32 media and does not exist on FAT12 and FAT16 media\&. Bits 0-3 -- Zero-based number of active FAT\&. Only valid if mirroring is disabled\&. Bits 4-6 -- Reserved\&. Bit 7 -- 0 means the FAT is mirrored at runtime into all FATs\&. -- 1 means only one FAT is active; it is the one referenced in bits 0-3\&. Bits 8-15 -- Reserved\&. 
+.SS "uint16_t fat32FSInfo"
+Sector number of FSINFO structure in the reserved area of the FAT32 volume\&. Usually 1\&. 
+.SS "uint32_t const FAT32MASK = 0X0FFFFFFF"
+Mask a for FAT32 entry\&. Entries are 28 bits\&. 
+.SS "uint8_t fat32Reserved[12]"
+Reserved for future expansion\&. Code that formats FAT32 volumes should always set all of the bytes of this field to 0\&. 
+.SS "uint32_t fat32RootCluster"
+Cluster number of the first cluster of the root directory for FAT32\&. This usually 2 but not required to be 2\&. 
+.SS "uint16_t fat32Version"
+FAT32 version\&. High byte is major revision number\&. Low byte is minor revision number\&. Only 0\&.0 define\&. 
+.SS "uint8_t fatCount"
+The number of copies of the FAT on the volume\&. The value of this field is always 2\&. 
+.SS "uint32_t fileSize"
+32-bit unsigned holding this file's size in bytes\&. 
+.SS "char fileSystemType"
+A field with a value of either FAT, FAT12 or FAT16, depending on the disk format\&.
+.PP
+A text field with a value of FAT32\&. 
+.SS "uint16_t firstClusterHigh"
+High word of this entry's first cluster number (always 0 for a FAT12 or FAT16 volume)\&. 
+.SS "uint16_t firstClusterLow"
+Low word of this entry's first cluster number\&. 
+.SS "uint32_t firstSector"
+Logical block address of the first block in the partition\&. 
+.SS "uint32_t freeCount"
+Contains the last known free cluster count on the volume\&. If the value is 0xFFFFFFFF, then the free count is unknown and must be computed\&. Any other value can be used, but is not necessarily correct\&. It should be range checked at least to make sure it is <= volume cluster count\&. 
+.SS "uint32_t const FSINFO_LEAD_SIG = 0x41615252"
+Lead signature for a FSINFO sector 
+.SS "uint32_t const FSINFO_STRUCT_SIG = 0x61417272"
+Struct signature for a FSINFO sector 
+.SS "uint16_t headCount"
+Number of heads for interrupt 0x13\&. Not used otherwise\&. 
+.SS "uint32_t hidddenSectors"
+Count of hidden sectors preceding the partition that contains this FAT volume\&. This field is generally only relevant for media visible on interrupt 0x13\&. 
+.SS "uint8_t jump"
+The first three bytes of the boot sector must be valid, executable x 86-based CPU instructions\&. This includes a jump instruction that skips the next nonexecutable bytes\&. 
+.SS "uint16_t lastAccessDate"
+Last access date\&. Note that there is no last access time, only a date\&. This is the date of last read or write\&. In the case of a write, this should be set to the same date as lastWriteDate\&. 
+.SS "uint16_t lastWriteDate"
+Date of last write\&. \fBFile\fP creation is considered a write\&. 
+.SS "uint16_t lastWriteTime"
+Time of last write\&. \fBFile\fP creation is considered a write\&. 
+.SS "uint32_t leadSignature"
+must be 0X52, 0X52, 0X61, 0X41 
+.SS "uint8_t mbrSig0"
+First MBR signature byte\&. Must be 0X55 
+.SS "uint8_t mbrSig1"
+Second MBR signature byte\&. Must be 0XAA 
+.SS "uint8_t mediaType"
+This dates back to the old MS-DOS 1\&.x media determination and is no longer usually used for anything\&. 0xF8 is the standard value for fixed (nonremovable) media\&. For removable media, 0xF0 is frequently used\&. Legal values are 0xF0 or 0xF8-0xFF\&. 
+.SS "uint8_t name[11]"
+Short 8\&.3 name\&.
+.PP
+The first eight bytes contain the file name with blank fill\&. The last three bytes contain the file extension with blank fill\&. 
+.SS "uint32_t nextFree"
+This is a hint for the FAT driver\&. It indicates the cluster number at which the driver should start looking for free clusters\&. If the value is 0xFFFFFFFF, then there is no hint and the driver should start looking at cluster 2\&. 
+.SS "char oemId"
+This is typically a string of characters that identifies the operating system that formatted the volume\&. 
+.SS "\fBpart_t\fP part[4]"
+Partition tables\&. 
+.SS "unsigned char reserved1"
+used by Windows NT - should be zero for FAT
+.PP
+must be zero 
+.SS "unsigned char reserved2"
+must be zero
+.PP
+not used 
+.SS "uint8_t reservedNT"
+Reserved for use by Windows NT\&. Set value to 0 when a file is created and never modify or look at it after that\&. 
+.SS "uint16_t reservedSectorCount"
+The number of sectors preceding the start of the first FAT, including the boot sector\&. The value of this field is always 1\&.
+.PP
+The number of sectors preceding the start of the first FAT, including the boot sector\&. Must not be zero 
+.SS "uint16_t rootDirEntryCount"
+For FAT12 and FAT16 volumes, this field contains the count of 32-byte directory entries in the root directory\&. For FAT32 volumes, this field must be set to 0\&. For FAT12 and FAT16 volumes, this value should always specify a count that when multiplied by 32 results in a multiple of bytesPerSector\&. FAT16 volumes should use the value 512\&.
+.PP
+FAT12/FAT16 only\&. For FAT32 volumes, this field must be set to 0\&. 
+.SS "uint8_t sectorsPerCluster"
+Number of sectors per allocation unit\&. This value must be a power of 2 that is greater than 0\&. The legal values are 1, 2, 4, 8, 16, 32, 64, and 128\&. 128 should be avoided\&. 
+.SS "uint16_t sectorsPerFat16"
+Count of sectors occupied by one FAT on FAT12/FAT16 volumes\&. On FAT32 volumes this field must be 0, and sectorsPerFat32 contains the FAT size count\&.
+.PP
+On FAT32 volumes this field must be 0, and sectorsPerFat32 contains the FAT size count\&. 
+.SS "uint32_t sectorsPerFat32"
+Count of sectors occupied by one FAT on FAT32 volumes\&. 
+.SS "uint16_t sectorsPerTrack"
+Sectors per track for interrupt 0x13\&. Not used otherwise\&. 
+.SS "uint32_t structSignature"
+must be 0X72, 0X72, 0X41, 0X61 
+.SS "uint8_t tailSignature[4]"
+must be 0X00, 0X00, 0X55, 0XAA 
+.SS "uint32_t totalSectors"
+Length of the partition, in blocks\&. 
+.SS "uint16_t totalSectors16"
+This field is the old 16-bit total count of sectors on the volume\&. This count includes the count of all sectors in all four regions of the volume\&. This field can be 0; if it is 0, then totalSectors32 must be nonzero\&. For FAT32 volumes, this field must be 0\&. For FAT12 and FAT16 volumes, this field contains the sector count, and totalSectors32 is 0 if the total sector count fits (is less than 0x10000)\&.
+.PP
+For FAT32 volumes, this field must be 0\&. 
+.SS "uint32_t totalSectors32"
+This field is the new 32-bit total count of sectors on the volume\&. This count includes the count of all sectors in all four regions of the volume\&. This field can be 0; if it is 0, then totalSectors16 must be nonzero\&.
+.PP
+Contains the total number of sectors in the FAT32 volume\&. 
+.SS "uint8_t type"
+Partition type\&. See defines that begin with PART_TYPE_ for some Microsoft partition types\&. 
+.SS "uint16_t usuallyZero"
+Usually zero but may be more boot code\&. 
+.SS "char volumeLabel"
+A field once used to store the volume label\&. The volume label is now stored as a special file in the root directory\&. 
+.SS "uint32_t volumeSerialNumber"
+A random serial number created when formatting a disk, which helps to distinguish between disks\&. Usually generated by combining date and time\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,203 @@
+.TH "C:/arbitros/trunk/libraries/sd/SdFat/SdBaseFile.h" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/arbitros/trunk/libraries/sd/SdFat/SdBaseFile.h \- 
+.PP
+\fBSdBaseFile\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <SdFatConfig\&.h>\fP
+.br
+\fC#include <SdVolume\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBFatPos_t\fP"
+.br
+.RI "\fIinternal type for istream do not use in user apps \fP"
+.ti -1c
+.RI "class \fBSdBaseFile\fP"
+.br
+.RI "\fIBase class for \fBSdFile\fP with \fBPrint\fP and C++ streams\&. \fP"
+.in -1c
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPGM_P\fP   const char*"
+.br
+.ti -1c
+.RI "#define \fBPSTR\fP(x)   (x)"
+.br
+.ti -1c
+.RI "#define \fBpgm_read_byte\fP(addr)   (*(const unsigned char*)(addr))"
+.br
+.ti -1c
+.RI "#define \fBpgm_read_word\fP(addr)   (*(const uint16_t*)(addr))"
+.br
+.ti -1c
+.RI "#define \fBPROGMEM\fP   const"
+.br
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "uint8_t const \fBO_READ\fP = 0X01"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_RDONLY\fP = \fBO_READ\fP"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_WRITE\fP = 0X02"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_WRONLY\fP = \fBO_WRITE\fP"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_RDWR\fP = (\fBO_READ\fP | \fBO_WRITE\fP)"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_ACCMODE\fP = (\fBO_READ\fP | \fBO_WRITE\fP)"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_APPEND\fP = 0X04"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_SYNC\fP = 0X08"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_TRUNC\fP = 0X10"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_AT_END\fP = 0X20"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_CREAT\fP = 0X40"
+.br
+.ti -1c
+.RI "uint8_t const \fBO_EXCL\fP = 0X80"
+.br
+.ti -1c
+.RI "uint8_t const \fBLS_DATE\fP = 1"
+.br
+.ti -1c
+.RI "uint8_t const \fBLS_SIZE\fP = 2"
+.br
+.ti -1c
+.RI "uint8_t const \fBLS_R\fP = 4"
+.br
+.ti -1c
+.RI "uint8_t const \fBT_ACCESS\fP = 1"
+.br
+.ti -1c
+.RI "uint8_t const \fBT_CREATE\fP = 2"
+.br
+.ti -1c
+.RI "uint8_t const \fBT_WRITE\fP = 4"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_CLOSED\fP = 0"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_NORMAL\fP = 1"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_ROOT_FIXED\fP = 2"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_ROOT32\fP = 3"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_SUBDIR\fP = 4"
+.br
+.ti -1c
+.RI "uint8_t const \fBFAT_FILE_TYPE_MIN_DIR\fP = \fBFAT_FILE_TYPE_ROOT_FIXED\fP"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT_DEFAULT_DATE\fP = ((2000 - 1980) << 9) | (1 << 5) | 1"
+.br
+.ti -1c
+.RI "uint16_t const \fBFAT_DEFAULT_TIME\fP = (1 << 11)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSdBaseFile\fP class\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PGM_P   const char*"
+pointer to flash for ARM 
+.SS "#define pgm_read_byte(addr)   (*(const unsigned char*)(addr))"
+read 8-bits from flash for ARM 
+.SS "#define pgm_read_word(addr)   (*(const uint16_t*)(addr))"
+read 16-bits from flash for ARM 
+.SS "#define PROGMEM   const"
+store in flash for ARM 
+.SS "#define PSTR(x)   (x)"
+store literal string in flash for ARM 
+.SH "Variable Documentation"
+.PP 
+.SS "uint16_t const FAT_DEFAULT_DATE = ((2000 - 1980) << 9) | (1 << 5) | 1"
+Default date for file timestamps is 1 Jan 2000 
+.SS "uint16_t const FAT_DEFAULT_TIME = (1 << 11)"
+Default time for file timestamp is 1 am 
+.SS "uint8_t const FAT_FILE_TYPE_CLOSED = 0"
+This file has not been opened\&. 
+.SS "uint8_t const FAT_FILE_TYPE_MIN_DIR = \fBFAT_FILE_TYPE_ROOT_FIXED\fP"
+Test value for directory type 
+.SS "uint8_t const FAT_FILE_TYPE_NORMAL = 1"
+A normal file 
+.SS "uint8_t const FAT_FILE_TYPE_ROOT32 = 3"
+A FAT32 root directory 
+.SS "uint8_t const FAT_FILE_TYPE_ROOT_FIXED = 2"
+A FAT12 or FAT16 root directory 
+.SS "uint8_t const FAT_FILE_TYPE_SUBDIR = 4"
+A subdirectory file 
+.SS "uint8_t const LS_DATE = 1"
+ls() flag to print modify date 
+.SS "uint8_t const LS_R = 4"
+ls() flag for recursive list of subdirectories 
+.SS "uint8_t const LS_SIZE = 2"
+ls() flag to print file size 
+.SS "uint8_t const O_ACCMODE = (\fBO_READ\fP | \fBO_WRITE\fP)"
+open() oflag mask for access modes 
+.SS "uint8_t const O_APPEND = 0X04"
+The file offset shall be set to the end of the file prior to each write\&. 
+.SS "uint8_t const O_AT_END = 0X20"
+set the initial position at the end of the file 
+.SS "uint8_t const O_CREAT = 0X40"
+create the file if nonexistent 
+.SS "uint8_t const O_EXCL = 0X80"
+If O_CREAT and O_EXCL are set, open() shall fail if the file exists 
+.SS "uint8_t const O_RDONLY = \fBO_READ\fP"
+open() oflag - same as O_IN 
+.SS "uint8_t const O_RDWR = (\fBO_READ\fP | \fBO_WRITE\fP)"
+open() oflag for reading and writing 
+.SS "uint8_t const O_READ = 0X01"
+open() oflag for reading 
+.SS "uint8_t const O_SYNC = 0X08"
+synchronous writes - call sync() after each write 
+.SS "uint8_t const O_TRUNC = 0X10"
+truncate the file to zero length 
+.SS "uint8_t const O_WRITE = 0X02"
+open() oflag for write 
+.SS "uint8_t const O_WRONLY = \fBO_WRITE\fP"
+open() oflag - same as O_WRITE 
+.SS "uint8_t const T_ACCESS = 1"
+set the file's last access date 
+.SS "uint8_t const T_CREATE = 2"
+set the file's creation date and time 
+.SS "uint8_t const T_WRITE = 4"
+Set the file's write date and time 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

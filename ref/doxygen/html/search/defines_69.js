@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['idle_5fwatchdog_5fpet_5frate',['IDLE_WATCHDOG_PET_RATE',['../arb__idle_8c.html#a43d948fe6dd0dd0b585561376b795e09',1,'arb_idle.c']]],
+  ['idle_5fwatchdog_5freset_5fperiod',['IDLE_WATCHDOG_RESET_PERIOD',['../arb__idle_8c.html#a1b8eb24f6b7f7af8a59a250d8f2717a5',1,'arb_idle.c']]],
+  ['ins_5faccel_5faddress',['INS_ACCEL_ADDRESS',['../drv__ins_8c.html#a5a381d0223cd509bd47b8cda7ab485c9',1,'drv_ins.c']]],
+  ['ins_5fatt_5fres_5favr_5fq',['INS_ATT_RES_AVR_Q',['../drv__ins_8c.html#a772ba1b1cefc1ee442df392279e31b9e',1,'drv_ins.c']]],
+  ['ins_5fatt_5fres_5fforgetting_5ffactor',['INS_ATT_RES_FORGETTING_FACTOR',['../drv__ins_8c.html#ab42e32e814f9bbedaa3a307dc2852f51',1,'drv_ins.c']]],
+  ['ins_5fatt_5fres_5fvar_5fextra_5fres',['INS_ATT_RES_VAR_EXTRA_RES',['../drv__ins_8c.html#a4451d5c07d0112f1894e43084fc0f985',1,'drv_ins.c']]],
+  ['ins_5faxis_5fscale_5fq_5ffactor',['INS_AXIS_SCALE_Q_FACTOR',['../drv__ins_8c.html#af798f59386f7d42cf9175eebdc83da20',1,'drv_ins.c']]],
+  ['ins_5fdcm_5finit_5fmax_5fsamp_5fto_5favrg',['INS_DCM_INIT_MAX_SAMP_TO_AVRG',['../drv__ins_8c.html#a7c9d10a79cbf4faa7c285e9f34802951',1,'drv_ins.c']]],
+  ['ins_5fdt',['INS_dt',['../drv__ins_8c.html#ac91f023824b9a038577f4e47ea506213',1,'drv_ins.c']]],
+  ['ins_5fdt_5fsleep',['INS_DT_SLEEP',['../drv__ins_8c.html#a53c704d42f4a6a9ee456aa8d1e48802b',1,'drv_ins.c']]],
+  ['ins_5fef_5fnum_5fcoef',['INS_EF_NUM_COEF',['../drv__ins_8h.html#a1da66e219dba99ecf632aae24eb5d83e',1,'drv_ins.h']]],
+  ['ins_5fgyro_5faddress',['INS_GYRO_ADDRESS',['../drv__ins_8c.html#a339ad1308dce219ad8b80fe2c50b499f',1,'drv_ins.c']]],
+  ['ins_5fgyro_5fcal_5fdt',['INS_GYRO_CAL_DT',['../drv__ins_8c.html#a69a8da369f5a3515206589c14be822a8',1,'drv_ins.c']]],
+  ['ins_5fgyro_5fcal_5fforgeting_5ffact',['INS_GYRO_CAL_FORGETING_FACT',['../drv__ins_8c.html#affa0cb1f8bfbfaac78b055129a435574',1,'drv_ins.c']]],
+  ['ins_5fgyro_5fcal_5fnum_5fmeas',['INS_GYRO_CAL_NUM_MEAS',['../drv__ins_8c.html#a0df6b77f99a802a712d3e0310e0dca29',1,'drv_ins.c']]],
+  ['ins_5fgyro_5fconv_5ffactor',['INS_GYRO_CONV_FACTOR',['../drv__ins_8c.html#ab8ce17f376ae1b2a90a307d05ae0d8aa',1,'drv_ins.c']]],
+  ['ins_5fgyro_5fmax_5frotation',['INS_GYRO_MAX_ROTATION',['../drv__ins_8c.html#a347e83542dabbb950f874ee7d9f09261',1,'drv_ins.c']]],
+  ['ins_5fmagn_5faddress',['INS_MAGN_ADDRESS',['../drv__ins_8c.html#a9c6e57364fa04d40dc216e102d9c03d3',1,'drv_ins.c']]],
+  ['ins_5fmajor_5fnumber',['INS_MAJOR_NUMBER',['../drv__ins_8c.html#a5652296ddbf1977e452dd6ad6e16fc47',1,'drv_ins.c']]],
+  ['ins_5fmax_5fcal_5fgrav_5fenv',['INS_MAX_CAL_GRAV_ENV',['../drv__ins_8c.html#adcebfb1e55eb6eda1d2f5ea69ae6dbdd',1,'drv_ins.c']]],
+  ['ins_5fmax_5fcal_5fmag_5fenv',['INS_MAX_CAL_MAG_ENV',['../drv__ins_8c.html#a9402190142acdb612138bdf76eab3131',1,'drv_ins.c']]],
+  ['ins_5fmax_5fcal_5fsamples',['INS_MAX_CAL_SAMPLES',['../drv__ins_8h.html#a2f2de93c471f96bb143498ee21024c1c',1,'drv_ins.h']]],
+  ['ins_5ftimer',['INS_TIMER',['../drv__ins_8c.html#a1f9d7db9fd9282576d4a04b389602a49',1,'drv_ins.c']]],
+  ['ins_5ftwi',['INS_TWI',['../drv__ins_8c.html#aec55a5bf52d31f05d498e617956d1681',1,'drv_ins.c']]],
+  ['ins_5ftwi_5fbaud_5frate',['INS_TWI_BAUD_RATE',['../drv__ins_8c.html#a19d61cac04e135ba37e680e66c1e041f',1,'drv_ins.c']]]
+];

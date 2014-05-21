@@ -1,0 +1,168 @@
+\hypertarget{class_sd_file}{\section{Sd\-File Class Reference}
+\label{class_sd_file}\index{Sd\-File@{Sd\-File}}
+}
+
+
+\hyperlink{class_sd_base_file}{Sd\-Base\-File} with \hyperlink{class_print}{Print}.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-File.\-h$>$}
+
+Inheritance diagram for Sd\-File\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sd_file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sd_file_a2b40ebbf89221903430dba02f50cbd9b}{Sd\-File} (const char $\ast$\hyperlink{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{name}, uint8\-\_\-t oflag)
+\item 
+bool \hyperlink{class_sd_file_a9b199fded04cffe6a609465dce43fdcc}{get\-Write\-Error} ()
+\item 
+void \hyperlink{class_sd_file_af50f0c1e1c726ef3dee08a84456090b9}{clear\-Write\-Error} ()
+\item 
+size\-\_\-t \hyperlink{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}{write} (uint8\-\_\-t b)
+\item 
+int \hyperlink{class_sd_file_abc47d1855b6d1ac124b27c3bea6ad9ef}{write} (const char $\ast$str)
+\item 
+int \hyperlink{class_sd_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write} (const void $\ast$buf, size\-\_\-t nbyte)
+\item 
+void \hyperlink{class_sd_file_af4dace00a7941e0936830200cb3fc9f9}{write\-\_\-\-P} (\hyperlink{_sd_base_file_8h_a963f816fc88a5d8479c285ed4c630229}{P\-G\-M\-\_\-\-P} str)
+\item 
+void \hyperlink{class_sd_file_a01a8e28448c6120f8de1db3f44c15da9}{writeln\-\_\-\-P} (\hyperlink{_sd_base_file_8h_a963f816fc88a5d8479c285ed4c630229}{P\-G\-M\-\_\-\-P} str)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sd_base_file}{Sd\-Base\-File} with \hyperlink{class_print}{Print}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sd_file_a2b40ebbf89221903430dba02f50cbd9b}{\index{Sd\-File@{Sd\-File}!Sd\-File@{Sd\-File}}
+\index{Sd\-File@{Sd\-File}!SdFile@{Sd\-File}}
+\subsubsection[{Sd\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sd\-File} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{uint8\-\_\-t}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{class_sd_file_a2b40ebbf89221903430dba02f50cbd9b}
+Create a file object and open it in the current working directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & A path with a valid 8.\-3 D\-O\-S name for a file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of open flags. see \hyperlink{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}{Sd\-Base\-File\-::open(\-Sd\-Base\-File$\ast$, const char$\ast$, uint8\-\_\-t)}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sd_file_af50f0c1e1c726ef3dee08a84456090b9}{\index{Sd\-File@{Sd\-File}!clear\-Write\-Error@{clear\-Write\-Error}}
+\index{clear\-Write\-Error@{clear\-Write\-Error}!SdFile@{Sd\-File}}
+\subsubsection[{clear\-Write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-Write\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_file_af50f0c1e1c726ef3dee08a84456090b9}
+Set write\-Error to zero \hypertarget{class_sd_file_a9b199fded04cffe6a609465dce43fdcc}{\index{Sd\-File@{Sd\-File}!get\-Write\-Error@{get\-Write\-Error}}
+\index{get\-Write\-Error@{get\-Write\-Error}!SdFile@{Sd\-File}}
+\subsubsection[{get\-Write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool get\-Write\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_file_a9b199fded04cffe6a609465dce43fdcc}
+\begin{DoxyReturn}{Returns}
+value of write\-Error 
+\end{DoxyReturn}
+\hypertarget{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}{\index{Sd\-File@{Sd\-File}!write@{write}}
+\index{write@{write}!SdFile@{Sd\-File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t write (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}
+Write a byte to a file. Required by the Arduino \hyperlink{class_print}{Print} class. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em b} & the byte to be written. Use get\-Write\-Error to check for errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 for success and 0 for failure. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_print}{Print}.
+
+\hypertarget{class_sd_file_abc47d1855b6d1ac124b27c3bea6ad9ef}{\index{Sd\-File@{Sd\-File}!write@{write}}
+\index{write@{write}!SdFile@{Sd\-File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}int write (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_sd_file_abc47d1855b6d1ac124b27c3bea6ad9ef}
+Write a string to a file. Used by the Arduino \hyperlink{class_print}{Print} class. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & Pointer to the string. Use get\-Write\-Error to check for errors. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+count of characters written for success or -\/1 for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{\index{Sd\-File@{Sd\-File}!write@{write}}
+\index{write@{write}!SdFile@{Sd\-File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}int write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{buf, }
+\item[{size\-\_\-t}]{nbyte}
+\end{DoxyParamCaption}
+)}}\label{class_sd_file_aaf4f4cafe922e54d7b10c1b18bf60d07}
+Write data to an open file.
+
+\begin{DoxyNote}{Note}
+Data is moved to the cache but may not be written to the storage device until \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} is called.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & Pointer to the location of the data to be written.\\
+\hline
+\mbox{\tt in}  & {\em nbyte} & Number of bytes to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For success \hyperlink{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}{write()} returns the number of bytes written, always {\itshape nbyte}. If an error occurs, \hyperlink{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}{write()} returns -\/1. Possible errors include \hyperlink{class_sd_file_ac82b138293686567ab5dfbe3ba1fa1ee}{write()} is called before a file has been opened, write is called for a read-\/only file, device is full, a corrupt file system or an I/\-O error. 
+\end{DoxyReturn}
+\hypertarget{class_sd_file_af4dace00a7941e0936830200cb3fc9f9}{\index{Sd\-File@{Sd\-File}!write\-\_\-\-P@{write\-\_\-\-P}}
+\index{write\-\_\-\-P@{write\-\_\-\-P}!SdFile@{Sd\-File}}
+\subsubsection[{write\-\_\-\-P}]{\setlength{\rightskip}{0pt plus 5cm}void write\-\_\-\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-G\-M\-\_\-\-P}}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_sd_file_af4dace00a7941e0936830200cb3fc9f9}
+Write a P\-R\-O\-G\-M\-E\-M string to a file. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & Pointer to the P\-R\-O\-G\-M\-E\-M string. Use get\-Write\-Error to check for errors. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_file_a01a8e28448c6120f8de1db3f44c15da9}{\index{Sd\-File@{Sd\-File}!writeln\-\_\-\-P@{writeln\-\_\-\-P}}
+\index{writeln\-\_\-\-P@{writeln\-\_\-\-P}!SdFile@{Sd\-File}}
+\subsubsection[{writeln\-\_\-\-P}]{\setlength{\rightskip}{0pt plus 5cm}void writeln\-\_\-\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf P\-G\-M\-\_\-\-P}}]{str}
+\end{DoxyParamCaption}
+)}}\label{class_sd_file_a01a8e28448c6120f8de1db3f44c15da9}
+Write a P\-R\-O\-G\-M\-E\-M string followed by C\-R/\-L\-F to a file. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em str} & Pointer to the P\-R\-O\-G\-M\-E\-M string. Use get\-Write\-Error to check for errors. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_file_8h}{Sd\-File.\-h}\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/Sd\-File.\-cpp\end{DoxyCompactItemize}

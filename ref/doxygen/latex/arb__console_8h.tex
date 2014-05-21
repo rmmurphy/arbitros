@@ -1,0 +1,42 @@
+\hypertarget{arb__console_8h}{\section{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-console.h File Reference}
+\label{arb__console_8h}\index{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-console.\-h@{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-console.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-console.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__console_8h_a0fc0641ac85c43e857156b3e096a78aa}{arb\-\_\-console\-\_\-h}
+\item 
+\#define \hyperlink{arb__console_8h_a30c0b86b4bd44af6eca4c510d4ca4f07}{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}~(300)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__console_8h_a0750f79fe237bc0c9774b12f492d223e}{arb\-\_\-console\-Init} (char $\ast$pc\-\_\-cons\-Driver, char $\ast$pc\-\_\-sd\-Driver, \hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} t\-\_\-stack, \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio} t\-\_\-pri, bool($\ast$pf\-\_\-fun\-Ptr)(\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-console\-Hndl, int8\-\_\-t $\ast$pc\-\_\-buff, \hyperlink{structt__console_tok_hndl}{t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl))
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__console_8h_a0fc0641ac85c43e857156b3e096a78aa}{\index{arb\-\_\-console.\-h@{arb\-\_\-console.\-h}!arb\-\_\-console\-\_\-h@{arb\-\_\-console\-\_\-h}}
+\index{arb\-\_\-console\-\_\-h@{arb\-\_\-console\-\_\-h}!arb_console.h@{arb\-\_\-console.\-h}}
+\subsubsection[{arb\-\_\-console\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define arb\-\_\-console\-\_\-h}}\label{arb__console_8h_a0fc0641ac85c43e857156b3e096a78aa}
+\hypertarget{arb__console_8h_a30c0b86b4bd44af6eca4c510d4ca4f07}{\index{arb\-\_\-console.\-h@{arb\-\_\-console.\-h}!M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}}
+\index{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}!arb_console.h@{arb\-\_\-console.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E~(300)}}\label{arb__console_8h_a30c0b86b4bd44af6eca4c510d4ca4f07}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__console_8h_a0750f79fe237bc0c9774b12f492d223e}{\index{arb\-\_\-console.\-h@{arb\-\_\-console.\-h}!arb\-\_\-console\-Init@{arb\-\_\-console\-Init}}
+\index{arb\-\_\-console\-Init@{arb\-\_\-console\-Init}!arb_console.h@{arb\-\_\-console.\-h}}
+\subsubsection[{arb\-\_\-console\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-console\-Init (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pc\-\_\-cons\-Driver, }
+\item[{char $\ast$}]{pc\-\_\-sd\-Driver, }
+\item[{{\bf t\-\_\-stack\-Size}}]{t\-\_\-stack, }
+\item[{{\bf t\-\_\-thrd\-Prio}}]{t\-\_\-pri, }
+\item[{bool($\ast$)({\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-console\-Hndl, int8\-\_\-t $\ast$pc\-\_\-buff, {\bf t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl)}]{pf\-\_\-fun\-Ptr}
+\end{DoxyParamCaption}
+)}}\label{arb__console_8h_a0750f79fe237bc0c9774b12f492d223e}

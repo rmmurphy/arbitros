@@ -1,0 +1,438 @@
+.TH "SdFat" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SdFat \- 
+.PP
+Integration class for the SdFat library\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdFat\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBinit\fP () \fB__attribute__\fP((error('use sd\&.begin()')))"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (uint8_t sckRateID) \fB__attribute__\fP((error('use sd\&.begin(chipSelect"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (uint8_t sckRateID, uint8_t chipSelectPin) \fB__attribute__\fP((error('use sd\&.begin(chipSelect"
+.br
+.ti -1c
+.RI "\fBSd2Card\fP * \fBcard\fP ()"
+.br
+.ti -1c
+.RI "bool \fBchdir\fP (bool set_cwd=false)"
+.br
+.ti -1c
+.RI "bool \fBchdir\fP (const char *path, bool set_cwd=false)"
+.br
+.ti -1c
+.RI "void \fBchvol\fP ()"
+.br
+.ti -1c
+.RI "void \fBerrorHalt\fP ()"
+.br
+.ti -1c
+.RI "void \fBerrorHalt\fP (char const *msg)"
+.br
+.ti -1c
+.RI "void \fBerrorPrint\fP ()"
+.br
+.ti -1c
+.RI "void \fBerrorPrint\fP (char const *msg)"
+.br
+.ti -1c
+.RI "bool \fBexists\fP (const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "bool \fBbegin\fP (uint8_t chipSelectPin=\fBSD_CHIP_SELECT_PIN\fP, uint8_t sckRateID=\fBSPI_FULL_SPEED\fP)"
+.br
+.ti -1c
+.RI "void \fBinitErrorHalt\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitErrorHalt\fP (char const *msg)"
+.br
+.ti -1c
+.RI "void \fBinitErrorPrint\fP ()"
+.br
+.ti -1c
+.RI "void \fBinitErrorPrint\fP (char const *msg)"
+.br
+.ti -1c
+.RI "void \fBls\fP (uint8_t flags=0)"
+.br
+.ti -1c
+.RI "void \fBls\fP (\fBPrint\fP *pr, uint8_t flags=0)"
+.br
+.ti -1c
+.RI "bool \fBmkdir\fP (const char *path, bool pFlag=true)"
+.br
+.ti -1c
+.RI "bool \fBremove\fP (const char *path)"
+.br
+.ti -1c
+.RI "bool \fBrename\fP (const char *oldPath, const char *newPath)"
+.br
+.ti -1c
+.RI "bool \fBrmdir\fP (const char *path)"
+.br
+.ti -1c
+.RI "bool \fBtruncate\fP (const char *path, uint32_t length)"
+.br
+.ti -1c
+.RI "\fBSdVolume\fP * \fBvol\fP ()"
+.br
+.ti -1c
+.RI "\fBSdBaseFile\fP * \fBvwd\fP ()"
+.br
+.ti -1c
+.RI "void \fBerrorHalt_P\fP (\fBPGM_P\fP msg)"
+.br
+.ti -1c
+.RI "void \fBerrorPrint_P\fP (\fBPGM_P\fP msg)"
+.br
+.ti -1c
+.RI "void \fBinitErrorHalt_P\fP (\fBPGM_P\fP msg)"
+.br
+.ti -1c
+.RI "void \fBinitErrorPrint_P\fP (\fBPGM_P\fP msg)"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBsetStdOut\fP (\fBPrint\fP *stream)"
+.br
+.ti -1c
+.RI "static \fBPrint\fP * \fBstdOut\fP ()"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "bool \fBsckRate\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Integration class for the SdFat library\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "bool begin (uint8_tchipSelectPin = \fC\fBSD_CHIP_SELECT_PIN\fP\fP, uint8_tsckRateID = \fC\fBSPI_FULL_SPEED\fP\fP)"
+Initialize an \fBSdFat\fP object\&.
+.PP
+Initializes the SD card, SD volume, and root directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIchipSelectPin\fP SD chip select pin\&. See \fBSd2Card::init()\fP\&. 
+.br
+\fIsckRateID\fP value for SPI SCK rate\&. See \fBSd2Card::init()\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "\fBSd2Card\fP* card ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBSd2Card\fP object\&. 
+.RE
+.PP
+
+.SS "bool chdir (boolset_cwd = \fCfalse\fP)"
+Change a volume's working directory to root
+.PP
+Changes the volume's working directory to the SD's root directory\&. Optionally set the current working directory to the volume's working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIset_cwd\fP Set the current working directory to this volume's working directory if true\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool chdir (const char *path, boolset_cwd = \fCfalse\fP)"
+Change a volume's working directory
+.PP
+Changes the volume working directory to the \fIpath\fP subdirectory\&. Optionally set the current working directory to the volume's working directory\&.
+.PP
+Example: If the volume's working directory is '/DIR', chdir('SUB') will change the volume's working directory from '/DIR' to '/DIR/SUB'\&.
+.PP
+If path is '/', the volume's working directory will be changed to the root directory
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP The name of the subdirectory\&.
+.br
+\fIset_cwd\fP Set the current working directory to this volume's working directory if true\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "void chvol ()"
+Set the current working directory to a volume's working directory\&.
+.PP
+This is useful with multiple SD cards\&.
+.PP
+The current working directory is changed to this volume's working directory\&.
+.PP
+This is like the Windows/DOS <drive letter>: command\&. 
+.SS "void errorHalt ()"
+Print any SD error code and halt\&. 
+.SS "void errorHalt (char const *msg)"
+Print msg, any SD error code, and halt\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message to print\&. 
+.RE
+.PP
+
+.SS "void errorHalt_P (\fBPGM_P\fPmsg)"
+Print msg, any SD error code, and halt\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message in program space (flash memory) to print\&. 
+.RE
+.PP
+
+.SS "void errorPrint ()"
+Print any SD error code\&. 
+.SS "void errorPrint (char const *msg)"
+Print msg, any SD error code\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message to print\&. 
+.RE
+.PP
+
+.SS "void errorPrint_P (\fBPGM_P\fPmsg)"
+Print msg, any SD error code\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message in program space (flash memory) to print\&. 
+.RE
+.PP
+
+.SS "bool exists (const char *name)"
+Test for the existence of a file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the file to be tested for\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true if the file exists else false\&. 
+.RE
+.PP
+
+.SS "void initErrorHalt ()"
+Print error details and halt after SdFat::init() fails\&. 
+.SS "void initErrorHalt (char const *msg)"
+\fBPrint\fP message, error details, and halt after SdFat::init() fails\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message to print\&. 
+.RE
+.PP
+
+.SS "void initErrorHalt_P (\fBPGM_P\fPmsg)"
+\fBPrint\fP message, error details, and halt after SdFat::init() fails\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message in program space (flash memory) to print\&. 
+.RE
+.PP
+
+.SS "void initErrorPrint ()"
+\fBPrint\fP error details after SdFat::init() fails\&. 
+.SS "void initErrorPrint (char const *msg)"
+\fBPrint\fP message and error details and halt after SdFat::init() fails\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message to print\&. 
+.RE
+.PP
+
+.SS "void initErrorPrint_P (\fBPGM_P\fPmsg)"
+\fBPrint\fP message and error details after SdFat::init() fails\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fImsg\fP Message in program space (flash memory) to print\&. 
+.RE
+.PP
+
+.SS "void ls (uint8_tflags = \fC0\fP)"
+List the directory contents of the volume working directory to stdOut\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflags\fP The inclusive OR of
+.RE
+.PP
+LS_DATE - Print file modification date
+.PP
+LS_SIZE - Print file size\&.
+.PP
+LS_R - Recursive list of subdirectories\&. 
+.SS "void ls (\fBPrint\fP *pr, uint8_tflags = \fC0\fP)"
+List the directory contents of the volume working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for list\&.
+.br
+\fIflags\fP The inclusive OR of
+.RE
+.PP
+LS_DATE - Print file modification date
+.PP
+LS_SIZE - Print file size\&.
+.PP
+LS_R - Recursive list of subdirectories\&. 
+.SS "bool mkdir (const char *path, boolpFlag = \fCtrue\fP)"
+Make a subdirectory in the volume working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for the subdirectory\&.
+.br
+\fIpFlag\fP Create missing parent directories if true\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool remove (const char *path)"
+Remove a file from the volume working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for the file\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool rename (const char *oldPath, const char *newPath)"
+Rename a file or subdirectory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoldPath\fP Path name to the file or subdirectory to be renamed\&.
+.br
+\fInewPath\fP New path name of the file or subdirectory\&.
+.RE
+.PP
+The \fInewPath\fP object must not exist before the rename call\&.
+.PP
+The file to be renamed must not be open\&. The directory entry may be moved and file system corruption could occur if the file is accessed by a file object that was opened before the \fBrename()\fP call\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool rmdir (const char *path)"
+Remove a subdirectory from the volume's working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for the subdirectory\&.
+.RE
+.PP
+The subdirectory file will be removed only if it is empty\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "static void setStdOut (\fBPrint\fP *stream)\fC [inline]\fP, \fC [static]\fP"
+Set stdOut \fBPrint\fP stream for messages\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstream\fP The new \fBPrint\fP stream\&. 
+.RE
+.PP
+
+.SS "static \fBPrint\fP* stdOut ()\fC [inline]\fP, \fC [static]\fP"
+\fBReturns:\fP
+.RS 4
+\fBPrint\fP stream for messages\&. 
+.RE
+.PP
+
+.SS "bool truncate (const char *path, uint32_tlength)"
+Truncate a file to a specified length\&. The current file position will be maintained if it is less than or equal to \fIlength\fP otherwise it will be set to end of file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for the file\&. 
+.br
+\fIlength\fP The desired length for the file\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include file is read only, file is a directory, \fIlength\fP is greater than the current file size or an I/O error occurs\&. 
+.RE
+.PP
+
+.SS "\fBSdVolume\fP* vol ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+a pointer to the \fBSdVolume\fP object\&. 
+.RE
+.PP
+
+.SS "\fBSdBaseFile\fP* vwd ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+a pointer to the volume working directory\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

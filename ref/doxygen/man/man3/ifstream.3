@@ -1,0 +1,74 @@
+.TH "ifstream" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ifstream \- 
+.PP
+SD file input stream\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdStream\&.h>\fP
+.PP
+Inherits \fBistream\fP, and \fBSdStreamBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBifstream\fP (const char *path, \fBopenmode\fP mode=\fBin\fP)"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "bool \fBis_open\fP ()"
+.br
+.ti -1c
+.RI "void \fBopen\fP (const char *path, \fBopenmode\fP mode=\fBin\fP)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+SD file input stream\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBifstream\fP (const char *path, \fBopenmode\fPmode = \fC\fBin\fP\fP)\fC [inline]\fP, \fC [explicit]\fP"
+Constructor with open 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP file to open 
+.br
+\fImode\fP open mode 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void close ()\fC [inline]\fP"
+Close a file and force cached data and directory information to be written to the storage device\&. 
+.SS "bool is_open ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if stream is open else false\&. 
+.RE
+.PP
+
+.SS "void open (const char *path, \fBopenmode\fPmode = \fC\fBin\fP\fP)\fC [inline]\fP"
+Open an ifstream 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP file to open 
+.br
+\fImode\fP open mode
+.RE
+.PP
+\fImode\fP See \fBfstream::open()\fP for valid modes\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

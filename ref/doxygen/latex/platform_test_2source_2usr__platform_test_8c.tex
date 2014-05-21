@@ -1,0 +1,187 @@
+\hypertarget{platform_test_2source_2usr__platform_test_8c}{\section{C\-:/arbitros/trunk/boards/primus/examples/platform\-Test/source/usr\-\_\-platform\-Test.c File Reference}
+\label{platform_test_2source_2usr__platform_test_8c}\index{C\-:/arbitros/trunk/boards/primus/examples/platform\-Test/source/usr\-\_\-platform\-Test.\-c@{C\-:/arbitros/trunk/boards/primus/examples/platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-printf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-semaphore.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-sys\-Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-mailbox.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-dma.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-uart.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-twi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-spi.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}usr\-\_\-platform\-Test.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__platform_test_object}{t\-\_\-platform\-Test\-Object}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{platform_test_2source_2usr__platform_test_8c_ad4d796b98c583d49e83adabd74a63bf6}{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}~(24)
+\item 
+\#define \hyperlink{platform_test_2source_2usr__platform_test_8c_a083a404be758cd06b7842ca88012932d}{T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S}~(0x7\-F)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_ac4890a070733afb291e247fcf63f5ac3}{usr\-\_\-platform\-Test} (\hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-param, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args)
+\item 
+static int8\-\_\-t \hyperlink{platform_test_2source_2usr__platform_test_8c_a6c759e379782c4d73a4d8a029b23016b}{usr\-\_\-twi\-Slave\-Trans\-Finished} (\hyperlink{utl__twi_8h_ad394479612b02ee281768e222e098781}{t\-\_\-twi\-Status} t\-\_\-status, int8\-\_\-t c\-\_\-data)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_a6d1f9989f92c5fe975d008c4994fdfdf}{rx\-Dma\-Transfer\-Complete} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_aef9947cb8ccd3c848e39328e9a74c287}{usr\-\_\-timer\-Test\-Interrupt} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_a2363a05a764f9f79c4ce3c3694266ae9}{usr\-\_\-timer\-Test\-Gpio\-Interrupt} (\hyperlink{utl__gpio_8h_a0e38e6ec216663b0b59e0b3e2364bb97}{t\-\_\-gpio\-Port} t\-\_\-port, uint8\-\_\-t \hyperlink{utl__gpio_8h_a132b425d1185fb153f6011d137e3a312}{c\-\_\-pin})
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_abd3cecd8d460b2286ac91916ca9ba4c6}{spi\-Master\-Complete} (int8\-\_\-t $\ast$pc\-\_\-rx\-Data, uint16\-\_\-t s\-\_\-length)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_aaa50379d8c582f805edb544166f3d727}{configure\-Uart\-Dma} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_aae26de736ce677339061fc7cdc7c70a2}{usr\-\_\-uart\-Loopback\-Test\-Init} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_ac2fb693a2e9be9e2dbdc3bcca1ea63d7}{usr\-\_\-twi\-Loopback\-Test\-Init} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_a9c106e8cd4a54a57ce6a396404297d55}{usr\-\_\-timer\-Test\-Init} (void)
+\item 
+static void \hyperlink{platform_test_2source_2usr__platform_test_8c_aa583d936cae6fa9e1e15967da429923d}{usr\-\_\-spi\-Loopback\-Test\-Init} (void)
+\item 
+\hyperlink{arb__mailbox_8h_ae1d23cf0441eea24e4ed1878c1e610bf}{t\-\_\-\-M\-A\-I\-L\-B\-O\-X\-H\-N\-D\-L} \hyperlink{platform_test_2source_2usr__platform_test_8c_a4197735e2b66644e288a5dfc61c1ea2a}{usr\-\_\-get\-Plat\-Test\-In\-Mailbox} (void)
+\item 
+\hyperlink{arb__mailbox_8h_ae1d23cf0441eea24e4ed1878c1e610bf}{t\-\_\-\-M\-A\-I\-L\-B\-O\-X\-H\-N\-D\-L} \hyperlink{platform_test_2source_2usr__platform_test_8c_aac5d76d310de07fbf48319e65335c1b6}{usr\-\_\-get\-Plat\-Test\-Out\-Mailbox} (void)
+\item 
+void \hyperlink{platform_test_2source_2usr__platform_test_8c_a0957ad5888899e99a220e344bb9d716a}{usr\-\_\-platform\-Test\-Init} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structt__platform_test_object}{t\-\_\-platform\-Test\-Object} \hyperlink{platform_test_2source_2usr__platform_test_8c_a07578c765441c5d92991bdbc9674c2b2}{gt\-\_\-plat\-Test\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_ad4d796b98c583d49e83adabd74a63bf6}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}}
+\index{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-B\-U\-F\-F\-E\-R\-\_\-\-S\-I\-Z\-E~(24)}}\label{platform_test_2source_2usr__platform_test_8c_ad4d796b98c583d49e83adabd74a63bf6}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a083a404be758cd06b7842ca88012932d}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S@{T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S}}
+\index{T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S@{T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-W\-I\-\_\-\-S\-L\-A\-V\-E\-\_\-\-A\-D\-D\-R\-E\-S\-S~(0x7\-F)}}\label{platform_test_2source_2usr__platform_test_8c_a083a404be758cd06b7842ca88012932d}
+
+
+\subsection{Function Documentation}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_aaa50379d8c582f805edb544166f3d727}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!configure\-Uart\-Dma@{configure\-Uart\-Dma}}
+\index{configure\-Uart\-Dma@{configure\-Uart\-Dma}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{configure\-Uart\-Dma}]{\setlength{\rightskip}{0pt plus 5cm}static void configure\-Uart\-Dma (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_aaa50379d8c582f805edb544166f3d727}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a6d1f9989f92c5fe975d008c4994fdfdf}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!rx\-Dma\-Transfer\-Complete@{rx\-Dma\-Transfer\-Complete}}
+\index{rx\-Dma\-Transfer\-Complete@{rx\-Dma\-Transfer\-Complete}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{rx\-Dma\-Transfer\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}static void rx\-Dma\-Transfer\-Complete (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_a6d1f9989f92c5fe975d008c4994fdfdf}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_abd3cecd8d460b2286ac91916ca9ba4c6}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!spi\-Master\-Complete@{spi\-Master\-Complete}}
+\index{spi\-Master\-Complete@{spi\-Master\-Complete}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{spi\-Master\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}static void spi\-Master\-Complete (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-rx\-Data, }
+\item[{uint16\-\_\-t}]{s\-\_\-length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_abd3cecd8d460b2286ac91916ca9ba4c6}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a4197735e2b66644e288a5dfc61c1ea2a}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-get\-Plat\-Test\-In\-Mailbox@{usr\-\_\-get\-Plat\-Test\-In\-Mailbox}}
+\index{usr\-\_\-get\-Plat\-Test\-In\-Mailbox@{usr\-\_\-get\-Plat\-Test\-In\-Mailbox}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-get\-Plat\-Test\-In\-Mailbox}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-M\-A\-I\-L\-B\-O\-X\-H\-N\-D\-L} usr\-\_\-get\-Plat\-Test\-In\-Mailbox (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{platform_test_2source_2usr__platform_test_8c_a4197735e2b66644e288a5dfc61c1ea2a}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_aac5d76d310de07fbf48319e65335c1b6}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-get\-Plat\-Test\-Out\-Mailbox@{usr\-\_\-get\-Plat\-Test\-Out\-Mailbox}}
+\index{usr\-\_\-get\-Plat\-Test\-Out\-Mailbox@{usr\-\_\-get\-Plat\-Test\-Out\-Mailbox}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-get\-Plat\-Test\-Out\-Mailbox}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-M\-A\-I\-L\-B\-O\-X\-H\-N\-D\-L} usr\-\_\-get\-Plat\-Test\-Out\-Mailbox (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{platform_test_2source_2usr__platform_test_8c_aac5d76d310de07fbf48319e65335c1b6}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_ac4890a070733afb291e247fcf63f5ac3}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-platform\-Test@{usr\-\_\-platform\-Test}}
+\index{usr\-\_\-platform\-Test@{usr\-\_\-platform\-Test}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-platform\-Test}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-platform\-Test (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-param, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_ac4890a070733afb291e247fcf63f5ac3}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a0957ad5888899e99a220e344bb9d716a}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-platform\-Test\-Init@{usr\-\_\-platform\-Test\-Init}}
+\index{usr\-\_\-platform\-Test\-Init@{usr\-\_\-platform\-Test\-Init}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-platform\-Test\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void usr\-\_\-platform\-Test\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{platform_test_2source_2usr__platform_test_8c_a0957ad5888899e99a220e344bb9d716a}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_aa583d936cae6fa9e1e15967da429923d}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-spi\-Loopback\-Test\-Init@{usr\-\_\-spi\-Loopback\-Test\-Init}}
+\index{usr\-\_\-spi\-Loopback\-Test\-Init@{usr\-\_\-spi\-Loopback\-Test\-Init}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-spi\-Loopback\-Test\-Init}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-spi\-Loopback\-Test\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_aa583d936cae6fa9e1e15967da429923d}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a2363a05a764f9f79c4ce3c3694266ae9}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-timer\-Test\-Gpio\-Interrupt@{usr\-\_\-timer\-Test\-Gpio\-Interrupt}}
+\index{usr\-\_\-timer\-Test\-Gpio\-Interrupt@{usr\-\_\-timer\-Test\-Gpio\-Interrupt}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-timer\-Test\-Gpio\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-timer\-Test\-Gpio\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-gpio\-Port}}]{t\-\_\-port, }
+\item[{uint8\-\_\-t}]{c\-\_\-pin}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_a2363a05a764f9f79c4ce3c3694266ae9}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a9c106e8cd4a54a57ce6a396404297d55}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-timer\-Test\-Init@{usr\-\_\-timer\-Test\-Init}}
+\index{usr\-\_\-timer\-Test\-Init@{usr\-\_\-timer\-Test\-Init}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-timer\-Test\-Init}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-timer\-Test\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_a9c106e8cd4a54a57ce6a396404297d55}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_aef9947cb8ccd3c848e39328e9a74c287}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-timer\-Test\-Interrupt@{usr\-\_\-timer\-Test\-Interrupt}}
+\index{usr\-\_\-timer\-Test\-Interrupt@{usr\-\_\-timer\-Test\-Interrupt}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-timer\-Test\-Interrupt}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-timer\-Test\-Interrupt (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_aef9947cb8ccd3c848e39328e9a74c287}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_ac2fb693a2e9be9e2dbdc3bcca1ea63d7}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-twi\-Loopback\-Test\-Init@{usr\-\_\-twi\-Loopback\-Test\-Init}}
+\index{usr\-\_\-twi\-Loopback\-Test\-Init@{usr\-\_\-twi\-Loopback\-Test\-Init}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-twi\-Loopback\-Test\-Init}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-twi\-Loopback\-Test\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_ac2fb693a2e9be9e2dbdc3bcca1ea63d7}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a6c759e379782c4d73a4d8a029b23016b}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-twi\-Slave\-Trans\-Finished@{usr\-\_\-twi\-Slave\-Trans\-Finished}}
+\index{usr\-\_\-twi\-Slave\-Trans\-Finished@{usr\-\_\-twi\-Slave\-Trans\-Finished}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-twi\-Slave\-Trans\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}static int8\-\_\-t usr\-\_\-twi\-Slave\-Trans\-Finished (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-twi\-Status}}]{t\-\_\-status, }
+\item[{int8\-\_\-t}]{c\-\_\-data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_a6c759e379782c4d73a4d8a029b23016b}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_aae26de736ce677339061fc7cdc7c70a2}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!usr\-\_\-uart\-Loopback\-Test\-Init@{usr\-\_\-uart\-Loopback\-Test\-Init}}
+\index{usr\-\_\-uart\-Loopback\-Test\-Init@{usr\-\_\-uart\-Loopback\-Test\-Init}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{usr\-\_\-uart\-Loopback\-Test\-Init}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-uart\-Loopback\-Test\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{platform_test_2source_2usr__platform_test_8c_aae26de736ce677339061fc7cdc7c70a2}
+
+
+\subsection{Variable Documentation}
+\hypertarget{platform_test_2source_2usr__platform_test_8c_a07578c765441c5d92991bdbc9674c2b2}{\index{platform\-Test/source/usr\-\_\-platform\-Test.\-c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}!gt\-\_\-plat\-Test\-Object@{gt\-\_\-plat\-Test\-Object}}
+\index{gt\-\_\-plat\-Test\-Object@{gt\-\_\-plat\-Test\-Object}!platformTest/source/usr_platformTest.c@{platform\-Test/source/usr\-\_\-platform\-Test.\-c}}
+\subsubsection[{gt\-\_\-plat\-Test\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-platform\-Test\-Object} gt\-\_\-plat\-Test\-Object}}\label{platform_test_2source_2usr__platform_test_8c_a07578c765441c5d92991bdbc9674c2b2}

@@ -1,0 +1,231 @@
+.TH "SdVolume" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SdVolume \- 
+.PP
+Access FAT16 and FAT32 volumes on SD and SDHC cards\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdVolume\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSdVolume\fP ()"
+.br
+.ti -1c
+.RI "\fBcache_t\fP * \fBcacheClear\fP ()"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (\fBSd2Card\fP *dev)"
+.br
+.ti -1c
+.RI "bool \fBinit\fP (\fBSd2Card\fP *dev, uint8_t \fBpart\fP)"
+.br
+.ti -1c
+.RI "uint8_t \fBblocksPerCluster\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBblocksPerFat\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBclusterCount\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBclusterSizeShift\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBdataStartBlock\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBfatCount\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBfatStartBlock\fP () const "
+.br
+.ti -1c
+.RI "uint8_t \fBfatType\fP () const "
+.br
+.ti -1c
+.RI "int32_t \fBfreeClusterCount\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBrootDirEntryCount\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBrootDirStart\fP () const "
+.br
+.ti -1c
+.RI "\fBSd2Card\fP * \fBsdCard\fP ()"
+.br
+.ti -1c
+.RI "bool \fBdbgFat\fP (uint32_t n, uint32_t *v)"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSdBaseFile\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Access FAT16 and FAT32 volumes on SD and SDHC cards\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSdVolume\fP ()\fC [inline]\fP"
+Create an instance of \fBSdVolume\fP 
+.SH "Member Function Documentation"
+.PP 
+.SS "uint8_t blocksPerCluster () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The volume's cluster size in blocks\&. 
+.RE
+.PP
+
+.SS "uint32_t blocksPerFat () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The number of blocks in one FAT\&. 
+.RE
+.PP
+
+.SS "\fBcache_t\fP* cacheClear ()\fC [inline]\fP"
+Clear the cache and returns a pointer to the cache\&. Used by the WaveRP recorder to do raw write to the SD card\&. Not for normal apps\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A pointer to the cache buffer or zero if an error occurs\&. 
+.RE
+.PP
+
+.SS "uint32_t clusterCount () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The total number of clusters in the volume\&. 
+.RE
+.PP
+
+.SS "uint8_t clusterSizeShift () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The shift count required to multiply by blocksPerCluster\&. 
+.RE
+.PP
+
+.SS "uint32_t dataStartBlock () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The logical block number for the start of file data\&. 
+.RE
+.PP
+
+.SS "bool dbgFat (uint32_tn, uint32_t *v)\fC [inline]\fP"
+Debug access to FAT table
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP cluster number\&. 
+.br
+\fIv\fP value of entry 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure 
+.RE
+.PP
+
+.SS "uint8_t fatCount () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The number of FAT structures on the volume\&. 
+.RE
+.PP
+
+.SS "uint32_t fatStartBlock () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The logical block number for the start of the first FAT\&. 
+.RE
+.PP
+
+.SS "uint8_t fatType () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The FAT type of the volume\&. Values are 12, 16 or 32\&. 
+.RE
+.PP
+
+.SS "int32_t freeClusterCount ()"
+Volume free space in clusters\&.
+.PP
+\fBReturns:\fP
+.RS 4
+Count of free clusters for success or -1 if an error occurs\&. 
+.RE
+.PP
+
+.SS "bool init (\fBSd2Card\fP *dev)\fC [inline]\fP"
+Initialize a FAT volume\&. Try partition one first then try super floppy format\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev\fP The \fBSd2Card\fP where the volume is located\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include not finding a valid partition, not finding a valid FAT file system or an I/O error\&. 
+.RE
+.PP
+
+.SS "bool init (\fBSd2Card\fP *dev, uint8_tpart)"
+Initialize a FAT volume\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdev\fP The SD card where the volume is located\&.
+.br
+\fIpart\fP The partition to be used\&. Legal values for \fIpart\fP are 1-4 to use the corresponding partition on a device formatted with a MBR, Master Boot Record, or zero if the device is formatted as a super floppy with the FAT boot sector in block zero\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include not finding a valid partition, not finding a valid FAT file system in the specified partition or an I/O error\&. 
+.RE
+.PP
+
+.SS "uint32_t rootDirEntryCount () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The number of entries in the root directory for FAT16 volumes\&. 
+.RE
+.PP
+
+.SS "uint32_t rootDirStart () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The logical block number for the start of the root directory on FAT16 volumes or the first cluster number on FAT32 volumes\&. 
+.RE
+.PP
+
+.SS "\fBSd2Card\fP* sdCard ()\fC [inline]\fP"
+\fBSd2Card\fP object for this volume 
+.PP
+\fBReturns:\fP
+.RS 4
+pointer to \fBSd2Card\fP object\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

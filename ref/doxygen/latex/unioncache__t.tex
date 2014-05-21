@@ -1,0 +1,66 @@
+\hypertarget{unioncache__t}{\section{cache\-\_\-t Union Reference}
+\label{unioncache__t}\index{cache\-\_\-t@{cache\-\_\-t}}
+}
+
+
+Cache for an S\-D data block.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-Volume.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{unioncache__t_a3d71d6f767b902517cdc2a90b93d93ef}{data} \mbox{[}512\mbox{]}
+\item 
+uint16\-\_\-t \hyperlink{unioncache__t_afbc2aee9e685ba2ec0b2a3e4cfbaefed}{fat16} \mbox{[}256\mbox{]}
+\item 
+uint32\-\_\-t \hyperlink{unioncache__t_ae7eca49d4c578b2d41d0ca2edfa65a11}{fat32} \mbox{[}128\mbox{]}
+\item 
+\hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} \hyperlink{unioncache__t_a6d2e24ad404317d817f7691495f9fa5b}{dir} \mbox{[}16\mbox{]}
+\item 
+\hyperlink{_sd_fat_structs_8h_a7c429e5097f101c8c97663d6c4155bd9}{mbr\-\_\-t} \hyperlink{unioncache__t_ab085ad5652aa1dcd3d1c289126acb76e}{mbr}
+\item 
+\hyperlink{_sd_fat_structs_8h_aedac4595ee08198da26c14b9891a07d5}{fat\-\_\-boot\-\_\-t} \hyperlink{unioncache__t_af7dac1f364d9df2fab1065761459085a}{fbs}
+\item 
+\hyperlink{_sd_fat_structs_8h_a38fa081d004647a828095d31b07ec491}{fat32\-\_\-boot\-\_\-t} \hyperlink{unioncache__t_a8a286df1a2c7d0d8c19f0bc92f4a37a0}{fbs32}
+\item 
+\hyperlink{_sd_fat_structs_8h_a6030ed0fce3a819326a2548407fc8556}{fat32\-\_\-fsinfo\-\_\-t} \hyperlink{unioncache__t_ad5b9c8824c92202c5f442fd4da58772a}{fsinfo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cache for an S\-D data block. 
+
+\subsection{Field Documentation}
+\hypertarget{unioncache__t_a3d71d6f767b902517cdc2a90b93d93ef}{\index{cache\-\_\-t@{cache\-\_\-t}!data@{data}}
+\index{data@{data}!cache_t@{cache\-\_\-t}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t data\mbox{[}512\mbox{]}}}\label{unioncache__t_a3d71d6f767b902517cdc2a90b93d93ef}
+Used to access cached file data blocks. \hypertarget{unioncache__t_a6d2e24ad404317d817f7691495f9fa5b}{\index{cache\-\_\-t@{cache\-\_\-t}!dir@{dir}}
+\index{dir@{dir}!cache_t@{cache\-\_\-t}}
+\subsubsection[{dir}]{\setlength{\rightskip}{0pt plus 5cm}{\bf dir\-\_\-t} dir\mbox{[}16\mbox{]}}}\label{unioncache__t_a6d2e24ad404317d817f7691495f9fa5b}
+Used to access cached directory entries. \hypertarget{unioncache__t_afbc2aee9e685ba2ec0b2a3e4cfbaefed}{\index{cache\-\_\-t@{cache\-\_\-t}!fat16@{fat16}}
+\index{fat16@{fat16}!cache_t@{cache\-\_\-t}}
+\subsubsection[{fat16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat16\mbox{[}256\mbox{]}}}\label{unioncache__t_afbc2aee9e685ba2ec0b2a3e4cfbaefed}
+Used to access cached F\-A\-T16 entries. \hypertarget{unioncache__t_ae7eca49d4c578b2d41d0ca2edfa65a11}{\index{cache\-\_\-t@{cache\-\_\-t}!fat32@{fat32}}
+\index{fat32@{fat32}!cache_t@{cache\-\_\-t}}
+\subsubsection[{fat32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t fat32\mbox{[}128\mbox{]}}}\label{unioncache__t_ae7eca49d4c578b2d41d0ca2edfa65a11}
+Used to access cached F\-A\-T32 entries. \hypertarget{unioncache__t_af7dac1f364d9df2fab1065761459085a}{\index{cache\-\_\-t@{cache\-\_\-t}!fbs@{fbs}}
+\index{fbs@{fbs}!cache_t@{cache\-\_\-t}}
+\subsubsection[{fbs}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fat\-\_\-boot\-\_\-t} fbs}}\label{unioncache__t_af7dac1f364d9df2fab1065761459085a}
+Used to access to a cached F\-A\-T boot sector. \hypertarget{unioncache__t_a8a286df1a2c7d0d8c19f0bc92f4a37a0}{\index{cache\-\_\-t@{cache\-\_\-t}!fbs32@{fbs32}}
+\index{fbs32@{fbs32}!cache_t@{cache\-\_\-t}}
+\subsubsection[{fbs32}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fat32\-\_\-boot\-\_\-t} fbs32}}\label{unioncache__t_a8a286df1a2c7d0d8c19f0bc92f4a37a0}
+Used to access to a cached F\-A\-T32 boot sector. \hypertarget{unioncache__t_ad5b9c8824c92202c5f442fd4da58772a}{\index{cache\-\_\-t@{cache\-\_\-t}!fsinfo@{fsinfo}}
+\index{fsinfo@{fsinfo}!cache_t@{cache\-\_\-t}}
+\subsubsection[{fsinfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf fat32\-\_\-fsinfo\-\_\-t} fsinfo}}\label{unioncache__t_ad5b9c8824c92202c5f442fd4da58772a}
+Used to access to a cached F\-A\-T32 F\-S\-I\-N\-F\-O sector. \hypertarget{unioncache__t_ab085ad5652aa1dcd3d1c289126acb76e}{\index{cache\-\_\-t@{cache\-\_\-t}!mbr@{mbr}}
+\index{mbr@{mbr}!cache_t@{cache\-\_\-t}}
+\subsubsection[{mbr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mbr\-\_\-t} mbr}}\label{unioncache__t_ab085ad5652aa1dcd3d1c289126acb76e}
+Used to access a cached Master Boot Record. 
+
+The documentation for this union was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_volume_8h}{Sd\-Volume.\-h}\end{DoxyCompactItemize}

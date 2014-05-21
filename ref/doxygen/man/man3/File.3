@@ -1,0 +1,71 @@
+.TH "File" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+File \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBStream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFile\fP (\fBSdFile\fP f, const char *name)"
+.br
+.ti -1c
+.RI "virtual size_t \fBwrite\fP (uint8_t)"
+.br
+.ti -1c
+.RI "virtual size_t \fBwrite\fP (const uint8_t *buf, size_t size)"
+.br
+.ti -1c
+.RI "virtual int \fBread\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBpeek\fP ()"
+.br
+.ti -1c
+.RI "virtual int \fBavailable\fP ()"
+.br
+.ti -1c
+.RI "virtual void \fBflush\fP ()"
+.br
+.ti -1c
+.RI "int \fBread\fP (void *buf, uint16_t nbyte)"
+.br
+.ti -1c
+.RI "boolean \fBseek\fP (uint32_t pos)"
+.br
+.ti -1c
+.RI "uint32_t \fBposition\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBsize\fP ()"
+.br
+.ti -1c
+.RI "void \fBclose\fP ()"
+.br
+.ti -1c
+.RI "\fBoperator bool\fP ()"
+.br
+.ti -1c
+.RI "char * \fBname\fP ()"
+.br
+.ti -1c
+.RI "boolean \fBisDirectory\fP (void)"
+.br
+.ti -1c
+.RI "\fBFile\fP \fBopenNextFile\fP (uint8_t mode=\fBO_RDONLY\fP)"
+.br
+.ti -1c
+.RI "void \fBrewindDirectory\fP (void)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

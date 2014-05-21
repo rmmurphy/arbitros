@@ -1,0 +1,201 @@
+\hypertarget{iostream_8h}{\section{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/iostream.h File Reference}
+\label{iostream_8h}\index{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/iostream.\-h@{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/iostream.\-h}}
+}
+
+
+\hyperlink{classiostream}{iostream} class  
+
+
+{\ttfamily \#include $<$istream.\-h$>$}\\*
+{\ttfamily \#include $<$ostream.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structsetfill}{setfill}
+\begin{DoxyCompactList}\small\item\em type for setfill manipulator \end{DoxyCompactList}\item 
+struct \hyperlink{structsetprecision}{setprecision}
+\begin{DoxyCompactList}\small\item\em type for setprecision manipulator \end{DoxyCompactList}\item 
+struct \hyperlink{structsetw}{setw}
+\begin{DoxyCompactList}\small\item\em type for setw manipulator \end{DoxyCompactList}\item 
+class \hyperlink{classiostream}{iostream}
+\begin{DoxyCompactList}\small\item\em Input/\-Output stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classistream}{istream} \& \hyperlink{iostream_8h_a8adf4c714b8c8f201dedc83ee04556b1}{ws} (\hyperlink{classistream}{istream} \&is)
+\item 
+\hyperlink{classostream}{ostream} \& \hyperlink{iostream_8h_ab9868f8e151efc1705646437dbb59bb2}{endl} (\hyperlink{classostream}{ostream} \&os)
+\item 
+\hyperlink{classostream}{ostream} \& \hyperlink{iostream_8h_a2f6f5344fca38fd4fe7b6231fd992a0d}{flush} (\hyperlink{classostream}{ostream} \&os)
+\item 
+\hyperlink{classostream}{ostream} \& \hyperlink{iostream_8h_aa125ac928f3377cbc6e3cf288b9378fd}{operator$<$$<$} (\hyperlink{classostream}{ostream} \&os, const \hyperlink{structsetfill}{setfill} \&arg)
+\item 
+\hyperlink{classistream}{istream} \& \hyperlink{iostream_8h_a4a4079de901e0f3f10c743115bd345b2}{operator$>$$>$} (\hyperlink{classistream}{istream} \&obj, const \hyperlink{structsetfill}{setfill} \&arg)
+\item 
+\hyperlink{classostream}{ostream} \& \hyperlink{iostream_8h_a23d4c29ef8ae37ec7d972d0b66187652}{operator$<$$<$} (\hyperlink{classostream}{ostream} \&os, const \hyperlink{structsetprecision}{setprecision} \&arg)
+\item 
+\hyperlink{classistream}{istream} \& \hyperlink{iostream_8h_a2f819cd0ccda31a8b648f20534469308}{operator$>$$>$} (\hyperlink{classistream}{istream} \&is, const \hyperlink{structsetprecision}{setprecision} \&arg)
+\item 
+\hyperlink{classostream}{ostream} \& \hyperlink{iostream_8h_a331649f2fdb01ed069dc18a5fad781b1}{operator$<$$<$} (\hyperlink{classostream}{ostream} \&os, const \hyperlink{structsetw}{setw} \&arg)
+\item 
+\hyperlink{classistream}{istream} \& \hyperlink{iostream_8h_a8d1b3da6f1074322a6e9e11ff4ce8c33}{operator$>$$>$} (\hyperlink{classistream}{istream} \&is, const \hyperlink{structsetw}{setw} \&arg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classiostream}{iostream} class 
+
+\subsection{Function Documentation}
+\hypertarget{iostream_8h_ab9868f8e151efc1705646437dbb59bb2}{\index{iostream.\-h@{iostream.\-h}!endl@{endl}}
+\index{endl@{endl}!iostream.h@{iostream.\-h}}
+\subsubsection[{endl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostream}\& endl (
+\begin{DoxyParamCaption}
+\item[{{\bf ostream} \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_ab9868f8e151efc1705646437dbb59bb2}
+insert endline 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & The \hyperlink{class_stream}{Stream} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a2f6f5344fca38fd4fe7b6231fd992a0d}{\index{iostream.\-h@{iostream.\-h}!flush@{flush}}
+\index{flush@{flush}!iostream.h@{iostream.\-h}}
+\subsubsection[{flush}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostream}\& flush (
+\begin{DoxyParamCaption}
+\item[{{\bf ostream} \&}]{os}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a2f6f5344fca38fd4fe7b6231fd992a0d}
+flush manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & The stream \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_aa125ac928f3377cbc6e3cf288b9378fd}{\index{iostream.\-h@{iostream.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf ostream} \&}]{os, }
+\item[{const {\bf setfill} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_aa125ac928f3377cbc6e3cf288b9378fd}
+setfill manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setfill object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a23d4c29ef8ae37ec7d972d0b66187652}{\index{iostream.\-h@{iostream.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf ostream} \&}]{os, }
+\item[{const {\bf setprecision} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a23d4c29ef8ae37ec7d972d0b66187652}
+setprecision manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setprecision object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a331649f2fdb01ed069dc18a5fad781b1}{\index{iostream.\-h@{iostream.\-h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ostream}\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf ostream} \&}]{os, }
+\item[{const {\bf setw} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a331649f2fdb01ed069dc18a5fad781b1}
+setw manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em os} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setw object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a4a4079de901e0f3f10c743115bd345b2}{\index{iostream.\-h@{iostream.\-h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf istream}\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf istream} \&}]{obj, }
+\item[{const {\bf setfill} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a4a4079de901e0f3f10c743115bd345b2}
+setfill manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em obj} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setfill object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a2f819cd0ccda31a8b648f20534469308}{\index{iostream.\-h@{iostream.\-h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf istream}\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf istream} \&}]{is, }
+\item[{const {\bf setprecision} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a2f819cd0ccda31a8b648f20534469308}
+setprecision manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setprecision object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a8d1b3da6f1074322a6e9e11ff4ce8c33}{\index{iostream.\-h@{iostream.\-h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!iostream.h@{iostream.\-h}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf istream}\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf istream} \&}]{is, }
+\item[{const {\bf setw} \&}]{arg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a8d1b3da6f1074322a6e9e11ff4ce8c33}
+setw manipulator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is} & the stream \\
+\hline
+\mbox{\tt in}  & {\em arg} & set setw object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stream 
+\end{DoxyReturn}
+\hypertarget{iostream_8h_a8adf4c714b8c8f201dedc83ee04556b1}{\index{iostream.\-h@{iostream.\-h}!ws@{ws}}
+\index{ws@{ws}!iostream.h@{iostream.\-h}}
+\subsubsection[{ws}]{\setlength{\rightskip}{0pt plus 5cm}{\bf istream}\& ws (
+\begin{DoxyParamCaption}
+\item[{{\bf istream} \&}]{is}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{iostream_8h_a8adf4c714b8c8f201dedc83ee04556b1}
+Skip white space 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em is} & the \hyperlink{class_stream}{Stream} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The stream 
+\end{DoxyReturn}

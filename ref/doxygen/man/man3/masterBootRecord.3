@@ -1,0 +1,58 @@
+.TH "masterBootRecord" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+masterBootRecord \- 
+.PP
+Master Boot Record\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdFatStructs\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fBcodeArea\fP [440]"
+.br
+.ti -1c
+.RI "uint32_t \fBdiskSignature\fP"
+.br
+.ti -1c
+.RI "uint16_t \fBusuallyZero\fP"
+.br
+.ti -1c
+.RI "\fBpart_t\fP \fBpart\fP [4]"
+.br
+.ti -1c
+.RI "uint8_t \fBmbrSig0\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBmbrSig1\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Master Boot Record\&. 
+
+The first block of a storage device that is formatted with a MBR\&. 
+.SH "Field Documentation"
+.PP 
+.SS "uint8_t codeArea[440]"
+Code Area for master boot program\&. 
+.SS "uint32_t diskSignature"
+Optional Windows NT disk signature\&. May contain boot code\&. 
+.SS "uint8_t mbrSig0"
+First MBR signature byte\&. Must be 0X55 
+.SS "uint8_t mbrSig1"
+Second MBR signature byte\&. Must be 0XAA 
+.SS "\fBpart_t\fP part[4]"
+Partition tables\&. 
+.SS "uint16_t usuallyZero"
+Usually zero but may be more boot code\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

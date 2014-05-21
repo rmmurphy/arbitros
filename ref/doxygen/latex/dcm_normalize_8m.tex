@@ -1,0 +1,85 @@
+\hypertarget{dcm_normalize_8m}{\section{C\-:/arbitros/trunk/drivers/matlab/ins/dcm\-Normalize.m File Reference}
+\label{dcm_normalize_8m}\index{C\-:/arbitros/trunk/drivers/matlab/ins/dcm\-Normalize.\-m@{C\-:/arbitros/trunk/drivers/matlab/ins/dcm\-Normalize.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dcm_normalize_8m_a48c3331d52b0fa94e72b275848144dff}{D\-C\-M} (1,\-:)
+\item 
+\hyperlink{dcm_normalize_8m_ad334c9c9b7daee1cbf97010598c2b319}{D\-C\-M} (2,\-:)
+\item 
+\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M} (3,\-:)
+\item 
+\hyperlink{dcm_normalize_8m_ab93318734590fb1275b1c8a1a5f7b5f4}{if} (max(\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(1,\-:)) $>$ 1) \hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{dcm_normalize_8m_a14c0ce99e2960044a3bec537c3b0e927}{function} \mbox{[}\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}\mbox{]}
+\item 
+\hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and} of\mbox{[}4\mbox{]} \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} = \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(1,\-:)$\ast$\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(2,\-:)'
+\item 
+\hyperlink{dcm_normalize_8m_a3195d140bf11f6ba1cf1db17b9529bcf}{Xorth} = \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(1,\-:)' -\/ (\hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error}/2)$\ast$\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(2,\-:)'
+\item 
+\hyperlink{dcm_normalize_8m_a4aa841c877b7b0137ccfd47ef3181a9a}{Yorth} = \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(2,\-:)' -\/ (\hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error}/2)$\ast$\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(1,\-:)'
+\item 
+\hyperlink{dcm_normalize_8m_a904b125707caf8b7483b8e3d7bcb5675}{Zorth} = cross(\hyperlink{dcm_normalize_8m_a3195d140bf11f6ba1cf1db17b9529bcf}{Xorth},\hyperlink{dcm_normalize_8m_a4aa841c877b7b0137ccfd47ef3181a9a}{Yorth})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{dcm_normalize_8m_a48c3331d52b0fa94e72b275848144dff}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{dcm_normalize_8m_a48c3331d52b0fa94e72b275848144dff}
+\hypertarget{dcm_normalize_8m_ad334c9c9b7daee1cbf97010598c2b319}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{dcm_normalize_8m_ad334c9c9b7daee1cbf97010598c2b319}
+\hypertarget{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}
+\hypertarget{dcm_normalize_8m_ab93318734590fb1275b1c8a1a5f7b5f4}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!if@{if}}
+\index{if@{if}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{if}]{\setlength{\rightskip}{0pt plus 5cm}if (
+\begin{DoxyParamCaption}
+\item[{max({\bf D\-C\-M}(1,\-:))}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{dcm_normalize_8m_ab93318734590fb1275b1c8a1a5f7b5f4}
+
+
+\subsection{Variable Documentation}
+\hypertarget{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!error@{error}}
+\index{error@{error}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}{\bf and} of \mbox{[}4\mbox{]} error = {\bf D\-C\-M}(1,\-:)$\ast${\bf D\-C\-M}(2,\-:)'}}\label{dcm_normalize_8m_a5ee817c076587e88884910406497df94}
+\hypertarget{dcm_normalize_8m_a14c0ce99e2960044a3bec537c3b0e927}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!function@{function}}
+\index{function@{function}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}function\mbox{[}{\bf D\-C\-M}\mbox{]}}}\label{dcm_normalize_8m_a14c0ce99e2960044a3bec537c3b0e927}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \hyperlink{drv__ins_8c_a22385b8389c683e5db41eb34fbb01f68}{dcmNormalize}( \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM})
+    %Normalize the \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM} according to eq 18
+\end{DoxyCode}
+\hypertarget{dcm_normalize_8m_a3195d140bf11f6ba1cf1db17b9529bcf}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!Xorth@{Xorth}}
+\index{Xorth@{Xorth}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{Xorth}]{\setlength{\rightskip}{0pt plus 5cm}Xorth = {\bf D\-C\-M}(1,\-:)' -\/ ({\bf error}/2)$\ast${\bf D\-C\-M}(2,\-:)'}}\label{dcm_normalize_8m_a3195d140bf11f6ba1cf1db17b9529bcf}
+\hypertarget{dcm_normalize_8m_a4aa841c877b7b0137ccfd47ef3181a9a}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!Yorth@{Yorth}}
+\index{Yorth@{Yorth}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{Yorth}]{\setlength{\rightskip}{0pt plus 5cm}Yorth = {\bf D\-C\-M}(2,\-:)' -\/ ({\bf error}/2)$\ast${\bf D\-C\-M}(1,\-:)'}}\label{dcm_normalize_8m_a4aa841c877b7b0137ccfd47ef3181a9a}
+\hypertarget{dcm_normalize_8m_a904b125707caf8b7483b8e3d7bcb5675}{\index{dcm\-Normalize.\-m@{dcm\-Normalize.\-m}!Zorth@{Zorth}}
+\index{Zorth@{Zorth}!dcmNormalize.m@{dcm\-Normalize.\-m}}
+\subsubsection[{Zorth}]{\setlength{\rightskip}{0pt plus 5cm}Zorth = cross({\bf Xorth},{\bf Yorth})}}\label{dcm_normalize_8m_a904b125707caf8b7483b8e3d7bcb5675}

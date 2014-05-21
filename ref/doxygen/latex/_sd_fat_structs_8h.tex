@@ -1,0 +1,621 @@
+\hypertarget{_sd_fat_structs_8h}{\section{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Fat\-Structs.h File Reference}
+\label{_sd_fat_structs_8h}\index{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Fat\-Structs.\-h@{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Fat\-Structs.\-h}}
+}
+
+
+F\-A\-T file structures.  
+
+
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structpartition_table}{partition\-Table}
+\begin{DoxyCompactList}\small\item\em M\-B\-R partition table entry. \end{DoxyCompactList}\item 
+struct \hyperlink{structmaster_boot_record}{master\-Boot\-Record}
+\begin{DoxyCompactList}\small\item\em Master Boot Record. \end{DoxyCompactList}\item 
+struct \hyperlink{structfat__boot}{fat\-\_\-boot}
+\begin{DoxyCompactList}\small\item\em Boot sector for a F\-A\-T12/\-F\-A\-T16 volume. \end{DoxyCompactList}\item 
+struct \hyperlink{structfat32__boot}{fat32\-\_\-boot}
+\begin{DoxyCompactList}\small\item\em Boot sector for a F\-A\-T32 volume. \end{DoxyCompactList}\item 
+struct \hyperlink{structfat32__fsinfo}{fat32\-\_\-fsinfo}
+\begin{DoxyCompactList}\small\item\em F\-S\-I\-N\-F\-O sector for a F\-A\-T32 volume. \end{DoxyCompactList}\item 
+struct \hyperlink{structdirectory_entry}{directory\-Entry}
+\begin{DoxyCompactList}\small\item\em F\-A\-T short directory entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structpartition_table}{partition\-Table} \hyperlink{_sd_fat_structs_8h_a37251e7d5c69a159be727a3fc8c9d0e6}{part\-\_\-t}
+\item 
+typedef struct \hyperlink{structmaster_boot_record}{master\-Boot\-Record} \hyperlink{_sd_fat_structs_8h_a7c429e5097f101c8c97663d6c4155bd9}{mbr\-\_\-t}
+\item 
+typedef struct \hyperlink{structfat__boot}{fat\-\_\-boot} \hyperlink{_sd_fat_structs_8h_aedac4595ee08198da26c14b9891a07d5}{fat\-\_\-boot\-\_\-t}
+\item 
+typedef struct \hyperlink{structfat32__boot}{fat32\-\_\-boot} \hyperlink{_sd_fat_structs_8h_a38fa081d004647a828095d31b07ec491}{fat32\-\_\-boot\-\_\-t}
+\item 
+typedef struct \hyperlink{structfat32__fsinfo}{fat32\-\_\-fsinfo} \hyperlink{_sd_fat_structs_8h_a6030ed0fce3a819326a2548407fc8556}{fat32\-\_\-fsinfo\-\_\-t}
+\item 
+typedef struct \hyperlink{structdirectory_entry}{directory\-Entry} \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{_sd_fat_structs_8h_ae8ade7cb3ac1769946ea36d0847391c4}{struct \hyperlink{structpartition_table}{partition\-Table} {\bfseries \-\_\-\-\_\-attribute\-\_\-\-\_\-} ((packed))}\label{_sd_fat_structs_8h_ae8ade7cb3ac1769946ea36d0847391c4}
+
+\item 
+static uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a504c3d996b412f386becc27a8c49cd2c}{D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E} (const \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a5ce8bde4d6ff3950df951e84c7bb8d58}{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E} (const \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ace8ed88fcb41afc4d2fe0eabf96e71c6}{D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R} (const \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a9d99b04fa090825a9b9c2468fa81e627}{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R} (const \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_aa1aeb3a5e2838c5c7270fa17bcc31e8e}{B\-O\-O\-T\-S\-I\-G0} = 0\-X55
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a1b5a143c48d93d6f4e3fc1f5f3ac1dc3}{B\-O\-O\-T\-S\-I\-G1} = 0\-X\-A\-A
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_ac856ff0a92288eb124e1688581628cd0}{E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G} = 0\-X29
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ad2acb7fab9ef33a6f00c834401250229}{boot}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ab27b713d70d01c43e31fc67e08f876bf}{begin\-Head}
+\item 
+unsigned \hyperlink{_sd_fat_structs_8h_a3ef026d5e8a9c697e414cf773b129db4}{begin\-Sector}
+\item 
+unsigned \hyperlink{_sd_fat_structs_8h_aae20759e6c6dbfa51368964f8fe095c7}{begin\-Cylinder\-High}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_afefdee23280567f8434f9c31610e0a3b}{begin\-Cylinder\-Low}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a1d127017fb298b889f4ba24752d08b8e}{type}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a248e6a8c42872744129b8b85a864a7a6}{end\-Head}
+\item 
+unsigned \hyperlink{_sd_fat_structs_8h_a1412f3c5116885eb7d4a047e432c9cdd}{end\-Sector}
+\item 
+unsigned \hyperlink{_sd_fat_structs_8h_adeccbdcad0d989d1e33a07b435ab7300}{end\-Cylinder\-High}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a3eb4b87675075500899edbb9296e0435}{end\-Cylinder\-Low}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a5951cd74127d45180071909972899c0e}{first\-Sector}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_ab3559f69d4a46a945bd4c037070585f2}{total\-Sectors}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a714f552faf0b0f09ffc53e2ba52ddbc3}{code\-Area} \mbox{[}440\mbox{]}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a6a40348b3b308847ba21a75829d91871}{disk\-Signature}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_aefe56bef1bc942c24bc7eefc4a7aefcc}{usually\-Zero}
+\item 
+\hyperlink{_sd_fat_structs_8h_a37251e7d5c69a159be727a3fc8c9d0e6}{part\-\_\-t} \hyperlink{_sd_fat_structs_8h_aa65f87792f271fc6cfa70980af6ac3dd}{part} \mbox{[}4\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_aa5633d8ea0049be26315e7627e32bb4e}{mbr\-Sig0}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_af106928fafe93a641c06cfb87b0d24e3}{mbr\-Sig1}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ad29ce39fde11e3efe207f3cc71924c01}{jump} \mbox{[}3\mbox{]}
+\item 
+char \hyperlink{_sd_fat_structs_8h_a9c423397154f11b5108165f058d64c03}{oem\-Id} \mbox{[}8\mbox{]}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_adb2ddeae74baf681103d21d724814a63}{bytes\-Per\-Sector}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a3ce07376c286acd8393a18a32d7ca4c0}{sectors\-Per\-Cluster}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a16c854faf567331bbbfb383e6c8df6f5}{reserved\-Sector\-Count}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a624e9eb125b4fc8aeaebcccf79e17aa8}{fat\-Count}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_aabe25e54b9c06a9a7393fc6c475d9fa1}{root\-Dir\-Entry\-Count}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_ad717f5b9af13f8ec9d0d6d1337174dfa}{total\-Sectors16}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ab88738f9cb91c882cb91d5e83a19a73f}{media\-Type}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_abf85d1c57b01c8901a0cdcd0ac1babc2}{sectors\-Per\-Fat16}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a42886f9109ee1759d5972e871f0689a8}{sectors\-Per\-Track}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a57cb7e16b9969fa87c9f1ca43a87d217}{head\-Count}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a454fd6cc3f063c86b7fe65c367da7cdd}{hiddden\-Sectors}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a64d5902f9e900ecc745b1c0b325d875f}{total\-Sectors32}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_aa7c65fdb4f759fca094105d1c870bcb2}{drive\-Number}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_affe215a7220b2d52fb9dacf3b35e56dc}{reserved1}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_acc4a4e4c22b630d12c1b2c2b8c7eb366}{boot\-Signature}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a7c9ffcee12051cefe1724e8024af25f8}{volume\-Serial\-Number}
+\item 
+char \hyperlink{_sd_fat_structs_8h_a4c67f30c214795e34070d3402de94f41}{volume\-Label} \mbox{[}11\mbox{]}
+\item 
+char \hyperlink{_sd_fat_structs_8h_a14bc72c09ec28729b9907aab215e5fe3}{file\-System\-Type} \mbox{[}8\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a2f3c72b78dbeeeb61d543df3c9d1cefd}{boot\-Code} \mbox{[}448\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_abdaf2cc75b74800944ede557442ca5bd}{boot\-Sector\-Sig0}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a44983e94ecddbdcb7ab691e493a13d94}{boot\-Sector\-Sig1}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a687653b3b71ab0de1f27f8ab8f331a1c}{sectors\-Per\-Fat32}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a4f864cefb7f1b004d5739ffab9a65ae1}{fat32\-Flags}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a8f27235fa3dee48a4b4e099135fc81d6}{fat32\-Version}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a58249ed4ed0f92d5768f2342f248af82}{fat32\-Root\-Cluster}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_aad3222ea255af06d09734e96a93c82ed}{fat32\-F\-S\-Info}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a1914baf34756efd18072059dccfcf40f}{fat32\-Back\-Boot\-Block}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_ae31dc7ad96aec8e0d184fd7e5a97f30d}{fat32\-Reserved} \mbox{[}12\mbox{]}
+\item 
+uint32\-\_\-t const \hyperlink{_sd_fat_structs_8h_ac569b1b465f941aaa41a17d270e278df}{F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G} = 0x41615252
+\item 
+uint32\-\_\-t const \hyperlink{_sd_fat_structs_8h_ab777b40d12137b9ed073b3bb578703d0}{F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G} = 0x61417272
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a19196eeae2525130bdb0d39607860743}{lead\-Signature}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a31ea8ae6a8d32f61dd576d0d4921f015}{struct\-Signature}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_af5d9e0aff08147617a09dc19d207eafe}{free\-Count}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a456cdbc01678df5d05eabb80f5aac9b0}{next\-Free}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a2d2f4821102b812b81b15f5e713dd8e8}{reserved2} \mbox{[}12\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a89944902cc4effcd8568575786c3a084}{tail\-Signature} \mbox{[}4\mbox{]}
+\item 
+uint16\-\_\-t const \hyperlink{_sd_fat_structs_8h_a5beb263a9cb768739f5ddb476ede6690}{F\-A\-T12\-E\-O\-C} = 0\-X\-F\-F\-F
+\item 
+uint16\-\_\-t const \hyperlink{_sd_fat_structs_8h_af1754604787f709306101dcc04391ff2}{F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N} = 0\-X\-F\-F8
+\item 
+uint16\-\_\-t const \hyperlink{_sd_fat_structs_8h_a47b11a71cedad5402613ab2aae827c99}{F\-A\-T16\-E\-O\-C} = 0\-X\-F\-F\-F\-F
+\item 
+uint16\-\_\-t const \hyperlink{_sd_fat_structs_8h_a79b2cefbcfdbf3507fe0496804541b0d}{F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N} = 0\-X\-F\-F\-F8
+\item 
+uint32\-\_\-t const \hyperlink{_sd_fat_structs_8h_ac213f2ce8eaa53f7d98424b300038dfd}{F\-A\-T32\-E\-O\-C} = 0\-X0\-F\-F\-F\-F\-F\-F\-F
+\item 
+uint32\-\_\-t const \hyperlink{_sd_fat_structs_8h_af5bcc97de8cc4956435d06349d6e714b}{F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N} = 0\-X0\-F\-F\-F\-F\-F\-F8
+\item 
+uint32\-\_\-t const \hyperlink{_sd_fat_structs_8h_a00e6cb52e814024fc23971c43f6e257a}{F\-A\-T32\-M\-A\-S\-K} = 0\-X0\-F\-F\-F\-F\-F\-F\-F
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{name} \mbox{[}11\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a983149395439fbc9ca8497076b75fd6b}{attributes}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a937b2d2e4b78ddf9e42b19c754e4f31a}{reserved\-N\-T}
+\item 
+uint8\-\_\-t \hyperlink{_sd_fat_structs_8h_a088ac767e59feb38599e0a53e6aacb82}{creation\-Time\-Tenths}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a2b2b18a3fb988470278b1217abe946ab}{creation\-Time}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_ab00be6268bf4c4f4b6014f056e27ba45}{creation\-Date}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a5635857642ec25e070355257115dafd1}{last\-Access\-Date}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_ad6224dfa27a1c558703f158e93ceafe0}{first\-Cluster\-High}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_ab140bb773b2ff0ddf7199efc083ce037}{last\-Write\-Time}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a26f462d6e4410d502149973ee6c216fd}{last\-Write\-Date}
+\item 
+uint16\-\_\-t \hyperlink{_sd_fat_structs_8h_a3a4f70fb49494208d7eb349969a8acaa}{first\-Cluster\-Low}
+\item 
+uint32\-\_\-t \hyperlink{_sd_fat_structs_8h_a48f46ad02b77a00b795d15626ba1d42e}{file\-Size}
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a27c8cd1e50f71974c9d98a868cfc4c77}{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5} = 0\-X05
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a5de4ada3536d89559f6433e835e311da}{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D} = 0\-X\-E5
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a23b2e4d06e245c778f4c52909cf97c76}{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E} = 0\-X00
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_abff82a1fd65417a032777e0821821640}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y} = 0\-X01
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a3a41f54f933a4d34b1502321ab9da5ff}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N} = 0\-X02
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_ae89bc34164e7318b3d3169ff290c8d70}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M} = 0\-X04
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_af50cf547300f2cc5d33e7ab457b5a200}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D} = 0\-X08
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a3f9e7ceac3e0a9aebead998e88349139}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y} = 0\-X10
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a7144738c367c16e672b3e48962bc7dda}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E} = 0\-X20
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a0d3f6fbbd34126b2d5563bba65220985}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E} = 0\-X0\-F
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a0aa5725dd4916058f0c6c06b09f83059}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K} = 0\-X3\-F
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_ad131502987658581d57cc18328d18aa5}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S} = 0\-X3\-F
+\item 
+uint8\-\_\-t const \hyperlink{_sd_fat_structs_8h_a40ed222fdb5b5c6b2f04268ab0ce20ca}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K} = (\hyperlink{_sd_fat_structs_8h_af50cf547300f2cc5d33e7ab457b5a200}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D} $|$ \hyperlink{_sd_fat_structs_8h_a3f9e7ceac3e0a9aebead998e88349139}{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+F\-A\-T file structures. 
+
+\subsection{Typedef Documentation}
+\hypertarget{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!dir\-\_\-t@{dir\-\_\-t}}
+\index{dir\-\_\-t@{dir\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{dir\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf directory\-Entry} {\bf dir\-\_\-t}}}\label{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}
+Type name for \hyperlink{structdirectory_entry}{directory\-Entry} \hypertarget{_sd_fat_structs_8h_a38fa081d004647a828095d31b07ec491}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-\_\-boot\-\_\-t@{fat32\-\_\-boot\-\_\-t}}
+\index{fat32\-\_\-boot\-\_\-t@{fat32\-\_\-boot\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-\_\-boot\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf fat32\-\_\-boot} {\bf fat32\-\_\-boot\-\_\-t}}}\label{_sd_fat_structs_8h_a38fa081d004647a828095d31b07ec491}
+Type name for F\-A\-T32 Boot Sector \hypertarget{_sd_fat_structs_8h_a6030ed0fce3a819326a2548407fc8556}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-\_\-fsinfo\-\_\-t@{fat32\-\_\-fsinfo\-\_\-t}}
+\index{fat32\-\_\-fsinfo\-\_\-t@{fat32\-\_\-fsinfo\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-\_\-fsinfo\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf fat32\-\_\-fsinfo} {\bf fat32\-\_\-fsinfo\-\_\-t}}}\label{_sd_fat_structs_8h_a6030ed0fce3a819326a2548407fc8556}
+Type name for F\-A\-T32 F\-S\-I\-N\-F\-O Sector \hypertarget{_sd_fat_structs_8h_aedac4595ee08198da26c14b9891a07d5}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat\-\_\-boot\-\_\-t@{fat\-\_\-boot\-\_\-t}}
+\index{fat\-\_\-boot\-\_\-t@{fat\-\_\-boot\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat\-\_\-boot\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf fat\-\_\-boot} {\bf fat\-\_\-boot\-\_\-t}}}\label{_sd_fat_structs_8h_aedac4595ee08198da26c14b9891a07d5}
+Type name for F\-A\-T Boot Sector \hypertarget{_sd_fat_structs_8h_a7c429e5097f101c8c97663d6c4155bd9}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!mbr\-\_\-t@{mbr\-\_\-t}}
+\index{mbr\-\_\-t@{mbr\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{mbr\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf master\-Boot\-Record} {\bf mbr\-\_\-t}}}\label{_sd_fat_structs_8h_a7c429e5097f101c8c97663d6c4155bd9}
+Type name for \hyperlink{structmaster_boot_record}{master\-Boot\-Record} \hypertarget{_sd_fat_structs_8h_a37251e7d5c69a159be727a3fc8c9d0e6}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!part\-\_\-t@{part\-\_\-t}}
+\index{part\-\_\-t@{part\-\_\-t}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{part\-\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf partition\-Table} {\bf part\-\_\-t}}}\label{_sd_fat_structs_8h_a37251e7d5c69a159be727a3fc8c9d0e6}
+Type name for \hyperlink{structpartition_table}{partition\-Table} 
+
+\subsection{Function Documentation}
+\hypertarget{_sd_fat_structs_8h_a5ce8bde4d6ff3950df951e84c7bb8d58}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E@{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E}}
+\index{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E@{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E (
+\begin{DoxyParamCaption}
+\item[{const {\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_fat_structs_8h_a5ce8bde4d6ff3950df951e84c7bb8d58}
+Directory entry is for a file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir} & Pointer to a directory entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entry is for a normal file else false. 
+\end{DoxyReturn}
+\hypertarget{_sd_fat_structs_8h_a9d99b04fa090825a9b9c2468fa81e627}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R@{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R}}
+\index{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R@{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t D\-I\-R\-\_\-\-I\-S\-\_\-\-F\-I\-L\-E\-\_\-\-O\-R\-\_\-\-S\-U\-B\-D\-I\-R (
+\begin{DoxyParamCaption}
+\item[{const {\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_fat_structs_8h_a9d99b04fa090825a9b9c2468fa81e627}
+Directory entry is for a file or subdirectory 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir} & Pointer to a directory entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entry is for a normal file or subdirectory else false. 
+\end{DoxyReturn}
+\hypertarget{_sd_fat_structs_8h_a504c3d996b412f386becc27a8c49cd2c}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E@{D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}}
+\index{D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E@{D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t D\-I\-R\-\_\-\-I\-S\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E (
+\begin{DoxyParamCaption}
+\item[{const {\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_fat_structs_8h_a504c3d996b412f386becc27a8c49cd2c}
+Directory entry is part of a long name 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir} & Pointer to a directory entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entry is for part of a long name else false. 
+\end{DoxyReturn}
+\hypertarget{_sd_fat_structs_8h_ace8ed88fcb41afc4d2fe0eabf96e71c6}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R@{D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R}}
+\index{D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R@{D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t D\-I\-R\-\_\-\-I\-S\-\_\-\-S\-U\-B\-D\-I\-R (
+\begin{DoxyParamCaption}
+\item[{const {\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_fat_structs_8h_ace8ed88fcb41afc4d2fe0eabf96e71c6}
+Directory entry is for a subdirectory 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir} & Pointer to a directory entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the entry is for a subdirectory else false. 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_sd_fat_structs_8h_a983149395439fbc9ca8497076b75fd6b}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!attributes@{attributes}}
+\index{attributes@{attributes}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{attributes}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t attributes}}\label{_sd_fat_structs_8h_a983149395439fbc9ca8497076b75fd6b}
+Entry attributes.
+
+The upper two bits of the attribute byte are reserved and should always be set to 0 when a file is created and never modified or looked at after that. See defines that begin with D\-I\-R\-\_\-\-A\-T\-T\-\_\-. \hypertarget{_sd_fat_structs_8h_aae20759e6c6dbfa51368964f8fe095c7}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!begin\-Cylinder\-High@{begin\-Cylinder\-High}}
+\index{begin\-Cylinder\-High@{begin\-Cylinder\-High}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{begin\-Cylinder\-High}]{\setlength{\rightskip}{0pt plus 5cm}unsigned begin\-Cylinder\-High}}\label{_sd_fat_structs_8h_aae20759e6c6dbfa51368964f8fe095c7}
+High bits cylinder for first block in partition. \hypertarget{_sd_fat_structs_8h_afefdee23280567f8434f9c31610e0a3b}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!begin\-Cylinder\-Low@{begin\-Cylinder\-Low}}
+\index{begin\-Cylinder\-Low@{begin\-Cylinder\-Low}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{begin\-Cylinder\-Low}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t begin\-Cylinder\-Low}}\label{_sd_fat_structs_8h_afefdee23280567f8434f9c31610e0a3b}
+Combine begin\-Cylinder\-Low with begin\-Cylinder\-High. Legal values are 0-\/1023. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_ab27b713d70d01c43e31fc67e08f876bf}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!begin\-Head@{begin\-Head}}
+\index{begin\-Head@{begin\-Head}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{begin\-Head}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t begin\-Head}}\label{_sd_fat_structs_8h_ab27b713d70d01c43e31fc67e08f876bf}
+Head part of Cylinder-\/head-\/sector address of the first block in the partition. Legal values are 0-\/255. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_a3ef026d5e8a9c697e414cf773b129db4}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!begin\-Sector@{begin\-Sector}}
+\index{begin\-Sector@{begin\-Sector}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{begin\-Sector}]{\setlength{\rightskip}{0pt plus 5cm}unsigned begin\-Sector}}\label{_sd_fat_structs_8h_a3ef026d5e8a9c697e414cf773b129db4}
+Sector part of Cylinder-\/head-\/sector address of the first block in the partition. Legal values are 1-\/63. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_ad2acb7fab9ef33a6f00c834401250229}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!boot@{boot}}
+\index{boot@{boot}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{boot}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot}}\label{_sd_fat_structs_8h_ad2acb7fab9ef33a6f00c834401250229}
+Boot Indicator . Indicates whether the volume is the active partition. Legal values include\-: 0\-X00. Do not use for booting. 0\-X80 Active partition. \hypertarget{_sd_fat_structs_8h_a2f3c72b78dbeeeb61d543df3c9d1cefd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!boot\-Code@{boot\-Code}}
+\index{boot\-Code@{boot\-Code}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{boot\-Code}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Code}}\label{_sd_fat_structs_8h_a2f3c72b78dbeeeb61d543df3c9d1cefd}
+X86 boot code \hypertarget{_sd_fat_structs_8h_abdaf2cc75b74800944ede557442ca5bd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!boot\-Sector\-Sig0@{boot\-Sector\-Sig0}}
+\index{boot\-Sector\-Sig0@{boot\-Sector\-Sig0}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{boot\-Sector\-Sig0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Sector\-Sig0}}\label{_sd_fat_structs_8h_abdaf2cc75b74800944ede557442ca5bd}
+must be 0\-X55 \hypertarget{_sd_fat_structs_8h_a44983e94ecddbdcb7ab691e493a13d94}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!boot\-Sector\-Sig1@{boot\-Sector\-Sig1}}
+\index{boot\-Sector\-Sig1@{boot\-Sector\-Sig1}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{boot\-Sector\-Sig1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Sector\-Sig1}}\label{_sd_fat_structs_8h_a44983e94ecddbdcb7ab691e493a13d94}
+must be 0\-X\-A\-A \hypertarget{_sd_fat_structs_8h_aa1aeb3a5e2838c5c7270fa17bcc31e8e}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!B\-O\-O\-T\-S\-I\-G0@{B\-O\-O\-T\-S\-I\-G0}}
+\index{B\-O\-O\-T\-S\-I\-G0@{B\-O\-O\-T\-S\-I\-G0}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{B\-O\-O\-T\-S\-I\-G0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const B\-O\-O\-T\-S\-I\-G0 = 0\-X55}}\label{_sd_fat_structs_8h_aa1aeb3a5e2838c5c7270fa17bcc31e8e}
+Value for byte 510 of boot block or M\-B\-R \hypertarget{_sd_fat_structs_8h_a1b5a143c48d93d6f4e3fc1f5f3ac1dc3}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!B\-O\-O\-T\-S\-I\-G1@{B\-O\-O\-T\-S\-I\-G1}}
+\index{B\-O\-O\-T\-S\-I\-G1@{B\-O\-O\-T\-S\-I\-G1}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{B\-O\-O\-T\-S\-I\-G1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const B\-O\-O\-T\-S\-I\-G1 = 0\-X\-A\-A}}\label{_sd_fat_structs_8h_a1b5a143c48d93d6f4e3fc1f5f3ac1dc3}
+Value for byte 511 of boot block or M\-B\-R \hypertarget{_sd_fat_structs_8h_acc4a4e4c22b630d12c1b2c2b8c7eb366}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!boot\-Signature@{boot\-Signature}}
+\index{boot\-Signature@{boot\-Signature}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{boot\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Signature}}\label{_sd_fat_structs_8h_acc4a4e4c22b630d12c1b2c2b8c7eb366}
+0\-X29 if next three fields are valid \hypertarget{_sd_fat_structs_8h_adb2ddeae74baf681103d21d724814a63}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!bytes\-Per\-Sector@{bytes\-Per\-Sector}}
+\index{bytes\-Per\-Sector@{bytes\-Per\-Sector}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{bytes\-Per\-Sector}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t bytes\-Per\-Sector}}\label{_sd_fat_structs_8h_adb2ddeae74baf681103d21d724814a63}
+The size of a hardware sector. Valid decimal values for this field are 512, 1024, 2048, and 4096. For most disks used in the United States, the value of this field is 512. \hypertarget{_sd_fat_structs_8h_a714f552faf0b0f09ffc53e2ba52ddbc3}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!code\-Area@{code\-Area}}
+\index{code\-Area@{code\-Area}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{code\-Area}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t code\-Area\mbox{[}440\mbox{]}}}\label{_sd_fat_structs_8h_a714f552faf0b0f09ffc53e2ba52ddbc3}
+Code Area for master boot program. \hypertarget{_sd_fat_structs_8h_ab00be6268bf4c4f4b6014f056e27ba45}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!creation\-Date@{creation\-Date}}
+\index{creation\-Date@{creation\-Date}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{creation\-Date}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t creation\-Date}}\label{_sd_fat_structs_8h_ab00be6268bf4c4f4b6014f056e27ba45}
+Date file was created. \hypertarget{_sd_fat_structs_8h_a2b2b18a3fb988470278b1217abe946ab}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!creation\-Time@{creation\-Time}}
+\index{creation\-Time@{creation\-Time}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{creation\-Time}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t creation\-Time}}\label{_sd_fat_structs_8h_a2b2b18a3fb988470278b1217abe946ab}
+Time file was created. \hypertarget{_sd_fat_structs_8h_a088ac767e59feb38599e0a53e6aacb82}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!creation\-Time\-Tenths@{creation\-Time\-Tenths}}
+\index{creation\-Time\-Tenths@{creation\-Time\-Tenths}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{creation\-Time\-Tenths}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t creation\-Time\-Tenths}}\label{_sd_fat_structs_8h_a088ac767e59feb38599e0a53e6aacb82}
+The granularity of the seconds part of creation\-Time is 2 seconds so this field is a count of tenths of a second and its valid value range is 0-\/199 inclusive. (W\-H\-G note -\/ seems to be hundredths) \hypertarget{_sd_fat_structs_8h_a7144738c367c16e672b3e48962bc7dda}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-A\-R\-C\-H\-I\-V\-E = 0\-X20}}\label{_sd_fat_structs_8h_a7144738c367c16e672b3e48962bc7dda}
+Old D\-O\-S archive bit for backup support \hypertarget{_sd_fat_structs_8h_ad131502987658581d57cc18328d18aa5}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-E\-F\-I\-N\-E\-D\-\_\-\-B\-I\-T\-S = 0\-X3\-F}}\label{_sd_fat_structs_8h_ad131502987658581d57cc18328d18aa5}
+defined attribute bits \hypertarget{_sd_fat_structs_8h_a3f9e7ceac3e0a9aebead998e88349139}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y = 0\-X10}}\label{_sd_fat_structs_8h_a3f9e7ceac3e0a9aebead998e88349139}
+Entry is for a directory \hypertarget{_sd_fat_structs_8h_a40ed222fdb5b5c6b2f04268ab0ce20ca}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-A\-S\-K = ({\bf D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D} $|$ {\bf D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-D\-I\-R\-E\-C\-T\-O\-R\-Y})}}\label{_sd_fat_structs_8h_a40ed222fdb5b5c6b2f04268ab0ce20ca}
+Mask for file/subdirectory tests \hypertarget{_sd_fat_structs_8h_a3a41f54f933a4d34b1502321ab9da5ff}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-H\-I\-D\-D\-E\-N = 0\-X02}}\label{_sd_fat_structs_8h_a3a41f54f933a4d34b1502321ab9da5ff}
+\hyperlink{class_file}{File} should hidden in directory listings \hypertarget{_sd_fat_structs_8h_a0d3f6fbbd34126b2d5563bba65220985}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E = 0\-X0\-F}}\label{_sd_fat_structs_8h_a0d3f6fbbd34126b2d5563bba65220985}
+Test value for long name entry. Test is (d-\/$>$attributes \& D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K) == D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E. \hypertarget{_sd_fat_structs_8h_a0aa5725dd4916058f0c6c06b09f83059}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-L\-O\-N\-G\-\_\-\-N\-A\-M\-E\-\_\-\-M\-A\-S\-K = 0\-X3\-F}}\label{_sd_fat_structs_8h_a0aa5725dd4916058f0c6c06b09f83059}
+Test mask for long name entry \hypertarget{_sd_fat_structs_8h_abff82a1fd65417a032777e0821821640}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-R\-E\-A\-D\-\_\-\-O\-N\-L\-Y = 0\-X01}}\label{_sd_fat_structs_8h_abff82a1fd65417a032777e0821821640}
+file is read-\/only \hypertarget{_sd_fat_structs_8h_ae89bc34164e7318b3d3169ff290c8d70}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-S\-Y\-S\-T\-E\-M = 0\-X04}}\label{_sd_fat_structs_8h_ae89bc34164e7318b3d3169ff290c8d70}
+Entry is for a system file \hypertarget{_sd_fat_structs_8h_af50cf547300f2cc5d33e7ab457b5a200}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}}
+\index{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D@{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-A\-T\-T\-\_\-\-V\-O\-L\-U\-M\-E\-\_\-\-I\-D = 0\-X08}}\label{_sd_fat_structs_8h_af50cf547300f2cc5d33e7ab457b5a200}
+Directory entry contains the volume label \hypertarget{_sd_fat_structs_8h_a27c8cd1e50f71974c9d98a868cfc4c77}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5}}
+\index{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-0\-X\-E5 = 0\-X05}}\label{_sd_fat_structs_8h_a27c8cd1e50f71974c9d98a868cfc4c77}
+escape for name\mbox{[}0\mbox{]} = 0\-X\-E5 \hypertarget{_sd_fat_structs_8h_a5de4ada3536d89559f6433e835e311da}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D}}
+\index{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-D\-E\-L\-E\-T\-E\-D = 0\-X\-E5}}\label{_sd_fat_structs_8h_a5de4ada3536d89559f6433e835e311da}
+name\mbox{[}0\mbox{]} value for entry that is free after being \char`\"{}deleted\char`\"{} \hypertarget{_sd_fat_structs_8h_a23b2e4d06e245c778f4c52909cf97c76}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E}}
+\index{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E@{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const D\-I\-R\-\_\-\-N\-A\-M\-E\-\_\-\-F\-R\-E\-E = 0\-X00}}\label{_sd_fat_structs_8h_a23b2e4d06e245c778f4c52909cf97c76}
+name\mbox{[}0\mbox{]} value for entry that is free and no allocated entries follow \hypertarget{_sd_fat_structs_8h_a6a40348b3b308847ba21a75829d91871}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!disk\-Signature@{disk\-Signature}}
+\index{disk\-Signature@{disk\-Signature}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{disk\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t disk\-Signature}}\label{_sd_fat_structs_8h_a6a40348b3b308847ba21a75829d91871}
+Optional Windows N\-T disk signature. May contain boot code. \hypertarget{_sd_fat_structs_8h_aa7c65fdb4f759fca094105d1c870bcb2}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!drive\-Number@{drive\-Number}}
+\index{drive\-Number@{drive\-Number}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{drive\-Number}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t drive\-Number}}\label{_sd_fat_structs_8h_aa7c65fdb4f759fca094105d1c870bcb2}
+Related to the B\-I\-O\-S physical drive number. Floppy drives are identified as 0x00 and physical hard disks are identified as 0x80, regardless of the number of physical disk drives. Typically, this value is set prior to issuing an I\-N\-T 13h B\-I\-O\-S call to specify the device to access. The value is only relevant if the device is a boot device. \hypertarget{_sd_fat_structs_8h_adeccbdcad0d989d1e33a07b435ab7300}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!end\-Cylinder\-High@{end\-Cylinder\-High}}
+\index{end\-Cylinder\-High@{end\-Cylinder\-High}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{end\-Cylinder\-High}]{\setlength{\rightskip}{0pt plus 5cm}unsigned end\-Cylinder\-High}}\label{_sd_fat_structs_8h_adeccbdcad0d989d1e33a07b435ab7300}
+High bits of end cylinder \hypertarget{_sd_fat_structs_8h_a3eb4b87675075500899edbb9296e0435}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!end\-Cylinder\-Low@{end\-Cylinder\-Low}}
+\index{end\-Cylinder\-Low@{end\-Cylinder\-Low}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{end\-Cylinder\-Low}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t end\-Cylinder\-Low}}\label{_sd_fat_structs_8h_a3eb4b87675075500899edbb9296e0435}
+Combine end\-Cylinder\-Low with end\-Cylinder\-High. Legal values are 0-\/1023. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_a248e6a8c42872744129b8b85a864a7a6}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!end\-Head@{end\-Head}}
+\index{end\-Head@{end\-Head}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{end\-Head}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t end\-Head}}\label{_sd_fat_structs_8h_a248e6a8c42872744129b8b85a864a7a6}
+head part of cylinder-\/head-\/sector address of the last sector in the partition. Legal values are 0-\/255. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_a1412f3c5116885eb7d4a047e432c9cdd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!end\-Sector@{end\-Sector}}
+\index{end\-Sector@{end\-Sector}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{end\-Sector}]{\setlength{\rightskip}{0pt plus 5cm}unsigned end\-Sector}}\label{_sd_fat_structs_8h_a1412f3c5116885eb7d4a047e432c9cdd}
+Sector part of cylinder-\/head-\/sector address of the last sector in the partition. Legal values are 1-\/63. Only used in old P\-C B\-I\-O\-S. \hypertarget{_sd_fat_structs_8h_ac856ff0a92288eb124e1688581628cd0}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G@{E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G}}
+\index{E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G@{E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const E\-X\-T\-E\-N\-D\-E\-D\-\_\-\-B\-O\-O\-T\-\_\-\-S\-I\-G = 0\-X29}}\label{_sd_fat_structs_8h_ac856ff0a92288eb124e1688581628cd0}
+Value for boot\-Signature field int F\-A\-T/\-F\-A\-T32 boot sector \hypertarget{_sd_fat_structs_8h_a5beb263a9cb768739f5ddb476ede6690}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T12\-E\-O\-C@{F\-A\-T12\-E\-O\-C}}
+\index{F\-A\-T12\-E\-O\-C@{F\-A\-T12\-E\-O\-C}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T12\-E\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T12\-E\-O\-C = 0\-X\-F\-F\-F}}\label{_sd_fat_structs_8h_a5beb263a9cb768739f5ddb476ede6690}
+F\-A\-T12 end of chain value used by Microsoft. \hypertarget{_sd_fat_structs_8h_af1754604787f709306101dcc04391ff2}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N}}
+\index{F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T12\-E\-O\-C\-\_\-\-M\-I\-N = 0\-X\-F\-F8}}\label{_sd_fat_structs_8h_af1754604787f709306101dcc04391ff2}
+Minimum value for F\-A\-T12 E\-O\-C. Use to test for E\-O\-C. \hypertarget{_sd_fat_structs_8h_a47b11a71cedad5402613ab2aae827c99}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T16\-E\-O\-C@{F\-A\-T16\-E\-O\-C}}
+\index{F\-A\-T16\-E\-O\-C@{F\-A\-T16\-E\-O\-C}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T16\-E\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T16\-E\-O\-C = 0\-X\-F\-F\-F\-F}}\label{_sd_fat_structs_8h_a47b11a71cedad5402613ab2aae827c99}
+F\-A\-T16 end of chain value used by Microsoft. \hypertarget{_sd_fat_structs_8h_a79b2cefbcfdbf3507fe0496804541b0d}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N}}
+\index{F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T16\-E\-O\-C\-\_\-\-M\-I\-N = 0\-X\-F\-F\-F8}}\label{_sd_fat_structs_8h_a79b2cefbcfdbf3507fe0496804541b0d}
+Minimum value for F\-A\-T16 E\-O\-C. Use to test for E\-O\-C. \hypertarget{_sd_fat_structs_8h_a1914baf34756efd18072059dccfcf40f}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-Back\-Boot\-Block@{fat32\-Back\-Boot\-Block}}
+\index{fat32\-Back\-Boot\-Block@{fat32\-Back\-Boot\-Block}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-Back\-Boot\-Block}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Back\-Boot\-Block}}\label{_sd_fat_structs_8h_a1914baf34756efd18072059dccfcf40f}
+If nonzero, indicates the sector number in the reserved area of the volume of a copy of the boot record. Usually 6. No value other than 6 is recommended. \hypertarget{_sd_fat_structs_8h_ac213f2ce8eaa53f7d98424b300038dfd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T32\-E\-O\-C@{F\-A\-T32\-E\-O\-C}}
+\index{F\-A\-T32\-E\-O\-C@{F\-A\-T32\-E\-O\-C}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T32\-E\-O\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const F\-A\-T32\-E\-O\-C = 0\-X0\-F\-F\-F\-F\-F\-F\-F}}\label{_sd_fat_structs_8h_ac213f2ce8eaa53f7d98424b300038dfd}
+F\-A\-T32 end of chain value used by Microsoft. \hypertarget{_sd_fat_structs_8h_af5bcc97de8cc4956435d06349d6e714b}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N}}
+\index{F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N@{F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const F\-A\-T32\-E\-O\-C\-\_\-\-M\-I\-N = 0\-X0\-F\-F\-F\-F\-F\-F8}}\label{_sd_fat_structs_8h_af5bcc97de8cc4956435d06349d6e714b}
+Minimum value for F\-A\-T32 E\-O\-C. Use to test for E\-O\-C. \hypertarget{_sd_fat_structs_8h_a4f864cefb7f1b004d5739ffab9a65ae1}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-Flags@{fat32\-Flags}}
+\index{fat32\-Flags@{fat32\-Flags}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Flags}}\label{_sd_fat_structs_8h_a4f864cefb7f1b004d5739ffab9a65ae1}
+This field is only defined for F\-A\-T32 media and does not exist on F\-A\-T12 and F\-A\-T16 media. Bits 0-\/3 -- Zero-\/based number of active F\-A\-T. Only valid if mirroring is disabled. Bits 4-\/6 -- Reserved. Bit 7 -- 0 means the F\-A\-T is mirrored at runtime into all F\-A\-Ts. -- 1 means only one F\-A\-T is active; it is the one referenced in bits 0-\/3. Bits 8-\/15 -- Reserved. \hypertarget{_sd_fat_structs_8h_aad3222ea255af06d09734e96a93c82ed}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-F\-S\-Info@{fat32\-F\-S\-Info}}
+\index{fat32\-F\-S\-Info@{fat32\-F\-S\-Info}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-F\-S\-Info}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-F\-S\-Info}}\label{_sd_fat_structs_8h_aad3222ea255af06d09734e96a93c82ed}
+Sector number of F\-S\-I\-N\-F\-O structure in the reserved area of the F\-A\-T32 volume. Usually 1. \hypertarget{_sd_fat_structs_8h_a00e6cb52e814024fc23971c43f6e257a}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-A\-T32\-M\-A\-S\-K@{F\-A\-T32\-M\-A\-S\-K}}
+\index{F\-A\-T32\-M\-A\-S\-K@{F\-A\-T32\-M\-A\-S\-K}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-A\-T32\-M\-A\-S\-K}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const F\-A\-T32\-M\-A\-S\-K = 0\-X0\-F\-F\-F\-F\-F\-F\-F}}\label{_sd_fat_structs_8h_a00e6cb52e814024fc23971c43f6e257a}
+Mask a for F\-A\-T32 entry. Entries are 28 bits. \hypertarget{_sd_fat_structs_8h_ae31dc7ad96aec8e0d184fd7e5a97f30d}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-Reserved@{fat32\-Reserved}}
+\index{fat32\-Reserved@{fat32\-Reserved}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t fat32\-Reserved\mbox{[}12\mbox{]}}}\label{_sd_fat_structs_8h_ae31dc7ad96aec8e0d184fd7e5a97f30d}
+Reserved for future expansion. Code that formats F\-A\-T32 volumes should always set all of the bytes of this field to 0. \hypertarget{_sd_fat_structs_8h_a58249ed4ed0f92d5768f2342f248af82}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-Root\-Cluster@{fat32\-Root\-Cluster}}
+\index{fat32\-Root\-Cluster@{fat32\-Root\-Cluster}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-Root\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t fat32\-Root\-Cluster}}\label{_sd_fat_structs_8h_a58249ed4ed0f92d5768f2342f248af82}
+Cluster number of the first cluster of the root directory for F\-A\-T32. This usually 2 but not required to be 2. \hypertarget{_sd_fat_structs_8h_a8f27235fa3dee48a4b4e099135fc81d6}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat32\-Version@{fat32\-Version}}
+\index{fat32\-Version@{fat32\-Version}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat32\-Version}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Version}}\label{_sd_fat_structs_8h_a8f27235fa3dee48a4b4e099135fc81d6}
+F\-A\-T32 version. High byte is major revision number. Low byte is minor revision number. Only 0.\-0 define. \hypertarget{_sd_fat_structs_8h_a624e9eb125b4fc8aeaebcccf79e17aa8}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!fat\-Count@{fat\-Count}}
+\index{fat\-Count@{fat\-Count}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{fat\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t fat\-Count}}\label{_sd_fat_structs_8h_a624e9eb125b4fc8aeaebcccf79e17aa8}
+The number of copies of the F\-A\-T on the volume. The value of this field is always 2. \hypertarget{_sd_fat_structs_8h_a48f46ad02b77a00b795d15626ba1d42e}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!file\-Size@{file\-Size}}
+\index{file\-Size@{file\-Size}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{file\-Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t file\-Size}}\label{_sd_fat_structs_8h_a48f46ad02b77a00b795d15626ba1d42e}
+32-\/bit unsigned holding this file's size in bytes. \hypertarget{_sd_fat_structs_8h_a14bc72c09ec28729b9907aab215e5fe3}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!file\-System\-Type@{file\-System\-Type}}
+\index{file\-System\-Type@{file\-System\-Type}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{file\-System\-Type}]{\setlength{\rightskip}{0pt plus 5cm}char file\-System\-Type}}\label{_sd_fat_structs_8h_a14bc72c09ec28729b9907aab215e5fe3}
+A field with a value of either F\-A\-T, F\-A\-T12 or F\-A\-T16, depending on the disk format.
+
+A text field with a value of F\-A\-T32. \hypertarget{_sd_fat_structs_8h_ad6224dfa27a1c558703f158e93ceafe0}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!first\-Cluster\-High@{first\-Cluster\-High}}
+\index{first\-Cluster\-High@{first\-Cluster\-High}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{first\-Cluster\-High}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t first\-Cluster\-High}}\label{_sd_fat_structs_8h_ad6224dfa27a1c558703f158e93ceafe0}
+High word of this entry's first cluster number (always 0 for a F\-A\-T12 or F\-A\-T16 volume). \hypertarget{_sd_fat_structs_8h_a3a4f70fb49494208d7eb349969a8acaa}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!first\-Cluster\-Low@{first\-Cluster\-Low}}
+\index{first\-Cluster\-Low@{first\-Cluster\-Low}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{first\-Cluster\-Low}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t first\-Cluster\-Low}}\label{_sd_fat_structs_8h_a3a4f70fb49494208d7eb349969a8acaa}
+Low word of this entry's first cluster number. \hypertarget{_sd_fat_structs_8h_a5951cd74127d45180071909972899c0e}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!first\-Sector@{first\-Sector}}
+\index{first\-Sector@{first\-Sector}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{first\-Sector}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t first\-Sector}}\label{_sd_fat_structs_8h_a5951cd74127d45180071909972899c0e}
+Logical block address of the first block in the partition. \hypertarget{_sd_fat_structs_8h_af5d9e0aff08147617a09dc19d207eafe}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!free\-Count@{free\-Count}}
+\index{free\-Count@{free\-Count}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{free\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t free\-Count}}\label{_sd_fat_structs_8h_af5d9e0aff08147617a09dc19d207eafe}
+Contains the last known free cluster count on the volume. If the value is 0x\-F\-F\-F\-F\-F\-F\-F\-F, then the free count is unknown and must be computed. Any other value can be used, but is not necessarily correct. It should be range checked at least to make sure it is $<$= volume cluster count. \hypertarget{_sd_fat_structs_8h_ac569b1b465f941aaa41a17d270e278df}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G@{F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G}}
+\index{F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G@{F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const F\-S\-I\-N\-F\-O\-\_\-\-L\-E\-A\-D\-\_\-\-S\-I\-G = 0x41615252}}\label{_sd_fat_structs_8h_ac569b1b465f941aaa41a17d270e278df}
+Lead signature for a F\-S\-I\-N\-F\-O sector \hypertarget{_sd_fat_structs_8h_ab777b40d12137b9ed073b3bb578703d0}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G@{F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G}}
+\index{F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G@{F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t const F\-S\-I\-N\-F\-O\-\_\-\-S\-T\-R\-U\-C\-T\-\_\-\-S\-I\-G = 0x61417272}}\label{_sd_fat_structs_8h_ab777b40d12137b9ed073b3bb578703d0}
+Struct signature for a F\-S\-I\-N\-F\-O sector \hypertarget{_sd_fat_structs_8h_a57cb7e16b9969fa87c9f1ca43a87d217}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!head\-Count@{head\-Count}}
+\index{head\-Count@{head\-Count}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{head\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t head\-Count}}\label{_sd_fat_structs_8h_a57cb7e16b9969fa87c9f1ca43a87d217}
+Number of heads for interrupt 0x13. Not used otherwise. \hypertarget{_sd_fat_structs_8h_a454fd6cc3f063c86b7fe65c367da7cdd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!hiddden\-Sectors@{hiddden\-Sectors}}
+\index{hiddden\-Sectors@{hiddden\-Sectors}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{hiddden\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t hiddden\-Sectors}}\label{_sd_fat_structs_8h_a454fd6cc3f063c86b7fe65c367da7cdd}
+Count of hidden sectors preceding the partition that contains this F\-A\-T volume. This field is generally only relevant for media visible on interrupt 0x13. \hypertarget{_sd_fat_structs_8h_ad29ce39fde11e3efe207f3cc71924c01}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!jump@{jump}}
+\index{jump@{jump}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t jump}}\label{_sd_fat_structs_8h_ad29ce39fde11e3efe207f3cc71924c01}
+The first three bytes of the boot sector must be valid, executable x 86-\/based C\-P\-U instructions. This includes a jump instruction that skips the next nonexecutable bytes. \hypertarget{_sd_fat_structs_8h_a5635857642ec25e070355257115dafd1}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!last\-Access\-Date@{last\-Access\-Date}}
+\index{last\-Access\-Date@{last\-Access\-Date}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{last\-Access\-Date}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t last\-Access\-Date}}\label{_sd_fat_structs_8h_a5635857642ec25e070355257115dafd1}
+Last access date. Note that there is no last access time, only a date. This is the date of last read or write. In the case of a write, this should be set to the same date as last\-Write\-Date. \hypertarget{_sd_fat_structs_8h_a26f462d6e4410d502149973ee6c216fd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!last\-Write\-Date@{last\-Write\-Date}}
+\index{last\-Write\-Date@{last\-Write\-Date}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{last\-Write\-Date}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t last\-Write\-Date}}\label{_sd_fat_structs_8h_a26f462d6e4410d502149973ee6c216fd}
+Date of last write. \hyperlink{class_file}{File} creation is considered a write. \hypertarget{_sd_fat_structs_8h_ab140bb773b2ff0ddf7199efc083ce037}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!last\-Write\-Time@{last\-Write\-Time}}
+\index{last\-Write\-Time@{last\-Write\-Time}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{last\-Write\-Time}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t last\-Write\-Time}}\label{_sd_fat_structs_8h_ab140bb773b2ff0ddf7199efc083ce037}
+Time of last write. \hyperlink{class_file}{File} creation is considered a write. \hypertarget{_sd_fat_structs_8h_a19196eeae2525130bdb0d39607860743}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!lead\-Signature@{lead\-Signature}}
+\index{lead\-Signature@{lead\-Signature}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{lead\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t lead\-Signature}}\label{_sd_fat_structs_8h_a19196eeae2525130bdb0d39607860743}
+must be 0\-X52, 0\-X52, 0\-X61, 0\-X41 \hypertarget{_sd_fat_structs_8h_aa5633d8ea0049be26315e7627e32bb4e}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!mbr\-Sig0@{mbr\-Sig0}}
+\index{mbr\-Sig0@{mbr\-Sig0}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{mbr\-Sig0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t mbr\-Sig0}}\label{_sd_fat_structs_8h_aa5633d8ea0049be26315e7627e32bb4e}
+First M\-B\-R signature byte. Must be 0\-X55 \hypertarget{_sd_fat_structs_8h_af106928fafe93a641c06cfb87b0d24e3}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!mbr\-Sig1@{mbr\-Sig1}}
+\index{mbr\-Sig1@{mbr\-Sig1}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{mbr\-Sig1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t mbr\-Sig1}}\label{_sd_fat_structs_8h_af106928fafe93a641c06cfb87b0d24e3}
+Second M\-B\-R signature byte. Must be 0\-X\-A\-A \hypertarget{_sd_fat_structs_8h_ab88738f9cb91c882cb91d5e83a19a73f}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!media\-Type@{media\-Type}}
+\index{media\-Type@{media\-Type}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{media\-Type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t media\-Type}}\label{_sd_fat_structs_8h_ab88738f9cb91c882cb91d5e83a19a73f}
+This dates back to the old M\-S-\/\-D\-O\-S 1.\-x media determination and is no longer usually used for anything. 0x\-F8 is the standard value for fixed (nonremovable) media. For removable media, 0x\-F0 is frequently used. Legal values are 0x\-F0 or 0x\-F8-\/0x\-F\-F. \hypertarget{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!name@{name}}
+\index{name@{name}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t name\mbox{[}11\mbox{]}}}\label{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}
+Short 8.\-3 name.
+
+The first eight bytes contain the file name with blank fill. The last three bytes contain the file extension with blank fill. \hypertarget{_sd_fat_structs_8h_a456cdbc01678df5d05eabb80f5aac9b0}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!next\-Free@{next\-Free}}
+\index{next\-Free@{next\-Free}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{next\-Free}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t next\-Free}}\label{_sd_fat_structs_8h_a456cdbc01678df5d05eabb80f5aac9b0}
+This is a hint for the F\-A\-T driver. It indicates the cluster number at which the driver should start looking for free clusters. If the value is 0x\-F\-F\-F\-F\-F\-F\-F\-F, then there is no hint and the driver should start looking at cluster 2. \hypertarget{_sd_fat_structs_8h_a9c423397154f11b5108165f058d64c03}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!oem\-Id@{oem\-Id}}
+\index{oem\-Id@{oem\-Id}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{oem\-Id}]{\setlength{\rightskip}{0pt plus 5cm}char oem\-Id}}\label{_sd_fat_structs_8h_a9c423397154f11b5108165f058d64c03}
+This is typically a string of characters that identifies the operating system that formatted the volume. \hypertarget{_sd_fat_structs_8h_aa65f87792f271fc6cfa70980af6ac3dd}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!part@{part}}
+\index{part@{part}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf part\-\_\-t} part\mbox{[}4\mbox{]}}}\label{_sd_fat_structs_8h_aa65f87792f271fc6cfa70980af6ac3dd}
+Partition tables. \hypertarget{_sd_fat_structs_8h_affe215a7220b2d52fb9dacf3b35e56dc}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!reserved1@{reserved1}}
+\index{reserved1@{reserved1}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{reserved1}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char reserved1}}\label{_sd_fat_structs_8h_affe215a7220b2d52fb9dacf3b35e56dc}
+used by Windows N\-T -\/ should be zero for F\-A\-T
+
+must be zero \hypertarget{_sd_fat_structs_8h_a2d2f4821102b812b81b15f5e713dd8e8}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!reserved2@{reserved2}}
+\index{reserved2@{reserved2}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{reserved2}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char reserved2}}\label{_sd_fat_structs_8h_a2d2f4821102b812b81b15f5e713dd8e8}
+must be zero
+
+not used \hypertarget{_sd_fat_structs_8h_a937b2d2e4b78ddf9e42b19c754e4f31a}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!reserved\-N\-T@{reserved\-N\-T}}
+\index{reserved\-N\-T@{reserved\-N\-T}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{reserved\-N\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t reserved\-N\-T}}\label{_sd_fat_structs_8h_a937b2d2e4b78ddf9e42b19c754e4f31a}
+Reserved for use by Windows N\-T. Set value to 0 when a file is created and never modify or look at it after that. \hypertarget{_sd_fat_structs_8h_a16c854faf567331bbbfb383e6c8df6f5}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!reserved\-Sector\-Count@{reserved\-Sector\-Count}}
+\index{reserved\-Sector\-Count@{reserved\-Sector\-Count}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{reserved\-Sector\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t reserved\-Sector\-Count}}\label{_sd_fat_structs_8h_a16c854faf567331bbbfb383e6c8df6f5}
+The number of sectors preceding the start of the first F\-A\-T, including the boot sector. The value of this field is always 1.
+
+The number of sectors preceding the start of the first F\-A\-T, including the boot sector. Must not be zero \hypertarget{_sd_fat_structs_8h_aabe25e54b9c06a9a7393fc6c475d9fa1}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!root\-Dir\-Entry\-Count@{root\-Dir\-Entry\-Count}}
+\index{root\-Dir\-Entry\-Count@{root\-Dir\-Entry\-Count}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{root\-Dir\-Entry\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t root\-Dir\-Entry\-Count}}\label{_sd_fat_structs_8h_aabe25e54b9c06a9a7393fc6c475d9fa1}
+For F\-A\-T12 and F\-A\-T16 volumes, this field contains the count of 32-\/byte directory entries in the root directory. For F\-A\-T32 volumes, this field must be set to 0. For F\-A\-T12 and F\-A\-T16 volumes, this value should always specify a count that when multiplied by 32 results in a multiple of bytes\-Per\-Sector. F\-A\-T16 volumes should use the value 512.
+
+F\-A\-T12/\-F\-A\-T16 only. For F\-A\-T32 volumes, this field must be set to 0. \hypertarget{_sd_fat_structs_8h_a3ce07376c286acd8393a18a32d7ca4c0}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!sectors\-Per\-Cluster@{sectors\-Per\-Cluster}}
+\index{sectors\-Per\-Cluster@{sectors\-Per\-Cluster}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{sectors\-Per\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sectors\-Per\-Cluster}}\label{_sd_fat_structs_8h_a3ce07376c286acd8393a18a32d7ca4c0}
+Number of sectors per allocation unit. This value must be a power of 2 that is greater than 0. The legal values are 1, 2, 4, 8, 16, 32, 64, and 128. 128 should be avoided. \hypertarget{_sd_fat_structs_8h_abf85d1c57b01c8901a0cdcd0ac1babc2}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!sectors\-Per\-Fat16@{sectors\-Per\-Fat16}}
+\index{sectors\-Per\-Fat16@{sectors\-Per\-Fat16}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{sectors\-Per\-Fat16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sectors\-Per\-Fat16}}\label{_sd_fat_structs_8h_abf85d1c57b01c8901a0cdcd0ac1babc2}
+Count of sectors occupied by one F\-A\-T on F\-A\-T12/\-F\-A\-T16 volumes. On F\-A\-T32 volumes this field must be 0, and sectors\-Per\-Fat32 contains the F\-A\-T size count.
+
+On F\-A\-T32 volumes this field must be 0, and sectors\-Per\-Fat32 contains the F\-A\-T size count. \hypertarget{_sd_fat_structs_8h_a687653b3b71ab0de1f27f8ab8f331a1c}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!sectors\-Per\-Fat32@{sectors\-Per\-Fat32}}
+\index{sectors\-Per\-Fat32@{sectors\-Per\-Fat32}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{sectors\-Per\-Fat32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t sectors\-Per\-Fat32}}\label{_sd_fat_structs_8h_a687653b3b71ab0de1f27f8ab8f331a1c}
+Count of sectors occupied by one F\-A\-T on F\-A\-T32 volumes. \hypertarget{_sd_fat_structs_8h_a42886f9109ee1759d5972e871f0689a8}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!sectors\-Per\-Track@{sectors\-Per\-Track}}
+\index{sectors\-Per\-Track@{sectors\-Per\-Track}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{sectors\-Per\-Track}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sectors\-Per\-Track}}\label{_sd_fat_structs_8h_a42886f9109ee1759d5972e871f0689a8}
+Sectors per track for interrupt 0x13. Not used otherwise. \hypertarget{_sd_fat_structs_8h_a31ea8ae6a8d32f61dd576d0d4921f015}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!struct\-Signature@{struct\-Signature}}
+\index{struct\-Signature@{struct\-Signature}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{struct\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t struct\-Signature}}\label{_sd_fat_structs_8h_a31ea8ae6a8d32f61dd576d0d4921f015}
+must be 0\-X72, 0\-X72, 0\-X41, 0\-X61 \hypertarget{_sd_fat_structs_8h_a89944902cc4effcd8568575786c3a084}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!tail\-Signature@{tail\-Signature}}
+\index{tail\-Signature@{tail\-Signature}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{tail\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t tail\-Signature\mbox{[}4\mbox{]}}}\label{_sd_fat_structs_8h_a89944902cc4effcd8568575786c3a084}
+must be 0\-X00, 0\-X00, 0\-X55, 0\-X\-A\-A \hypertarget{_sd_fat_structs_8h_ab3559f69d4a46a945bd4c037070585f2}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!total\-Sectors@{total\-Sectors}}
+\index{total\-Sectors@{total\-Sectors}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{total\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t total\-Sectors}}\label{_sd_fat_structs_8h_ab3559f69d4a46a945bd4c037070585f2}
+Length of the partition, in blocks. \hypertarget{_sd_fat_structs_8h_ad717f5b9af13f8ec9d0d6d1337174dfa}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!total\-Sectors16@{total\-Sectors16}}
+\index{total\-Sectors16@{total\-Sectors16}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{total\-Sectors16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t total\-Sectors16}}\label{_sd_fat_structs_8h_ad717f5b9af13f8ec9d0d6d1337174dfa}
+This field is the old 16-\/bit total count of sectors on the volume. This count includes the count of all sectors in all four regions of the volume. This field can be 0; if it is 0, then total\-Sectors32 must be nonzero. For F\-A\-T32 volumes, this field must be 0. For F\-A\-T12 and F\-A\-T16 volumes, this field contains the sector count, and total\-Sectors32 is 0 if the total sector count fits (is less than 0x10000).
+
+For F\-A\-T32 volumes, this field must be 0. \hypertarget{_sd_fat_structs_8h_a64d5902f9e900ecc745b1c0b325d875f}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!total\-Sectors32@{total\-Sectors32}}
+\index{total\-Sectors32@{total\-Sectors32}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{total\-Sectors32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t total\-Sectors32}}\label{_sd_fat_structs_8h_a64d5902f9e900ecc745b1c0b325d875f}
+This field is the new 32-\/bit total count of sectors on the volume. This count includes the count of all sectors in all four regions of the volume. This field can be 0; if it is 0, then total\-Sectors16 must be nonzero.
+
+Contains the total number of sectors in the F\-A\-T32 volume. \hypertarget{_sd_fat_structs_8h_a1d127017fb298b889f4ba24752d08b8e}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!type@{type}}
+\index{type@{type}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t type}}\label{_sd_fat_structs_8h_a1d127017fb298b889f4ba24752d08b8e}
+Partition type. See defines that begin with P\-A\-R\-T\-\_\-\-T\-Y\-P\-E\-\_\- for some Microsoft partition types. \hypertarget{_sd_fat_structs_8h_aefe56bef1bc942c24bc7eefc4a7aefcc}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!usually\-Zero@{usually\-Zero}}
+\index{usually\-Zero@{usually\-Zero}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{usually\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t usually\-Zero}}\label{_sd_fat_structs_8h_aefe56bef1bc942c24bc7eefc4a7aefcc}
+Usually zero but may be more boot code. \hypertarget{_sd_fat_structs_8h_a4c67f30c214795e34070d3402de94f41}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!volume\-Label@{volume\-Label}}
+\index{volume\-Label@{volume\-Label}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{volume\-Label}]{\setlength{\rightskip}{0pt plus 5cm}char volume\-Label}}\label{_sd_fat_structs_8h_a4c67f30c214795e34070d3402de94f41}
+A field once used to store the volume label. The volume label is now stored as a special file in the root directory. \hypertarget{_sd_fat_structs_8h_a7c9ffcee12051cefe1724e8024af25f8}{\index{Sd\-Fat\-Structs.\-h@{Sd\-Fat\-Structs.\-h}!volume\-Serial\-Number@{volume\-Serial\-Number}}
+\index{volume\-Serial\-Number@{volume\-Serial\-Number}!SdFatStructs.h@{Sd\-Fat\-Structs.\-h}}
+\subsubsection[{volume\-Serial\-Number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t volume\-Serial\-Number}}\label{_sd_fat_structs_8h_a7c9ffcee12051cefe1724e8024af25f8}
+A random serial number created when formatting a disk, which helps to distinguish between disks. Usually generated by combining date and time. 

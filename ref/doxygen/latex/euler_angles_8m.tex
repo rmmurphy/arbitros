@@ -1,0 +1,30 @@
+\hypertarget{euler_angles_8m}{\section{C\-:/arbitros/trunk/drivers/matlab/ins/euler\-Angles.m File Reference}
+\label{euler_angles_8m}\index{C\-:/arbitros/trunk/drivers/matlab/ins/euler\-Angles.\-m@{C\-:/arbitros/trunk/drivers/matlab/ins/euler\-Angles.\-m}}
+}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{euler_angles_8m_a82d785c2b59e2a295a802334ff07dd31}{function} \mbox{[}\hyperlink{mag_plot_8m_a7993a910e3864ada05ae35fe7205d276}{roll}, \hyperlink{mag_plot_8m_afe627986b4147fc678023fb03e010791}{pitch}, \hyperlink{mag_plot_8m_aaeddb3af347c13f3d0915fb2e613acce}{yaw}\mbox{]}
+\item 
+\hyperlink{euler_angles_8m_a7993a910e3864ada05ae35fe7205d276}{roll} = atan2( \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(3,2),\hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(3,3))
+\item 
+\hyperlink{euler_angles_8m_aaeddb3af347c13f3d0915fb2e613acce}{yaw} = atan2( \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(2,1), \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}(1,1))
+\end{DoxyCompactItemize}
+
+
+\subsection{Variable Documentation}
+\hypertarget{euler_angles_8m_a82d785c2b59e2a295a802334ff07dd31}{\index{euler\-Angles.\-m@{euler\-Angles.\-m}!function@{function}}
+\index{function@{function}!eulerAngles.m@{euler\-Angles.\-m}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}function\mbox{[}{\bf roll}, {\bf pitch}, {\bf yaw}\mbox{]}}}\label{euler_angles_8m_a82d785c2b59e2a295a802334ff07dd31}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= eulerAngles( \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM})
+    %Calculate the euler angles \textcolor{keyword}{using} eq 2.17
+    \hyperlink{ahrs_8m_afe627986b4147fc678023fb03e010791}{pitch} = -atan2( \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM}(3,1), sqrt(1 - \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM}(3,1)*\hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM}(3,1)))
+\end{DoxyCode}
+\hypertarget{euler_angles_8m_a7993a910e3864ada05ae35fe7205d276}{\index{euler\-Angles.\-m@{euler\-Angles.\-m}!roll@{roll}}
+\index{roll@{roll}!eulerAngles.m@{euler\-Angles.\-m}}
+\subsubsection[{roll}]{\setlength{\rightskip}{0pt plus 5cm}roll = atan2( {\bf D\-C\-M}(3,2),{\bf D\-C\-M}(3,3))}}\label{euler_angles_8m_a7993a910e3864ada05ae35fe7205d276}
+\hypertarget{euler_angles_8m_aaeddb3af347c13f3d0915fb2e613acce}{\index{euler\-Angles.\-m@{euler\-Angles.\-m}!yaw@{yaw}}
+\index{yaw@{yaw}!eulerAngles.m@{euler\-Angles.\-m}}
+\subsubsection[{yaw}]{\setlength{\rightskip}{0pt plus 5cm}yaw = atan2( {\bf D\-C\-M}(2,1), {\bf D\-C\-M}(1,1))}}\label{euler_angles_8m_aaeddb3af347c13f3d0915fb2e613acce}

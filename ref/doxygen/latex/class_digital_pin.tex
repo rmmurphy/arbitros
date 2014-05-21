@@ -1,0 +1,201 @@
+\hypertarget{class_digital_pin}{\section{Digital\-Pin$<$ Pin\-Number $>$ Class Template Reference}
+\label{class_digital_pin}\index{Digital\-Pin$<$ Pin\-Number $>$@{Digital\-Pin$<$ Pin\-Number $>$}}
+}
+
+
+Fast A\-V\-R digital port I/\-O.  
+
+
+
+
+{\ttfamily \#include $<$Digital\-Pin.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_digital_pin_a1d78389acd564b7c9381330fdd23eb03}{Digital\-Pin} ()
+\item 
+\hyperlink{class_digital_pin_ae1517ba2394860237680fc3a3ba34073}{Digital\-Pin} (bool pin\-Mode)
+\item 
+\hyperlink{class_digital_pin_ae959501b29aba5bb264127fc9d7f5cef}{Digital\-Pin} (bool mode, bool level)
+\item 
+\hyperlink{class_digital_pin}{Digital\-Pin} \& \hyperlink{class_digital_pin_a7b60c216751ba225517cd158ed312ec5}{operator=} (bool value) \hyperlink{class_digital_pin_a0ee76ba764259da3324009b59929ed3d}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((always\-\_\-inline))
+\item 
+\hyperlink{class_digital_pin_aa06d24301da2b81f8d2f98deefd2ab07}{operator bool} () const \hyperlink{class_digital_pin_a0ee76ba764259da3324009b59929ed3d}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((always\-\_\-inline))
+\item 
+\hyperlink{class_digital_pin_a0ee76ba764259da3324009b59929ed3d}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void config(bool mode
+\item 
+\hyperlink{class_digital_pin_a1d3608d12c5d7d1ced5cf89b8a2efead}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void high()
+\item 
+\hyperlink{class_digital_pin_a7c8dfa2cd238b4c8172df8c8e0b75fa6}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void low()
+\item 
+\hyperlink{class_digital_pin_aee2526484b1601c8dd69534a1a393f60}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void mode(bool pin\-Mode)
+\item 
+\hyperlink{class_digital_pin_af31b7333e751d84df793d823254032d8}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) bool read() const 
+\item 
+\hyperlink{class_digital_pin_a57f6cf9cbd61abb7dc9bfcdc1b16edc7}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void toggle()
+\item 
+\hyperlink{class_digital_pin_a1b176c901f3bd935aad21f46fe6e5a61}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void write(bool value)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries level}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$uint8\-\_\-t Pin\-Number$>$class Digital\-Pin$<$ Pin\-Number $>$}
+
+Fast A\-V\-R digital port I/\-O. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_digital_pin_a1d78389acd564b7c9381330fdd23eb03}{\index{Digital\-Pin@{Digital\-Pin}!Digital\-Pin@{Digital\-Pin}}
+\index{Digital\-Pin@{Digital\-Pin}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{Digital\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\-Pin} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a1d78389acd564b7c9381330fdd23eb03}
+Constructor \hypertarget{class_digital_pin_ae1517ba2394860237680fc3a3ba34073}{\index{Digital\-Pin@{Digital\-Pin}!Digital\-Pin@{Digital\-Pin}}
+\index{Digital\-Pin@{Digital\-Pin}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{Digital\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\-Pin} (
+\begin{DoxyParamCaption}
+\item[{bool}]{pin\-Mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{class_digital_pin_ae1517ba2394860237680fc3a3ba34073}
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mode} & if true set output mode else input mode. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_digital_pin_ae959501b29aba5bb264127fc9d7f5cef}{\index{Digital\-Pin@{Digital\-Pin}!Digital\-Pin@{Digital\-Pin}}
+\index{Digital\-Pin@{Digital\-Pin}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{Digital\-Pin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\-Pin} (
+\begin{DoxyParamCaption}
+\item[{bool}]{mode, }
+\item[{bool}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_ae959501b29aba5bb264127fc9d7f5cef}
+Constructor 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & If true set output mode else input mode \\
+\hline
+\mbox{\tt in}  & {\em level} & If mode is output, set level high/low. If mode is input, enable or disable the pin's 20\-K pullup. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_digital_pin_a0ee76ba764259da3324009b59929ed3d}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a0ee76ba764259da3324009b59929ed3d}
+set pin configuration 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mode} & If true set output mode else input mode \\
+\hline
+\mbox{\tt in}  & {\em level} & If mode is output, set level high/low. If mode is input, enable or disable the pin's 20\-K pullup. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_digital_pin_a1d3608d12c5d7d1ced5cf89b8a2efead}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a1d3608d12c5d7d1ced5cf89b8a2efead}
+Set pin level high if output mode or enable 20\-K pullup if input mode. \hypertarget{class_digital_pin_a7c8dfa2cd238b4c8172df8c8e0b75fa6}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a7c8dfa2cd238b4c8172df8c8e0b75fa6}
+Set pin level low if output mode or disable 20\-K pullup if input mode. \hypertarget{class_digital_pin_aee2526484b1601c8dd69534a1a393f60}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_aee2526484b1601c8dd69534a1a393f60}
+Set pin mode 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin\-Mode} & if true set output mode else input mode.\\
+\hline
+\end{DoxyParams}
+mode() does not enable or disable the 20\-K pullup for input mode. \hypertarget{class_digital_pin_af31b7333e751d84df793d823254032d8}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_af31b7333e751d84df793d823254032d8}
+\begin{DoxyReturn}{Returns}
+Pin's level 
+\end{DoxyReturn}
+\hypertarget{class_digital_pin_a57f6cf9cbd61abb7dc9bfcdc1b16edc7}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a57f6cf9cbd61abb7dc9bfcdc1b16edc7}
+toggle a pin
+
+If the pin is in output mode toggle the pin's level. If the pin is in input mode toggle the state of the 20\-K pullup. \hypertarget{class_digital_pin_a1b176c901f3bd935aad21f46fe6e5a61}{\index{Digital\-Pin@{Digital\-Pin}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a1b176c901f3bd935aad21f46fe6e5a61}
+Write the pin's level. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & If true set the pin's level high else set the pin's level low. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_digital_pin_aa06d24301da2b81f8d2f98deefd2ab07}{\index{Digital\-Pin@{Digital\-Pin}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_aa06d24301da2b81f8d2f98deefd2ab07}
+Parenthesis operator \begin{DoxyReturn}{Returns}
+Pin's level 
+\end{DoxyReturn}
+\hypertarget{class_digital_pin_a7b60c216751ba225517cd158ed312ec5}{\index{Digital\-Pin@{Digital\-Pin}!operator=@{operator=}}
+\index{operator=@{operator=}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Digital\-Pin}\& operator= (
+\begin{DoxyParamCaption}
+\item[{bool}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_digital_pin_a7b60c216751ba225517cd158ed312ec5}
+Asignment operator 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & If true set the pin's level high else set the pin's level low.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This \hyperlink{class_digital_pin}{Digital\-Pin} instance. 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_digital_pin_a99e9667ea97bdf511cc167b924ec833c}{\index{Digital\-Pin@{Digital\-Pin}!level@{level}}
+\index{level@{level}!DigitalPin@{Digital\-Pin}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}bool level}}\label{class_digital_pin_a99e9667ea97bdf511cc167b924ec833c}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    fastPinConfig(PinNumber, mode, level)
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/utility/\hyperlink{_digital_pin_8h}{Digital\-Pin.\-h}\end{DoxyCompactItemize}

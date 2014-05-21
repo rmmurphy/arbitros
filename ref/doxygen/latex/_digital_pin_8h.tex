@@ -1,0 +1,60 @@
+\hypertarget{_digital_pin_8h}{\section{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/utility/\-Digital\-Pin.h File Reference}
+\label{_digital_pin_8h}\index{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/utility/\-Digital\-Pin.\-h@{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/utility/\-Digital\-Pin.\-h}}
+}
+
+
+Fast Digital Pin functions.  
+
+
+{\ttfamily \#include $<$avr/io.\-h$>$}\\*
+{\ttfamily \#include $<$util/atomic.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{structpin__map__t}{pin\-\_\-map\-\_\-t}
+\begin{DoxyCompactList}\small\item\em struct for mapping digital pins \end{DoxyCompactList}\item 
+class \hyperlink{class_digital_pin}{Digital\-Pin$<$ Pin\-Number $>$}
+\begin{DoxyCompactList}\small\item\em Fast A\-V\-R digital port I/\-O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__digital_pin_ga6a94475a4246cb2279a1b6d1090f84ac}{bad\-Pin\-Number} (void) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}Pin number is too large or not a const ant\char`\"{})))
+\item 
+static \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void bad\-Pin\-Check(uint8\-\_\-t pin)
+\item 
+\hypertarget{group__digital_pin_gad7db1200cb344310c564a5ba81165d94}{{\bfseries if} (address $>$(uint8\-\_\-t $\ast$) 0\-X5\-F)}\label{group__digital_pin_gad7db1200cb344310c564a5ba81165d94}
+
+\item 
+\hypertarget{group__digital_pin_ga4adc306038cf7fb6fd42255194822fb3}{{\bfseries if} (level)}\label{group__digital_pin_ga4adc306038cf7fb6fd42255194822fb3}
+
+\item 
+\hypertarget{group__digital_pin_gad0ab504cdbfd3a66329b31037d9ff281}{{\bfseries fast\-Bit\-Write\-Safe} (pin\-Map\mbox{[}pin\mbox{]}.port, pin\-Map\mbox{[}pin\mbox{]}.bit, level)}\label{group__digital_pin_gad0ab504cdbfd3a66329b31037d9ff281}
+
+\item 
+\hypertarget{group__digital_pin_ga251e643b0e2a8cb7e5925ea6c9181c78}{{\bfseries fast\-Bit\-Write\-Safe} (pin\-Map\mbox{[}pin\mbox{]}.ddr, pin\-Map\mbox{[}pin\mbox{]}.bit, mode)}\label{group__digital_pin_ga251e643b0e2a8cb7e5925ea6c9181c78}
+
+\item 
+\hypertarget{group__digital_pin_ga17778c1e9b0443c03cf406e4dcdcd78e}{{\bfseries fast\-Digital\-Write} (pin, level)}\label{group__digital_pin_ga17778c1e9b0443c03cf406e4dcdcd78e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\-\_\-t \hyperlink{group__digital_pin_ga3ba5f4d8ff10e60ec2d424722dd9fe92}{digital\-Pin\-Count} = sizeof(pin\-Map)/sizeof(\hyperlink{structpin__map__t}{pin\-\_\-map\-\_\-t})
+\item 
+\hypertarget{group__digital_pin_gad15e9d6879273cee61ab5b915db182a7}{static uint8\-\_\-t {\bfseries bit}}\label{group__digital_pin_gad15e9d6879273cee61ab5b915db182a7}
+
+\item 
+\hypertarget{group__digital_pin_ga3146654bb267c84258ec880e7971e7d4}{static uint8\-\_\-t bool level uint8\-\_\-t {\bfseries old\-S\-R\-E\-G}}\label{group__digital_pin_ga3146654bb267c84258ec880e7971e7d4}
+
+\item 
+{\bfseries else}
+\item 
+static bool {\bfseries level}
+\item 
+static bool {\bfseries mode}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fast Digital Pin functions. 

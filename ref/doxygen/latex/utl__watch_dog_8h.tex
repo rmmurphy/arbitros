@@ -1,0 +1,132 @@
+\hypertarget{utl__watch_dog_8h}{\section{C\-:/arbitros/trunk/utilities/headers/xmega128\-A1/utl\-\_\-watch\-Dog.h File Reference}
+\label{utl__watch_dog_8h}\index{C\-:/arbitros/trunk/utilities/headers/xmega128\-A1/utl\-\_\-watch\-Dog.\-h@{C\-:/arbitros/trunk/utilities/headers/xmega128\-A1/utl\-\_\-watch\-Dog.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__wd_config}{t\-\_\-wd\-Config}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utl__watch_dog_8h_aef68c9f83501ca945b1b9e28388a34eb}{U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y}()~( W\-D\-T.\-S\-T\-A\-T\-U\-S \& W\-D\-T\-\_\-\-S\-Y\-N\-C\-B\-U\-S\-Y\-\_\-bm )
+\item 
+\#define \hyperlink{utl__watch_dog_8h_a4e90bb8f40e5ac14b5dc3370cea59689}{U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T}()~asm(\char`\"{}wdr\char`\"{})
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{t\-\_\-wd\-Error} \{ \\*
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448aebfff5f3e13295d4b749771b6b4cb683}{W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G} = -\/5, 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a529693de31ed72d8c96127c5e2e36489}{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D} = -\/4, 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a479fecfd068cab38b9b9bd52c62ab460}{W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E} = -\/3, 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a38a6129ed12b7649e474328acd961ce9}{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E} = -\/2, 
+\\*
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448ab12c97c4f67053c006ff9f03dcdd894c}{W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P} = -\/1, 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a62a764471b95c6d888c02934714be27e}{W\-D\-\_\-\-P\-A\-S\-S\-E\-D} = 0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L} \hyperlink{utl__watch_dog_8h_a560412e4f29c2aafa8b20368ef265a9c}{utl\-\_\-request\-Wd\-Access} (void)
+\item 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{t\-\_\-wd\-Error} \hyperlink{utl__watch_dog_8h_a0fa9d554d390076c6f9dad88478828bc}{utl\-\_\-release\-Wd\-Access} (\hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L} t\-\_\-handle)
+\item 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{t\-\_\-wd\-Error} \hyperlink{utl__watch_dog_8h_a32fe128178a264ddf3db5f56f4d6a72f}{utl\-\_\-configure\-Wd} (\hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L} t\-\_\-handle, \hyperlink{structt__wd_config}{t\-\_\-wd\-Config} t\-\_\-conf)
+\item 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{t\-\_\-wd\-Error} \hyperlink{utl__watch_dog_8h_a246f45a7d6add1919a0b17fbce7f8347}{utl\-\_\-wd\-Enable} (\hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L} t\-\_\-handle)
+\item 
+\hyperlink{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{t\-\_\-wd\-Error} \hyperlink{utl__watch_dog_8h_a106a1fdb1dd3a3813299dfa2fb68f74c}{utl\-\_\-wd\-Disable} (\hyperlink{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{t\-\_\-\-W\-D\-H\-N\-D\-L} t\-\_\-handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{utl__watch_dog_8h_aef68c9f83501ca945b1b9e28388a34eb}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y@{U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y}}
+\index{U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y@{U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-T\-L\-\_\-\-W\-D\-\_\-\-I\-S\-\_\-\-S\-Y\-N\-C\-\_\-\-B\-U\-S\-Y(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~( W\-D\-T.\-S\-T\-A\-T\-U\-S \& W\-D\-T\-\_\-\-S\-Y\-N\-C\-B\-U\-S\-Y\-\_\-bm )}}\label{utl__watch_dog_8h_aef68c9f83501ca945b1b9e28388a34eb}
+\hypertarget{utl__watch_dog_8h_a4e90bb8f40e5ac14b5dc3370cea59689}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T@{U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T}}
+\index{U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T@{U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define U\-T\-L\-\_\-\-W\-D\-\_\-\-R\-E\-S\-E\-T(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)~asm(\char`\"{}wdr\char`\"{})}}\label{utl__watch_dog_8h_a4e90bb8f40e5ac14b5dc3370cea59689}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!t\-\_\-\-W\-D\-H\-N\-D\-L@{t\-\_\-\-W\-D\-H\-N\-D\-L}}
+\index{t\-\_\-\-W\-D\-H\-N\-D\-L@{t\-\_\-\-W\-D\-H\-N\-D\-L}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{t\-\_\-\-W\-D\-H\-N\-D\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-\-W\-D\-H\-N\-D\-L}}}\label{utl__watch_dog_8h_a8fbbf42f91c080829da6c7d31d6174d1}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!t\-\_\-wd\-Error@{t\-\_\-wd\-Error}}
+\index{t\-\_\-wd\-Error@{t\-\_\-wd\-Error}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{t\-\_\-wd\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-wd\-Error}}}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G@{W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G@{W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448aebfff5f3e13295d4b749771b6b4cb683}{W\-D\-\_\-\-N\-O\-\_\-\-C\-O\-N\-F\-I\-G}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448aebfff5f3e13295d4b749771b6b4cb683}
+}]\index{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D@{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D@{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a529693de31ed72d8c96127c5e2e36489}{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-P\-E\-R\-I\-O\-D}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a529693de31ed72d8c96127c5e2e36489}
+}]\index{W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E@{W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a479fecfd068cab38b9b9bd52c62ab460}{W\-D\-\_\-\-U\-N\-A\-V\-A\-I\-L\-A\-B\-L\-E}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a479fecfd068cab38b9b9bd52c62ab460}
+}]\index{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E@{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E@{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a38a6129ed12b7649e474328acd961ce9}{W\-D\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a38a6129ed12b7649e474328acd961ce9}
+}]\index{W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448ab12c97c4f67053c006ff9f03dcdd894c}{W\-D\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448ab12c97c4f67053c006ff9f03dcdd894c}
+}]\index{W\-D\-\_\-\-P\-A\-S\-S\-E\-D@{W\-D\-\_\-\-P\-A\-S\-S\-E\-D}!utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}}\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!W\-D\-\_\-\-P\-A\-S\-S\-E\-D@{W\-D\-\_\-\-P\-A\-S\-S\-E\-D}}\item[{\em 
+\hypertarget{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a62a764471b95c6d888c02934714be27e}{W\-D\-\_\-\-P\-A\-S\-S\-E\-D}\label{utl__watch_dog_8h_ae40a0c45ea8d71a537759ee9b57f3448a62a764471b95c6d888c02934714be27e}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{utl__watch_dog_8h_a32fe128178a264ddf3db5f56f4d6a72f}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!utl\-\_\-configure\-Wd@{utl\-\_\-configure\-Wd}}
+\index{utl\-\_\-configure\-Wd@{utl\-\_\-configure\-Wd}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{utl\-\_\-configure\-Wd}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-wd\-Error} utl\-\_\-configure\-Wd (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-W\-D\-H\-N\-D\-L}}]{t\-\_\-handle, }
+\item[{{\bf t\-\_\-wd\-Config}}]{t\-\_\-conf}
+\end{DoxyParamCaption}
+)}}\label{utl__watch_dog_8h_a32fe128178a264ddf3db5f56f4d6a72f}
+\hypertarget{utl__watch_dog_8h_a0fa9d554d390076c6f9dad88478828bc}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!utl\-\_\-release\-Wd\-Access@{utl\-\_\-release\-Wd\-Access}}
+\index{utl\-\_\-release\-Wd\-Access@{utl\-\_\-release\-Wd\-Access}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{utl\-\_\-release\-Wd\-Access}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-wd\-Error} utl\-\_\-release\-Wd\-Access (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-W\-D\-H\-N\-D\-L}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__watch_dog_8h_a0fa9d554d390076c6f9dad88478828bc}
+\hypertarget{utl__watch_dog_8h_a560412e4f29c2aafa8b20368ef265a9c}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!utl\-\_\-request\-Wd\-Access@{utl\-\_\-request\-Wd\-Access}}
+\index{utl\-\_\-request\-Wd\-Access@{utl\-\_\-request\-Wd\-Access}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{utl\-\_\-request\-Wd\-Access}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-W\-D\-H\-N\-D\-L} utl\-\_\-request\-Wd\-Access (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utl__watch_dog_8h_a560412e4f29c2aafa8b20368ef265a9c}
+\hypertarget{utl__watch_dog_8h_a106a1fdb1dd3a3813299dfa2fb68f74c}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!utl\-\_\-wd\-Disable@{utl\-\_\-wd\-Disable}}
+\index{utl\-\_\-wd\-Disable@{utl\-\_\-wd\-Disable}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{utl\-\_\-wd\-Disable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-wd\-Error} utl\-\_\-wd\-Disable (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-W\-D\-H\-N\-D\-L}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__watch_dog_8h_a106a1fdb1dd3a3813299dfa2fb68f74c}
+\hypertarget{utl__watch_dog_8h_a246f45a7d6add1919a0b17fbce7f8347}{\index{utl\-\_\-watch\-Dog.\-h@{utl\-\_\-watch\-Dog.\-h}!utl\-\_\-wd\-Enable@{utl\-\_\-wd\-Enable}}
+\index{utl\-\_\-wd\-Enable@{utl\-\_\-wd\-Enable}!utl_watchDog.h@{utl\-\_\-watch\-Dog.\-h}}
+\subsubsection[{utl\-\_\-wd\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-wd\-Error} utl\-\_\-wd\-Enable (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-W\-D\-H\-N\-D\-L}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__watch_dog_8h_a246f45a7d6add1919a0b17fbce7f8347}

@@ -1,0 +1,58 @@
+\hypertarget{structmaster_boot_record}{\section{master\-Boot\-Record Struct Reference}
+\label{structmaster_boot_record}\index{master\-Boot\-Record@{master\-Boot\-Record}}
+}
+
+
+Master Boot Record.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-Fat\-Structs.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{structmaster_boot_record_a714f552faf0b0f09ffc53e2ba52ddbc3}{code\-Area} \mbox{[}440\mbox{]}
+\item 
+uint32\-\_\-t \hyperlink{structmaster_boot_record_a6a40348b3b308847ba21a75829d91871}{disk\-Signature}
+\item 
+uint16\-\_\-t \hyperlink{structmaster_boot_record_aefe56bef1bc942c24bc7eefc4a7aefcc}{usually\-Zero}
+\item 
+\hyperlink{_sd_fat_structs_8h_a37251e7d5c69a159be727a3fc8c9d0e6}{part\-\_\-t} \hyperlink{structmaster_boot_record_aa65f87792f271fc6cfa70980af6ac3dd}{part} \mbox{[}4\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{structmaster_boot_record_aa5633d8ea0049be26315e7627e32bb4e}{mbr\-Sig0}
+\item 
+uint8\-\_\-t \hyperlink{structmaster_boot_record_af106928fafe93a641c06cfb87b0d24e3}{mbr\-Sig1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Master Boot Record. 
+
+The first block of a storage device that is formatted with a M\-B\-R. 
+
+\subsection{Field Documentation}
+\hypertarget{structmaster_boot_record_a714f552faf0b0f09ffc53e2ba52ddbc3}{\index{master\-Boot\-Record@{master\-Boot\-Record}!code\-Area@{code\-Area}}
+\index{code\-Area@{code\-Area}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{code\-Area}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t code\-Area\mbox{[}440\mbox{]}}}\label{structmaster_boot_record_a714f552faf0b0f09ffc53e2ba52ddbc3}
+Code Area for master boot program. \hypertarget{structmaster_boot_record_a6a40348b3b308847ba21a75829d91871}{\index{master\-Boot\-Record@{master\-Boot\-Record}!disk\-Signature@{disk\-Signature}}
+\index{disk\-Signature@{disk\-Signature}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{disk\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t disk\-Signature}}\label{structmaster_boot_record_a6a40348b3b308847ba21a75829d91871}
+Optional Windows N\-T disk signature. May contain boot code. \hypertarget{structmaster_boot_record_aa5633d8ea0049be26315e7627e32bb4e}{\index{master\-Boot\-Record@{master\-Boot\-Record}!mbr\-Sig0@{mbr\-Sig0}}
+\index{mbr\-Sig0@{mbr\-Sig0}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{mbr\-Sig0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t mbr\-Sig0}}\label{structmaster_boot_record_aa5633d8ea0049be26315e7627e32bb4e}
+First M\-B\-R signature byte. Must be 0\-X55 \hypertarget{structmaster_boot_record_af106928fafe93a641c06cfb87b0d24e3}{\index{master\-Boot\-Record@{master\-Boot\-Record}!mbr\-Sig1@{mbr\-Sig1}}
+\index{mbr\-Sig1@{mbr\-Sig1}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{mbr\-Sig1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t mbr\-Sig1}}\label{structmaster_boot_record_af106928fafe93a641c06cfb87b0d24e3}
+Second M\-B\-R signature byte. Must be 0\-X\-A\-A \hypertarget{structmaster_boot_record_aa65f87792f271fc6cfa70980af6ac3dd}{\index{master\-Boot\-Record@{master\-Boot\-Record}!part@{part}}
+\index{part@{part}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf part\-\_\-t} part\mbox{[}4\mbox{]}}}\label{structmaster_boot_record_aa65f87792f271fc6cfa70980af6ac3dd}
+Partition tables. \hypertarget{structmaster_boot_record_aefe56bef1bc942c24bc7eefc4a7aefcc}{\index{master\-Boot\-Record@{master\-Boot\-Record}!usually\-Zero@{usually\-Zero}}
+\index{usually\-Zero@{usually\-Zero}!masterBootRecord@{master\-Boot\-Record}}
+\subsubsection[{usually\-Zero}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t usually\-Zero}}\label{structmaster_boot_record_aefe56bef1bc942c24bc7eefc4a7aefcc}
+Usually zero but may be more boot code. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_fat_structs_8h}{Sd\-Fat\-Structs.\-h}\end{DoxyCompactItemize}

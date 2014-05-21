@@ -1,0 +1,648 @@
+\hypertarget{ahrs_8m}{\section{C\-:/arbitros/trunk/drivers/matlab/ins/ahrs.m File Reference}
+\label{ahrs_8m}\index{C\-:/arbitros/trunk/drivers/matlab/ins/ahrs.\-m@{C\-:/arbitros/trunk/drivers/matlab/ins/ahrs.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+id \hyperlink{ahrs_8m_a59b03f87d0711d5c7aad6ac8638a03c5}{Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:} (id Murphy,\mbox{[}Date\mbox{]} id September,\mbox{[}References\mbox{]} id Matrix,\mbox{[}I\-M\-U\mbox{]} id ahrs\-Samples)
+\item 
+id \hyperlink{ahrs_8m_a87aa27e835ca8ba024646b16c4b7091c}{gyro\-Full\-Scale\-Value} ()
+\item 
+id \hyperlink{ahrs_8m_a4ff248a90c101bf3e3713c17cd3ffab0}{dt} ()
+\item 
+\hyperlink{ahrs_8m_a05bac2be733d087d85932df0d9e20fba}{mean} (\hyperlink{ahrs_8m_ad407ff5737c974d6599ce33961009bdb}{gyr}(1\-:num\-Samp\-In10\-Sec, 2))$\ast$\hyperlink{ahrs_8m_a290addc07b6cd3693596a8579c60d46b}{gyro\-Conversion}
+\item 
+\hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean} (\hyperlink{ahrs_8m_ad407ff5737c974d6599ce33961009bdb}{gyr}(1\-:num\-Samp\-In10\-Sec, 3))$\ast$\hyperlink{ahrs_8m_a290addc07b6cd3693596a8579c60d46b}{gyro\-Conversion}\mbox{]}
+\item 
+\hyperlink{ahrs_8m_a59cef41b84a510b05949a109fc981465}{D\-C\-M} (1, 2)
+\item 
+\hyperlink{ahrs_8m_aa01559a5053d2bd6c72a7acc1b3559bc}{D\-C\-M} (1, 3)
+\item 
+\hyperlink{ahrs_8m_ad727b9519fcc161753de4468344405d9}{D\-C\-M} (2, 1)
+\item 
+\hyperlink{ahrs_8m_a76fd75a973195470fdb0d358ffc82db0}{D\-C\-M} (2, 2)
+\item 
+\hyperlink{ahrs_8m_a8e63131a90c4589b48ae6dc5680a0a6c}{D\-C\-M} (2, 3)
+\item 
+\hyperlink{ahrs_8m_a169fe0d483c9724440df238708f4af8a}{D\-C\-M} (3, 1)
+\item 
+\hyperlink{ahrs_8m_aaf5d1cc6fe2b0a60903d81bcb152c95c}{D\-C\-M} (3, 2)
+\item 
+\hyperlink{ahrs_8m_ace9a10cace27314ed3f9f023c0df56bc}{D\-C\-M} (3, 3)
+\item 
+\hyperlink{ahrs_8m_a9a20bd6695b05fe2c5880fd06d12d8cd}{acc} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}, 2)
+\item 
+\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}, 3)
+\item 
+\hyperlink{ahrs_8m_a09793ea2d892d0ffcd0bf2aa9a46f1a4}{gyr} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}, 1)
+\item 
+\hyperlink{ahrs_8m_a53d2c06d86c46dadfbb653f2a2259ae2}{gyr} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}, 2)
+\item 
+\hyperlink{ahrs_8m_ad407ff5737c974d6599ce33961009bdb}{gyr} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}, 3)
+\item 
+\hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T},\-:)
+\item 
+Get the magnetic field vector \\*
+in the nav frame \hyperlink{ahrs_8m_a6c09ea21d23865d2f25f4a050d6c0c3b}{delta\-Z} (1)
+\item 
+Roll \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} is based \hyperlink{mag_plot_8m_a58ab1fd68e97078232808206b850161b}{on} the \hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x} \\*
+grav \hyperlink{ahrs_8m_a3ae15444340ade1028cb8e11f80c66f4}{component} \hyperlink{ahrs_8m_a4fc9cfc74a43cb279b37445232ae9c89}{delta\-Z} (2)
+\item 
+Pitch \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} is based \hyperlink{mag_plot_8m_a58ab1fd68e97078232808206b850161b}{on} the \hyperlink{mag_plot_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} \\*
+grav \hyperlink{ahrs_8m_a3ae15444340ade1028cb8e11f80c66f4}{component} \hyperlink{ahrs_8m_a125d2e390dcd2b79fe0e483c5b83a7bc}{delta\-Z} (3)
+\item 
+\hyperlink{ahrs_8m_abcb9e071857020e3d766bca269d2c94f}{res} (2)
+\item 
+\hyperlink{ahrs_8m_abd5a608aae9055fc55bf7bf0277abdf7}{res} (3)
+\item 
+\hyperlink{ahrs_8m_a95753b4bbe6914bbef589af6a60f4427}{roll\-Res} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T})
+\item 
+\hyperlink{ahrs_8m_ab63d47b5f8b706137c47cedf7289033f}{pitch\-Res} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T})
+\item 
+\hyperlink{ahrs_8m_a282896eb1be5e5fd179ecb8c5a7e8f90}{yaw\-Res} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T})
+\item 
+\hyperlink{ahrs_8m_ae8b4ff61c39c5c2ea8ece84aed662c7f}{r\-Var} (1)
+\item 
+\hyperlink{ahrs_8m_aa8a1c3feb63aa7583d90b465918eb3dd}{r\-Var} (2)
+\item 
+\hyperlink{ahrs_8m_a32aadae37f025a94364f993e73bb5a78}{r\-Var} (3)
+\item 
+\hyperlink{ahrs_8m_ab1e8f3ab43552267b31f6affb4eeeede}{res1} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}-\/200, 1)
+\item 
+\hyperlink{ahrs_8m_a97e6d77f3cdff288c94a8e6bfd907f3c}{res1} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}-\/200, 2)
+\item 
+\hyperlink{ahrs_8m_a505598bbbe2c0b33730137a70f597f43}{res1} (\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}-\/200, 3)
+\item 
+\hyperlink{ahrs_8m_a1c5847702f8720f23af3dd9ec78cfd1a}{plot} (\hyperlink{mag_plot_8m_a7993a910e3864ada05ae35fe7205d276}{roll} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_ad943efe1dd23e2ce15b29c9e574d4831}{plot} (\hyperlink{ahrs_8m_a89275c8183fafd650ed6b8a7c02f714b}{roll1} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_aa9783daa006da149652758b739ab346f}{plot} (\hyperlink{ahrs_8m_a505598bbbe2c0b33730137a70f597f43}{res1}(1\-:\hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end}, 1)$\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_a8d7bf9092ce3afa71b8f0c2eabd30967}{plot} (\hyperlink{mag_plot_8m_afe627986b4147fc678023fb03e010791}{pitch} $\ast$32767/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_a6e9b7f9943700a8af6fb20acf8deacbe}{plot} (\hyperlink{ahrs_8m_aa22c177f7f7d01863aaa7a522b8f1be8}{pitch1} $\ast$32767/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_ab5a746a2391f3b1b6df0f21f52932e50}{plot} (\hyperlink{mag_plot_8m_aaeddb3af347c13f3d0915fb2e613acce}{yaw} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_ada8d5be4b4abdb329a6dca82f0f0996a}{plot} (\hyperlink{ahrs_8m_a8e4874ace740fd5068c6b5f279282a92}{yaw1} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_a84769f1123dc37b5d66f2a1122160b1a}{plot} (\hyperlink{ahrs_8m_a282896eb1be5e5fd179ecb8c5a7e8f90}{yaw\-Res} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_a095a65028d45853d8e4d9a5544ce7a04}{plot} (\hyperlink{ahrs_8m_ab63d47b5f8b706137c47cedf7289033f}{pitch\-Res} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\item 
+\hyperlink{ahrs_8m_aaf940da81d10bfe89538dbbab5c6ddfb}{plot} (\hyperlink{ahrs_8m_a95753b4bbe6914bbef589af6a60f4427}{roll\-Res} $\ast$180/\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ahrs_8m_a50a97477ff59a28b3dd9315b21e66a23}{seconds}
+\item 
+\hyperlink{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{A} value of \hyperlink{ahrs_8m_aceb79e72e64673a9474e8313f599584d}{fxpnt} represents deg \hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} \hyperlink{ahrs_8m_a290addc07b6cd3693596a8579c60d46b}{gyro\-Conversion} = (gyro\-Full\-Scale\-Range / \hyperlink{ahrs_8m_a87aa27e835ca8ba024646b16c4b7091c}{gyro\-Full\-Scale\-Value})$\ast$\hyperlink{mag_plot_8m_aee307926074ece43f45be386744f9397}{pi}/180
+\item 
+rad \hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} \hyperlink{ahrs_8m_aceb79e72e64673a9474e8313f599584d}{fxpnt}
+\item 
+rad \hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} \hyperlink{ahrs_8m_a99205e6391ee965122edaa503a64ac1a}{y}
+\item 
+\hyperlink{ahrs_8m_ad75173b0194fe0ad917f9f1e70cc18c0}{avr\-Acc\-X} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}(1\-:num\-Samp\-In10\-Sec,1))
+\item 
+\hyperlink{ahrs_8m_a02300035a8ea0db48e7b88c290692f5c}{avr\-Acc\-Y} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}(1\-:num\-Samp\-In10\-Sec,2))
+\item 
+\hyperlink{ahrs_8m_a34324c8732eec0f38b5a2d11ecfb04e3}{avr\-Acc\-Z} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}(1\-:num\-Samp\-In10\-Sec,3))
+\item 
+\hyperlink{ahrs_8m_ac87c61ca9eeb786f6b66106c207fb433}{avr\-Mag\-X} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag}(1\-:num\-Samp\-In10\-Sec,1))
+\item 
+\hyperlink{ahrs_8m_a90367c3a723d4f4f8743fbef322a897f}{avr\-Mag\-Y} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag}(1\-:num\-Samp\-In10\-Sec,2))
+\item 
+\hyperlink{ahrs_8m_a3320b42e2051d7b55f73a5236edfcf01}{avr\-Mag\-Z} = \hyperlink{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{mean}(\hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag}(1\-:num\-Samp\-In10\-Sec,3))
+\item 
+magnetometer \hyperlink{ahrs_8m_aebc7d7462b5d60cbdfd443bacf4d3132}{bias}
+\item 
+magnetometer \hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and} gyro scale \\*
+factor \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} which we don t \\*
+know at this point unless we \\*
+have performed the ellipsoid \\*
+fit \hyperlink{ahrs_8m_a83faab68a35ae3221d423fcb1ecfb01e}{algorithm}
+\item 
+\hyperlink{ahrs_8m_a252357e24c7514de04d2e21cbc91134c}{m\-Bias} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}(3,1)
+\item 
+\hyperlink{ahrs_8m_a41ff8572fa45a49861e7dbd98b46143f}{g\-Scale} = ones(3,1)
+\item 
+\hyperlink{ahrs_8m_a7993a910e3864ada05ae35fe7205d276}{roll} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_afe627986b4147fc678023fb03e010791}{pitch} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_aaeddb3af347c13f3d0915fb2e613acce}{yaw} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a89275c8183fafd650ed6b8a7c02f714b}{roll1} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_aa22c177f7f7d01863aaa7a522b8f1be8}{pitch1} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a8e4874ace740fd5068c6b5f279282a92}{yaw1} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a8459ea67c34367494089f4a6cac911f1}{d\-G\-Bias} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}(3,1)
+\item 
+\hyperlink{ahrs_8m_a413d6fe48b0e04f1b6fa01cfa5924b42}{d\-G\-Scale} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}(3,1)
+\item 
+\hyperlink{ahrs_8m_aa95f92209a91048e52c2c3d618db455b}{body\-Accel} = 0
+\item 
+\hyperlink{ahrs_8m_a4de30eb625e2352cfacde6853fc777e6}{roll\-Res} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a623284ae7e227905486cd76d90afbbe2}{pitch\-Res} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a89aa57050663083e6b64dc6a86f9cbde}{yaw\-Res} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}), 1)
+\item 
+\hyperlink{ahrs_8m_a3b4c7dd36cf1373f3f0564ec7dcc7be6}{roll\-Res\-Var} = 0
+\item 
+\hyperlink{ahrs_8m_a7ea51f1e8a28001b3a86dbabf7de9e47}{pitch\-Res\-Var} = 0
+\item 
+\hyperlink{ahrs_8m_a567bb3c3d1b9d760f6457a86f17d7fd8}{yaw\-Res\-Var} = 0
+\item 
+\hyperlink{ahrs_8m_a000558939f90645fbd9df213964f10c0}{D\-C\-M1} = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}( 3,3,\hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length}(\hyperlink{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{acc}))
+\item 
+\hyperlink{ahrs_8m_a771ecea63ee63666f17cf8f4afd0d6ae}{i\-\_\-count} = 0
+\item 
+\hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and}
+\item 
+Get the gravity vector in the \\*
+nav frame \hyperlink{ahrs_8m_a743b1f788bef89cfd501f99616d9a917}{mag\-N} = \hyperlink{dcm_normalize_8m_acb1204fdbdc06fd21577791c7d91217d}{D\-C\-M}$\ast$\hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag}(\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T},\-:)'
+\item 
+Yaw \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} is based \hyperlink{mag_plot_8m_a58ab1fd68e97078232808206b850161b}{on} the \hyperlink{mag_plot_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} \hyperlink{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{mag} \hyperlink{ahrs_8m_a3ae15444340ade1028cb8e11f80c66f4}{component}
+\item 
+where \hyperlink{ahrs_8m_ae49740b4cb1b92c947eb5c14ac953acf}{T}
+\item 
+\hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} \hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} hold \hyperlink{ahrs_8m_af470882f7e2022851bcd30badb9762f1}{all}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ahrs_8m_a9a20bd6695b05fe2c5880fd06d12d8cd}{\index{ahrs.\-m@{ahrs.\-m}!acc@{acc}}
+\index{acc@{acc}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{acc}]{\setlength{\rightskip}{0pt plus 5cm}acc (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a9a20bd6695b05fe2c5880fd06d12d8cd}
+\hypertarget{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}{\index{ahrs.\-m@{ahrs.\-m}!acc@{acc}}
+\index{acc@{acc}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{acc}]{\setlength{\rightskip}{0pt plus 5cm}acc (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a1429907de7d3bd59f8a3ea0aeb39116a}
+\hypertarget{ahrs_8m_a59cef41b84a510b05949a109fc981465}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a59cef41b84a510b05949a109fc981465}
+\hypertarget{ahrs_8m_aa01559a5053d2bd6c72a7acc1b3559bc}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{1}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_aa01559a5053d2bd6c72a7acc1b3559bc}
+\hypertarget{ahrs_8m_ad727b9519fcc161753de4468344405d9}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ad727b9519fcc161753de4468344405d9}
+\hypertarget{ahrs_8m_a76fd75a973195470fdb0d358ffc82db0}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a76fd75a973195470fdb0d358ffc82db0}
+\hypertarget{ahrs_8m_a8e63131a90c4589b48ae6dc5680a0a6c}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{2}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a8e63131a90c4589b48ae6dc5680a0a6c}
+\hypertarget{ahrs_8m_a169fe0d483c9724440df238708f4af8a}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a169fe0d483c9724440df238708f4af8a}
+\hypertarget{ahrs_8m_aaf5d1cc6fe2b0a60903d81bcb152c95c}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_aaf5d1cc6fe2b0a60903d81bcb152c95c}
+\hypertarget{ahrs_8m_ace9a10cace27314ed3f9f023c0df56bc}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M@{D\-C\-M}}
+\index{D\-C\-M@{D\-C\-M}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M (
+\begin{DoxyParamCaption}
+\item[{3}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ace9a10cace27314ed3f9f023c0df56bc}
+\hypertarget{ahrs_8m_a6c09ea21d23865d2f25f4a050d6c0c3b}{\index{ahrs.\-m@{ahrs.\-m}!delta\-Z@{delta\-Z}}
+\index{delta\-Z@{delta\-Z}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{delta\-Z}]{\setlength{\rightskip}{0pt plus 5cm}Get the magnetic field vector in the nav frame delta\-Z (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a6c09ea21d23865d2f25f4a050d6c0c3b}
+\hypertarget{ahrs_8m_a4fc9cfc74a43cb279b37445232ae9c89}{\index{ahrs.\-m@{ahrs.\-m}!delta\-Z@{delta\-Z}}
+\index{delta\-Z@{delta\-Z}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{delta\-Z}]{\setlength{\rightskip}{0pt plus 5cm}Roll {\bf error} is based {\bf on} the {\bf x} grav {\bf component} delta\-Z (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a4fc9cfc74a43cb279b37445232ae9c89}
+\hypertarget{ahrs_8m_a125d2e390dcd2b79fe0e483c5b83a7bc}{\index{ahrs.\-m@{ahrs.\-m}!delta\-Z@{delta\-Z}}
+\index{delta\-Z@{delta\-Z}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{delta\-Z}]{\setlength{\rightskip}{0pt plus 5cm}Pitch {\bf error} is based {\bf on} the {\bf y} grav {\bf component} delta\-Z (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a125d2e390dcd2b79fe0e483c5b83a7bc}
+\hypertarget{ahrs_8m_a4ff248a90c101bf3e3713c17cd3ffab0}{\index{ahrs.\-m@{ahrs.\-m}!dt@{dt}}
+\index{dt@{dt}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{dt}]{\setlength{\rightskip}{0pt plus 5cm}id dt (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{ahrs_8m_a4ff248a90c101bf3e3713c17cd3ffab0}
+\hypertarget{ahrs_8m_a09793ea2d892d0ffcd0bf2aa9a46f1a4}{\index{ahrs.\-m@{ahrs.\-m}!gyr@{gyr}}
+\index{gyr@{gyr}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{gyr}]{\setlength{\rightskip}{0pt plus 5cm}gyr (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a09793ea2d892d0ffcd0bf2aa9a46f1a4}
+\hypertarget{ahrs_8m_a53d2c06d86c46dadfbb653f2a2259ae2}{\index{ahrs.\-m@{ahrs.\-m}!gyr@{gyr}}
+\index{gyr@{gyr}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{gyr}]{\setlength{\rightskip}{0pt plus 5cm}gyr (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a53d2c06d86c46dadfbb653f2a2259ae2}
+\hypertarget{ahrs_8m_ad407ff5737c974d6599ce33961009bdb}{\index{ahrs.\-m@{ahrs.\-m}!gyr@{gyr}}
+\index{gyr@{gyr}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{gyr}]{\setlength{\rightskip}{0pt plus 5cm}gyr (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ad407ff5737c974d6599ce33961009bdb}
+\hypertarget{ahrs_8m_a87aa27e835ca8ba024646b16c4b7091c}{\index{ahrs.\-m@{ahrs.\-m}!gyro\-Full\-Scale\-Value@{gyro\-Full\-Scale\-Value}}
+\index{gyro\-Full\-Scale\-Value@{gyro\-Full\-Scale\-Value}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{gyro\-Full\-Scale\-Value}]{\setlength{\rightskip}{0pt plus 5cm}id gyro\-Full\-Scale\-Value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [virtual]}}}\label{ahrs_8m_a87aa27e835ca8ba024646b16c4b7091c}
+\hypertarget{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}{\index{ahrs.\-m@{ahrs.\-m}!mag@{mag}}
+\index{mag@{mag}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{mag}]{\setlength{\rightskip}{0pt plus 5cm}mag (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{, }
+\item[{\-:}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a934b98afbb582f3344dae4b6d293762f}
+\hypertarget{ahrs_8m_a05bac2be733d087d85932df0d9e20fba}{\index{ahrs.\-m@{ahrs.\-m}!mean@{mean}}
+\index{mean@{mean}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{mean}]{\setlength{\rightskip}{0pt plus 5cm}mean (
+\begin{DoxyParamCaption}
+\item[{{\bf gyr}(1\-:num\-Samp\-In10\-Sec, 2)}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a05bac2be733d087d85932df0d9e20fba}
+\hypertarget{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}{\index{ahrs.\-m@{ahrs.\-m}!mean@{mean}}
+\index{mean@{mean}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{mean}]{\setlength{\rightskip}{0pt plus 5cm}mean (
+\begin{DoxyParamCaption}
+\item[{{\bf gyr}(1\-:num\-Samp\-In10\-Sec, 3)}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a5ee419443ced73d345810f5724d7f1b8}
+\hypertarget{ahrs_8m_ab63d47b5f8b706137c47cedf7289033f}{\index{ahrs.\-m@{ahrs.\-m}!pitch\-Res@{pitch\-Res}}
+\index{pitch\-Res@{pitch\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{pitch\-Res}]{\setlength{\rightskip}{0pt plus 5cm}pitch\-Res (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ab63d47b5f8b706137c47cedf7289033f}
+\hypertarget{ahrs_8m_a1c5847702f8720f23af3dd9ec78cfd1a}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf roll} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a1c5847702f8720f23af3dd9ec78cfd1a}
+\hypertarget{ahrs_8m_ad943efe1dd23e2ce15b29c9e574d4831}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf roll1} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ad943efe1dd23e2ce15b29c9e574d4831}
+\hypertarget{ahrs_8m_aa9783daa006da149652758b739ab346f}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf res1}(1\-:{\bf end}, 1)$\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_aa9783daa006da149652758b739ab346f}
+\hypertarget{ahrs_8m_a8d7bf9092ce3afa71b8f0c2eabd30967}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf pitch} $\ast$32767/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a8d7bf9092ce3afa71b8f0c2eabd30967}
+\hypertarget{ahrs_8m_a6e9b7f9943700a8af6fb20acf8deacbe}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf pitch1} $\ast$32767/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a6e9b7f9943700a8af6fb20acf8deacbe}
+\hypertarget{ahrs_8m_ab5a746a2391f3b1b6df0f21f52932e50}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf yaw} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ab5a746a2391f3b1b6df0f21f52932e50}
+\hypertarget{ahrs_8m_ada8d5be4b4abdb329a6dca82f0f0996a}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf yaw1} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ada8d5be4b4abdb329a6dca82f0f0996a}
+\hypertarget{ahrs_8m_a84769f1123dc37b5d66f2a1122160b1a}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf yaw\-Res} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a84769f1123dc37b5d66f2a1122160b1a}
+\hypertarget{ahrs_8m_a095a65028d45853d8e4d9a5544ce7a04}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf pitch\-Res} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a095a65028d45853d8e4d9a5544ce7a04}
+\hypertarget{ahrs_8m_aaf940da81d10bfe89538dbbab5c6ddfb}{\index{ahrs.\-m@{ahrs.\-m}!plot@{plot}}
+\index{plot@{plot}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{plot}]{\setlength{\rightskip}{0pt plus 5cm}plot (
+\begin{DoxyParamCaption}
+\item[{{\bf roll\-Res} $\ast$180/}]{pi}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_aaf940da81d10bfe89538dbbab5c6ddfb}
+\hypertarget{ahrs_8m_a59b03f87d0711d5c7aad6ac8638a03c5}{\index{ahrs.\-m@{ahrs.\-m}!Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:@{Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:}}
+\index{Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:@{Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-:}]{\setlength{\rightskip}{0pt plus 5cm}id Programmer\-:\-Date\-:\-References\-:\-I\-M\-U\-: (
+\begin{DoxyParamCaption}
+\item[{id}]{Murphy, }
+\item[{\mbox{[}\-Date\mbox{]} id}]{September, }
+\item[{\mbox{[}\-References\mbox{]} id}]{Matrix, }
+\item[{\mbox{[}\-I\-M\-U\mbox{]} id}]{ahrs\-Samples}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{ahrs_8m_a59b03f87d0711d5c7aad6ac8638a03c5}
+\hypertarget{ahrs_8m_abcb9e071857020e3d766bca269d2c94f}{\index{ahrs.\-m@{ahrs.\-m}!res@{res}}
+\index{res@{res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{res}]{\setlength{\rightskip}{0pt plus 5cm}res (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_abcb9e071857020e3d766bca269d2c94f}
+\hypertarget{ahrs_8m_abd5a608aae9055fc55bf7bf0277abdf7}{\index{ahrs.\-m@{ahrs.\-m}!res@{res}}
+\index{res@{res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{res}]{\setlength{\rightskip}{0pt plus 5cm}res (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_abd5a608aae9055fc55bf7bf0277abdf7}
+\hypertarget{ahrs_8m_ab1e8f3ab43552267b31f6affb4eeeede}{\index{ahrs.\-m@{ahrs.\-m}!res1@{res1}}
+\index{res1@{res1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{res1}]{\setlength{\rightskip}{0pt plus 5cm}res1 (
+\begin{DoxyParamCaption}
+\item[{{\bf T}-\/}]{200, }
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ab1e8f3ab43552267b31f6affb4eeeede}
+\hypertarget{ahrs_8m_a97e6d77f3cdff288c94a8e6bfd907f3c}{\index{ahrs.\-m@{ahrs.\-m}!res1@{res1}}
+\index{res1@{res1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{res1}]{\setlength{\rightskip}{0pt plus 5cm}res1 (
+\begin{DoxyParamCaption}
+\item[{{\bf T}-\/}]{200, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a97e6d77f3cdff288c94a8e6bfd907f3c}
+\hypertarget{ahrs_8m_a505598bbbe2c0b33730137a70f597f43}{\index{ahrs.\-m@{ahrs.\-m}!res1@{res1}}
+\index{res1@{res1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{res1}]{\setlength{\rightskip}{0pt plus 5cm}res1 (
+\begin{DoxyParamCaption}
+\item[{{\bf T}-\/}]{200, }
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a505598bbbe2c0b33730137a70f597f43}
+\hypertarget{ahrs_8m_a95753b4bbe6914bbef589af6a60f4427}{\index{ahrs.\-m@{ahrs.\-m}!roll\-Res@{roll\-Res}}
+\index{roll\-Res@{roll\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{roll\-Res}]{\setlength{\rightskip}{0pt plus 5cm}roll\-Res (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a95753b4bbe6914bbef589af6a60f4427}
+\hypertarget{ahrs_8m_ae8b4ff61c39c5c2ea8ece84aed662c7f}{\index{ahrs.\-m@{ahrs.\-m}!r\-Var@{r\-Var}}
+\index{r\-Var@{r\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{r\-Var}]{\setlength{\rightskip}{0pt plus 5cm}r\-Var (
+\begin{DoxyParamCaption}
+\item[{1}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_ae8b4ff61c39c5c2ea8ece84aed662c7f}
+\hypertarget{ahrs_8m_aa8a1c3feb63aa7583d90b465918eb3dd}{\index{ahrs.\-m@{ahrs.\-m}!r\-Var@{r\-Var}}
+\index{r\-Var@{r\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{r\-Var}]{\setlength{\rightskip}{0pt plus 5cm}r\-Var (
+\begin{DoxyParamCaption}
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_aa8a1c3feb63aa7583d90b465918eb3dd}
+\hypertarget{ahrs_8m_a32aadae37f025a94364f993e73bb5a78}{\index{ahrs.\-m@{ahrs.\-m}!r\-Var@{r\-Var}}
+\index{r\-Var@{r\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{r\-Var}]{\setlength{\rightskip}{0pt plus 5cm}r\-Var (
+\begin{DoxyParamCaption}
+\item[{3}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a32aadae37f025a94364f993e73bb5a78}
+\hypertarget{ahrs_8m_a282896eb1be5e5fd179ecb8c5a7e8f90}{\index{ahrs.\-m@{ahrs.\-m}!yaw\-Res@{yaw\-Res}}
+\index{yaw\-Res@{yaw\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{yaw\-Res}]{\setlength{\rightskip}{0pt plus 5cm}yaw\-Res (
+\begin{DoxyParamCaption}
+\item[{{\bf T}}]{}
+\end{DoxyParamCaption}
+)}}\label{ahrs_8m_a282896eb1be5e5fd179ecb8c5a7e8f90}
+
+
+\subsection{Variable Documentation}
+\hypertarget{ahrs_8m_a83faab68a35ae3221d423fcb1ecfb01e}{\index{ahrs.\-m@{ahrs.\-m}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{algorithm}]{\setlength{\rightskip}{0pt plus 5cm}magnetometer {\bf and} gyro scale factor {\bf error} which we don t know at this point unless we have performed the ellipsoid fit algorithm}}\label{ahrs_8m_a83faab68a35ae3221d423fcb1ecfb01e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+==========================================================================
+aBias = \hyperlink{error_state_kalman_8m_aa4a09e5b046bcf56ad20ff9257147ecf}{zeros}(3,1)
+\end{DoxyCode}
+\hypertarget{ahrs_8m_af470882f7e2022851bcd30badb9762f1}{\index{ahrs.\-m@{ahrs.\-m}!all@{all}}
+\index{all@{all}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{all}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf end} hold all}}\label{ahrs_8m_af470882f7e2022851bcd30badb9762f1}
+\hypertarget{ahrs_8m_afa199521a240e64469e26df8973798f0}{\index{ahrs.\-m@{ahrs.\-m}!and@{and}}
+\index{and@{and}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{and}]{\setlength{\rightskip}{0pt plus 5cm}where {\bf delta\-Z} is the attitude {\bf error} measurement \mbox{[}3\mbox{]} unlabeled eq s in section and}}\label{ahrs_8m_afa199521a240e64469e26df8973798f0}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+======================================================================     
+    \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM} = \hyperlink{drv__ins_8c_a22385b8389c683e5db41eb34fbb01f68}{dcmNormalize}( \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM})
+\end{DoxyCode}
+\hypertarget{ahrs_8m_ad75173b0194fe0ad917f9f1e70cc18c0}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Acc\-X@{avr\-Acc\-X}}
+\index{avr\-Acc\-X@{avr\-Acc\-X}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Acc\-X}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Acc\-X = {\bf mean}({\bf acc}(1\-:num\-Samp\-In10\-Sec,1))}}\label{ahrs_8m_ad75173b0194fe0ad917f9f1e70cc18c0}
+\hypertarget{ahrs_8m_a02300035a8ea0db48e7b88c290692f5c}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Acc\-Y@{avr\-Acc\-Y}}
+\index{avr\-Acc\-Y@{avr\-Acc\-Y}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Acc\-Y}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Acc\-Y = {\bf mean}({\bf acc}(1\-:num\-Samp\-In10\-Sec,2))}}\label{ahrs_8m_a02300035a8ea0db48e7b88c290692f5c}
+\hypertarget{ahrs_8m_a34324c8732eec0f38b5a2d11ecfb04e3}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Acc\-Z@{avr\-Acc\-Z}}
+\index{avr\-Acc\-Z@{avr\-Acc\-Z}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Acc\-Z}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Acc\-Z = {\bf mean}({\bf acc}(1\-:num\-Samp\-In10\-Sec,3))}}\label{ahrs_8m_a34324c8732eec0f38b5a2d11ecfb04e3}
+\hypertarget{ahrs_8m_ac87c61ca9eeb786f6b66106c207fb433}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Mag\-X@{avr\-Mag\-X}}
+\index{avr\-Mag\-X@{avr\-Mag\-X}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Mag\-X}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Mag\-X = {\bf mean}({\bf mag}(1\-:num\-Samp\-In10\-Sec,1))}}\label{ahrs_8m_ac87c61ca9eeb786f6b66106c207fb433}
+\hypertarget{ahrs_8m_a90367c3a723d4f4f8743fbef322a897f}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Mag\-Y@{avr\-Mag\-Y}}
+\index{avr\-Mag\-Y@{avr\-Mag\-Y}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Mag\-Y}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Mag\-Y = {\bf mean}({\bf mag}(1\-:num\-Samp\-In10\-Sec,2))}}\label{ahrs_8m_a90367c3a723d4f4f8743fbef322a897f}
+\hypertarget{ahrs_8m_a3320b42e2051d7b55f73a5236edfcf01}{\index{ahrs.\-m@{ahrs.\-m}!avr\-Mag\-Z@{avr\-Mag\-Z}}
+\index{avr\-Mag\-Z@{avr\-Mag\-Z}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{avr\-Mag\-Z}]{\setlength{\rightskip}{0pt plus 5cm}avr\-Mag\-Z = {\bf mean}({\bf mag}(1\-:num\-Samp\-In10\-Sec,3))}}\label{ahrs_8m_a3320b42e2051d7b55f73a5236edfcf01}
+\hypertarget{ahrs_8m_aebc7d7462b5d60cbdfd443bacf4d3132}{\index{ahrs.\-m@{ahrs.\-m}!bias@{bias}}
+\index{bias@{bias}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{bias}]{\setlength{\rightskip}{0pt plus 5cm}magnetometer bias}}\label{ahrs_8m_aebc7d7462b5d60cbdfd443bacf4d3132}
+\hypertarget{ahrs_8m_aa95f92209a91048e52c2c3d618db455b}{\index{ahrs.\-m@{ahrs.\-m}!body\-Accel@{body\-Accel}}
+\index{body\-Accel@{body\-Accel}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{body\-Accel}]{\setlength{\rightskip}{0pt plus 5cm}body\-Accel = 0}}\label{ahrs_8m_aa95f92209a91048e52c2c3d618db455b}
+\hypertarget{ahrs_8m_a3ae15444340ade1028cb8e11f80c66f4}{\index{ahrs.\-m@{ahrs.\-m}!component@{component}}
+\index{component@{component}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{component}]{\setlength{\rightskip}{0pt plus 5cm}Yaw {\bf error} is based {\bf on} the {\bf y} {\bf mag} component}}\label{ahrs_8m_a3ae15444340ade1028cb8e11f80c66f4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+======================================================================
+    % Compare the corrected attitude to the uncorrected \textcolor{keywordflow}{for} use in kalman
+    % \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error} monitoring
+    %======================================================================    
+    \hyperlink{ahrs_8m_abcb9e071857020e3d766bca269d2c94f}{res}(1) = abs(\hyperlink{drv__ins_8c_a84d967b3e2481165902ec69a8cf36b75}{phaseError}(\hyperlink{ahrs_8m_a89275c8183fafd650ed6b8a7c02f714b}{roll1}(\hyperlink{ahrs_8m_ae49740b4cb1b92c947eb5c14ac953acf}{T}), \hyperlink{acc_roll_pitch_8m_a7993a910e3864ada05ae35fe7205d276}{roll}(\hyperlink{ahrs_8m_ae49740b4cb1b92c947eb5c14ac953acf}{T})))
+\end{DoxyCode}
+\hypertarget{ahrs_8m_a000558939f90645fbd9df213964f10c0}{\index{ahrs.\-m@{ahrs.\-m}!D\-C\-M1@{D\-C\-M1}}
+\index{D\-C\-M1@{D\-C\-M1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{D\-C\-M1}]{\setlength{\rightskip}{0pt plus 5cm}D\-C\-M1 = {\bf zeros}( 3,3,{\bf length}({\bf acc}))}}\label{ahrs_8m_a000558939f90645fbd9df213964f10c0}
+\hypertarget{ahrs_8m_a8459ea67c34367494089f4a6cac911f1}{\index{ahrs.\-m@{ahrs.\-m}!d\-G\-Bias@{d\-G\-Bias}}
+\index{d\-G\-Bias@{d\-G\-Bias}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{d\-G\-Bias}]{\setlength{\rightskip}{0pt plus 5cm}d\-G\-Bias = {\bf zeros}(3,1)}}\label{ahrs_8m_a8459ea67c34367494089f4a6cac911f1}
+\hypertarget{ahrs_8m_a413d6fe48b0e04f1b6fa01cfa5924b42}{\index{ahrs.\-m@{ahrs.\-m}!d\-G\-Scale@{d\-G\-Scale}}
+\index{d\-G\-Scale@{d\-G\-Scale}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{d\-G\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}d\-G\-Scale = {\bf zeros}(3,1)}}\label{ahrs_8m_a413d6fe48b0e04f1b6fa01cfa5924b42}
+\hypertarget{ahrs_8m_aceb79e72e64673a9474e8313f599584d}{\index{ahrs.\-m@{ahrs.\-m}!fxpnt@{fxpnt}}
+\index{fxpnt@{fxpnt}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{fxpnt}]{\setlength{\rightskip}{0pt plus 5cm}rad {\bf sec} fxpnt}}\label{ahrs_8m_aceb79e72e64673a9474e8313f599584d}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+==========================================================================
+% Initialize the \hyperlink{dcm_update_8m_acdb352fc59a62626a408e91be74f7414}{DCM} \textcolor{keyword}{using} leveling (i.e. \hyperlink{error_state_kalman_8m_a2af4beda54af250a79cafa27ede75b67}{accelerometer} \hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and} magnetometer
+%\hyperlink{mag_plot_8m_a319265c6545ca1709d9d77b54665cf1b}{data}). In order to increase the accuracy of the estimate the acceleromter
+%\hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and} magnetometer \hyperlink{namespacearbitros_ahrs_a9336ebf25087d91c818ee6e9ec29f8c1}{x}
+\end{DoxyCode}
+\hypertarget{ahrs_8m_a41ff8572fa45a49861e7dbd98b46143f}{\index{ahrs.\-m@{ahrs.\-m}!g\-Scale@{g\-Scale}}
+\index{g\-Scale@{g\-Scale}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{g\-Scale}]{\setlength{\rightskip}{0pt plus 5cm}g\-Scale = ones(3,1)}}\label{ahrs_8m_a41ff8572fa45a49861e7dbd98b46143f}
+\hypertarget{ahrs_8m_a290addc07b6cd3693596a8579c60d46b}{\index{ahrs.\-m@{ahrs.\-m}!gyro\-Conversion@{gyro\-Conversion}}
+\index{gyro\-Conversion@{gyro\-Conversion}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{gyro\-Conversion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A} value of {\bf fxpnt} represents deg {\bf sec} gyro\-Conversion = (gyro\-Full\-Scale\-Range / {\bf gyro\-Full\-Scale\-Value})$\ast${\bf pi}/180}}\label{ahrs_8m_a290addc07b6cd3693596a8579c60d46b}
+\hypertarget{ahrs_8m_a771ecea63ee63666f17cf8f4afd0d6ae}{\index{ahrs.\-m@{ahrs.\-m}!i\-\_\-count@{i\-\_\-count}}
+\index{i\-\_\-count@{i\-\_\-count}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{i\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}{\bf if} i\-\_\-count = 0}}\label{ahrs_8m_a771ecea63ee63666f17cf8f4afd0d6ae}
+\hypertarget{ahrs_8m_a743b1f788bef89cfd501f99616d9a917}{\index{ahrs.\-m@{ahrs.\-m}!mag\-N@{mag\-N}}
+\index{mag\-N@{mag\-N}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{mag\-N}]{\setlength{\rightskip}{0pt plus 5cm}Get the gravity vector in the nav frame mag\-N = {\bf D\-C\-M}$\ast${\bf mag}({\bf T},\-:)'}}\label{ahrs_8m_a743b1f788bef89cfd501f99616d9a917}
+\hypertarget{ahrs_8m_a252357e24c7514de04d2e21cbc91134c}{\index{ahrs.\-m@{ahrs.\-m}!m\-Bias@{m\-Bias}}
+\index{m\-Bias@{m\-Bias}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{m\-Bias}]{\setlength{\rightskip}{0pt plus 5cm}m\-Bias = {\bf zeros}(3,1)}}\label{ahrs_8m_a252357e24c7514de04d2e21cbc91134c}
+\hypertarget{ahrs_8m_afe627986b4147fc678023fb03e010791}{\index{ahrs.\-m@{ahrs.\-m}!pitch@{pitch}}
+\index{pitch@{pitch}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{pitch}]{\setlength{\rightskip}{0pt plus 5cm}pitch = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_afe627986b4147fc678023fb03e010791}
+\hypertarget{ahrs_8m_aa22c177f7f7d01863aaa7a522b8f1be8}{\index{ahrs.\-m@{ahrs.\-m}!pitch1@{pitch1}}
+\index{pitch1@{pitch1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{pitch1}]{\setlength{\rightskip}{0pt plus 5cm}pitch1 = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_aa22c177f7f7d01863aaa7a522b8f1be8}
+\hypertarget{ahrs_8m_a623284ae7e227905486cd76d90afbbe2}{\index{ahrs.\-m@{ahrs.\-m}!pitch\-Res@{pitch\-Res}}
+\index{pitch\-Res@{pitch\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{pitch\-Res}]{\setlength{\rightskip}{0pt plus 5cm}pitch\-Res = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a623284ae7e227905486cd76d90afbbe2}
+\hypertarget{ahrs_8m_a7ea51f1e8a28001b3a86dbabf7de9e47}{\index{ahrs.\-m@{ahrs.\-m}!pitch\-Res\-Var@{pitch\-Res\-Var}}
+\index{pitch\-Res\-Var@{pitch\-Res\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{pitch\-Res\-Var}]{\setlength{\rightskip}{0pt plus 5cm}pitch\-Res\-Var = 0}}\label{ahrs_8m_a7ea51f1e8a28001b3a86dbabf7de9e47}
+\hypertarget{ahrs_8m_a7993a910e3864ada05ae35fe7205d276}{\index{ahrs.\-m@{ahrs.\-m}!roll@{roll}}
+\index{roll@{roll}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{roll}]{\setlength{\rightskip}{0pt plus 5cm}roll = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a7993a910e3864ada05ae35fe7205d276}
+\hypertarget{ahrs_8m_a89275c8183fafd650ed6b8a7c02f714b}{\index{ahrs.\-m@{ahrs.\-m}!roll1@{roll1}}
+\index{roll1@{roll1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{roll1}]{\setlength{\rightskip}{0pt plus 5cm}roll1 = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a89275c8183fafd650ed6b8a7c02f714b}
+\hypertarget{ahrs_8m_a4de30eb625e2352cfacde6853fc777e6}{\index{ahrs.\-m@{ahrs.\-m}!roll\-Res@{roll\-Res}}
+\index{roll\-Res@{roll\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{roll\-Res}]{\setlength{\rightskip}{0pt plus 5cm}roll\-Res = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a4de30eb625e2352cfacde6853fc777e6}
+\hypertarget{ahrs_8m_a3b4c7dd36cf1373f3f0564ec7dcc7be6}{\index{ahrs.\-m@{ahrs.\-m}!roll\-Res\-Var@{roll\-Res\-Var}}
+\index{roll\-Res\-Var@{roll\-Res\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{roll\-Res\-Var}]{\setlength{\rightskip}{0pt plus 5cm}roll\-Res\-Var = 0}}\label{ahrs_8m_a3b4c7dd36cf1373f3f0564ec7dcc7be6}
+\hypertarget{ahrs_8m_a50a97477ff59a28b3dd9315b21e66a23}{\index{ahrs.\-m@{ahrs.\-m}!seconds@{seconds}}
+\index{seconds@{seconds}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{seconds}]{\setlength{\rightskip}{0pt plus 5cm}seconds}}\label{ahrs_8m_a50a97477ff59a28b3dd9315b21e66a23}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+==========================================================================
+% The conversion from degrees/\hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} to rad/\hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} 
+%==========================================================================
+gyroFullScaleRange = 2000
+\end{DoxyCode}
+\hypertarget{ahrs_8m_ae49740b4cb1b92c947eb5c14ac953acf}{\index{ahrs.\-m@{ahrs.\-m}!T@{T}}
+\index{T@{T}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{T}]{\setlength{\rightskip}{0pt plus 5cm}where T}}\label{ahrs_8m_ae49740b4cb1b92c947eb5c14ac953acf}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 5\hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec} \hyperlink{ahrs_8m_afa199521a240e64469e26df8973798f0}{and} \hyperlink{ahrs_8m_a4ff248a90c101bf3e3713c17cd3ffab0}{dt} = .05sec
+    %======================================================================     
+    \hyperlink{ahrs_8m_a3b4c7dd36cf1373f3f0564ec7dcc7be6}{rollResVar} = .99*\hyperlink{ahrs_8m_a3b4c7dd36cf1373f3f0564ec7dcc7be6}{rollResVar} + .01*\hyperlink{ahrs_8m_abcb9e071857020e3d766bca269d2c94f}{res}(1)
+\end{DoxyCode}
+\hypertarget{ahrs_8m_a99205e6391ee965122edaa503a64ac1a}{\index{ahrs.\-m@{ahrs.\-m}!y@{y}}
+\index{y@{y}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}rad {\bf sec} y}}\label{ahrs_8m_a99205e6391ee965122edaa503a64ac1a}
+\hypertarget{ahrs_8m_aaeddb3af347c13f3d0915fb2e613acce}{\index{ahrs.\-m@{ahrs.\-m}!yaw@{yaw}}
+\index{yaw@{yaw}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{yaw}]{\setlength{\rightskip}{0pt plus 5cm}yaw = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_aaeddb3af347c13f3d0915fb2e613acce}
+\hypertarget{ahrs_8m_a8e4874ace740fd5068c6b5f279282a92}{\index{ahrs.\-m@{ahrs.\-m}!yaw1@{yaw1}}
+\index{yaw1@{yaw1}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{yaw1}]{\setlength{\rightskip}{0pt plus 5cm}yaw1 = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a8e4874ace740fd5068c6b5f279282a92}
+\hypertarget{ahrs_8m_a89aa57050663083e6b64dc6a86f9cbde}{\index{ahrs.\-m@{ahrs.\-m}!yaw\-Res@{yaw\-Res}}
+\index{yaw\-Res@{yaw\-Res}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{yaw\-Res}]{\setlength{\rightskip}{0pt plus 5cm}yaw\-Res = {\bf zeros}( {\bf length}({\bf acc}), 1)}}\label{ahrs_8m_a89aa57050663083e6b64dc6a86f9cbde}
+\hypertarget{ahrs_8m_a567bb3c3d1b9d760f6457a86f17d7fd8}{\index{ahrs.\-m@{ahrs.\-m}!yaw\-Res\-Var@{yaw\-Res\-Var}}
+\index{yaw\-Res\-Var@{yaw\-Res\-Var}!ahrs.m@{ahrs.\-m}}
+\subsubsection[{yaw\-Res\-Var}]{\setlength{\rightskip}{0pt plus 5cm}yaw\-Res\-Var = 0}}\label{ahrs_8m_a567bb3c3d1b9d760f6457a86f17d7fd8}

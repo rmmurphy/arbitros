@@ -1,0 +1,43 @@
+\hypertarget{structt__console_object}{\section{t\-\_\-console\-Object Struct Reference}
+\label{structt__console_object}\index{t\-\_\-console\-Object@{t\-\_\-console\-Object}}
+}
+
+
+Grouping of objects commonly used across all functions within this file.  
+
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E \hyperlink{structt__console_object_ae0eceac7658ed204c517d618961e5cd9}{t\-\_\-console\-Thread}
+\item 
+t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E \hyperlink{structt__console_object_a6f9d3d1fa28b532e16089830ab73c3b6}{t\-\_\-console\-Hndl}
+\item 
+t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E \hyperlink{structt__console_object_aaabb9b990f986cd929e22cd0da9586f1}{t\-\_\-sd\-Hndl}
+\item 
+bool($\ast$ \hyperlink{structt__console_object_a43c5369489e99b24653bd0b0ff0e77e0}{pf\-\_\-fun\-Ptr} )(t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E \hyperlink{structt__console_object_a6f9d3d1fa28b532e16089830ab73c3b6}{t\-\_\-console\-Hndl}, int8\-\_\-t $\ast$pc\-\_\-buff, \hyperlink{structt__console_tok_hndl}{t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Grouping of objects commonly used across all functions within this file. 
+
+\subsection{Field Documentation}
+\hypertarget{structt__console_object_a43c5369489e99b24653bd0b0ff0e77e0}{\index{t\-\_\-console\-Object@{t\-\_\-console\-Object}!pf\-\_\-fun\-Ptr@{pf\-\_\-fun\-Ptr}}
+\index{pf\-\_\-fun\-Ptr@{pf\-\_\-fun\-Ptr}!t_consoleObject@{t\-\_\-console\-Object}}
+\subsubsection[{pf\-\_\-fun\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}bool($\ast$ pf\-\_\-fun\-Ptr)(t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E {\bf t\-\_\-console\-Hndl}, int8\-\_\-t $\ast$pc\-\_\-buff, {\bf t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl)}}\label{structt__console_object_a43c5369489e99b24653bd0b0ff0e77e0}
+Pointer to the user-\/space console handler configured during module initialization (\#arb\-\_\-console\-Init). The console thread (\hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console}) passes control to this function after determining that a command (entered over the terminal) is not part of the Arbitros basic kernel command set. \hypertarget{structt__console_object_a6f9d3d1fa28b532e16089830ab73c3b6}{\index{t\-\_\-console\-Object@{t\-\_\-console\-Object}!t\-\_\-console\-Hndl@{t\-\_\-console\-Hndl}}
+\index{t\-\_\-console\-Hndl@{t\-\_\-console\-Hndl}!t_consoleObject@{t\-\_\-console\-Object}}
+\subsubsection[{t\-\_\-console\-Hndl}]{\setlength{\rightskip}{0pt plus 5cm}t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E t\-\_\-console\-Hndl}}\label{structt__console_object_a6f9d3d1fa28b532e16089830ab73c3b6}
+Handle to the console thread created during module initialization (\#arb\-\_\-console\-Init). Handles are the primary mechanism for linking a thread (i.\-e. \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console})--through the kernel--to the particular device driver its trying to access. \hypertarget{structt__console_object_ae0eceac7658ed204c517d618961e5cd9}{\index{t\-\_\-console\-Object@{t\-\_\-console\-Object}!t\-\_\-console\-Thread@{t\-\_\-console\-Thread}}
+\index{t\-\_\-console\-Thread@{t\-\_\-console\-Thread}!t_consoleObject@{t\-\_\-console\-Object}}
+\subsubsection[{t\-\_\-console\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E t\-\_\-console\-Thread}}\label{structt__console_object_ae0eceac7658ed204c517d618961e5cd9}
+Handle to the console thread created during module initialization (\#arb\-\_\-console\-Init). \hypertarget{structt__console_object_aaabb9b990f986cd929e22cd0da9586f1}{\index{t\-\_\-console\-Object@{t\-\_\-console\-Object}!t\-\_\-sd\-Hndl@{t\-\_\-sd\-Hndl}}
+\index{t\-\_\-sd\-Hndl@{t\-\_\-sd\-Hndl}!t_consoleObject@{t\-\_\-console\-Object}}
+\subsubsection[{t\-\_\-sd\-Hndl}]{\setlength{\rightskip}{0pt plus 5cm}t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E t\-\_\-sd\-Hndl}}\label{structt__console_object_aaabb9b990f986cd929e22cd0da9586f1}
+Handle to the fat32 S\-D card driver created during module initialization (\#arb\-\_\-console\-Init). This handle provides a way of exposing file system functionality--such as directory searching, file deletion, and reading the contents of a file--to an external user via the terminal command window by way of the \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console} thread. 
+
+The documentation for this struct was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/rtos/source/common/\hyperlink{arb__console_8c}{arb\-\_\-console.\-c}\item 
+C\-:/arbitros/trunk/boards/primus/examples/ins/source/usr\-\_\-console.\-c\end{DoxyCompactItemize}

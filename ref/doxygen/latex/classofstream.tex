@@ -1,0 +1,105 @@
+\hypertarget{classofstream}{\section{ofstream Class Reference}
+\label{classofstream}\index{ofstream@{ofstream}}
+}
+
+
+S\-D card output stream.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-Stream.\-h$>$}
+
+Inheritance diagram for ofstream\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classofstream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classofstream_ab2226cccf0ba0eddfc6780e3aef38af3}{ofstream} (const char $\ast$path, \hyperlink{classios__base_a97a503456f60758f2c110f99b0ce0815}{ios\-::openmode} mode=\hyperlink{classios__base_a5300f1b3e0fe12cc7c484ab89f8bba83}{out})
+\item 
+void \hyperlink{classofstream_a1978eec476ebfeed466b5ce921853720}{clear} (\hyperlink{classios__base_a67209c853f091390e1a08ac0b043fe11}{iostate} state=\hyperlink{classios__base_ada0c8aa0797472d458523a3c2c475cdb}{goodbit})
+\item 
+void \hyperlink{classofstream_a5ae591df94fc66ccb85cbb6565368bca}{close} ()
+\item 
+void \hyperlink{classofstream_a958a6e7ea215ffd011bd882be4d1a0ce}{open} (const char $\ast$path, \hyperlink{classios__base_a97a503456f60758f2c110f99b0ce0815}{openmode} mode=\hyperlink{classios__base_a5300f1b3e0fe12cc7c484ab89f8bba83}{out})
+\item 
+bool \hyperlink{classofstream_a2f57f54d8c03b615bb31eee091d8a88a}{is\-\_\-open} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+S\-D card output stream. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classofstream_ab2226cccf0ba0eddfc6780e3aef38af3}{\index{ofstream@{ofstream}!ofstream@{ofstream}}
+\index{ofstream@{ofstream}!ofstream@{ofstream}}
+\subsubsection[{ofstream}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ofstream} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{{\bf ios\-::openmode}}]{mode = {\ttfamily {\bf out}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}}\label{classofstream_ab2226cccf0ba0eddfc6780e3aef38af3}
+Constructor with open 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & file to open \\
+\hline
+\mbox{\tt in}  & {\em mode} & open mode \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classofstream_a1978eec476ebfeed466b5ce921853720}{\index{ofstream@{ofstream}!clear@{clear}}
+\index{clear@{clear}!ofstream@{ofstream}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void clear (
+\begin{DoxyParamCaption}
+\item[{{\bf iostate}}]{state = {\ttfamily {\bf goodbit}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classofstream_a1978eec476ebfeed466b5ce921853720}
+Clear state and write\-Error 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em state} & new state for stream \\
+\hline
+\end{DoxyParams}
+\hypertarget{classofstream_a5ae591df94fc66ccb85cbb6565368bca}{\index{ofstream@{ofstream}!close@{close}}
+\index{close@{close}!ofstream@{ofstream}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classofstream_a5ae591df94fc66ccb85cbb6565368bca}
+Close a file and force cached data and directory information to be written to the storage device. \hypertarget{classofstream_a2f57f54d8c03b615bb31eee091d8a88a}{\index{ofstream@{ofstream}!is\-\_\-open@{is\-\_\-open}}
+\index{is\-\_\-open@{is\-\_\-open}!ofstream@{ofstream}}
+\subsubsection[{is\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-\_\-open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classofstream_a2f57f54d8c03b615bb31eee091d8a88a}
+\begin{DoxyReturn}{Returns}
+True if stream is open else false. 
+\end{DoxyReturn}
+\hypertarget{classofstream_a958a6e7ea215ffd011bd882be4d1a0ce}{\index{ofstream@{ofstream}!open@{open}}
+\index{open@{open}!ofstream@{ofstream}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{{\bf openmode}}]{mode = {\ttfamily {\bf out}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classofstream_a958a6e7ea215ffd011bd882be4d1a0ce}
+Open an ofstream 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & file to open \\
+\hline
+\mbox{\tt in}  & {\em mode} & open mode\\
+\hline
+\end{DoxyParams}
+{\itshape mode} See \hyperlink{classfstream_af61417d70e1106ce7f88965d684134d4}{fstream\-::open()} for valid modes. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_stream_8h}{Sd\-Stream.\-h}\end{DoxyCompactItemize}

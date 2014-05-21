@@ -1,0 +1,350 @@
+.TH "Sd2Card" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Sd2Card \- 
+.PP
+Raw access to SD and SDHC flash memory cards\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <Sd2Card\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSd2Card\fP ()"
+.br
+.ti -1c
+.RI "uint32_t \fBcardSize\fP ()"
+.br
+.ti -1c
+.RI "bool \fBerase\fP (uint32_t firstBlock, uint32_t lastBlock)"
+.br
+.ti -1c
+.RI "bool \fBeraseSingleBlockEnable\fP ()"
+.br
+.ti -1c
+.RI "void \fBerror\fP (uint8_t code)"
+.br
+.ti -1c
+.RI "int \fBerrorCode\fP () const "
+.br
+.ti -1c
+.RI "int \fBerrorData\fP () const "
+.br
+.ti -1c
+.RI "bool \fBinit\fP (uint8_t sckRateID=\fBSPI_FULL_SPEED\fP, uint8_t chipSelectPin=\fBSD_CHIP_SELECT_PIN\fP)"
+.br
+.ti -1c
+.RI "bool \fBreadBlock\fP (uint32_t block, uint8_t *dst)"
+.br
+.ti -1c
+.RI "bool \fBreadCID\fP (cid_t *cid)"
+.br
+.ti -1c
+.RI "bool \fBreadCSD\fP (\fBcsd_t\fP *csd)"
+.br
+.ti -1c
+.RI "bool \fBreadData\fP (uint8_t *dst)"
+.br
+.ti -1c
+.RI "bool \fBreadStart\fP (uint32_t blockNumber)"
+.br
+.ti -1c
+.RI "bool \fBreadStop\fP ()"
+.br
+.ti -1c
+.RI "bool \fBsetSckRate\fP (uint8_t sckRateID)"
+.br
+.ti -1c
+.RI "int \fBtype\fP () const "
+.br
+.ti -1c
+.RI "bool \fBwriteBlock\fP (uint32_t blockNumber, const uint8_t *src)"
+.br
+.ti -1c
+.RI "bool \fBwriteData\fP (const uint8_t *src)"
+.br
+.ti -1c
+.RI "bool \fBwriteStart\fP (uint32_t blockNumber, uint32_t eraseCount)"
+.br
+.ti -1c
+.RI "bool \fBwriteStop\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Raw access to SD and SDHC flash memory cards\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSd2Card\fP ()\fC [inline]\fP"
+Construct an instance of \fBSd2Card\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "uint32_t cardSize ()"
+Determine the size of an SD flash memory card\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The number of 512 byte data blocks in the card or zero if an error occurs\&. 
+.RE
+.PP
+
+.SS "bool erase (uint32_tfirstBlock, uint32_tlastBlock)"
+Erase a range of blocks\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfirstBlock\fP The address of the first block in the range\&. 
+.br
+\fIlastBlock\fP The address of the last block in the range\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This function requests the SD card to do a flash erase for a range of blocks\&. The data on the card after an erase operation is either 0 or 1, depends on the card vendor\&. The card must support single block erase\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool eraseSingleBlockEnable ()"
+Determine if card supports single block erase\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned if single block erase is supported\&. The value zero, false, is returned if single block erase is not supported\&. 
+.RE
+.PP
+
+.SS "void error (uint8_tcode)\fC [inline]\fP"
+Set SD error code\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcode\fP value for error code\&. 
+.RE
+.PP
+
+.SS "int errorCode () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+error code for last error\&. See \fBSd2Card\&.h\fP for a list of error codes\&. 
+.RE
+.PP
+
+.SS "int errorData () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+error data for last error\&. 
+.RE
+.PP
+
+.SS "bool init (uint8_tsckRateID = \fC\fBSPI_FULL_SPEED\fP\fP, uint8_tchipSelectPin = \fC\fBSD_CHIP_SELECT_PIN\fP\fP)"
+Initialize an SD flash memory card with default clock rate and chip select pin\&. See sd2Card::init(uint8_t sckRateID, uint8_t chipSelectPin)\&.
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&.
+.RE
+.PP
+Initialize an SD flash memory card\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsckRateID\fP SPI clock rate selector\&. See \fBsetSckRate()\fP\&. 
+.br
+\fIchipSelectPin\fP SD chip select pin number\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. The reason for failure can be determined by calling \fBerrorCode()\fP and \fBerrorData()\fP\&. 
+.RE
+.PP
+
+.SS "bool readBlock (uint32_tblockNumber, uint8_t *dst)"
+Read a 512 byte block from an SD card\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblockNumber\fP Logical block to be read\&. 
+.br
+\fIdst\fP Pointer to the location that will receive the data\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool readCID (cid_t *cid)\fC [inline]\fP"
+Read a card's \fBCID\fP register\&. The \fBCID\fP contains card identification information such as Manufacturer ID, Product name, Product serial number and Manufacturing date\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcid\fP pointer to area for returned data\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool readCSD (\fBcsd_t\fP *csd)\fC [inline]\fP"
+Read a card's CSD register\&. The CSD contains Card-Specific Data that provides information regarding access to the card's contents\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIcsd\fP pointer to area for returned data\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool readData (uint8_t *dst)"
+Read one data block in a multiple block read sequence
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdst\fP Pointer to the location for the data to be read\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool readStart (uint32_tblockNumber)"
+Start a read multiple blocks sequence\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblockNumber\fP Address of first block in sequence\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This function is used with \fBreadData()\fP and \fBreadStop()\fP for optimized multiple block reads\&. SPI chipSelect must be low for the entire sequence\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool readStop ()"
+End a read multiple blocks sequence\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool setSckRate (uint8_tsckRateID)"
+Set the SPI clock rate\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsckRateID\fP A value in the range [0, 14]\&.
+.RE
+.PP
+The SPI clock divisor will be set to approximately
+.PP
+(2 + (sckRateID & 1)) << ( sckRateID/2)
+.PP
+The maximum SPI rate is F_CPU/2 for \fIsckRateID\fP = 0 and the rate is F_CPU/128 for \fIscsRateID\fP = 12\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for an invalid value of \fIsckRateID\fP\&. 
+.RE
+.PP
+
+.SS "int type () const\fC [inline]\fP"
+Return the card type: SD V1, SD V2 or SDHC 
+.PP
+\fBReturns:\fP
+.RS 4
+0 - SD V1, 1 - SD V2, or 3 - SDHC\&. 
+.RE
+.PP
+
+.SS "bool writeBlock (uint32_tblockNumber, const uint8_t *src)"
+Writes a 512 byte block to an SD card\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblockNumber\fP Logical block to be written\&. 
+.br
+\fIsrc\fP Pointer to the location of the data to be written\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool writeData (const uint8_t *src)"
+Write one data block in a multiple block write sequence 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIsrc\fP Pointer to the location of the data to be written\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool writeStart (uint32_tblockNumber, uint32_teraseCount)"
+Start a write multiple blocks sequence\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIblockNumber\fP Address of first block in sequence\&. 
+.br
+\fIeraseCount\fP The number of blocks to be pre-erased\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This function is used with \fBwriteData()\fP and \fBwriteStop()\fP for optimized multiple block writes\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool writeStop ()"
+End a write multiple blocks sequence\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

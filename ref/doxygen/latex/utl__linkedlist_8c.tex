@@ -1,0 +1,103 @@
+\hypertarget{utl__linkedlist_8c}{\section{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-linkedlist.c File Reference}
+\label{utl__linkedlist_8c}\index{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-linkedlist.\-c@{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-linkedlist.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-memory.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linked\-List.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utl__linkedlist_8c_ae7fe9dbd79f1c01532d88ac0aab2d45b}{L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D}~(0)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\-\_\-t \hyperlink{utl__linkedlist_8c_a14a2fd9bee286fafed70e0954354fa75}{utl\-\_\-get\-Dyn\-List\-Mem\-Usage} (void)
+\item 
+\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} \hyperlink{utl__linkedlist_8c_ada8473cafc35782c01c4f1d9ee6b8ec3}{utl\-\_\-create\-Container} (void)
+\item 
+\hyperlink{utl__linkedlist_8h_a17da2ceefc34e22a6176523aa0aa5ce4}{t\-\_\-linked\-List\-Error} \hyperlink{utl__linkedlist_8c_a8b3918341ec0b31235dec8dc5acdbb62}{utl\-\_\-destroy\-Container} (\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} t\-\_\-cont\-Hndl)
+\item 
+\hyperlink{utl__linkedlist_8h_ae391d8d66653b758fa22298ff0c75419}{t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L} \hyperlink{utl__linkedlist_8c_a2e2f28b4fe8abe8da9b06f9ce9ad2500}{utl\-\_\-create\-Link} (uint16\-\_\-t s\-\_\-element\-Size\-Bytes)
+\item 
+\hyperlink{utl__linkedlist_8h_a17da2ceefc34e22a6176523aa0aa5ce4}{t\-\_\-linked\-List\-Error} \hyperlink{utl__linkedlist_8c_a2d18cac24d2a3f0126ba14711bad9e63}{utl\-\_\-insert\-Link} (\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} t\-\_\-cont\-Hndl, \hyperlink{utl__linkedlist_8h_ae391d8d66653b758fa22298ff0c75419}{t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L} t\-\_\-link\-Hndl, bool b\-\_\-tail)
+\item 
+\hyperlink{utl__linkedlist_8h_a17da2ceefc34e22a6176523aa0aa5ce4}{t\-\_\-linked\-List\-Error} \hyperlink{utl__linkedlist_8c_a8fa1103422d85c935c1357c1ddea26ad}{utl\-\_\-destroy\-Link} (\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} t\-\_\-cont\-Hndl, \hyperlink{utl__linkedlist_8h_ae391d8d66653b758fa22298ff0c75419}{t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L} t\-\_\-link\-Hndl)
+\item 
+\hyperlink{utl__linkedlist_8h_a17da2ceefc34e22a6176523aa0aa5ce4}{t\-\_\-linked\-List\-Error} \hyperlink{utl__linkedlist_8c_a53cad854c29d8db754432a82cf7da381}{utl\-\_\-remove\-Link} (\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} t\-\_\-cont\-Hndl, \hyperlink{utl__linkedlist_8h_ae391d8d66653b758fa22298ff0c75419}{t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L} t\-\_\-link\-Hndl)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static uint32\-\_\-t \hyperlink{utl__linkedlist_8c_a013529b8fbe2421f5704c0afe6707188}{gi\-\_\-dyn\-List\-Mem\-Usage} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{utl__linkedlist_8c_ae7fe9dbd79f1c01532d88ac0aab2d45b}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D@{L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D}}
+\index{L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D@{L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define L\-I\-N\-K\-E\-D\-L\-I\-S\-T\-\_\-\-L\-I\-N\-K\-\_\-\-U\-N\-M\-A\-P\-P\-E\-D~(0)}}\label{utl__linkedlist_8c_ae7fe9dbd79f1c01532d88ac0aab2d45b}
+
+
+\subsection{Function Documentation}
+\hypertarget{utl__linkedlist_8c_ada8473cafc35782c01c4f1d9ee6b8ec3}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-create\-Container@{utl\-\_\-create\-Container}}
+\index{utl\-\_\-create\-Container@{utl\-\_\-create\-Container}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-create\-Container}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} utl\-\_\-create\-Container (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_ada8473cafc35782c01c4f1d9ee6b8ec3}
+\hypertarget{utl__linkedlist_8c_a2e2f28b4fe8abe8da9b06f9ce9ad2500}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-create\-Link@{utl\-\_\-create\-Link}}
+\index{utl\-\_\-create\-Link@{utl\-\_\-create\-Link}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-create\-Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L} utl\-\_\-create\-Link (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{s\-\_\-element\-Size\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a2e2f28b4fe8abe8da9b06f9ce9ad2500}
+\hypertarget{utl__linkedlist_8c_a8b3918341ec0b31235dec8dc5acdbb62}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-destroy\-Container@{utl\-\_\-destroy\-Container}}
+\index{utl\-\_\-destroy\-Container@{utl\-\_\-destroy\-Container}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-destroy\-Container}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-linked\-List\-Error} utl\-\_\-destroy\-Container (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L}}]{t\-\_\-cont\-Hndl}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a8b3918341ec0b31235dec8dc5acdbb62}
+\hypertarget{utl__linkedlist_8c_a8fa1103422d85c935c1357c1ddea26ad}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-destroy\-Link@{utl\-\_\-destroy\-Link}}
+\index{utl\-\_\-destroy\-Link@{utl\-\_\-destroy\-Link}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-destroy\-Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-linked\-List\-Error} utl\-\_\-destroy\-Link (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L}}]{t\-\_\-cont\-Hndl, }
+\item[{{\bf t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L}}]{t\-\_\-link\-Hndl}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a8fa1103422d85c935c1357c1ddea26ad}
+\hypertarget{utl__linkedlist_8c_a14a2fd9bee286fafed70e0954354fa75}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-get\-Dyn\-List\-Mem\-Usage@{utl\-\_\-get\-Dyn\-List\-Mem\-Usage}}
+\index{utl\-\_\-get\-Dyn\-List\-Mem\-Usage@{utl\-\_\-get\-Dyn\-List\-Mem\-Usage}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-get\-Dyn\-List\-Mem\-Usage}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t utl\-\_\-get\-Dyn\-List\-Mem\-Usage (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a14a2fd9bee286fafed70e0954354fa75}
+\hypertarget{utl__linkedlist_8c_a2d18cac24d2a3f0126ba14711bad9e63}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-insert\-Link@{utl\-\_\-insert\-Link}}
+\index{utl\-\_\-insert\-Link@{utl\-\_\-insert\-Link}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-insert\-Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-linked\-List\-Error} utl\-\_\-insert\-Link (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L}}]{t\-\_\-cont\-Hndl, }
+\item[{{\bf t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L}}]{t\-\_\-link\-Hndl, }
+\item[{bool}]{b\-\_\-tail}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a2d18cac24d2a3f0126ba14711bad9e63}
+\hypertarget{utl__linkedlist_8c_a53cad854c29d8db754432a82cf7da381}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!utl\-\_\-remove\-Link@{utl\-\_\-remove\-Link}}
+\index{utl\-\_\-remove\-Link@{utl\-\_\-remove\-Link}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{utl\-\_\-remove\-Link}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-linked\-List\-Error} utl\-\_\-remove\-Link (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L}}]{t\-\_\-cont\-Hndl, }
+\item[{{\bf t\-\_\-\-L\-I\-N\-K\-H\-N\-D\-L}}]{t\-\_\-link\-Hndl}
+\end{DoxyParamCaption}
+)}}\label{utl__linkedlist_8c_a53cad854c29d8db754432a82cf7da381}
+
+
+\subsection{Variable Documentation}
+\hypertarget{utl__linkedlist_8c_a013529b8fbe2421f5704c0afe6707188}{\index{utl\-\_\-linkedlist.\-c@{utl\-\_\-linkedlist.\-c}!gi\-\_\-dyn\-List\-Mem\-Usage@{gi\-\_\-dyn\-List\-Mem\-Usage}}
+\index{gi\-\_\-dyn\-List\-Mem\-Usage@{gi\-\_\-dyn\-List\-Mem\-Usage}!utl_linkedlist.c@{utl\-\_\-linkedlist.\-c}}
+\subsubsection[{gi\-\_\-dyn\-List\-Mem\-Usage}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t gi\-\_\-dyn\-List\-Mem\-Usage = 0\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__linkedlist_8c_a013529b8fbe2421f5704c0afe6707188}

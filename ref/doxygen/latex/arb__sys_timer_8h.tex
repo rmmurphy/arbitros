@@ -1,0 +1,179 @@
+\hypertarget{arb__sys_timer_8h}{\section{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-sys\-Timer.h File Reference}
+\label{arb__sys_timer_8h}\index{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-sys\-Timer.\-h@{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-sys\-Timer.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-clocks.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__sys_time}{t\-\_\-sys\-Time}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__sys_timer_8h_ac815795cba17ea3b8792527eb78954bd}{arb\-\_\-sys\-Timer\-\_\-h}
+\item 
+\#define \hyperlink{arb__sys_timer_8h_a07ef976c7d7e1100518962365ecceb47}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E}~(500000) /$\ast$ticks/\hyperlink{error_state_kalman_8m_a3cbf8063018be67a2f9313a4b99270d8}{sec}$\ast$/
+\item 
+\#define \hyperlink{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}~(.\-01f)  /$\ast$seconds$\ast$/
+\item 
+\#define \hyperlink{arb__sys_timer_8h_ad5c004dc217215adb23f86e0dbd53329}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C}~(\hyperlink{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}$\ast$1000000)
+\item 
+\#define \hyperlink{arb__sys_timer_8h_a54b6d5d05d46fd94caa8f2ee8d98067c}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C}~(\hyperlink{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}$\ast$1000)
+\item 
+\#define \hyperlink{arb__sys_timer_8h_a94d3097a7667ef70edf033ec8112a739}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S}
+\item 
+\#define \hyperlink{arb__sys_timer_8h_ae038525efe279f4a2f84e4468ac9f09d}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}~(1000000 / \hyperlink{arb__sys_timer_8h_a07ef976c7d7e1100518962365ecceb47}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E})
+\item 
+\#define \hyperlink{arb__sys_timer_8h_a97e9d8d3f003167354a2c06eb356051a}{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}~(uint16\-\_\-t)(1.\-0f / A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D)
+\item 
+\#define \hyperlink{arb__sys_timer_8h_a5873618d068c5cd5ff6d664892e9b2ff}{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C}~((uint64\-\_\-t)3600000)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{arb__sys_timer_8h_a6686f5eb7234db053b5a1736cc8d23a3}{arb\-\_\-sys\-Timer\-Init} (\hyperlink{utl__timer_8h_a9fe392c06a3afb8e3db7d6735664bc04}{t\-\_\-timer\-Mod\-Id} t\-\_\-timer\-Id)
+\item 
+\hyperlink{structt__sys_time}{t\-\_\-sys\-Time} \hyperlink{arb__sys_timer_8h_abbb001ba970e12626e8c00372bca3b93}{arb\-\_\-sys\-Time\-Now} (void)
+\item 
+void \hyperlink{arb__sys_timer_8h_afd1401df012f1f373ed1aeb75a7f3770}{arb\-\_\-reset\-Sys\-Time} (void)
+\item 
+void \hyperlink{arb__sys_timer_8h_a06355d95c149adc46ac6b654fa3b1adb}{arb\-\_\-restart\-Sys\-Timer} (void)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__sys_timer_8h_a8a10569b88900a8a51902960374ef08a}{arb\-\_\-sys\-Timer\-Start} (void)
+\item 
+void \hyperlink{arb__sys_timer_8h_ae5c4ea1583039726e7a1f9a8d115df85}{arb\-\_\-sys\-Timer\-Stop} (void)
+\item 
+void \hyperlink{arb__sys_timer_8h_ab5790a73a41d4ea8d6d0219628aa34c2}{arb\-\_\-set\-Sys\-Time} (uint8\-\_\-t c\-\_\-hours, uint8\-\_\-t c\-\_\-min, uint8\-\_\-t c\-\_\-sec)
+\item 
+uint64\-\_\-t \hyperlink{arb__sys_timer_8h_acfe40faf2257a1e12b303c10f169246a}{arb\-\_\-sys\-Msec\-Now} (void)
+\item 
+uint64\-\_\-t \hyperlink{arb__sys_timer_8h_a93e511f45e35e3d054b10d39bc81735a}{arb\-\_\-sys\-Msec\-Delta} (uint64\-\_\-t l\-\_\-curr\-Time, uint64\-\_\-t l\-\_\-prev\-Time)
+\item 
+bool \hyperlink{arb__sys_timer_8h_aca7fb6a13e00f7b4925e8879c6d331c7}{arb\-\_\-sys\-Timer\-Enabled} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structt__sys_time}{t\-\_\-sys\-Time} \hyperlink{arb__sys_timer_8h_a08f606895e93cffe8934c4457aa24471}{gt\-\_\-sys\-Time}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__sys_timer_8h_a5873618d068c5cd5ff6d664892e9b2ff}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-M\-A\-X\-\_\-\-M\-S\-E\-C~((uint64\-\_\-t)3600000)}}\label{arb__sys_timer_8h_a5873618d068c5cd5ff6d664892e9b2ff}
+\hypertarget{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D~(.\-01f)  /$\ast$seconds$\ast$/}}\label{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}
+\hypertarget{arb__sys_timer_8h_a54b6d5d05d46fd94caa8f2ee8d98067c}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-M\-S\-E\-C~({\bf A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}$\ast$1000)}}\label{arb__sys_timer_8h_a54b6d5d05d46fd94caa8f2ee8d98067c}
+\hypertarget{arb__sys_timer_8h_a94d3097a7667ef70edf033ec8112a739}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-T\-I\-C\-K\-S}}\label{arb__sys_timer_8h_a94d3097a7667ef70edf033ec8112a739}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(uint16\_t)(\hyperlink{arb__sys_timer_8h_ad6ebc04c1154680d137520d18f440c4b}{ARB\_SYS\_TIMER\_PERIOD}*\(\backslash\)
+   \hyperlink{arb__sys_timer_8h_a07ef976c7d7e1100518962365ecceb47}{ARB\_SYS\_TIMER\_TICK\_RATE}  - 1)
+\end{DoxyCode}
+\hypertarget{arb__sys_timer_8h_ad5c004dc217215adb23f86e0dbd53329}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D\-\_\-\-I\-N\-\_\-\-U\-S\-E\-C~({\bf A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D}$\ast$1000000)}}\label{arb__sys_timer_8h_ad5c004dc217215adb23f86e0dbd53329}
+\hypertarget{arb__sys_timer_8h_a07ef976c7d7e1100518962365ecceb47}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E~(500000) /$\ast$ticks/{\bf sec}$\ast$/}}\label{arb__sys_timer_8h_a07ef976c7d7e1100518962365ecceb47}
+\hypertarget{arb__sys_timer_8h_ae038525efe279f4a2f84e4468ac9f09d}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}}
+\index{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K@{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-U\-S\-E\-C\-\_\-\-P\-E\-R\-\_\-\-T\-I\-C\-K~(1000000 / {\bf A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-T\-I\-C\-K\-\_\-\-R\-A\-T\-E})}}\label{arb__sys_timer_8h_ae038525efe279f4a2f84e4468ac9f09d}
+\hypertarget{arb__sys_timer_8h_ac815795cba17ea3b8792527eb78954bd}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Timer\-\_\-h@{arb\-\_\-sys\-Timer\-\_\-h}}
+\index{arb\-\_\-sys\-Timer\-\_\-h@{arb\-\_\-sys\-Timer\-\_\-h}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Timer\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define arb\-\_\-sys\-Timer\-\_\-h}}\label{arb__sys_timer_8h_ac815795cba17ea3b8792527eb78954bd}
+\hypertarget{arb__sys_timer_8h_a97e9d8d3f003167354a2c06eb356051a}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D@{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}}
+\index{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D@{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D~(uint16\-\_\-t)(1.\-0f / A\-R\-B\-\_\-\-S\-Y\-S\-\_\-\-T\-I\-M\-E\-R\-\_\-\-P\-E\-R\-I\-O\-D)}}\label{arb__sys_timer_8h_a97e9d8d3f003167354a2c06eb356051a}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__sys_timer_8h_afd1401df012f1f373ed1aeb75a7f3770}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-reset\-Sys\-Time@{arb\-\_\-reset\-Sys\-Time}}
+\index{arb\-\_\-reset\-Sys\-Time@{arb\-\_\-reset\-Sys\-Time}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-reset\-Sys\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-reset\-Sys\-Time (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_afd1401df012f1f373ed1aeb75a7f3770}
+\hypertarget{arb__sys_timer_8h_a06355d95c149adc46ac6b654fa3b1adb}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-restart\-Sys\-Timer@{arb\-\_\-restart\-Sys\-Timer}}
+\index{arb\-\_\-restart\-Sys\-Timer@{arb\-\_\-restart\-Sys\-Timer}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-restart\-Sys\-Timer}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-restart\-Sys\-Timer (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_a06355d95c149adc46ac6b654fa3b1adb}
+\hypertarget{arb__sys_timer_8h_ab5790a73a41d4ea8d6d0219628aa34c2}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-set\-Sys\-Time@{arb\-\_\-set\-Sys\-Time}}
+\index{arb\-\_\-set\-Sys\-Time@{arb\-\_\-set\-Sys\-Time}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-set\-Sys\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-set\-Sys\-Time (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-hours, }
+\item[{uint8\-\_\-t}]{c\-\_\-min, }
+\item[{uint8\-\_\-t}]{c\-\_\-sec}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_ab5790a73a41d4ea8d6d0219628aa34c2}
+\hypertarget{arb__sys_timer_8h_a93e511f45e35e3d054b10d39bc81735a}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Msec\-Delta@{arb\-\_\-sys\-Msec\-Delta}}
+\index{arb\-\_\-sys\-Msec\-Delta@{arb\-\_\-sys\-Msec\-Delta}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Msec\-Delta}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t arb\-\_\-sys\-Msec\-Delta (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{l\-\_\-curr\-Time, }
+\item[{uint64\-\_\-t}]{l\-\_\-prev\-Time}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_a93e511f45e35e3d054b10d39bc81735a}
+\hypertarget{arb__sys_timer_8h_acfe40faf2257a1e12b303c10f169246a}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Msec\-Now@{arb\-\_\-sys\-Msec\-Now}}
+\index{arb\-\_\-sys\-Msec\-Now@{arb\-\_\-sys\-Msec\-Now}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Msec\-Now}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t arb\-\_\-sys\-Msec\-Now (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_acfe40faf2257a1e12b303c10f169246a}
+\hypertarget{arb__sys_timer_8h_abbb001ba970e12626e8c00372bca3b93}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Time\-Now@{arb\-\_\-sys\-Time\-Now}}
+\index{arb\-\_\-sys\-Time\-Now@{arb\-\_\-sys\-Time\-Now}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Time\-Now}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-sys\-Time} arb\-\_\-sys\-Time\-Now (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_abbb001ba970e12626e8c00372bca3b93}
+\hypertarget{arb__sys_timer_8h_aca7fb6a13e00f7b4925e8879c6d331c7}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Timer\-Enabled@{arb\-\_\-sys\-Timer\-Enabled}}
+\index{arb\-\_\-sys\-Timer\-Enabled@{arb\-\_\-sys\-Timer\-Enabled}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Timer\-Enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool arb\-\_\-sys\-Timer\-Enabled (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_aca7fb6a13e00f7b4925e8879c6d331c7}
+\hypertarget{arb__sys_timer_8h_a6686f5eb7234db053b5a1736cc8d23a3}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Timer\-Init@{arb\-\_\-sys\-Timer\-Init}}
+\index{arb\-\_\-sys\-Timer\-Init@{arb\-\_\-sys\-Timer\-Init}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Timer\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-sys\-Timer\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-timer\-Mod\-Id}}]{t\-\_\-timer\-Id}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_a6686f5eb7234db053b5a1736cc8d23a3}
+\hypertarget{arb__sys_timer_8h_a8a10569b88900a8a51902960374ef08a}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Timer\-Start@{arb\-\_\-sys\-Timer\-Start}}
+\index{arb\-\_\-sys\-Timer\-Start@{arb\-\_\-sys\-Timer\-Start}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Timer\-Start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-sys\-Timer\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_a8a10569b88900a8a51902960374ef08a}
+\hypertarget{arb__sys_timer_8h_ae5c4ea1583039726e7a1f9a8d115df85}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!arb\-\_\-sys\-Timer\-Stop@{arb\-\_\-sys\-Timer\-Stop}}
+\index{arb\-\_\-sys\-Timer\-Stop@{arb\-\_\-sys\-Timer\-Stop}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{arb\-\_\-sys\-Timer\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-sys\-Timer\-Stop (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__sys_timer_8h_ae5c4ea1583039726e7a1f9a8d115df85}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__sys_timer_8h_a08f606895e93cffe8934c4457aa24471}{\index{arb\-\_\-sys\-Timer.\-h@{arb\-\_\-sys\-Timer.\-h}!gt\-\_\-sys\-Time@{gt\-\_\-sys\-Time}}
+\index{gt\-\_\-sys\-Time@{gt\-\_\-sys\-Time}!arb_sysTimer.h@{arb\-\_\-sys\-Timer.\-h}}
+\subsubsection[{gt\-\_\-sys\-Time}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-sys\-Time} gt\-\_\-sys\-Time}}\label{arb__sys_timer_8h_a08f606895e93cffe8934c4457aa24471}

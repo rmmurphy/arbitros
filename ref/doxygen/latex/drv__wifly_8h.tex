@@ -1,0 +1,131 @@
+\hypertarget{drv__wifly_8h}{\section{C\-:/arbitros/trunk/drivers/headers/drv\-\_\-wifly.h File Reference}
+\label{drv__wifly_8h}\index{C\-:/arbitros/trunk/drivers/headers/drv\-\_\-wifly.\-h@{C\-:/arbitros/trunk/drivers/headers/drv\-\_\-wifly.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-uart.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__wifly_setup}{t\-\_\-wifly\-Setup}
+\item 
+struct \hyperlink{structt__wifly_config}{t\-\_\-wifly\-Config}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{drv__wifly_8h_a4d9082b89dedb90ee2f5891db7acbca5}{drv\-\_\-wifly\-\_\-h}
+\item 
+\#define \hyperlink{drv__wifly_8h_ae425421216ea160a8a6ad78d3685e0bc}{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N}~(1)
+\item 
+\#define \hyperlink{drv__wifly_8h_ab1bdd365c092e8b177fe493a163d3c9c}{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S}~(0)
+\item 
+\#define \hyperlink{drv__wifly_8h_a14f3e5582ba3f711cb3580f6222eed8a}{W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E}~(27)
+\item 
+\#define \hyperlink{drv__wifly_8h_a5bc6add81ccbb523ca9f2637ce449d43}{W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E}~(25)
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657}{t\-\_\-wifly\-Error} \{ \\*
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ab3f0690fc2dbce7dbb99aca037cd5d59}{W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E} = -\/7, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0666333c84ca422b6592800dbe5b7463}{W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L} = -\/6, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a66a6fb696f994a37a943118b39445fe3}{W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T} = -\/5, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ad2c2203ecfa7d0ef2d2e9d7cedcd26b3}{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G} = -\/4, 
+\\*
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657aec2131f07043429add939c6724619c22}{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D} = -\/3, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0ba641cbc186311757496dc8d7b2562b}{W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R} = -\/2, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a1aaffae21af7c5498172dd99b92c231b}{W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P} = -\/1, 
+\hyperlink{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ac6e090ab57cee5835ba4e046fd11ff7f}{W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D} = 0
+ \}
+\item 
+enum \hyperlink{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456}{t\-\_\-wifly\-Cmd} \{ \hyperlink{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456aa22e3a50948de920d0276a58a347e4ea}{W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N}, 
+\hyperlink{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456af4b9099c393c61ebe6b246c5f46800e6}{W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D}, 
+\hyperlink{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456addc4a5acefaa7c1a7e7bc602a8107778}{W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D}, 
+\hyperlink{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456a0b0cd0c20463fc793dbfa754b052b202}{W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__wifly_8h_a517fcfa8679b4336e7695590ef6b8e11}{drv\-\_\-wifly\-Init} (\hyperlink{structt__wifly_setup}{t\-\_\-wifly\-Setup} t\-\_\-setup)
+\item 
+void \hyperlink{drv__wifly_8h_af80ff730f1325c6eba1ee59a5ff2a54b}{drv\-\_\-wifly\-Exit} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{drv__wifly_8h_a4d9082b89dedb90ee2f5891db7acbca5}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!drv\-\_\-wifly\-\_\-h@{drv\-\_\-wifly\-\_\-h}}
+\index{drv\-\_\-wifly\-\_\-h@{drv\-\_\-wifly\-\_\-h}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{drv\-\_\-wifly\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define drv\-\_\-wifly\-\_\-h}}\label{drv__wifly_8h_a4d9082b89dedb90ee2f5891db7acbca5}
+\hypertarget{drv__wifly_8h_a14f3e5582ba3f711cb3580f6222eed8a}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E@{W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E}}
+\index{W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E@{W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-F\-L\-Y\-\_\-\-K\-E\-Y\-\_\-\-S\-I\-Z\-E~(27)}}\label{drv__wifly_8h_a14f3e5582ba3f711cb3580f6222eed8a}
+\hypertarget{drv__wifly_8h_ab1bdd365c092e8b177fe493a163d3c9c}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S@{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S}}
+\index{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S@{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-D\-I\-S~(0)}}\label{drv__wifly_8h_ab1bdd365c092e8b177fe493a163d3c9c}
+\hypertarget{drv__wifly_8h_ae425421216ea160a8a6ad78d3685e0bc}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N@{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N}}
+\index{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N@{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-F\-L\-Y\-\_\-\-R\-E\-S\-E\-T\-\_\-\-E\-N~(1)}}\label{drv__wifly_8h_ae425421216ea160a8a6ad78d3685e0bc}
+\hypertarget{drv__wifly_8h_a5bc6add81ccbb523ca9f2637ce449d43}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E@{W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E}}
+\index{W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E@{W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define W\-I\-F\-L\-Y\-\_\-\-S\-S\-I\-D\-\_\-\-S\-I\-Z\-E~(25)}}\label{drv__wifly_8h_a5bc6add81ccbb523ca9f2637ce449d43}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!t\-\_\-wifly\-Cmd@{t\-\_\-wifly\-Cmd}}
+\index{t\-\_\-wifly\-Cmd@{t\-\_\-wifly\-Cmd}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{t\-\_\-wifly\-Cmd}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-wifly\-Cmd}}}\label{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N@{W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N@{W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N}}\item[{\em 
+\hypertarget{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456aa22e3a50948de920d0276a58a347e4ea}{W\-I\-F\-L\-Y\-\_\-\-B\-E\-G\-I\-N}\label{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456aa22e3a50948de920d0276a58a347e4ea}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456af4b9099c393c61ebe6b246c5f46800e6}{W\-I\-F\-L\-Y\-\_\-\-E\-N\-T\-E\-R\-\_\-\-C\-M\-D}\label{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456af4b9099c393c61ebe6b246c5f46800e6}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456addc4a5acefaa7c1a7e7bc602a8107778}{W\-I\-F\-L\-Y\-\_\-\-E\-X\-I\-T\-\_\-\-C\-M\-D}\label{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456addc4a5acefaa7c1a7e7bc602a8107778}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456a0b0cd0c20463fc793dbfa754b052b202}{W\-I\-F\-L\-Y\-\_\-\-S\-E\-N\-D\-\_\-\-C\-M\-D}\label{drv__wifly_8h_a28826984ec454d5549e350ff2ac8e456a0b0cd0c20463fc793dbfa754b052b202}
+}]\end{description}
+\end{Desc}
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!t\-\_\-wifly\-Error@{t\-\_\-wifly\-Error}}
+\index{t\-\_\-wifly\-Error@{t\-\_\-wifly\-Error}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{t\-\_\-wifly\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-wifly\-Error}}}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E@{W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E@{W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ab3f0690fc2dbce7dbb99aca037cd5d59}{W\-I\-F\-L\-Y\-\_\-\-N\-O\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ab3f0690fc2dbce7dbb99aca037cd5d59}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L@{W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L@{W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0666333c84ca422b6592800dbe5b7463}{W\-I\-F\-L\-Y\-\_\-\-C\-M\-D\-\_\-\-M\-O\-D\-E\-\_\-\-F\-A\-I\-L}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0666333c84ca422b6592800dbe5b7463}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T@{W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T@{W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a66a6fb696f994a37a943118b39445fe3}{W\-I\-F\-L\-Y\-\_\-\-F\-A\-I\-L\-E\-D\-\_\-\-T\-O\-\_\-\-B\-O\-O\-T}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a66a6fb696f994a37a943118b39445fe3}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G@{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G@{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ad2c2203ecfa7d0ef2d2e9d7cedcd26b3}{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-A\-R\-G}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ad2c2203ecfa7d0ef2d2e9d7cedcd26b3}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D@{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657aec2131f07043429add939c6724619c22}{W\-I\-F\-L\-Y\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-C\-M\-D}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657aec2131f07043429add939c6724619c22}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R@{W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R@{W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0ba641cbc186311757496dc8d7b2562b}{W\-I\-F\-L\-Y\-\_\-\-N\-U\-L\-L\-\_\-\-P\-T\-R}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a0ba641cbc186311757496dc8d7b2562b}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a1aaffae21af7c5498172dd99b92c231b}{W\-I\-F\-L\-Y\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657a1aaffae21af7c5498172dd99b92c231b}
+}]\index{W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D@{W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D}!drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}}\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D@{W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D}}\item[{\em 
+\hypertarget{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ac6e090ab57cee5835ba4e046fd11ff7f}{W\-I\-F\-L\-Y\-\_\-\-P\-A\-S\-S\-E\-D}\label{drv__wifly_8h_adebffe22183c4aa893b03ce751c7d657ac6e090ab57cee5835ba4e046fd11ff7f}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{drv__wifly_8h_af80ff730f1325c6eba1ee59a5ff2a54b}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!drv\-\_\-wifly\-Exit@{drv\-\_\-wifly\-Exit}}
+\index{drv\-\_\-wifly\-Exit@{drv\-\_\-wifly\-Exit}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{drv\-\_\-wifly\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void drv\-\_\-wifly\-Exit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{drv__wifly_8h_af80ff730f1325c6eba1ee59a5ff2a54b}
+\hypertarget{drv__wifly_8h_a517fcfa8679b4336e7695590ef6b8e11}{\index{drv\-\_\-wifly.\-h@{drv\-\_\-wifly.\-h}!drv\-\_\-wifly\-Init@{drv\-\_\-wifly\-Init}}
+\index{drv\-\_\-wifly\-Init@{drv\-\_\-wifly\-Init}!drv_wifly.h@{drv\-\_\-wifly.\-h}}
+\subsubsection[{drv\-\_\-wifly\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} drv\-\_\-wifly\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-wifly\-Setup}}]{t\-\_\-setup}
+\end{DoxyParamCaption}
+)}}\label{drv__wifly_8h_a517fcfa8679b4336e7695590ef6b8e11}

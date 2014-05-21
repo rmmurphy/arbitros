@@ -1,0 +1,1383 @@
+\hypertarget{class_sd_base_file}{\section{Sd\-Base\-File Class Reference}
+\label{class_sd_base_file}\index{Sd\-Base\-File@{Sd\-Base\-File}}
+}
+
+
+Base class for \hyperlink{class_sd_file}{Sd\-File} with \hyperlink{class_print}{Print} and C++ streams.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-Base\-File.\-h$>$}
+
+Inheritance diagram for Sd\-Base\-File\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sd_base_file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sd_base_file_a9e1a71e3766b3acc8171920ada4e7717}{Sd\-Base\-File} ()
+\item 
+\hyperlink{class_sd_base_file_a1e2296895cd32f7269ee1cb9e2c94d92}{Sd\-Base\-File} (const char $\ast$path, uint8\-\_\-t oflag)
+\item 
+bool \hyperlink{class_sd_base_file_a9b199fded04cffe6a609465dce43fdcc}{get\-Write\-Error} ()
+\item 
+void \hyperlink{class_sd_base_file_af50f0c1e1c726ef3dee08a84456090b9}{clear\-Write\-Error} ()
+\item 
+void \hyperlink{class_sd_base_file_af64a10413bed83901d3f08274019d6bb}{getpos} (\hyperlink{struct_fat_pos__t}{Fat\-Pos\-\_\-t} $\ast$pos)
+\item 
+void \hyperlink{class_sd_base_file_a48594bc03b5a4a47cf774e01c40be1b5}{setpos} (\hyperlink{struct_fat_pos__t}{Fat\-Pos\-\_\-t} $\ast$pos)
+\item 
+uint32\-\_\-t \hyperlink{class_sd_base_file_af93dbeb8dc6867fcc97a7b42e2898f02}{available} ()
+\item 
+bool \hyperlink{class_sd_base_file_a46143fd6de3be9ab9951f140d3ae8c2f}{close} ()
+\item 
+bool \hyperlink{class_sd_base_file_a1934f84b25a170fbdfbee1f874c7a315}{contiguous\-Range} (uint32\-\_\-t $\ast$bgn\-Block, uint32\-\_\-t $\ast$end\-Block)
+\item 
+bool \hyperlink{class_sd_base_file_aa541db9563ce4a0b765b11b10f76b449}{create\-Contiguous} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, const char $\ast$path, uint32\-\_\-t size)
+\item 
+uint32\-\_\-t \hyperlink{class_sd_base_file_ab5cffcf9871ff99fc7ed9caef94d1849}{cur\-Cluster} () const 
+\item 
+uint32\-\_\-t \hyperlink{class_sd_base_file_a4c56d435ee4c9cbc50c6f5aaf1e5d64d}{cur\-Position} () const 
+\item 
+bool \hyperlink{class_sd_base_file_a5a55859ea4ca96697df8852acb2e76d1}{dir\-Entry} (\hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\item 
+bool \hyperlink{class_sd_base_file_ace1cb5fa7dac7c504114b2b24ec144d2}{exists} (const char $\ast$\hyperlink{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{name})
+\item 
+int16\-\_\-t \hyperlink{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{fgets} (char $\ast$str, int16\-\_\-t num, char $\ast$delim=0)
+\item 
+uint32\-\_\-t \hyperlink{class_sd_base_file_a134f35678a76fc9be1efe2c290483814}{file\-Size} () const 
+\item 
+uint32\-\_\-t \hyperlink{class_sd_base_file_a58d3a00e51805ee03012cb2c86414796}{first\-Cluster} () const 
+\item 
+bool \hyperlink{class_sd_base_file_a6ee2b08977084de3a31d1509d7a8e6af}{get\-Filename} (char $\ast$\hyperlink{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{name})
+\item 
+bool \hyperlink{class_sd_base_file_a50918fb073b73ccef883870dfb705d74}{is\-Dir} () const 
+\item 
+bool \hyperlink{class_sd_base_file_aee673f3d8abf2d1bfd841274900fd40a}{is\-File} () const 
+\item 
+bool \hyperlink{class_sd_base_file_a3c7351cec1380d07f9e4b3ec96b2b1ff}{is\-Open} () const 
+\item 
+bool \hyperlink{class_sd_base_file_a8a0d7f6a7297d2b9772c4033b2296d56}{is\-Sub\-Dir} () const 
+\item 
+bool \hyperlink{class_sd_base_file_adb67b2a249620b49f23a8bc03cbdb3b0}{is\-Root} () const 
+\item 
+void \hyperlink{class_sd_base_file_ab4ab4da84ebfc68fe4c3035d156fab59}{ls} (\hyperlink{class_print}{Print} $\ast$pr, uint8\-\_\-t flags=0, uint8\-\_\-t indent=0)
+\item 
+void \hyperlink{class_sd_base_file_afaff0496e55019ed50d950230dd9c4f0}{ls} (uint8\-\_\-t flags=0)
+\item 
+bool \hyperlink{class_sd_base_file_a204a0b140efe0da51252fab0fd3bddcc}{mkdir} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir, const char $\ast$path, bool p\-Flag=true)
+\item 
+\hypertarget{class_sd_base_file_a920b65592f1ba58c38c01e0518ae94c9}{bool {\bfseries make\-Dir} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir, const char $\ast$path)}\label{class_sd_base_file_a920b65592f1ba58c38c01e0518ae94c9}
+
+\item 
+bool \hyperlink{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{open} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, uint16\-\_\-t index, uint8\-\_\-t oflag)
+\item 
+bool \hyperlink{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}{open} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, const char $\ast$path, uint8\-\_\-t oflag)
+\item 
+bool \hyperlink{class_sd_base_file_a77b8ed77fc5763bd65c27e688ad750c9}{open} (const char $\ast$path, uint8\-\_\-t oflag=\hyperlink{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{O\-\_\-\-R\-E\-A\-D})
+\item 
+bool \hyperlink{class_sd_base_file_abd013dab96da2ef4253c7ddc9cddf14a}{open\-Next} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, uint8\-\_\-t oflag)
+\item 
+bool \hyperlink{class_sd_base_file_a2e90ca886ca5681df690eeb646758aa5}{open\-Root} (\hyperlink{class_sd_volume}{Sd\-Volume} $\ast$vol)
+\item 
+int \hyperlink{class_sd_base_file_a9040fa1d479d71edf3a826f4691c35c4}{peek} ()
+\item 
+bool \hyperlink{class_sd_base_file_a37fb3af46ea3958c7c7bdc11f3dff345}{print\-Create\-Date\-Time} (\hyperlink{class_print}{Print} $\ast$pr)
+\item 
+int \hyperlink{class_sd_base_file_aeb564423f405ec9e71b62926b1ef8ab5}{print\-Field} (int16\-\_\-t value, char term)
+\item 
+int \hyperlink{class_sd_base_file_ac9a25d21b439ac5c270ebcb42aa208db}{print\-Field} (uint16\-\_\-t value, char term)
+\item 
+int \hyperlink{class_sd_base_file_a5a95541e25ab84c7ddbe3404db0e2efd}{print\-Field} (int32\-\_\-t value, char term)
+\item 
+int \hyperlink{class_sd_base_file_a85d0c7a2190689f774a07a5bfb9668bd}{print\-Field} (uint32\-\_\-t value, char term)
+\item 
+bool \hyperlink{class_sd_base_file_a9a50d259cda61d39b96e4c5ee8a2e45a}{print\-Modify\-Date\-Time} (\hyperlink{class_print}{Print} $\ast$pr)
+\item 
+bool \hyperlink{class_sd_base_file_a57f9e42369a4b97e6b21ed0040115e17}{print\-Name} ()
+\item 
+bool \hyperlink{class_sd_base_file_ad5e2bbdaf498b66fcf393137bb30a1c2}{print\-Name} (\hyperlink{class_print}{Print} $\ast$pr)
+\item 
+int16\-\_\-t \hyperlink{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}{read} ()
+\item 
+int \hyperlink{class_sd_base_file_a2af650686f0fc5fa748f6478f5f8afb1}{read} (void $\ast$buf, size\-\_\-t nbyte)
+\item 
+int8\-\_\-t \hyperlink{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}{read\-Dir} (\hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} $\ast$dir)
+\item 
+bool \hyperlink{class_sd_base_file_a1f9c4a4bd47b7cd9beb431504c5ae46c}{remove} ()
+\item 
+void \hyperlink{class_sd_base_file_ab8734e666421c9fe3b6380a818c6c727}{rewind} ()
+\item 
+bool \hyperlink{class_sd_base_file_a34221bbb3afb83430f8d21f59d8e5b1c}{rename} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, const char $\ast$new\-Path)
+\item 
+bool \hyperlink{class_sd_base_file_a8565ae91a87acd4ed1a648e52e51ce13}{rmdir} ()
+\item 
+\hypertarget{class_sd_base_file_ae2acaa045ad377689b6786197a157288}{bool {\bfseries rm\-Dir} ()}\label{class_sd_base_file_ae2acaa045ad377689b6786197a157288}
+
+\item 
+bool \hyperlink{class_sd_base_file_a5cbe5f8201b8457438d219e6b33b42bf}{rm\-Rf\-Star} ()
+\item 
+bool \hyperlink{class_sd_base_file_ae79988724675a378d01d9158b1b8b667}{seek\-Cur} (int32\-\_\-t offset)
+\item 
+bool \hyperlink{class_sd_base_file_ae7667637428e752e4ff64e07c2e88c92}{seek\-End} (int32\-\_\-t offset=0)
+\item 
+bool \hyperlink{class_sd_base_file_a37e6f66b2ccbd829cf7a62a5d3bcc0b3}{seek\-Set} (uint32\-\_\-t pos)
+\item 
+bool \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync} ()
+\item 
+bool \hyperlink{class_sd_base_file_a65d54c8f0cc5089edbd0b08eb3e7830e}{timestamp} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$file)
+\item 
+bool \hyperlink{class_sd_base_file_a679c37021bcac29a8a47cdb0b014ae4d}{timestamp} (uint8\-\_\-t flag, uint16\-\_\-t year, uint8\-\_\-t month, uint8\-\_\-t day, uint8\-\_\-t hour, uint8\-\_\-t minute, uint8\-\_\-t second)
+\item 
+uint8\-\_\-t \hyperlink{class_sd_base_file_a7c3e8c8aa22970484617493a084000b9}{type} () const 
+\item 
+bool \hyperlink{class_sd_base_file_aa0f431cd6c841a1a006aee221a8e411d}{truncate} (uint32\-\_\-t size)
+\item 
+\hyperlink{class_sd_volume}{Sd\-Volume} $\ast$ \hyperlink{class_sd_base_file_aed2457152a60a9f78da3c34813e396d0}{volume} () const 
+\item 
+int \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write} (const void $\ast$buf, size\-\_\-t nbyte)
+\item 
+\hypertarget{class_sd_base_file_a831f884ee269ed01d900f700d4999b37}{bool {\bfseries contiguous\-Range} (uint32\-\_\-t \&bgn\-Block, uint32\-\_\-t \&end\-Block) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use contiguous\-Range(\&bgn\-Block}\label{class_sd_base_file_a831f884ee269ed01d900f700d4999b37}
+
+\item 
+\hypertarget{class_sd_base_file_a24b797b735d0a69291c28c35e1d1be90}{bool {\bfseries create\-Contiguous} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir\-File, const char $\ast$path, uint32\-\_\-t size) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use create\-Contiguous(\&bgn\-Block}\label{class_sd_base_file_a24b797b735d0a69291c28c35e1d1be90}
+
+\item 
+\hypertarget{class_sd_base_file_ad7a4eda4563ff1e5a6251e36db92a53d}{bool {\bfseries dir\-Entry} (\hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} \&dir) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use dir\-Entry(\&dir)\char`\"{})))}\label{class_sd_base_file_ad7a4eda4563ff1e5a6251e36db92a53d}
+
+\item 
+\hypertarget{class_sd_base_file_a6b604b073052842aa4c479cb9ccd8be4}{bool {\bfseries mkdir} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir, const char $\ast$path) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use mkdir(\&dir}\label{class_sd_base_file_a6b604b073052842aa4c479cb9ccd8be4}
+
+\item 
+\hypertarget{class_sd_base_file_a5d1c617ddf4e6019613e79af477d5c6f}{bool {\bfseries open} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir\-File, const char $\ast$path, uint8\-\_\-t oflag) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use open(\&dir\-File}\label{class_sd_base_file_a5d1c617ddf4e6019613e79af477d5c6f}
+
+\item 
+\hypertarget{class_sd_base_file_adb73974c3511171cb2e0f30792745b18}{bool {\bfseries open} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir\-File, const char $\ast$path) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use open(\&dir\-File}\label{class_sd_base_file_adb73974c3511171cb2e0f30792745b18}
+
+\item 
+\hypertarget{class_sd_base_file_a62bf8ae3d7b7c0c43bcce0a0f1d5b464}{bool {\bfseries open} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir\-File, uint16\-\_\-t index, uint8\-\_\-t oflag) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use open(\&dir\-File}\label{class_sd_base_file_a62bf8ae3d7b7c0c43bcce0a0f1d5b464}
+
+\item 
+\hypertarget{class_sd_base_file_a8543f213a9b5402564d4ea85a3463616}{bool {\bfseries open\-Root} (\hyperlink{class_sd_volume}{Sd\-Volume} \&vol) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use open\-Root(\&vol)\char`\"{})))}\label{class_sd_base_file_a8543f213a9b5402564d4ea85a3463616}
+
+\item 
+\hypertarget{class_sd_base_file_ac688af3bef42702b4d6513ff586ba802}{int8\-\_\-t {\bfseries read\-Dir} (\hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} \&dir) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use read\-Dir(\&dir)\char`\"{})))}\label{class_sd_base_file_ac688af3bef42702b4d6513ff586ba802}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$ \hyperlink{class_sd_base_file_a2c5568d41d6270faa79b89323ae63c6d}{cwd} ()
+\item 
+static void \hyperlink{class_sd_base_file_ae89cdf7331e346cc8b7ce4a935c5b3e5}{date\-Time\-Callback} (void($\ast$date\-Time)(uint16\-\_\-t $\ast$date, uint16\-\_\-t $\ast$time))
+\item 
+static void \hyperlink{class_sd_base_file_aa8e3adbe61ae1e665819aa0f56c50169}{date\-Time\-Callback\-Cancel} ()
+\item 
+static void \hyperlink{class_sd_base_file_ae2293f94f8ef9e6879265baf97d711c3}{dir\-Name} (const \hyperlink{_sd_fat_structs_8h_a803db59d4e16a0c54a647afc6a7954e3}{dir\-\_\-t} \&dir, char $\ast$\hyperlink{_sd_fat_structs_8h_a30308c9b983377042fd2cc8900454fb1}{name})
+\item 
+static void \hyperlink{class_sd_base_file_a4b0b63f35ecabac2d7fda5d0fe590fbb}{print\-Fat\-Date} (uint16\-\_\-t fat\-Date)
+\item 
+static void \hyperlink{class_sd_base_file_a946e3ce2fc487b22bd0c6535cf2579e8}{print\-Fat\-Date} (\hyperlink{class_print}{Print} $\ast$pr, uint16\-\_\-t fat\-Date)
+\item 
+static void \hyperlink{class_sd_base_file_a59fbc58803704c97e24cda953b62e271}{print\-Fat\-Time} (uint16\-\_\-t fat\-Time)
+\item 
+static void \hyperlink{class_sd_base_file_aee26cb9627fd22021d7dc068b835529d}{print\-Fat\-Time} (\hyperlink{class_print}{Print} $\ast$pr, uint16\-\_\-t fat\-Time)
+\item 
+static bool \hyperlink{class_sd_base_file_a6cba36958b2afc506e72376125cae511}{remove} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} $\ast$dir\-File, const char $\ast$path)
+\item 
+\hypertarget{class_sd_base_file_af6a5d760094c8957e18a8d46d0abbee3}{static void {\bfseries date\-Time\-Callback} (void($\ast$date\-Time)(uint16\-\_\-t \&date, uint16\-\_\-t \&time)) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use void date\-Time\-Callback(\char`\"{}\char`\"{}void ($\ast$date\-Time)(uint16\-\_\-t$\ast$ date}\label{class_sd_base_file_af6a5d760094c8957e18a8d46d0abbee3}
+
+\item 
+\hypertarget{class_sd_base_file_a2691a24f7ba00f556e8320c28d1d5bed}{static bool {\bfseries remove} (\hyperlink{class_sd_base_file}{Sd\-Base\-File} \&dir\-File, const char $\ast$path) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}use remove(\&dir\-File}\label{class_sd_base_file_a2691a24f7ba00f556e8320c28d1d5bed}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_sd_base_file_a800e5043596b8bec0dd32076d3c9750c}{write\-Error}
+\item 
+\hypertarget{class_sd_base_file_a59ccb0407e4759a5363d4262e18aec73}{bool \& {\bfseries end\-Block}}\label{class_sd_base_file_a59ccb0407e4759a5363d4262e18aec73}
+
+\item 
+\hypertarget{class_sd_base_file_affcf6be1d8a276e78f7a669c22fee4e6}{static void uint16\-\_\-t $\ast$ {\bfseries time}}\label{class_sd_base_file_affcf6be1d8a276e78f7a669c22fee4e6}
+
+\item 
+\hypertarget{class_sd_base_file_a55cf894a3c789d80a963f10433251dfe}{bool {\bfseries path}}\label{class_sd_base_file_a55cf894a3c789d80a963f10433251dfe}
+
+\item 
+\hypertarget{class_sd_base_file_a2319f1b18c7dcb22957b3f75f6436299}{bool {\bfseries oflag}}\label{class_sd_base_file_a2319f1b18c7dcb22957b3f75f6436299}
+
+\item 
+\hypertarget{class_sd_base_file_a49c49194ba38e12c0991dfb65cf4876a}{bool {\bfseries O\-\_\-\-R\-D\-W\-R}}\label{class_sd_base_file_a49c49194ba38e12c0991dfb65cf4876a}
+
+\item 
+\hypertarget{class_sd_base_file_a7e1f783bbc6758254c17c5d46122e830}{bool {\bfseries index}}\label{class_sd_base_file_a7e1f783bbc6758254c17c5d46122e830}
+
+\item 
+\hypertarget{class_sd_base_file_a55cf894a3c789d80a963f10433251dfe}{static bool {\bfseries path}}\label{class_sd_base_file_a55cf894a3c789d80a963f10433251dfe}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sd_base_file_ac838f1e6beb01ec57bd4b52e57df85e7}{class {\bfseries Sd\-Fat}}\label{class_sd_base_file_ac838f1e6beb01ec57bd4b52e57df85e7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for \hyperlink{class_sd_file}{Sd\-File} with \hyperlink{class_print}{Print} and C++ streams. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sd_base_file_a9e1a71e3766b3acc8171920ada4e7717}{\index{Sd\-Base\-File@{Sd\-Base\-File}!Sd\-Base\-File@{Sd\-Base\-File}}
+\index{Sd\-Base\-File@{Sd\-Base\-File}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{Sd\-Base\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sd\-Base\-File} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a9e1a71e3766b3acc8171920ada4e7717}
+Create an instance. \hypertarget{class_sd_base_file_a1e2296895cd32f7269ee1cb9e2c94d92}{\index{Sd\-Base\-File@{Sd\-Base\-File}!Sd\-Base\-File@{Sd\-Base\-File}}
+\index{Sd\-Base\-File@{Sd\-Base\-File}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{Sd\-Base\-File}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sd\-Base\-File} (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{uint8\-\_\-t}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a1e2296895cd32f7269ee1cb9e2c94d92}
+Create a file object and open it in the current working directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & A path with a valid 8.\-3 D\-O\-S name for a file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of open flags. see \hyperlink{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}{Sd\-Base\-File\-::open(\-Sd\-Base\-File$\ast$, const char$\ast$, uint8\-\_\-t)}. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sd_base_file_af93dbeb8dc6867fcc97a7b42e2898f02}{\index{Sd\-Base\-File@{Sd\-Base\-File}!available@{available}}
+\index{available@{available}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{available}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t available (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_af93dbeb8dc6867fcc97a7b42e2898f02}
+\begin{DoxyReturn}{Returns}
+number of bytes available from yhe current position to E\-O\-F 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_af50f0c1e1c726ef3dee08a84456090b9}{\index{Sd\-Base\-File@{Sd\-Base\-File}!clear\-Write\-Error@{clear\-Write\-Error}}
+\index{clear\-Write\-Error@{clear\-Write\-Error}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{clear\-Write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}void clear\-Write\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_af50f0c1e1c726ef3dee08a84456090b9}
+Set write\-Error to zero \hypertarget{class_sd_base_file_a46143fd6de3be9ab9951f140d3ae8c2f}{\index{Sd\-Base\-File@{Sd\-Base\-File}!close@{close}}
+\index{close@{close}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}bool close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a46143fd6de3be9ab9951f140d3ae8c2f}
+Close a file and force cached data and directory information to be written to the storage device.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include no file is open or an I/\-O error. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a1934f84b25a170fbdfbee1f874c7a315}{\index{Sd\-Base\-File@{Sd\-Base\-File}!contiguous\-Range@{contiguous\-Range}}
+\index{contiguous\-Range@{contiguous\-Range}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{contiguous\-Range}]{\setlength{\rightskip}{0pt plus 5cm}bool contiguous\-Range (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t $\ast$}]{bgn\-Block, }
+\item[{uint32\-\_\-t $\ast$}]{end\-Block}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a1934f84b25a170fbdfbee1f874c7a315}
+Check for contiguous file and return its raw block range.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em bgn\-Block} & the first block address for the file. \\
+\hline
+\mbox{\tt out}  & {\em end\-Block} & the last block address for the file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include file is not contiguous, file has zero length or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_aa541db9563ce4a0b765b11b10f76b449}{\index{Sd\-Base\-File@{Sd\-Base\-File}!create\-Contiguous@{create\-Contiguous}}
+\index{create\-Contiguous@{create\-Contiguous}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{create\-Contiguous}]{\setlength{\rightskip}{0pt plus 5cm}bool create\-Contiguous (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{const char $\ast$}]{path, }
+\item[{uint32\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_aa541db9563ce4a0b765b11b10f76b449}
+Create and open a new contiguous file of a specified size.
+
+\begin{DoxyNote}{Note}
+This function only supports short D\-O\-S 8.\-3 names. See \hyperlink{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{open()} for more information.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & The directory where the file will be created. \\
+\hline
+\mbox{\tt in}  & {\em path} & A path with a valid D\-O\-S 8.\-3 file name. \\
+\hline
+\mbox{\tt in}  & {\em size} & The desired file size.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include {\itshape path} contains an invalid D\-O\-S 8.\-3 file name, the F\-A\-T volume has not been initialized, a file is already open, the file already exists, the root directory is full or an I/\-O error. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ab5cffcf9871ff99fc7ed9caef94d1849}{\index{Sd\-Base\-File@{Sd\-Base\-File}!cur\-Cluster@{cur\-Cluster}}
+\index{cur\-Cluster@{cur\-Cluster}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{cur\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t cur\-Cluster (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_ab5cffcf9871ff99fc7ed9caef94d1849}
+\begin{DoxyReturn}{Returns}
+The current cluster number for a file or directory. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a4c56d435ee4c9cbc50c6f5aaf1e5d64d}{\index{Sd\-Base\-File@{Sd\-Base\-File}!cur\-Position@{cur\-Position}}
+\index{cur\-Position@{cur\-Position}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{cur\-Position}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t cur\-Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a4c56d435ee4c9cbc50c6f5aaf1e5d64d}
+\begin{DoxyReturn}{Returns}
+The current position for a file or directory. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a2c5568d41d6270faa79b89323ae63c6d}{\index{Sd\-Base\-File@{Sd\-Base\-File}!cwd@{cwd}}
+\index{cwd@{cwd}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{cwd}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Sd\-Base\-File}$\ast$ cwd (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_sd_base_file_a2c5568d41d6270faa79b89323ae63c6d}
+\begin{DoxyReturn}{Returns}
+Current working directory 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ae89cdf7331e346cc8b7ce4a935c5b3e5}{\index{Sd\-Base\-File@{Sd\-Base\-File}!date\-Time\-Callback@{date\-Time\-Callback}}
+\index{date\-Time\-Callback@{date\-Time\-Callback}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{date\-Time\-Callback}]{\setlength{\rightskip}{0pt plus 5cm}static void date\-Time\-Callback (
+\begin{DoxyParamCaption}
+\item[{void($\ast$)(uint16\-\_\-t $\ast$date, uint16\-\_\-t $\ast$time)}]{date\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_sd_base_file_ae89cdf7331e346cc8b7ce4a935c5b3e5}
+Set the date/time callback function
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em date\-Time} & The user's call back function. The callback function is of the form\-:\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} dateTime(uint16\_t* date, uint16\_t* time) \{
+  uint16\_t year;
+  uint8\_t month, day, hour, minute, second;
+
+  \textcolor{comment}{// User gets date and time from GPS or real-time clock here}
+
+  \textcolor{comment}{// return date using FAT\_DATE macro to format fields}
+  *date = \hyperlink{_sd_base_file_8h_a44899ad42ddf32ff1c1a73b5251b304a}{FAT\_DATE}(year, month, day);
+
+  \textcolor{comment}{// return time using FAT\_TIME macro to format fields}
+  *time = \hyperlink{_sd_base_file_8h_a375720927be5a39475d48b2d75dae29a}{FAT\_TIME}(hour, minute, second);
+\}
+\end{DoxyCode}
+
+
+Sets the function that is called when a file is created or when a file's directory entry is modified by \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()}. All timestamps, access, creation, and modify, are set when a file is created. \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} maintains the last access date and last modify date/time.
+
+See the \hyperlink{class_sd_base_file_a65d54c8f0cc5089edbd0b08eb3e7830e}{timestamp()} function. \hypertarget{class_sd_base_file_aa8e3adbe61ae1e665819aa0f56c50169}{\index{Sd\-Base\-File@{Sd\-Base\-File}!date\-Time\-Callback\-Cancel@{date\-Time\-Callback\-Cancel}}
+\index{date\-Time\-Callback\-Cancel@{date\-Time\-Callback\-Cancel}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{date\-Time\-Callback\-Cancel}]{\setlength{\rightskip}{0pt plus 5cm}static void date\-Time\-Callback\-Cancel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{class_sd_base_file_aa8e3adbe61ae1e665819aa0f56c50169}
+Cancel the date/time callback function. \hypertarget{class_sd_base_file_a5a55859ea4ca96697df8852acb2e76d1}{\index{Sd\-Base\-File@{Sd\-Base\-File}!dir\-Entry@{dir\-Entry}}
+\index{dir\-Entry@{dir\-Entry}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{dir\-Entry}]{\setlength{\rightskip}{0pt plus 5cm}bool dir\-Entry (
+\begin{DoxyParamCaption}
+\item[{{\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a5a55859ea4ca96697df8852acb2e76d1}
+Return a file's directory entry.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dir} & Location for return of the file's directory entry.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ae2293f94f8ef9e6879265baf97d711c3}{\index{Sd\-Base\-File@{Sd\-Base\-File}!dir\-Name@{dir\-Name}}
+\index{dir\-Name@{dir\-Name}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{dir\-Name}]{\setlength{\rightskip}{0pt plus 5cm}void dir\-Name (
+\begin{DoxyParamCaption}
+\item[{const {\bf dir\-\_\-t} \&}]{dir, }
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_ae2293f94f8ef9e6879265baf97d711c3}
+Format the name field of {\itshape dir} into the 13 byte array {\itshape name} in standard 8.\-3 short name format.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir} & The directory structure containing the name. \\
+\hline
+\mbox{\tt out}  & {\em name} & A 13 byte char array for the formatted name. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_ace1cb5fa7dac7c504114b2b24ec144d2}{\index{Sd\-Base\-File@{Sd\-Base\-File}!exists@{exists}}
+\index{exists@{exists}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{exists}]{\setlength{\rightskip}{0pt plus 5cm}bool exists (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_ace1cb5fa7dac7c504114b2b24ec144d2}
+Test for the existence of a file in a directory
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & Name of the file to be tested for.\\
+\hline
+\end{DoxyParams}
+The calling instance must be an open directory file.
+
+dir\-File.\-exists(\char`\"{}\-T\-O\-F\-I\-N\-D.\-T\-X\-T\char`\"{}) searches for \char`\"{}\-T\-O\-F\-I\-N\-D.\-T\-X\-T\char`\"{} in the directory dir\-File.
+
+\begin{DoxyReturn}{Returns}
+true if the file exists else false. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{\index{Sd\-Base\-File@{Sd\-Base\-File}!fgets@{fgets}}
+\index{fgets@{fgets}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{fgets}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t fgets (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{str, }
+\item[{int16\-\_\-t}]{num, }
+\item[{char $\ast$}]{delim = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}
+Get a string from a file.
+
+\hyperlink{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{fgets()} reads bytes from a file into the array pointed to by {\itshape str}, until {\itshape num} -\/ 1 bytes are read, or a delimiter is read and transferred to {\itshape str}, or end-\/of-\/file is encountered. The string is then terminated with a null byte.
+
+\hyperlink{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{fgets()} deletes C\-R, '\textbackslash{}r', from the string. This insures only a '\textbackslash{}n' terminates the string for Windows text files which use C\-R\-L\-F for newline.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em str} & Pointer to the array where the string is stored. \\
+\hline
+\mbox{\tt in}  & {\em num} & Maximum number of characters to be read (including the final null byte). Usually the length of the array {\itshape str} is used. \\
+\hline
+\mbox{\tt in}  & {\em delim} & Optional set of delimiters. The default is \char`\"{}\textbackslash{}n\char`\"{}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For success \hyperlink{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{fgets()} returns the length of the string in {\itshape str}. If no data is read, \hyperlink{class_sd_base_file_af3081927d174cf7558953769f3dec7a3}{fgets()} returns zero for E\-O\-F or -\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a134f35678a76fc9be1efe2c290483814}{\index{Sd\-Base\-File@{Sd\-Base\-File}!file\-Size@{file\-Size}}
+\index{file\-Size@{file\-Size}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{file\-Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t file\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a134f35678a76fc9be1efe2c290483814}
+\begin{DoxyReturn}{Returns}
+The total number of bytes in a file or directory. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a58d3a00e51805ee03012cb2c86414796}{\index{Sd\-Base\-File@{Sd\-Base\-File}!first\-Cluster@{first\-Cluster}}
+\index{first\-Cluster@{first\-Cluster}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{first\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t first\-Cluster (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a58d3a00e51805ee03012cb2c86414796}
+\begin{DoxyReturn}{Returns}
+The first cluster number for a file or directory. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a6ee2b08977084de3a31d1509d7a8e6af}{\index{Sd\-Base\-File@{Sd\-Base\-File}!get\-Filename@{get\-Filename}}
+\index{get\-Filename@{get\-Filename}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{get\-Filename}]{\setlength{\rightskip}{0pt plus 5cm}bool get\-Filename (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{name}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a6ee2b08977084de3a31d1509d7a8e6af}
+Get a file's name
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em name} & An array of 13 characters for the file's name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_af64a10413bed83901d3f08274019d6bb}{\index{Sd\-Base\-File@{Sd\-Base\-File}!getpos@{getpos}}
+\index{getpos@{getpos}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{getpos}]{\setlength{\rightskip}{0pt plus 5cm}void getpos (
+\begin{DoxyParamCaption}
+\item[{{\bf Fat\-Pos\-\_\-t} $\ast$}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_af64a10413bed83901d3f08274019d6bb}
+get position for streams 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pos} & struct to receive position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_a9b199fded04cffe6a609465dce43fdcc}{\index{Sd\-Base\-File@{Sd\-Base\-File}!get\-Write\-Error@{get\-Write\-Error}}
+\index{get\-Write\-Error@{get\-Write\-Error}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{get\-Write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool get\-Write\-Error (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a9b199fded04cffe6a609465dce43fdcc}
+\begin{DoxyReturn}{Returns}
+value of write\-Error 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a50918fb073b73ccef883870dfb705d74}{\index{Sd\-Base\-File@{Sd\-Base\-File}!is\-Dir@{is\-Dir}}
+\index{is\-Dir@{is\-Dir}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{is\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a50918fb073b73ccef883870dfb705d74}
+\begin{DoxyReturn}{Returns}
+True if this is a directory else false. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_aee673f3d8abf2d1bfd841274900fd40a}{\index{Sd\-Base\-File@{Sd\-Base\-File}!is\-File@{is\-File}}
+\index{is\-File@{is\-File}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{is\-File}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_aee673f3d8abf2d1bfd841274900fd40a}
+\begin{DoxyReturn}{Returns}
+True if this is a normal file else false. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a3c7351cec1380d07f9e4b3ec96b2b1ff}{\index{Sd\-Base\-File@{Sd\-Base\-File}!is\-Open@{is\-Open}}
+\index{is\-Open@{is\-Open}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{is\-Open}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a3c7351cec1380d07f9e4b3ec96b2b1ff}
+\begin{DoxyReturn}{Returns}
+True if this is an open file/directory else false. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_adb67b2a249620b49f23a8bc03cbdb3b0}{\index{Sd\-Base\-File@{Sd\-Base\-File}!is\-Root@{is\-Root}}
+\index{is\-Root@{is\-Root}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{is\-Root}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_adb67b2a249620b49f23a8bc03cbdb3b0}
+\begin{DoxyReturn}{Returns}
+True if this is the root directory. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a8a0d7f6a7297d2b9772c4033b2296d56}{\index{Sd\-Base\-File@{Sd\-Base\-File}!is\-Sub\-Dir@{is\-Sub\-Dir}}
+\index{is\-Sub\-Dir@{is\-Sub\-Dir}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{is\-Sub\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Sub\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a8a0d7f6a7297d2b9772c4033b2296d56}
+\begin{DoxyReturn}{Returns}
+True if this is a subdirectory else false. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ab4ab4da84ebfc68fe4c3035d156fab59}{\index{Sd\-Base\-File@{Sd\-Base\-File}!ls@{ls}}
+\index{ls@{ls}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}void ls (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr, }
+\item[{uint8\-\_\-t}]{flags = {\ttfamily 0}, }
+\item[{uint8\-\_\-t}]{indent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_ab4ab4da84ebfc68fe4c3035d156fab59}
+List directory contents.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for list.\\
+\hline
+\mbox{\tt in}  & {\em flags} & The inclusive O\-R of\\
+\hline
+\end{DoxyParams}
+L\-S\-\_\-\-D\-A\-T\-E -\/ Print file modification date
+
+L\-S\-\_\-\-S\-I\-Z\-E -\/ Print file size.
+
+L\-S\-\_\-\-R -\/ Recursive list of subdirectories.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em indent} & Amount of space before file name. Used for recursive list to indicate subdirectory level. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_afaff0496e55019ed50d950230dd9c4f0}{\index{Sd\-Base\-File@{Sd\-Base\-File}!ls@{ls}}
+\index{ls@{ls}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{ls}]{\setlength{\rightskip}{0pt plus 5cm}void ls (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_afaff0496e55019ed50d950230dd9c4f0}
+List directory contents to std\-Out.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & The inclusive O\-R of\\
+\hline
+\end{DoxyParams}
+L\-S\-\_\-\-D\-A\-T\-E -\/ Print file modification date
+
+L\-S\-\_\-\-S\-I\-Z\-E -\/ Print file size.
+
+L\-S\-\_\-\-R -\/ Recursive list of subdirectories. \hypertarget{class_sd_base_file_a204a0b140efe0da51252fab0fd3bddcc}{\index{Sd\-Base\-File@{Sd\-Base\-File}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{mkdir}]{\setlength{\rightskip}{0pt plus 5cm}bool mkdir (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{parent, }
+\item[{const char $\ast$}]{path, }
+\item[{bool}]{p\-Flag = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a204a0b140efe0da51252fab0fd3bddcc}
+Make a new directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em parent} & An open \hyperlink{class_sd_fat}{Sd\-Fat} instance for the directory that will contain the new directory.\\
+\hline
+\mbox{\tt in}  & {\em path} & A path with a valid 8.\-3 D\-O\-S name for the new directory.\\
+\hline
+\mbox{\tt in}  & {\em p\-Flag} & Create missing parent directories if true.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include this file is already open, {\itshape parent} is not a directory, {\itshape path} is invalid or already exists in {\itshape parent}. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{\index{Sd\-Base\-File@{Sd\-Base\-File}!open@{open}}
+\index{open@{open}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool open (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{uint16\-\_\-t}]{index, }
+\item[{uint8\-\_\-t}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}
+Open a file by index.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & An open \hyperlink{class_sd_fat}{Sd\-Fat} instance for the directory.\\
+\hline
+\mbox{\tt in}  & {\em index} & The {\itshape index} of the directory entry for the file to be opened. The value for {\itshape index} is (directory file position)/32.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of flags O\-\_\-\-R\-E\-A\-D, O\-\_\-\-W\-R\-I\-T\-E, O\-\_\-\-T\-R\-U\-N\-C, and O\-\_\-\-S\-Y\-N\-C.\\
+\hline
+\end{DoxyParams}
+See \hyperlink{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{open()} by path for definition of flags. \begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}{\index{Sd\-Base\-File@{Sd\-Base\-File}!open@{open}}
+\index{open@{open}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool open (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{const char $\ast$}]{path, }
+\item[{uint8\-\_\-t}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}
+Open a file or directory by name.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & An open \hyperlink{class_sd_fat}{Sd\-Fat} instance for the directory containing the file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em path} & A path with a valid 8.\-3 D\-O\-S name for a file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of flags from the following list\\
+\hline
+\end{DoxyParams}
+O\-\_\-\-R\-E\-A\-D -\/ Open for reading.
+
+O\-\_\-\-R\-D\-O\-N\-L\-Y -\/ Same as O\-\_\-\-R\-E\-A\-D.
+
+O\-\_\-\-W\-R\-I\-T\-E -\/ Open for writing.
+
+O\-\_\-\-W\-R\-O\-N\-L\-Y -\/ Same as O\-\_\-\-W\-R\-I\-T\-E.
+
+O\-\_\-\-R\-D\-W\-R -\/ Open for reading and writing.
+
+O\-\_\-\-A\-P\-P\-E\-N\-D -\/ If set, the file offset shall be set to the end of the file prior to each write.
+
+O\-\_\-\-A\-T\-\_\-\-E\-N\-D -\/ Set the initial position at the end of the file.
+
+O\-\_\-\-C\-R\-E\-A\-T -\/ If the file exists, this flag has no effect except as noted under O\-\_\-\-E\-X\-C\-L below. Otherwise, the file shall be created
+
+O\-\_\-\-E\-X\-C\-L -\/ If O\-\_\-\-C\-R\-E\-A\-T and O\-\_\-\-E\-X\-C\-L are set, \hyperlink{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{open()} shall fail if the file exists.
+
+O\-\_\-\-S\-Y\-N\-C -\/ Call \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} after each write. This flag should not be used with write(uint8\-\_\-t), write\-\_\-\-P(\-P\-G\-M\-\_\-\-P), writeln\-\_\-\-P(\-P\-G\-M\-\_\-\-P), or the Arduino \hyperlink{class_print}{Print} class. These functions do character at a time writes so \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} will be called after each byte.
+
+O\-\_\-\-T\-R\-U\-N\-C -\/ If the file exists and is a regular file, and the file is successfully opened and is not read only, its length shall be truncated to 0.
+
+W\-A\-R\-N\-I\-N\-G\-: A given file must not be opened by more than one \hyperlink{class_sd_base_file}{Sd\-Base\-File} object of file corruption may occur.
+
+\begin{DoxyNote}{Note}
+Directory files must be opened read only. Write and truncation is not allowed for directory files.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include this file is already open, {\itshape dir\-File} is not a directory, {\itshape path} is invalid, the file does not exist or can't be opened in the access mode specified by oflag. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a77b8ed77fc5763bd65c27e688ad750c9}{\index{Sd\-Base\-File@{Sd\-Base\-File}!open@{open}}
+\index{open@{open}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool open (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{path, }
+\item[{uint8\-\_\-t}]{oflag = {\ttfamily {\bf O\-\_\-\-R\-E\-A\-D}}}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a77b8ed77fc5763bd65c27e688ad750c9}
+Open a file in the current working directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em path} & A path with a valid 8.\-3 D\-O\-S name for a file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of open flags. see \hyperlink{class_sd_base_file_a8359b5001f4a8382a2f945939cafd592}{Sd\-Base\-File\-::open(\-Sd\-Base\-File$\ast$, const char$\ast$, uint8\-\_\-t)}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_abd013dab96da2ef4253c7ddc9cddf14a}{\index{Sd\-Base\-File@{Sd\-Base\-File}!open\-Next@{open\-Next}}
+\index{open\-Next@{open\-Next}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{open\-Next}]{\setlength{\rightskip}{0pt plus 5cm}bool open\-Next (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{uint8\-\_\-t}]{oflag}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_abd013dab96da2ef4253c7ddc9cddf14a}
+Open the next file or subdirectory in a directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & An open \hyperlink{class_sd_fat}{Sd\-Fat} instance for the directory containing the file to be opened.\\
+\hline
+\mbox{\tt in}  & {\em oflag} & Values for {\itshape oflag} are constructed by a bitwise-\/inclusive O\-R of flags O\-\_\-\-R\-E\-A\-D, O\-\_\-\-W\-R\-I\-T\-E, O\-\_\-\-T\-R\-U\-N\-C, and O\-\_\-\-S\-Y\-N\-C.\\
+\hline
+\end{DoxyParams}
+See \hyperlink{class_sd_base_file_a52c7074d47cf3798184d1fbaa7d2711a}{open()} by path for definition of flags. \begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a2e90ca886ca5681df690eeb646758aa5}{\index{Sd\-Base\-File@{Sd\-Base\-File}!open\-Root@{open\-Root}}
+\index{open\-Root@{open\-Root}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{open\-Root}]{\setlength{\rightskip}{0pt plus 5cm}bool open\-Root (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Volume} $\ast$}]{vol}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a2e90ca886ca5681df690eeb646758aa5}
+Open a volume's root directory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em vol} & The F\-A\-T volume containing the root directory to be opened.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include the file is already open, the F\-A\-T volume has not been initialized or it a F\-A\-T12 volume. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a9040fa1d479d71edf3a826f4691c35c4}{\index{Sd\-Base\-File@{Sd\-Base\-File}!peek@{peek}}
+\index{peek@{peek}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{peek}]{\setlength{\rightskip}{0pt plus 5cm}int peek (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a9040fa1d479d71edf3a826f4691c35c4}
+Return the next available byte without consuming it.
+
+\begin{DoxyReturn}{Returns}
+The byte if no error and not at eof else -\/1; 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a37fb3af46ea3958c7c7bdc11f3dff345}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Create\-Date\-Time@{print\-Create\-Date\-Time}}
+\index{print\-Create\-Date\-Time@{print\-Create\-Date\-Time}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Create\-Date\-Time}]{\setlength{\rightskip}{0pt plus 5cm}bool print\-Create\-Date\-Time (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a37fb3af46ea3958c7c7bdc11f3dff345}
+\hyperlink{class_print}{Print} a file's creation date and time
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for output.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a4b0b63f35ecabac2d7fda5d0fe590fbb}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Fat\-Date@{print\-Fat\-Date}}
+\index{print\-Fat\-Date@{print\-Fat\-Date}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Fat\-Date}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Fat\-Date (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_a4b0b63f35ecabac2d7fda5d0fe590fbb}
+Print a directory date field to std\-Out.
+
+Format is yyyy-\/mm-\/dd.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Date} & The date field from a directory entry. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_a946e3ce2fc487b22bd0c6535cf2579e8}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Fat\-Date@{print\-Fat\-Date}}
+\index{print\-Fat\-Date@{print\-Fat\-Date}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Fat\-Date}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Fat\-Date (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr, }
+\item[{uint16\-\_\-t}]{fat\-Date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_a946e3ce2fc487b22bd0c6535cf2579e8}
+Print a directory date field.
+
+Format is yyyy-\/mm-\/dd.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for output. \\
+\hline
+\mbox{\tt in}  & {\em fat\-Date} & The date field from a directory entry. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_a59fbc58803704c97e24cda953b62e271}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Fat\-Time@{print\-Fat\-Time}}
+\index{print\-Fat\-Time@{print\-Fat\-Time}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Fat\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Fat\-Time (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_a59fbc58803704c97e24cda953b62e271}
+Print a directory time field to std\-Out.
+
+Format is hh\-:mm\-:ss.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Time} & The time field from a directory entry. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_aee26cb9627fd22021d7dc068b835529d}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Fat\-Time@{print\-Fat\-Time}}
+\index{print\-Fat\-Time@{print\-Fat\-Time}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Fat\-Time}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Fat\-Time (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr, }
+\item[{uint16\-\_\-t}]{fat\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_aee26cb9627fd22021d7dc068b835529d}
+Print a directory time field.
+
+Format is hh\-:mm\-:ss.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for output. \\
+\hline
+\mbox{\tt in}  & {\em fat\-Time} & The time field from a directory entry. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_aeb564423f405ec9e71b62926b1ef8ab5}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Field@{print\-Field}}
+\index{print\-Field@{print\-Field}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Field}]{\setlength{\rightskip}{0pt plus 5cm}int print\-Field (
+\begin{DoxyParamCaption}
+\item[{int16\-\_\-t}]{value, }
+\item[{char}]{term}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_aeb564423f405ec9e71b62926b1ef8ab5}
+\hyperlink{class_print}{Print} a number followed by a field terminator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The number to be printed. \\
+\hline
+\mbox{\tt in}  & {\em term} & The field terminator. Use '\textbackslash{}n' for C\-R L\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/1 if an error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ac9a25d21b439ac5c270ebcb42aa208db}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Field@{print\-Field}}
+\index{print\-Field@{print\-Field}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Field}]{\setlength{\rightskip}{0pt plus 5cm}int print\-Field (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{value, }
+\item[{char}]{term}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_ac9a25d21b439ac5c270ebcb42aa208db}
+\hyperlink{class_print}{Print} a number followed by a field terminator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The number to be printed. \\
+\hline
+\mbox{\tt in}  & {\em term} & The field terminator. Use '\textbackslash{}n' for C\-R L\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/1 if an error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a5a95541e25ab84c7ddbe3404db0e2efd}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Field@{print\-Field}}
+\index{print\-Field@{print\-Field}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Field}]{\setlength{\rightskip}{0pt plus 5cm}int print\-Field (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{value, }
+\item[{char}]{term}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a5a95541e25ab84c7ddbe3404db0e2efd}
+\hyperlink{class_print}{Print} a number followed by a field terminator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The number to be printed. \\
+\hline
+\mbox{\tt in}  & {\em term} & The field terminator. Use '\textbackslash{}n' for C\-R L\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/1 if an error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a85d0c7a2190689f774a07a5bfb9668bd}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Field@{print\-Field}}
+\index{print\-Field@{print\-Field}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Field}]{\setlength{\rightskip}{0pt plus 5cm}int print\-Field (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{value, }
+\item[{char}]{term}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a85d0c7a2190689f774a07a5bfb9668bd}
+\hyperlink{class_print}{Print} a number followed by a field terminator. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em value} & The number to be printed. \\
+\hline
+\mbox{\tt in}  & {\em term} & The field terminator. Use '\textbackslash{}n' for C\-R L\-F. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of bytes written or -\/1 if an error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a9a50d259cda61d39b96e4c5ee8a2e45a}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Modify\-Date\-Time@{print\-Modify\-Date\-Time}}
+\index{print\-Modify\-Date\-Time@{print\-Modify\-Date\-Time}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Modify\-Date\-Time}]{\setlength{\rightskip}{0pt plus 5cm}bool print\-Modify\-Date\-Time (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a9a50d259cda61d39b96e4c5ee8a2e45a}
+\hyperlink{class_print}{Print} a file's modify date and time
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for output.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a57f9e42369a4b97e6b21ed0040115e17}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Name@{print\-Name}}
+\index{print\-Name@{print\-Name}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Name}]{\setlength{\rightskip}{0pt plus 5cm}bool print\-Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a57f9e42369a4b97e6b21ed0040115e17}
+\hyperlink{class_print}{Print} a file's name to std\-Out
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ad5e2bbdaf498b66fcf393137bb30a1c2}{\index{Sd\-Base\-File@{Sd\-Base\-File}!print\-Name@{print\-Name}}
+\index{print\-Name@{print\-Name}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{print\-Name}]{\setlength{\rightskip}{0pt plus 5cm}bool print\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf Print} $\ast$}]{pr}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_ad5e2bbdaf498b66fcf393137bb30a1c2}
+\hyperlink{class_print}{Print} a file's name
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pr} & \hyperlink{class_print}{Print} stream for output.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}{\index{Sd\-Base\-File@{Sd\-Base\-File}!read@{read}}
+\index{read@{read}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t read (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}
+Read the next byte from a file.
+
+\begin{DoxyReturn}{Returns}
+For success read returns the next byte in the file as an int. If an error occurs or end of file is reached -\/1 is returned. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a2af650686f0fc5fa748f6478f5f8afb1}{\index{Sd\-Base\-File@{Sd\-Base\-File}!read@{read}}
+\index{read@{read}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}int read (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buf, }
+\item[{size\-\_\-t}]{nbyte}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a2af650686f0fc5fa748f6478f5f8afb1}
+Read data from a file starting at the current position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em buf} & Pointer to the location that will receive the data.\\
+\hline
+\mbox{\tt in}  & {\em nbyte} & Maximum number of bytes to read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For success \hyperlink{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}{read()} returns the number of bytes read. A value less than {\itshape nbyte}, including zero, will be returned if end of file is reached. If an error occurs, \hyperlink{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}{read()} returns -\/1. Possible errors include \hyperlink{class_sd_base_file_a5a4c0ff07215b20f25d11fef7710ed59}{read()} called before a file has been opened, corrupt file system or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}{\index{Sd\-Base\-File@{Sd\-Base\-File}!read\-Dir@{read\-Dir}}
+\index{read\-Dir@{read\-Dir}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{read\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}int8\-\_\-t read\-Dir (
+\begin{DoxyParamCaption}
+\item[{{\bf dir\-\_\-t} $\ast$}]{dir}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}
+Read the next directory entry from a directory file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em dir} & The dir\-\_\-t struct that will receive the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For success \hyperlink{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}{read\-Dir()} returns the number of bytes read. A value of zero will be returned if end of file is reached. If an error occurs, \hyperlink{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}{read\-Dir()} returns -\/1. Possible errors include \hyperlink{class_sd_base_file_addfe59dc0e7a6a8a88e9b7ecf5b51860}{read\-Dir()} called before a directory has been opened, this is not a directory file or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a6cba36958b2afc506e72376125cae511}{\index{Sd\-Base\-File@{Sd\-Base\-File}!remove@{remove}}
+\index{remove@{remove}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}bool remove (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{const char $\ast$}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{class_sd_base_file_a6cba36958b2afc506e72376125cae511}
+Remove a file.
+
+The directory entry and all data for the file are deleted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & The directory that contains the file. \\
+\hline
+\mbox{\tt in}  & {\em path} & Path for the file to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function should not be used to delete the 8.\-3 version of a file that has a long name. For example if a file has the long name \char`\"{}\-New Text Document.\-txt\char`\"{} you should not delete the 8.\-3 name \char`\"{}\-N\-E\-W\-T\-E\-X$\sim$1.\-T\-X\-T\char`\"{}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include the file is a directory, is read only, {\itshape dir\-File} is not a directory, {\itshape path} is not found or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a1f9c4a4bd47b7cd9beb431504c5ae46c}{\index{Sd\-Base\-File@{Sd\-Base\-File}!remove@{remove}}
+\index{remove@{remove}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}bool remove (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a1f9c4a4bd47b7cd9beb431504c5ae46c}
+Remove a file.
+
+The directory entry and all data for the file are deleted.
+
+\begin{DoxyNote}{Note}
+This function should not be used to delete the 8.\-3 version of a file that has a long name. For example if a file has the long name \char`\"{}\-New Text Document.\-txt\char`\"{} you should not delete the 8.\-3 name \char`\"{}\-N\-E\-W\-T\-E\-X$\sim$1.\-T\-X\-T\char`\"{}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include the file read-\/only, is a directory, or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a34221bbb3afb83430f8d21f59d8e5b1c}{\index{Sd\-Base\-File@{Sd\-Base\-File}!rename@{rename}}
+\index{rename@{rename}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{rename}]{\setlength{\rightskip}{0pt plus 5cm}bool rename (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{dir\-File, }
+\item[{const char $\ast$}]{new\-Path}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a34221bbb3afb83430f8d21f59d8e5b1c}
+Rename a file or subdirectory.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dir\-File} & Directory for the new path. \\
+\hline
+\mbox{\tt in}  & {\em new\-Path} & New path name for the file/directory.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include {\itshape dir\-File} is not open or is not a directory file, new\-Path is invalid or already exists, or an I/\-O error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ab8734e666421c9fe3b6380a818c6c727}{\index{Sd\-Base\-File@{Sd\-Base\-File}!rewind@{rewind}}
+\index{rewind@{rewind}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{rewind}]{\setlength{\rightskip}{0pt plus 5cm}void rewind (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_ab8734e666421c9fe3b6380a818c6c727}
+Set the file's current position to zero. \hypertarget{class_sd_base_file_a8565ae91a87acd4ed1a648e52e51ce13}{\index{Sd\-Base\-File@{Sd\-Base\-File}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{rmdir}]{\setlength{\rightskip}{0pt plus 5cm}bool rmdir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a8565ae91a87acd4ed1a648e52e51ce13}
+Remove a directory file.
+
+The directory file will be removed only if it is empty and is not the root directory. \hyperlink{class_sd_base_file_a8565ae91a87acd4ed1a648e52e51ce13}{rmdir()} follows D\-O\-S and Windows and ignores the read-\/only attribute for the directory.
+
+\begin{DoxyNote}{Note}
+This function should not be used to delete the 8.\-3 version of a directory that has a long name. For example if a directory has the long name \char`\"{}\-New folder\char`\"{} you should not delete the 8.\-3 name \char`\"{}\-N\-E\-W\-F\-O\-L$\sim$1\char`\"{}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include the file is not a directory, is the root directory, is not empty, or an I/\-O error occurred. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a5cbe5f8201b8457438d219e6b33b42bf}{\index{Sd\-Base\-File@{Sd\-Base\-File}!rm\-Rf\-Star@{rm\-Rf\-Star}}
+\index{rm\-Rf\-Star@{rm\-Rf\-Star}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{rm\-Rf\-Star}]{\setlength{\rightskip}{0pt plus 5cm}bool rm\-Rf\-Star (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a5cbe5f8201b8457438d219e6b33b42bf}
+Recursively delete a directory and all contained files.
+
+This is like the Unix/\-Linux 'rm -\/rf $\ast$' if called with the root directory hence the name.
+
+Warning -\/ This will remove all contents of the directory including subdirectories. The directory will then be removed if it is not root. The read-\/only attribute for files will be ignored.
+
+\begin{DoxyNote}{Note}
+This function should not be used to delete the 8.\-3 version of a directory that has a long name. See \hyperlink{class_sd_base_file_a1f9c4a4bd47b7cd9beb431504c5ae46c}{remove()} and \hyperlink{class_sd_base_file_a8565ae91a87acd4ed1a648e52e51ce13}{rmdir()}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ae79988724675a378d01d9158b1b8b667}{\index{Sd\-Base\-File@{Sd\-Base\-File}!seek\-Cur@{seek\-Cur}}
+\index{seek\-Cur@{seek\-Cur}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{seek\-Cur}]{\setlength{\rightskip}{0pt plus 5cm}bool seek\-Cur (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{offset}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_ae79988724675a378d01d9158b1b8b667}
+Set the files position to current position + {\itshape pos}. See \hyperlink{class_sd_base_file_a37e6f66b2ccbd829cf7a62a5d3bcc0b3}{seek\-Set()}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em offset} & The new position in bytes from the current position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_ae7667637428e752e4ff64e07c2e88c92}{\index{Sd\-Base\-File@{Sd\-Base\-File}!seek\-End@{seek\-End}}
+\index{seek\-End@{seek\-End}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{seek\-End}]{\setlength{\rightskip}{0pt plus 5cm}bool seek\-End (
+\begin{DoxyParamCaption}
+\item[{int32\-\_\-t}]{offset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_ae7667637428e752e4ff64e07c2e88c92}
+Set the files position to end-\/of-\/file + {\itshape offset}. See \hyperlink{class_sd_base_file_a37e6f66b2ccbd829cf7a62a5d3bcc0b3}{seek\-Set()}. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em offset} & The new position in bytes from end-\/of-\/file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a37e6f66b2ccbd829cf7a62a5d3bcc0b3}{\index{Sd\-Base\-File@{Sd\-Base\-File}!seek\-Set@{seek\-Set}}
+\index{seek\-Set@{seek\-Set}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{seek\-Set}]{\setlength{\rightskip}{0pt plus 5cm}bool seek\-Set (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a37e6f66b2ccbd829cf7a62a5d3bcc0b3}
+Sets a file's position.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pos} & The new position in bytes from the beginning of the file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a48594bc03b5a4a47cf774e01c40be1b5}{\index{Sd\-Base\-File@{Sd\-Base\-File}!setpos@{setpos}}
+\index{setpos@{setpos}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{setpos}]{\setlength{\rightskip}{0pt plus 5cm}void setpos (
+\begin{DoxyParamCaption}
+\item[{{\bf Fat\-Pos\-\_\-t} $\ast$}]{pos}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a48594bc03b5a4a47cf774e01c40be1b5}
+set position for streams 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em pos} & struct with value for new position \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{\index{Sd\-Base\-File@{Sd\-Base\-File}!sync@{sync}}
+\index{sync@{sync}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}bool sync (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}
+The \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} call causes all modified data and directory fields to be written to the storage device.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include a call to \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} before a file has been opened or an I/\-O error. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a65d54c8f0cc5089edbd0b08eb3e7830e}{\index{Sd\-Base\-File@{Sd\-Base\-File}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}bool timestamp (
+\begin{DoxyParamCaption}
+\item[{{\bf Sd\-Base\-File} $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a65d54c8f0cc5089edbd0b08eb3e7830e}
+Copy a file's timestamps
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file} & \hyperlink{class_file}{File} to copy timestamps from.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Modify and access timestamps may be overwritten if a date time callback function has been set by \hyperlink{class_sd_base_file_ae89cdf7331e346cc8b7ce4a935c5b3e5}{date\-Time\-Callback()}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a679c37021bcac29a8a47cdb0b014ae4d}{\index{Sd\-Base\-File@{Sd\-Base\-File}!timestamp@{timestamp}}
+\index{timestamp@{timestamp}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{timestamp}]{\setlength{\rightskip}{0pt plus 5cm}bool timestamp (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{flags, }
+\item[{uint16\-\_\-t}]{year, }
+\item[{uint8\-\_\-t}]{month, }
+\item[{uint8\-\_\-t}]{day, }
+\item[{uint8\-\_\-t}]{hour, }
+\item[{uint8\-\_\-t}]{minute, }
+\item[{uint8\-\_\-t}]{second}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_a679c37021bcac29a8a47cdb0b014ae4d}
+Set a file's timestamps in its directory entry.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em flags} & Values for {\itshape flags} are constructed by a bitwise-\/inclusive O\-R of flags from the following list\\
+\hline
+\end{DoxyParams}
+T\-\_\-\-A\-C\-C\-E\-S\-S -\/ Set the file's last access date.
+
+T\-\_\-\-C\-R\-E\-A\-T\-E -\/ Set the file's creation date and time.
+
+T\-\_\-\-W\-R\-I\-T\-E -\/ Set the file's last write/modification date and time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em year} & Valid range 1980 -\/ 2107 inclusive.\\
+\hline
+\mbox{\tt in}  & {\em month} & Valid range 1 -\/ 12 inclusive.\\
+\hline
+\mbox{\tt in}  & {\em day} & Valid range 1 -\/ 31 inclusive.\\
+\hline
+\mbox{\tt in}  & {\em hour} & Valid range 0 -\/ 23 inclusive.\\
+\hline
+\mbox{\tt in}  & {\em minute} & Valid range 0 -\/ 59 inclusive.\\
+\hline
+\mbox{\tt in}  & {\em second} & Valid range 0 -\/ 59 inclusive\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+It is possible to set an invalid date since there is no check for the number of days in a month.
+
+Modify and access timestamps may be overwritten if a date time callback function has been set by \hyperlink{class_sd_base_file_ae89cdf7331e346cc8b7ce4a935c5b3e5}{date\-Time\-Callback()}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_aa0f431cd6c841a1a006aee221a8e411d}{\index{Sd\-Base\-File@{Sd\-Base\-File}!truncate@{truncate}}
+\index{truncate@{truncate}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{truncate}]{\setlength{\rightskip}{0pt plus 5cm}bool truncate (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_aa0f431cd6c841a1a006aee221a8e411d}
+Truncate a file to a specified length. The current file position will be maintained if it is less than or equal to {\itshape length} otherwise it will be set to end of file.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em length} & The desired length for the file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. Reasons for failure include file is read only, file is a directory, {\itshape length} is greater than the current file size or an I/\-O error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_a7c3e8c8aa22970484617493a084000b9}{\index{Sd\-Base\-File@{Sd\-Base\-File}!type@{type}}
+\index{type@{type}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_a7c3e8c8aa22970484617493a084000b9}
+Type of file. You should use \hyperlink{class_sd_base_file_aee673f3d8abf2d1bfd841274900fd40a}{is\-File()} or \hyperlink{class_sd_base_file_a50918fb073b73ccef883870dfb705d74}{is\-Dir()} instead of \hyperlink{class_sd_base_file_a7c3e8c8aa22970484617493a084000b9}{type()} if possible.
+
+\begin{DoxyReturn}{Returns}
+The file or directory type. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_aed2457152a60a9f78da3c34813e396d0}{\index{Sd\-Base\-File@{Sd\-Base\-File}!volume@{volume}}
+\index{volume@{volume}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{volume}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sd\-Volume}$\ast$ volume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd_base_file_aed2457152a60a9f78da3c34813e396d0}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_sd_volume}{Sd\-Volume} that contains this file. 
+\end{DoxyReturn}
+\hypertarget{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{\index{Sd\-Base\-File@{Sd\-Base\-File}!write@{write}}
+\index{write@{write}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}int write (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{buf, }
+\item[{size\-\_\-t}]{nbyte}
+\end{DoxyParamCaption}
+)}}\label{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}
+Write data to an open file.
+
+\begin{DoxyNote}{Note}
+Data is moved to the cache but may not be written to the storage device until \hyperlink{class_sd_base_file_a3eb7f41182c04388c951db242c13f845}{sync()} is called.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em buf} & Pointer to the location of the data to be written.\\
+\hline
+\mbox{\tt in}  & {\em nbyte} & Number of bytes to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+For success \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()} returns the number of bytes written, always {\itshape nbyte}. If an error occurs, \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()} returns -\/1. Possible errors include \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()} is called before a file has been opened, write is called for a read-\/only file, device is full, a corrupt file system or an I/\-O error. 
+\end{DoxyReturn}
+
+
+\subsection{Field Documentation}
+\hypertarget{class_sd_base_file_a800e5043596b8bec0dd32076d3c9750c}{\index{Sd\-Base\-File@{Sd\-Base\-File}!write\-Error@{write\-Error}}
+\index{write\-Error@{write\-Error}!SdBaseFile@{Sd\-Base\-File}}
+\subsubsection[{write\-Error}]{\setlength{\rightskip}{0pt plus 5cm}bool write\-Error}}\label{class_sd_base_file_a800e5043596b8bec0dd32076d3c9750c}
+write\-Error is set to true if an error occurs during a \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()}. Set write\-Error to false before calling print() and/or \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()} and check for true after calls to print() and/or \hyperlink{class_sd_base_file_aaf4f4cafe922e54d7b10c1b18bf60d07}{write()}. 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_base_file_8h}{Sd\-Base\-File.\-h}\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/Sd\-Base\-File.\-cpp\end{DoxyCompactItemize}

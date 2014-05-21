@@ -1,0 +1,179 @@
+\hypertarget{drv__sonar_8c}{\section{C\-:/arbitros/trunk/drivers/source/drv\-\_\-sonar.c File Reference}
+\label{drv__sonar_8c}\index{C\-:/arbitros/trunk/drivers/source/drv\-\_\-sonar.\-c@{C\-:/arbitros/trunk/drivers/source/drv\-\_\-sonar.\-c}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-semaphore.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-sonar.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-gpio.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-adc.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__sonar_dev}{t\-\_\-sonar\-Dev}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{drv__sonar_8c_afbbdf38e94200856de57239cfe37e7cf}{S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}~(2)
+\item 
+\#define \hyperlink{drv__sonar_8c_ab76c7cfbe0c36010eb06194762cc025f}{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}~(1)
+\item 
+\#define \hyperlink{drv__sonar_8c_ad6244bb08ac12b8090e157e7afb37822}{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E}~(\hyperlink{utl__adc_8h_aefcc5656fb0dfbb2c8378a8b4907b9e6ad7204415a25cd40e1f5509a7f7820b60}{A\-D\-C1\-\_\-\-M\-O\-D\-U\-L\-E})
+\item 
+\#define \hyperlink{drv__sonar_8c_ab8ce3bdcc8835303f25db3c878fe8b3b}{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T}~(\hyperlink{utl__gpio_8h_a0e38e6ec216663b0b59e0b3e2364bb97a0d36b47f173bbc4bdced28d8a54fe4ac}{G\-P\-I\-O\-\_\-\-P\-O\-R\-T\-A})
+\item 
+\#define \hyperlink{drv__sonar_8c_af69d6a28a4a6adbf8bd2d57a3e8de335}{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N}~(\hyperlink{utl__gpio_8h_a61a1b7885b5f44435c82fb29749fded1}{P\-I\-N\-\_\-1})
+\item 
+\#define \hyperlink{drv__sonar_8c_aef226f083d54a06aaf8dbb24825ff1b2}{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N}~(\hyperlink{utl__gpio_8h_a24a5611002d30ab6e2b7cc3126492145}{P\-I\-N\-\_\-0})
+\item 
+\#define \hyperlink{drv__sonar_8c_a12286e941c0d64d1be30130eee7af7ad}{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N}~(\hyperlink{utl__gpio_8h_a6d66f3c31b8d0d21e539ba4b381ad5c7}{P\-I\-N\-\_\-2})
+\item 
+\#define \hyperlink{drv__sonar_8c_ab5efe12af139ca62e9419ece981faf15}{M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S}~(32)
+\item 
+\#define \hyperlink{drv__sonar_8c_afda0bb8844d5254739b5fdbd2f857160}{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}~(512.\-0f) /$\ast$inches$\ast$/
+\item 
+\#define \hyperlink{drv__sonar_8c_ab9b0721866eb97a6d6fee629143c29a7}{S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E}~(3.\-3f)   /$\ast$\-Volts$\ast$/
+\item 
+\#define \hyperlink{drv__sonar_8c_a5a03d0b939a8dda552c9fe3319a82485}{A\-D\-C\-\_\-\-V\-R\-E\-F}~(3.\-3f/1.\-6f)
+\item 
+\#define \hyperlink{drv__sonar_8c_a2ea6a892e84ca1d9f2cfe80fece650a4}{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}~(.\-05f$\ast$\-A\-D\-C\-\_\-\-V\-R\-E\-F)
+\item 
+\#define \hyperlink{drv__sonar_8c_afcb7aace8167b32a264feb975758baae}{A\-D\-C\-\_\-\-T\-O\-P}~(4096.\-0f) /$\ast$\-Top A\-D\-C value 2$^\wedge$12$\ast$/
+\item 
+\#define \hyperlink{drv__sonar_8c_a827907ee6183e98bb8a50727540d4bb1}{A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}~(uint8\-\_\-t)(\hyperlink{drv__sonar_8c_a2ea6a892e84ca1d9f2cfe80fece650a4}{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}$\ast$\hyperlink{drv__sonar_8c_afcb7aace8167b32a264feb975758baae}{A\-D\-C\-\_\-\-T\-O\-P}/\hyperlink{drv__sonar_8c_a5a03d0b939a8dda552c9fe3319a82485}{A\-D\-C\-\_\-\-V\-R\-E\-F})
+\item 
+\#define \hyperlink{drv__sonar_8c_a3a4fa64a2a68724f6705797f7d647664}{A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I}~(20)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__sonar_8c_a03ef4aa13f0256a88ac48c985c268648}{sonar\-Open} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} \hyperlink{structt__dev_handle}{t\-\_\-dev\-Handle})
+\item 
+static int32\-\_\-t \hyperlink{drv__sonar_8c_ab00416a55cedc3dfd01ad437cb708de5}{sonar\-Ioctl} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} \hyperlink{structt__dev_handle}{t\-\_\-dev\-Handle}, uint16\-\_\-t s\-\_\-command, int32\-\_\-t i\-\_\-arguments)
+\item 
+static \hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__sonar_8c_a65430bd08d46bd6e67abdc87448711e0}{sonar\-Close} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} \hyperlink{structt__dev_handle}{t\-\_\-dev\-Handle})
+\item 
+static void \hyperlink{drv__sonar_8c_a3dc3346d32866909823a366182ea2349}{measurement\-Finished} (void)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__sonar_8c_a80aa1bb515eecaca64f237401f507c14}{drv\-\_\-sonar\-Init} (void)
+\item 
+void \hyperlink{drv__sonar_8c_ac40ab6903cb8cd4c0f4c9bbbba9560d6}{drv\-\_\-sonar\-Exit} (void)
+\item 
+static void \hyperlink{drv__sonar_8c_a0e7eebee2bedaffaa236a50b3a3bf386}{adc\-Conversion\-Complete} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structt__sonar_dev}{t\-\_\-sonar\-Dev} \hyperlink{drv__sonar_8c_a9618e2715b821d84dc93509d36a4db07}{gat\-\_\-sonar\-Dev} \mbox{[}\hyperlink{drv__sonar_8c_ab76c7cfbe0c36010eb06194762cc025f}{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{drv__sonar_8c_a2ea6a892e84ca1d9f2cfe80fece650a4}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V@{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}}
+\index{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V@{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V~(.\-05f$\ast$\-A\-D\-C\-\_\-\-V\-R\-E\-F)}}\label{drv__sonar_8c_a2ea6a892e84ca1d9f2cfe80fece650a4}
+\hypertarget{drv__sonar_8c_a827907ee6183e98bb8a50727540d4bb1}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T@{A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}}
+\index{A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T@{A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-O\-F\-F\-S\-E\-T~(uint8\-\_\-t)({\bf A\-D\-C\-\_\-\-D\-E\-L\-T\-A\-\_\-\-V}$\ast${\bf A\-D\-C\-\_\-\-T\-O\-P}/{\bf A\-D\-C\-\_\-\-V\-R\-E\-F})}}\label{drv__sonar_8c_a827907ee6183e98bb8a50727540d4bb1}
+\hypertarget{drv__sonar_8c_afcb7aace8167b32a264feb975758baae}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!A\-D\-C\-\_\-\-T\-O\-P@{A\-D\-C\-\_\-\-T\-O\-P}}
+\index{A\-D\-C\-\_\-\-T\-O\-P@{A\-D\-C\-\_\-\-T\-O\-P}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-T\-O\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-T\-O\-P~(4096.\-0f) /$\ast$\-Top A\-D\-C value 2$^\wedge$12$\ast$/}}\label{drv__sonar_8c_afcb7aace8167b32a264feb975758baae}
+\hypertarget{drv__sonar_8c_a3a4fa64a2a68724f6705797f7d647664}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I@{A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I}}
+\index{A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I@{A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-V\-\_\-\-T\-O\-\_\-\-I~(20)}}\label{drv__sonar_8c_a3a4fa64a2a68724f6705797f7d647664}
+\hypertarget{drv__sonar_8c_a5a03d0b939a8dda552c9fe3319a82485}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!A\-D\-C\-\_\-\-V\-R\-E\-F@{A\-D\-C\-\_\-\-V\-R\-E\-F}}
+\index{A\-D\-C\-\_\-\-V\-R\-E\-F@{A\-D\-C\-\_\-\-V\-R\-E\-F}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{A\-D\-C\-\_\-\-V\-R\-E\-F}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-D\-C\-\_\-\-V\-R\-E\-F~(3.\-3f/1.\-6f)}}\label{drv__sonar_8c_a5a03d0b939a8dda552c9fe3319a82485}
+\hypertarget{drv__sonar_8c_ab5efe12af139ca62e9419ece981faf15}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S@{M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S}}
+\index{M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S@{M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-A\-V\-E\-R\-A\-G\-E\-S~(32)}}\label{drv__sonar_8c_ab5efe12af139ca62e9419ece981faf15}
+\hypertarget{drv__sonar_8c_ad6244bb08ac12b8090e157e7afb37822}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E}}
+\index{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-M\-O\-D\-U\-L\-E~({\bf A\-D\-C1\-\_\-\-M\-O\-D\-U\-L\-E})}}\label{drv__sonar_8c_ad6244bb08ac12b8090e157e7afb37822}
+\hypertarget{drv__sonar_8c_ab8ce3bdcc8835303f25db3c878fe8b3b}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T}}
+\index{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-P\-O\-R\-T~({\bf G\-P\-I\-O\-\_\-\-P\-O\-R\-T\-A})}}\label{drv__sonar_8c_ab8ce3bdcc8835303f25db3c878fe8b3b}
+\hypertarget{drv__sonar_8c_af69d6a28a4a6adbf8bd2d57a3e8de335}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N}}
+\index{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-A\-D\-C\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-P\-I\-N~({\bf P\-I\-N\-\_\-1})}}\label{drv__sonar_8c_af69d6a28a4a6adbf8bd2d57a3e8de335}
+\hypertarget{drv__sonar_8c_afbbdf38e94200856de57239cfe37e7cf}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R@{S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R@{S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R~(2)}}\label{drv__sonar_8c_afbbdf38e94200856de57239cfe37e7cf}
+\hypertarget{drv__sonar_8c_afda0bb8844d5254739b5fdbd2f857160}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}}
+\index{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E@{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-D\-I\-S\-T\-A\-N\-C\-E~(512.\-0f) /$\ast$inches$\ast$/}}\label{drv__sonar_8c_afda0bb8844d5254739b5fdbd2f857160}
+\hypertarget{drv__sonar_8c_ab76c7cfbe0c36010eb06194762cc025f}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S@{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}}
+\index{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S@{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S~(1)}}\label{drv__sonar_8c_ab76c7cfbe0c36010eb06194762cc025f}
+\hypertarget{drv__sonar_8c_a12286e941c0d64d1be30130eee7af7ad}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N}}
+\index{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-F\-I\-N\-I\-S\-H\-E\-D\-\_\-\-P\-I\-N~({\bf P\-I\-N\-\_\-2})}}\label{drv__sonar_8c_a12286e941c0d64d1be30130eee7af7ad}
+\hypertarget{drv__sonar_8c_aef226f083d54a06aaf8dbb24825ff1b2}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N}}
+\index{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N@{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-M\-E\-A\-S\-\_\-\-S\-T\-A\-R\-T\-\_\-\-P\-I\-N~({\bf P\-I\-N\-\_\-0})}}\label{drv__sonar_8c_aef226f083d54a06aaf8dbb24825ff1b2}
+\hypertarget{drv__sonar_8c_ab9b0721866eb97a6d6fee629143c29a7}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E@{S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E}}
+\index{S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E@{S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\-O\-N\-A\-R\-\_\-\-R\-E\-F\-\_\-\-V\-O\-L\-T\-A\-G\-E~(3.\-3f)   /$\ast$\-Volts$\ast$/}}\label{drv__sonar_8c_ab9b0721866eb97a6d6fee629143c29a7}
+
+
+\subsection{Function Documentation}
+\hypertarget{drv__sonar_8c_a0e7eebee2bedaffaa236a50b3a3bf386}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!adc\-Conversion\-Complete@{adc\-Conversion\-Complete}}
+\index{adc\-Conversion\-Complete@{adc\-Conversion\-Complete}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{adc\-Conversion\-Complete}]{\setlength{\rightskip}{0pt plus 5cm}static void adc\-Conversion\-Complete (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_a0e7eebee2bedaffaa236a50b3a3bf386}
+\hypertarget{drv__sonar_8c_ac40ab6903cb8cd4c0f4c9bbbba9560d6}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!drv\-\_\-sonar\-Exit@{drv\-\_\-sonar\-Exit}}
+\index{drv\-\_\-sonar\-Exit@{drv\-\_\-sonar\-Exit}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{drv\-\_\-sonar\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void drv\-\_\-sonar\-Exit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{drv__sonar_8c_ac40ab6903cb8cd4c0f4c9bbbba9560d6}
+\hypertarget{drv__sonar_8c_a80aa1bb515eecaca64f237401f507c14}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!drv\-\_\-sonar\-Init@{drv\-\_\-sonar\-Init}}
+\index{drv\-\_\-sonar\-Init@{drv\-\_\-sonar\-Init}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{drv\-\_\-sonar\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} drv\-\_\-sonar\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{drv__sonar_8c_a80aa1bb515eecaca64f237401f507c14}
+\hypertarget{drv__sonar_8c_a3dc3346d32866909823a366182ea2349}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!measurement\-Finished@{measurement\-Finished}}
+\index{measurement\-Finished@{measurement\-Finished}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{measurement\-Finished}]{\setlength{\rightskip}{0pt plus 5cm}static void measurement\-Finished (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_a3dc3346d32866909823a366182ea2349}
+\hypertarget{drv__sonar_8c_a65430bd08d46bd6e67abdc87448711e0}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!sonar\-Close@{sonar\-Close}}
+\index{sonar\-Close@{sonar\-Close}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{sonar\-Close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} sonar\-Close (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-dev\-Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_a65430bd08d46bd6e67abdc87448711e0}
+\hypertarget{drv__sonar_8c_ab00416a55cedc3dfd01ad437cb708de5}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!sonar\-Ioctl@{sonar\-Ioctl}}
+\index{sonar\-Ioctl@{sonar\-Ioctl}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{sonar\-Ioctl}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t sonar\-Ioctl (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-dev\-Handle, }
+\item[{uint16\-\_\-t}]{s\-\_\-command, }
+\item[{int32\-\_\-t}]{i\-\_\-arguments}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_ab00416a55cedc3dfd01ad437cb708de5}
+\hypertarget{drv__sonar_8c_a03ef4aa13f0256a88ac48c985c268648}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!sonar\-Open@{sonar\-Open}}
+\index{sonar\-Open@{sonar\-Open}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{sonar\-Open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} sonar\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-dev\-Handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_a03ef4aa13f0256a88ac48c985c268648}
+
+
+\subsection{Variable Documentation}
+\hypertarget{drv__sonar_8c_a9618e2715b821d84dc93509d36a4db07}{\index{drv\-\_\-sonar.\-c@{drv\-\_\-sonar.\-c}!gat\-\_\-sonar\-Dev@{gat\-\_\-sonar\-Dev}}
+\index{gat\-\_\-sonar\-Dev@{gat\-\_\-sonar\-Dev}!drv_sonar.c@{drv\-\_\-sonar.\-c}}
+\subsubsection[{gat\-\_\-sonar\-Dev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-sonar\-Dev} gat\-\_\-sonar\-Dev\mbox{[}{\bf S\-O\-N\-A\-R\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__sonar_8c_a9618e2715b821d84dc93509d36a4db07}

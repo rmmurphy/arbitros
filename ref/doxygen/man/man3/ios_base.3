@@ -1,0 +1,384 @@
+.TH "ios_base" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ios_base \- 
+.PP
+Base class for all streams\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ios\&.h>\fP
+.PP
+Inherited by \fBios\fP\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBseekdir\fP { \fBbeg\fP, \fBcur\fP, \fBend\fP }"
+.br
+.ti -1c
+.RI "typedef unsigned char \fBiostate\fP"
+.br
+.ti -1c
+.RI "typedef uint32_t \fBstreamsize\fP"
+.br
+.ti -1c
+.RI "typedef uint32_t \fBpos_type\fP"
+.br
+.ti -1c
+.RI "typedef int32_t \fBoff_type\fP"
+.br
+.ti -1c
+.RI "typedef unsigned int \fBfmtflags\fP"
+.br
+.ti -1c
+.RI "typedef uint8_t \fBopenmode\fP"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "char \fBfill\fP ()"
+.br
+.ti -1c
+.RI "char \fBfill\fP (char c)"
+.br
+.ti -1c
+.RI "\fBfmtflags\fP \fBflags\fP () const "
+.br
+.ti -1c
+.RI "\fBfmtflags\fP \fBflags\fP (\fBfmtflags\fP fl)"
+.br
+.ti -1c
+.RI "int \fBprecision\fP () const "
+.br
+.ti -1c
+.RI "int \fBprecision\fP (unsigned int n)"
+.br
+.ti -1c
+.RI "\fBfmtflags\fP \fBsetf\fP (\fBfmtflags\fP fl)"
+.br
+.ti -1c
+.RI "\fBfmtflags\fP \fBsetf\fP (\fBfmtflags\fP fl, \fBfmtflags\fP mask)"
+.br
+.ti -1c
+.RI "void \fBunsetf\fP (\fBfmtflags\fP fl)"
+.br
+.ti -1c
+.RI "unsigned \fBwidth\fP ()"
+.br
+.ti -1c
+.RI "unsigned \fBwidth\fP (unsigned n)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static const \fBiostate\fP \fBgoodbit\fP = 0x00"
+.br
+.ti -1c
+.RI "static const \fBiostate\fP \fBbadbit\fP = 0X01"
+.br
+.ti -1c
+.RI "static const \fBiostate\fP \fBeofbit\fP = 0x02"
+.br
+.ti -1c
+.RI "static const \fBiostate\fP \fBfailbit\fP = 0X04"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBleft\fP = 0x0001"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBright\fP = 0x0002"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBinternal\fP = 0x0004"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBdec\fP = 0x0008"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBhex\fP = 0x0010"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBoct\fP = 0x0020"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBboolalpha\fP = 0x0100"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBshowbase\fP = 0x0200"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBshowpoint\fP = 0x0400"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBshowpos\fP = 0x0800"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBskipws\fP = 0x1000"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBuppercase\fP = 0x4000"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBadjustfield\fP = \fBleft\fP | \fBright\fP | \fBinternal\fP"
+.br
+.ti -1c
+.RI "static const \fBfmtflags\fP \fBbasefield\fP = \fBdec\fP | \fBhex\fP | \fBoct\fP"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBapp\fP = 0X4"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBate\fP = 0X8"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBbinary\fP = 0X10"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBin\fP = 0X20"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBout\fP = 0X40"
+.br
+.ti -1c
+.RI "static const \fBopenmode\fP \fBtrunc\fP = 0X80"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fBflagsToBase\fP ()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for all streams\&. 
+.SH "Member Typedef Documentation"
+.PP 
+.SS "typedef unsigned int \fBfmtflags\fP"
+type for format flags 
+.SS "typedef unsigned char \fBiostate\fP"
+typedef for iostate bitmask 
+.SS "typedef int32_t \fBoff_type\fP"
+type for relative seek offset 
+.SS "typedef uint8_t \fBopenmode\fP"
+typedef for iostream open mode 
+.SS "typedef uint32_t \fBpos_type\fP"
+type for absolute seek position 
+.SS "typedef uint32_t \fBstreamsize\fP"
+unsigned size that can represent maximum file size\&. (violates spec - should be signed) 
+.SH "Member Enumeration Documentation"
+.PP 
+.SS "enum \fBseekdir\fP"
+enumerated type for the direction of relative seeks 
+.PP
+\fBEnumerator\fP
+.in +1c
+.TP
+\fB\fIbeg \fP\fP
+seek relative to the beginning of the stream 
+.TP
+\fB\fIcur \fP\fP
+seek relative to the current stream position 
+.TP
+\fB\fIend \fP\fP
+seek relative to the end of the stream 
+.SH "Member Function Documentation"
+.PP 
+.SS "char fill ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+fill character 
+.RE
+.PP
+
+.SS "char fill (charc)\fC [inline]\fP"
+Set fill character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP new fill character 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old fill character 
+.RE
+.PP
+
+.SS "\fBfmtflags\fP flags () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+format flags 
+.RE
+.PP
+
+.SS "\fBfmtflags\fP flags (\fBfmtflags\fPfl)\fC [inline]\fP"
+set format flags 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfl\fP new flag 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old flags 
+.RE
+.PP
+
+.SS "uint8_t flagsToBase ()\fC [inline]\fP, \fC [protected]\fP"
+\fBReturns:\fP
+.RS 4
+current number base 
+.RE
+.PP
+
+.SS "int precision () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+precision 
+.RE
+.PP
+
+.SS "int precision (unsigned intn)\fC [inline]\fP"
+set precision 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP new precision 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old precision 
+.RE
+.PP
+
+.SS "\fBfmtflags\fP setf (\fBfmtflags\fPfl)\fC [inline]\fP"
+set format flags 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfl\fP new flags to be or'ed in 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old flags 
+.RE
+.PP
+
+.SS "\fBfmtflags\fP setf (\fBfmtflags\fPfl, \fBfmtflags\fPmask)\fC [inline]\fP"
+modify format flags 
+.PP
+\fBParameters:\fP
+.RS 4
+\fImask\fP flags to be removed 
+.br
+\fIfl\fP flags to be set after mask bits have been cleared 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old flags 
+.RE
+.PP
+
+.SS "void unsetf (\fBfmtflags\fPfl)\fC [inline]\fP"
+clear format flags 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfl\fP flags to be cleared 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old flags 
+.RE
+.PP
+
+.SS "unsigned width ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+width 
+.RE
+.PP
+
+.SS "unsigned width (unsignedn)\fC [inline]\fP"
+set width 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP new width 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+old width 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "const \fBfmtflags\fP adjustfield = \fBleft\fP | \fBright\fP | \fBinternal\fP\fC [static]\fP"
+mask for adjustfield 
+.SS "const \fBopenmode\fP app = 0X4\fC [static]\fP"
+seek to end before each write 
+.SS "const \fBopenmode\fP ate = 0X8\fC [static]\fP"
+open and seek to end immediately after opening 
+.SS "const \fBiostate\fP badbit = 0X01\fC [static]\fP"
+iostate bad bit for a nonrecoverable error\&. 
+.SS "const \fBfmtflags\fP basefield = \fBdec\fP | \fBhex\fP | \fBoct\fP\fC [static]\fP"
+mask for basefield 
+.SS "const \fBopenmode\fP binary = 0X10\fC [static]\fP"
+perform input and output in binary mode (as opposed to text mode) 
+.SS "const \fBfmtflags\fP boolalpha = 0x0100\fC [static]\fP"
+use strings true/false for bool 
+.SS "const \fBfmtflags\fP dec = 0x0008\fC [static]\fP"
+base 10 flag 
+.SS "const \fBiostate\fP eofbit = 0x02\fC [static]\fP"
+iostate bit for end of file reached 
+.SS "const \fBiostate\fP failbit = 0X04\fC [static]\fP"
+iostate fail bit for nonfatal error 
+.SS "const \fBiostate\fP goodbit = 0x00\fC [static]\fP"
+iostate for no flags 
+.SS "const \fBfmtflags\fP hex = 0x0010\fC [static]\fP"
+base 16 flag 
+.SS "const \fBopenmode\fP in = 0X20\fC [static]\fP"
+open for input 
+.SS "const \fBfmtflags\fP internal = 0x0004\fC [static]\fP"
+fill between sign/base prefix and number 
+.SS "const \fBfmtflags\fP left = 0x0001\fC [static]\fP"
+left adjust fields 
+.SS "const \fBfmtflags\fP oct = 0x0020\fC [static]\fP"
+base 8 flag 
+.SS "const \fBopenmode\fP out = 0X40\fC [static]\fP"
+open for output 
+.SS "const \fBfmtflags\fP right = 0x0002\fC [static]\fP"
+right adjust fields 
+.SS "const \fBfmtflags\fP showbase = 0x0200\fC [static]\fP"
+use prefix 0X for hex and 0 for oct 
+.SS "const \fBfmtflags\fP showpoint = 0x0400\fC [static]\fP"
+always show '\&.' for floating numbers 
+.SS "const \fBfmtflags\fP showpos = 0x0800\fC [static]\fP"
+show + sign for nonnegative numbers 
+.SS "const \fBfmtflags\fP skipws = 0x1000\fC [static]\fP"
+skip initial white space 
+.SS "const \fBopenmode\fP trunc = 0X80\fC [static]\fP"
+truncate an existing stream when opening 
+.SS "const \fBfmtflags\fP uppercase = 0x4000\fC [static]\fP"
+use uppercase letters in number representations 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

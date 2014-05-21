@@ -1,0 +1,69 @@
+\hypertarget{arb__idle_8c}{\section{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-idle.c File Reference}
+\label{arb__idle_8c}\index{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-idle.\-c@{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-idle.\-c}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-idle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-printf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-sys\-Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-watch\-Dog.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__idle_object}{t\-\_\-idle\-Object}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__idle_8c_a1b8eb24f6b7f7af8a59a250d8f2717a5}{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D}~(8000) /$\ast$msec$\ast$/
+\item 
+\#define \hyperlink{arb__idle_8c_a43d948fe6dd0dd0b585561376b795e09}{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E}~(2000)/$\ast$msec$\ast$/
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{arb__idle_8c_ac1880c258d7e006f641b749049fb5377}{arb\-\_\-idle} (\hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-param, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args)
+\item 
+\hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} \hyperlink{arb__idle_8c_a2edd8f5366dcbc1f46f6897a57328fec}{arb\-\_\-idle\-Init} (\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} t\-\_\-idl\-Stack, \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio} t\-\_\-pri)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structt__idle_object}{t\-\_\-idle\-Object} \hyperlink{arb__idle_8c_aaa859ab257bdbe8300c04096fc5b4005}{gt\-\_\-idle\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__idle_8c_a43d948fe6dd0dd0b585561376b795e09}{\index{arb\-\_\-idle.\-c@{arb\-\_\-idle.\-c}!I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E@{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E}}
+\index{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E@{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E}!arb_idle.c@{arb\-\_\-idle.\-c}}
+\subsubsection[{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-P\-E\-T\-\_\-\-R\-A\-T\-E~(2000)/$\ast$msec$\ast$/}}\label{arb__idle_8c_a43d948fe6dd0dd0b585561376b795e09}
+\hypertarget{arb__idle_8c_a1b8eb24f6b7f7af8a59a250d8f2717a5}{\index{arb\-\_\-idle.\-c@{arb\-\_\-idle.\-c}!I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D@{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D}}
+\index{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D@{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D}!arb_idle.c@{arb\-\_\-idle.\-c}}
+\subsubsection[{I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-D\-L\-E\-\_\-\-W\-A\-T\-C\-H\-D\-O\-G\-\_\-\-R\-E\-S\-E\-T\-\_\-\-P\-E\-R\-I\-O\-D~(8000) /$\ast$msec$\ast$/}}\label{arb__idle_8c_a1b8eb24f6b7f7af8a59a250d8f2717a5}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__idle_8c_ac1880c258d7e006f641b749049fb5377}{\index{arb\-\_\-idle.\-c@{arb\-\_\-idle.\-c}!arb\-\_\-idle@{arb\-\_\-idle}}
+\index{arb\-\_\-idle@{arb\-\_\-idle}!arb_idle.c@{arb\-\_\-idle.\-c}}
+\subsubsection[{arb\-\_\-idle}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-idle (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-param, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args}
+\end{DoxyParamCaption}
+)}}\label{arb__idle_8c_ac1880c258d7e006f641b749049fb5377}
+\hypertarget{arb__idle_8c_a2edd8f5366dcbc1f46f6897a57328fec}{\index{arb\-\_\-idle.\-c@{arb\-\_\-idle.\-c}!arb\-\_\-idle\-Init@{arb\-\_\-idle\-Init}}
+\index{arb\-\_\-idle\-Init@{arb\-\_\-idle\-Init}!arb_idle.c@{arb\-\_\-idle.\-c}}
+\subsubsection[{arb\-\_\-idle\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} arb\-\_\-idle\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-stack\-Size}}]{t\-\_\-idl\-Stack, }
+\item[{{\bf t\-\_\-thrd\-Prio}}]{t\-\_\-pri}
+\end{DoxyParamCaption}
+)}}\label{arb__idle_8c_a2edd8f5366dcbc1f46f6897a57328fec}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__idle_8c_aaa859ab257bdbe8300c04096fc5b4005}{\index{arb\-\_\-idle.\-c@{arb\-\_\-idle.\-c}!gt\-\_\-idle\-Object@{gt\-\_\-idle\-Object}}
+\index{gt\-\_\-idle\-Object@{gt\-\_\-idle\-Object}!arb_idle.c@{arb\-\_\-idle.\-c}}
+\subsubsection[{gt\-\_\-idle\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-idle\-Object} gt\-\_\-idle\-Object\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__idle_8c_aaa859ab257bdbe8300c04096fc5b4005}

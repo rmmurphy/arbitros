@@ -1,0 +1,187 @@
+\hypertarget{arb__console_8c}{\section{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-console.c File Reference}
+\label{arb__console_8c}\index{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-console.\-c@{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-console.\-c}}
+}
+
+
+Main handler for the system console interface.  
+
+
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-sys\-Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-console.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-printf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-scheduler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-console.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-sd.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__console_object}{t\-\_\-console\-Object}
+\begin{DoxyCompactList}\small\item\em Grouping of objects commonly used across all functions within this file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{arb__console_8c_adc53244b6829c70060f007f46bedf047}{\#define \hyperlink{arb__console_8c_adc53244b6829c70060f007f46bedf047}{P\-R\-I\-N\-T\-F\-\_\-\-N\-U\-M\-\_\-\-L\-I\-N\-E\-S\-\_\-\-T\-O\-\_\-\-P\-R\-I\-N\-T}~(20)}\label{arb__console_8c_adc53244b6829c70060f007f46bedf047}
+
+\begin{DoxyCompactList}\small\item\em This macro controls the number of lines displayed to the terminal when printing the contents of a file using the command 'head'. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console} (t\-\_\-parameters t\-\_\-param, t\-\_\-arguments t\-\_\-args)
+\begin{DoxyCompactList}\small\item\em Arbitros system console thread which controls reading and writing to the standard output (command window). \end{DoxyCompactList}\item 
+static bool \hyperlink{arb__console_8c_a7ab5296ac37a44178c85af393cca3d44}{arb\-\_\-head} (int8\-\_\-t $\ast$pc\-\_\-buff, \hyperlink{structt__console_tok_hndl}{t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl)
+\begin{DoxyCompactList}\small\item\em Reads the contents of a file and writes them to the command window. \end{DoxyCompactList}\item 
+static void \hyperlink{arb__console_8c_a794d3adb2199bc2fea45b5c155e1a689}{arb\-\_\-display\-Kernel\-Help} (int8\-\_\-t $\ast$pc\-\_\-buff)
+\begin{DoxyCompactList}\small\item\em Displays a list of kernel commands to the terminal window. \end{DoxyCompactList}\item 
+static void \hyperlink{arb__console_8c_a7e29a86133dfa7660c4fd34c1535f51f}{arb\-\_\-set\-Debug\-Level} (\hyperlink{structt__console_tok_hndl}{t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl, int8\-\_\-t $\ast$pc\-\_\-buff)
+\begin{DoxyCompactList}\small\item\em Puts the system into debug mode where \#arb\-\_\-printf information is written to the terminal. \end{DoxyCompactList}\item 
+static void \hyperlink{arb__console_8c_a0ea3dea385ce66287f4eba9c06f4a8cb}{arb\-\_\-display\-Device\-List} (int8\-\_\-t $\ast$pc\-\_\-buff)
+\item 
+\hypertarget{arb__console_8c_a83957545ac8bc50184c4ce9dc4185971}{static void {\bfseries arb\-\_\-display\-System\-Statistics} (int8\-\_\-t $\ast$pc\-\_\-buff)}\label{arb__console_8c_a83957545ac8bc50184c4ce9dc4185971}
+
+\item 
+\hypertarget{arb__console_8c_a0750f79fe237bc0c9774b12f492d223e}{t\-\_\-error {\bfseries arb\-\_\-console\-Init} (char $\ast$pc\-\_\-cons\-Driver, char $\ast$pc\-\_\-sd\-Driver, t\-\_\-stack\-Size t\-\_\-stack, t\-\_\-thrd\-Prio t\-\_\-pri, bool($\ast$pf\-\_\-fun\-Ptr)(t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E t\-\_\-console\-Hndl, int8\-\_\-t $\ast$pc\-\_\-buff, \hyperlink{structt__console_tok_hndl}{t\-\_\-console\-Tok\-Hndl} $\ast$pt\-\_\-tok\-Hndl))}\label{arb__console_8c_a0750f79fe237bc0c9774b12f492d223e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{arb__console_8c_a7372a07169bf9ab879a82fb473517994}{static \hyperlink{structt__console_object}{t\-\_\-console\-Object} \hyperlink{arb__console_8c_a7372a07169bf9ab879a82fb473517994}{gt\-\_\-con\-Object}}\label{arb__console_8c_a7372a07169bf9ab879a82fb473517994}
+
+\begin{DoxyCompactList}\small\item\em Global variable containing objects common to all the functions within the file \hyperlink{arb__console_8c}{arb\-\_\-console.\-c}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Main handler for the system console interface. This file defines a set of functions that provide the tools for interfacing with the operating system or user-\/space application via a terminal window. The primary handler is a blocking thread named \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console}, which wakes any time a message is is received over the terminal via the device driver drv\-\_\-console.\-c. The following figure demonstrates how messages are exchanged and validated between the driver, console thread, and user-\/space handler.  After waking, the thread validates the tokenized message by checking the first entry against a list of basic kernel commands ({\bfseries ls, cd, help, dev, top, sdl, rm, sct, and head}). If the token doesn't match, the entire message is routed to the user-\/space layer for further evaluation. After processing the message the user-\/space layer returns control back to \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console} with an indicator letting the thread know if the message was handled properly.
+
+Standard Output (Terminal)  As seen in the figure, Arbitros offers a rich set of terminal commands. The first command {\bfseries ls}, outputs a list of all the directories and files currently housed on the system. In this example, only the 'L\-O\-G\-S' directory with 'D\-M\-S\-G.\-T\-X\-T' is present. These particular files are created during system initialization and used by the function \#arb\-\_\-printf for logging user-\/space or kernel debug messages. The {\bfseries help} command lists all the commands--with descriptions--recognized by the terminal handler \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console}. Finally, the command {\bfseries dev} displays a list of all the device drivers and number of open device driver handles.  The second figure highlights the commands {\bfseries top, sdl, and rm}. The command {\bfseries top} displays metrics such as the size of various memory sections (.data, .bss, and .heap), as well as the amount R\-A\-M left on the system. Additionally, {\bfseries top} displays an estimate of processor thread loading comprised of metrics averaged over a one minute and five minute interval. This feature allows an Arbitros developer to tune the performance of a particular thread or collection of threads in order to minimize the burden on the system. The command {\bfseries sdl} with argument 0,1, or 2 turns on one of \#arb\-\_\-printf's three debug levels \#\-P\-R\-I\-N\-T\-F\-\_\-\-D\-B\-G\-\_\-\-L\-O\-W, \#\-P\-R\-I\-N\-T\-F\-\_\-\-D\-B\-G\-\_\-\-M\-E\-D, and \#\-P\-R\-I\-N\-T\-F\-\_\-\-D\-B\-G\-\_\-\-H\-I\-G\-H, respectively. As seen in the figure, {\bfseries sdl 0} enables the lowest debug level \#\-P\-R\-I\-N\-T\-F\-\_\-\-D\-B\-G\-\_\-\-L\-O\-W, which displays a message every time the thread \#arb\-\_\-idle resets the system watchdog timer. This particular debug configuration will tell the kernel to pass any priority \#arb\-\_\-printf debug message onto the terminal. Increasing the debug level, such as configuring {\bfseries sdl 1 (or 2)}, will tell Arbitros to pass \#arb\-\_\-printf messages with the same or higher priority onto the terminal. The ability to display messages based on priority eases software integration, allowing a developer to \char`\"{}de-\/clutter\char`\"{} the terminal output in order to highlight the most important information. The final command {\bfseries rm -\/r}, recursively removes all files and folders stored on the system flash drive.
+
+\begin{DoxyCopyright}{Copyright}
+Copyright (C) 2011-\/2013 Ryan M. Murphy $<$ryan.\-m.\-murphy.\-77. com$>$ This program is free software\-: you can redistribute it and/ or modify it under the terms of the G\-N\-U General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but W\-I\-T\-H\-O\-U\-T A\-N\-Y W\-A\-R\-R\-A\-N\-T\-Y; without even the implied warranty of M\-E\-R\-C\-H\-A\-N\-T\-A\-B\-I\-L\-I\-T\-Y or F\-I\-T\-N\-E\-S\-S F\-O\-R A P\-A\-R\-T\-I\-C\-U\-L\-A\-R P\-U\-R\-P\-O\-S\-E. See the G\-N\-U General Public License for more details. You should have received a copy of the G\-N\-U General Public License along with this program. If not, see \href{http://www.gnu.org/licenses/}{\tt http\-://www.\-gnu.\-org/licenses/}.
+\end{DoxyCopyright}
+\begin{DoxyAuthor}{Author}
+Ryan M. Murphy \href{mailto:ryan.m.murphy.77@gmail.com}{\tt ryan.\-m.\-murphy.\-77@gmail.\-com}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jan, 14, 2013
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__console_8c_a53daff761c655e05e651b375d95d6309}{\index{arb\-\_\-console.\-c@{arb\-\_\-console.\-c}!arb\-\_\-console@{arb\-\_\-console}}
+\index{arb\-\_\-console@{arb\-\_\-console}!arb_console.c@{arb\-\_\-console.\-c}}
+\subsubsection[{arb\-\_\-console}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-console (
+\begin{DoxyParamCaption}
+\item[{t\-\_\-parameters}]{t\-\_\-param, }
+\item[{t\-\_\-arguments}]{t\-\_\-args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__console_8c_a53daff761c655e05e651b375d95d6309}
+
+
+Arbitros system console thread which controls reading and writing to the standard output (command window). 
+
+This console thread provides a mechanism for exchanging text messages between an external user--via a command line interface --and Arbitros kernel or user-\/space application. The thread blocks until detecting a carriage return, from which it wakes and reads the contents of the device driver's (drv\-\_\-console.\-c) buffer. The new message is checked against a set of 'Linux like' Arbitros kernel commands such as; {\bfseries sct, help, sdl, dev, top, ls, rm, cd, and head}. If the message is recognized as a kernel command it is subsequently processed; otherwise, control of the console is passed onto the user-\/space application via a function pointer passed in as a parameter to \#arb\-\_\-console\-Init during system initialization.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em t\-\_\-param} & User-\/definable parameter passed in at time of thread initialization.\\
+\hline
+\mbox{\tt in}  & {\em t\-\_\-args} & User-\/definable argument passed in at time of thread initialization.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{arb__console_8c_a0ea3dea385ce66287f4eba9c06f4a8cb}{\index{arb\-\_\-console.\-c@{arb\-\_\-console.\-c}!arb\-\_\-display\-Device\-List@{arb\-\_\-display\-Device\-List}}
+\index{arb\-\_\-display\-Device\-List@{arb\-\_\-display\-Device\-List}!arb_console.c@{arb\-\_\-console.\-c}}
+\subsubsection[{arb\-\_\-display\-Device\-List}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-display\-Device\-List (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__console_8c_a0ea3dea385ce66287f4eba9c06f4a8cb}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pc\-\_\-buff} & Scratch buffer used for writing messages to the terminal.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{arb__console_8c_a794d3adb2199bc2fea45b5c155e1a689}{\index{arb\-\_\-console.\-c@{arb\-\_\-console.\-c}!arb\-\_\-display\-Kernel\-Help@{arb\-\_\-display\-Kernel\-Help}}
+\index{arb\-\_\-display\-Kernel\-Help@{arb\-\_\-display\-Kernel\-Help}!arb_console.c@{arb\-\_\-console.\-c}}
+\subsubsection[{arb\-\_\-display\-Kernel\-Help}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-display\-Kernel\-Help (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__console_8c_a794d3adb2199bc2fea45b5c155e1a689}
+
+
+Displays a list of kernel commands to the terminal window. 
+
+After the thread \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console} receives the {\bfseries help} command via the terminal window it calls this function in order to display a list of all possible kernel commands.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pc\-\_\-buff} & scratch buffer used for writing the kernel commands and their description to the terminal window.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\hypertarget{arb__console_8c_a7ab5296ac37a44178c85af393cca3d44}{\index{arb\-\_\-console.\-c@{arb\-\_\-console.\-c}!arb\-\_\-head@{arb\-\_\-head}}
+\index{arb\-\_\-head@{arb\-\_\-head}!arb_console.c@{arb\-\_\-console.\-c}}
+\subsubsection[{arb\-\_\-head}]{\setlength{\rightskip}{0pt plus 5cm}static bool arb\-\_\-head (
+\begin{DoxyParamCaption}
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{{\bf t\-\_\-console\-Tok\-Hndl} $\ast$}]{pt\-\_\-tok\-Hndl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__console_8c_a7ab5296ac37a44178c85af393cca3d44}
+
+
+Reads the contents of a file and writes them to the command window. 
+
+This function prints the contents of the file (pointed to by {\bfseries  pt\-\_\-tok\-Hndl}) entered via the terminal window using the command {\bfseries head $<$filename$>$}. The file is iteratively printed \hyperlink{arb__console_8c_adc53244b6829c70060f007f46bedf047}{P\-R\-I\-N\-T\-F\-\_\-\-N\-U\-M\-\_\-\-L\-I\-N\-E\-S\-\_\-\-T\-O\-\_\-\-P\-R\-I\-N\-T} lines at a time. At the end of each iteration, the user is asked if another \hyperlink{arb__console_8c_adc53244b6829c70060f007f46bedf047}{P\-R\-I\-N\-T\-F\-\_\-\-N\-U\-M\-\_\-\-L\-I\-N\-E\-S\-\_\-\-T\-O\-\_\-\-P\-R\-I\-N\-T} lines should be displayed or if termination is required.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pc\-\_\-buff} & Scratch buffer used for reading/writing messages between the command window and system console thread \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console}.\\
+\hline
+\mbox{\tt in}  & {\em pt\-\_\-tok\-Hndl} & pointer to the current list of command line tokens.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+'true', if the file ($<$filename$>$) was opened, otherwise 'false'. 
+\end{DoxyReturn}
+\hypertarget{arb__console_8c_a7e29a86133dfa7660c4fd34c1535f51f}{\index{arb\-\_\-console.\-c@{arb\-\_\-console.\-c}!arb\-\_\-set\-Debug\-Level@{arb\-\_\-set\-Debug\-Level}}
+\index{arb\-\_\-set\-Debug\-Level@{arb\-\_\-set\-Debug\-Level}!arb_console.c@{arb\-\_\-console.\-c}}
+\subsubsection[{arb\-\_\-set\-Debug\-Level}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-set\-Debug\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-console\-Tok\-Hndl} $\ast$}]{pt\-\_\-tok\-Hndl, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__console_8c_a7e29a86133dfa7660c4fd34c1535f51f}
+
+
+Puts the system into debug mode where \#arb\-\_\-printf information is written to the terminal. 
+
+After the thread \hyperlink{arb__console_8c_a53daff761c655e05e651b375d95d6309}{arb\-\_\-console()} receives a {\bfseries sdl $<$arg$>$} command, it calls this function in order to configure the system--both kernel and console interface--for writing debug information to terminal window. If there are software debug messages (i.\-e. \#arb\-\_\-printf) with priority equal to or higher than $<$arg$>$ (e.\-g. 0,1, 2) they will subsequently be displayed at the terminal output; otherwise, the terminal will remain blank. After entering this mode, the user can press the return key--at any time--in order to return to nominal console operation. \begin{DoxySeeAlso}{See Also}
+term for further information
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pc\-\_\-buff} & Scratch buffer used for writing messages to the terminal.\\
+\hline
+\mbox{\tt in}  & {\em pt\-\_\-tok\-Hndl} & pointer to the tokenized list of terminal commands and arguments.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}

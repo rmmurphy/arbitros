@@ -1,0 +1,251 @@
+\hypertarget{arb__thread_8h}{\section{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-thread.h File Reference}
+\label{arb__thread_8h}\index{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-thread.\-h@{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-thread.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linkedlist.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_t_c_b}{T\-C\-B}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__thread_8h_afcb3796377137874bf2e37124728dde8}{arb\-\_\-thread\-\_\-h}
+\item 
+\#define \hyperlink{arb__thread_8h_aa0d8439b337411bac6b5c9746f01beeb}{R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R}~(1)
+\item 
+\#define \hyperlink{arb__thread_8h_a8d89027c8e248e876bdc35a5d8b95651}{A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S}
+\item 
+\#define \hyperlink{arb__thread_8h_a638d3f20ee9a2e331cf04ee9992adc10}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K}~(0x\-D\-E\-A\-D)
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint8\-\_\-t \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}
+\item 
+typedef int16\-\_\-t \hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters}
+\item 
+typedef int16\-\_\-t \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments}
+\item 
+typedef struct \hyperlink{struct_t_c_b}{T\-C\-B} \hyperlink{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}{t\-\_\-tcb}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} \{ \\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aa7ecc2edd4b52188edf0b2d74976afb9}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B} = 64, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a020b30e47f983d83abb355ec1c21ead2}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B} = 96, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1e14e8cc277d68e26deebeec88401f45}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B} = 128, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1518e52c5853a95da87170ff134487a6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B} = 160, 
+\\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a8f93bab878e57e5af6b021ef761e4ca8}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B} = 192, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ab96a45134ca539f50aa504c1d8f85395}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B} = 224, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2e246ca5fa6e725f1573a06b2a1cf1ea}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B} = 256, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2decfda3f75ded4efed132c6f919599c}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B} = 384, 
+\\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a7618503afe4f6e97f53e246984d0945d}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B} = 512, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81affc139a92ae079e46d75bbeda6aa6357}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B} = 640, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a51ba3312255bfbf3a7236ee420a79b81}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B} = 768, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2d7c6d10e99b7b0b37f36da87d265ea6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B} = 1024, 
+\\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ade79fa22fdaaf1cac3ec0cab6300947c}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B} = 1152, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a618e0ed409cede7285dfcf4272f7a709}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B} = 1280, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a11b9614b0b99e734624aa994fe963e5a}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B} = 1408, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aacbb268cffcbebce27335e87ff7b5476}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B} = 1536, 
+\\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ace25bf51f4862638da74d0c05b4a9df6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B} = 1792, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a64e5d6d0bad4a26598bbc7393500b9ec}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B} = 2048, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a383fb39099f61e973a47b22d09e49f79}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B} = 2304, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a5aca3eec9958077f2236215865fe1ccd}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B} = 2560, 
+\\*
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a05c9bf899858bb5f295850a26aa41cd5}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B} = 2816, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a6cac21cadaf27d9fc2b69d7788571a70}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B} = 3072, 
+\hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a223712a6cc80136c7c17b31af77232be}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B} = 4096
+ \}
+\item 
+enum \hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2}{t\-\_\-thread\-Status} \{ \\*
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a6564f2f3e15be06b670547bbcaaf0798}{R\-E\-A\-D\-Y} = 0, 
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a1061be6c3fb88d32829cba6f6b2be304}{R\-U\-N\-N\-I\-N\-G}, 
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a376c1b6a3f75d283a2efacf737438d61}{B\-L\-O\-C\-K\-E\-D}, 
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a488282601451a751e0f0e770b15d4235}{S\-L\-E\-E\-P\-I\-N\-G}, 
+\\*
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2aa307353740245a4be434ad2ca7169232}{I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}, 
+\hyperlink{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a240c1965a48eaf409ba68c4cc9462ac5}{T\-E\-R\-M\-I\-N\-A\-T\-E\-D}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} \hyperlink{arb__thread_8h_a92da7f756af74c1063c6b9e93b4f7078}{arb\-\_\-thread\-Create} (void $\ast$pt\-\_\-function, \hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-parms, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args, \hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} t\-\_\-stack, \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio} t\-\_\-priority)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__thread_8h_a17dffd38ef45fdb9e53204fbac740a16}{arb\-\_\-thread\-Destroy} (\hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} t\-\_\-thrd\-Handle)
+\item 
+void \hyperlink{arb__thread_8h_a82a38aa2d2d8e420edf17ec98e1d5443}{arb\-\_\-sleep} (const uint16\-\_\-t s\-\_\-quantum) \hyperlink{utl__math_8c_a4a1aa33e217e3ab6cc6f8a4126e6a705}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((noinline))
+\item 
+void \hyperlink{arb__thread_8h_a659972226e5e512036a76e47f78a8ca5}{arb\-\_\-update\-Sleeping\-Threads} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} \hyperlink{arb__thread_8h_af079a9f620d6d6a9da37efa763af9db3}{gt\-\_\-active\-Threads}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__thread_8h_a8d89027c8e248e876bdc35a5d8b95651}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S@{A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S}}
+\index{A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S@{A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-E\-X\-T\-R\-A\-\_\-\-S\-T\-A\-C\-K\-\_\-\-B\-Y\-T\-E\-S}}\label{arb__thread_8h_a8d89027c8e248e876bdc35a5d8b95651}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(45) \textcolor{comment}{/*To do: figure out why this needs to be}
+\textcolor{comment}{                                        45 instead of 43*/}
+\end{DoxyCode}
+\hypertarget{arb__thread_8h_a638d3f20ee9a2e331cf04ee9992adc10}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K}}
+\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-\-O\-V\-E\-R\-F\-L\-O\-W\-\_\-\-C\-H\-E\-C\-K~(0x\-D\-E\-A\-D)}}\label{arb__thread_8h_a638d3f20ee9a2e331cf04ee9992adc10}
+\hypertarget{arb__thread_8h_afcb3796377137874bf2e37124728dde8}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!arb\-\_\-thread\-\_\-h@{arb\-\_\-thread\-\_\-h}}
+\index{arb\-\_\-thread\-\_\-h@{arb\-\_\-thread\-\_\-h}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{arb\-\_\-thread\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define arb\-\_\-thread\-\_\-h}}\label{arb__thread_8h_afcb3796377137874bf2e37124728dde8}
+\hypertarget{arb__thread_8h_aa0d8439b337411bac6b5c9746f01beeb}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R@{R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R}}
+\index{R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R@{R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\-U\-N\-\_\-\-F\-O\-R\-E\-V\-E\-R~(1)}}\label{arb__thread_8h_aa0d8439b337411bac6b5c9746f01beeb}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-arguments@{t\-\_\-arguments}}
+\index{t\-\_\-arguments@{t\-\_\-arguments}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-arguments}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\-\_\-t {\bf t\-\_\-arguments}}}\label{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}
+\hypertarget{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-parameters@{t\-\_\-parameters}}
+\index{t\-\_\-parameters@{t\-\_\-parameters}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}typedef int16\-\_\-t {\bf t\-\_\-parameters}}}\label{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}
+\hypertarget{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-tcb@{t\-\_\-tcb}}
+\index{t\-\_\-tcb@{t\-\_\-tcb}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-tcb}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf T\-C\-B} {\bf t\-\_\-tcb}}}\label{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}
+\hypertarget{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E@{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}}
+\index{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E@{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}}}\label{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}
+\hypertarget{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-thrd\-Prio@{t\-\_\-thrd\-Prio}}
+\index{t\-\_\-thrd\-Prio@{t\-\_\-thrd\-Prio}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-thrd\-Prio}]{\setlength{\rightskip}{0pt plus 5cm}typedef uint8\-\_\-t {\bf t\-\_\-thrd\-Prio}}}\label{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-stack\-Size@{t\-\_\-stack\-Size}}
+\index{t\-\_\-stack\-Size@{t\-\_\-stack\-Size}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-stack\-Size}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-stack\-Size}}}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aa7ecc2edd4b52188edf0b2d74976afb9}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-64\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aa7ecc2edd4b52188edf0b2d74976afb9}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a020b30e47f983d83abb355ec1c21ead2}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-96\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a020b30e47f983d83abb355ec1c21ead2}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1e14e8cc277d68e26deebeec88401f45}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-128\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1e14e8cc277d68e26deebeec88401f45}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1518e52c5853a95da87170ff134487a6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-160\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a1518e52c5853a95da87170ff134487a6}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a8f93bab878e57e5af6b021ef761e4ca8}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-192\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a8f93bab878e57e5af6b021ef761e4ca8}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ab96a45134ca539f50aa504c1d8f85395}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-224\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ab96a45134ca539f50aa504c1d8f85395}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2e246ca5fa6e725f1573a06b2a1cf1ea}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-256\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2e246ca5fa6e725f1573a06b2a1cf1ea}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2decfda3f75ded4efed132c6f919599c}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-384\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2decfda3f75ded4efed132c6f919599c}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a7618503afe4f6e97f53e246984d0945d}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-512\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a7618503afe4f6e97f53e246984d0945d}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81affc139a92ae079e46d75bbeda6aa6357}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-640\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81affc139a92ae079e46d75bbeda6aa6357}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a51ba3312255bfbf3a7236ee420a79b81}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-768\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a51ba3312255bfbf3a7236ee420a79b81}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2d7c6d10e99b7b0b37f36da87d265ea6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1024\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a2d7c6d10e99b7b0b37f36da87d265ea6}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ade79fa22fdaaf1cac3ec0cab6300947c}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1152\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ade79fa22fdaaf1cac3ec0cab6300947c}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a618e0ed409cede7285dfcf4272f7a709}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1280\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a618e0ed409cede7285dfcf4272f7a709}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a11b9614b0b99e734624aa994fe963e5a}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1408\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a11b9614b0b99e734624aa994fe963e5a}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aacbb268cffcbebce27335e87ff7b5476}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1536\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81aacbb268cffcbebce27335e87ff7b5476}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ace25bf51f4862638da74d0c05b4a9df6}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-1792\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81ace25bf51f4862638da74d0c05b4a9df6}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a64e5d6d0bad4a26598bbc7393500b9ec}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2048\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a64e5d6d0bad4a26598bbc7393500b9ec}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a383fb39099f61e973a47b22d09e49f79}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2304\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a383fb39099f61e973a47b22d09e49f79}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a5aca3eec9958077f2236215865fe1ccd}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2560\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a5aca3eec9958077f2236215865fe1ccd}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a05c9bf899858bb5f295850a26aa41cd5}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-2816\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a05c9bf899858bb5f295850a26aa41cd5}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a6cac21cadaf27d9fc2b69d7788571a70}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-3072\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a6cac21cadaf27d9fc2b69d7788571a70}
+}]\index{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B@{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B}}\item[{\em 
+\hypertarget{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a223712a6cc80136c7c17b31af77232be}{A\-R\-B\-\_\-\-S\-T\-A\-C\-K\-\_\-4096\-B}\label{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81a223712a6cc80136c7c17b31af77232be}
+}]\end{description}
+\end{Desc}
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!t\-\_\-thread\-Status@{t\-\_\-thread\-Status}}
+\index{t\-\_\-thread\-Status@{t\-\_\-thread\-Status}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{t\-\_\-thread\-Status}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-thread\-Status}}}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{R\-E\-A\-D\-Y@{R\-E\-A\-D\-Y}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!R\-E\-A\-D\-Y@{R\-E\-A\-D\-Y}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a6564f2f3e15be06b670547bbcaaf0798}{R\-E\-A\-D\-Y}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a6564f2f3e15be06b670547bbcaaf0798}
+}]\index{R\-U\-N\-N\-I\-N\-G@{R\-U\-N\-N\-I\-N\-G}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!R\-U\-N\-N\-I\-N\-G@{R\-U\-N\-N\-I\-N\-G}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a1061be6c3fb88d32829cba6f6b2be304}{R\-U\-N\-N\-I\-N\-G}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a1061be6c3fb88d32829cba6f6b2be304}
+}]\index{B\-L\-O\-C\-K\-E\-D@{B\-L\-O\-C\-K\-E\-D}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!B\-L\-O\-C\-K\-E\-D@{B\-L\-O\-C\-K\-E\-D}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a376c1b6a3f75d283a2efacf737438d61}{B\-L\-O\-C\-K\-E\-D}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a376c1b6a3f75d283a2efacf737438d61}
+}]\index{S\-L\-E\-E\-P\-I\-N\-G@{S\-L\-E\-E\-P\-I\-N\-G}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!S\-L\-E\-E\-P\-I\-N\-G@{S\-L\-E\-E\-P\-I\-N\-G}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a488282601451a751e0f0e770b15d4235}{S\-L\-E\-E\-P\-I\-N\-G}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a488282601451a751e0f0e770b15d4235}
+}]\index{I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D@{I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D@{I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2aa307353740245a4be434ad2ca7169232}{I\-N\-I\-T\-I\-A\-L\-I\-Z\-E\-D}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2aa307353740245a4be434ad2ca7169232}
+}]\index{T\-E\-R\-M\-I\-N\-A\-T\-E\-D@{T\-E\-R\-M\-I\-N\-A\-T\-E\-D}!arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}}\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!T\-E\-R\-M\-I\-N\-A\-T\-E\-D@{T\-E\-R\-M\-I\-N\-A\-T\-E\-D}}\item[{\em 
+\hypertarget{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a240c1965a48eaf409ba68c4cc9462ac5}{T\-E\-R\-M\-I\-N\-A\-T\-E\-D}\label{arb__thread_8h_a94ba7e6218721cb6d09e0f30f6cc1df2a240c1965a48eaf409ba68c4cc9462ac5}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__thread_8h_a82a38aa2d2d8e420edf17ec98e1d5443}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!arb\-\_\-sleep@{arb\-\_\-sleep}}
+\index{arb\-\_\-sleep@{arb\-\_\-sleep}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{arb\-\_\-sleep}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-sleep (
+\begin{DoxyParamCaption}
+\item[{const uint16\-\_\-t}]{s\-\_\-quantum}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8h_a82a38aa2d2d8e420edf17ec98e1d5443}
+\hypertarget{arb__thread_8h_a92da7f756af74c1063c6b9e93b4f7078}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!arb\-\_\-thread\-Create@{arb\-\_\-thread\-Create}}
+\index{arb\-\_\-thread\-Create@{arb\-\_\-thread\-Create}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{arb\-\_\-thread\-Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} arb\-\_\-thread\-Create (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pt\-\_\-function, }
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-parms, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args, }
+\item[{{\bf t\-\_\-stack\-Size}}]{t\-\_\-stack, }
+\item[{{\bf t\-\_\-thrd\-Prio}}]{t\-\_\-priority}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8h_a92da7f756af74c1063c6b9e93b4f7078}
+\hypertarget{arb__thread_8h_a17dffd38ef45fdb9e53204fbac740a16}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!arb\-\_\-thread\-Destroy@{arb\-\_\-thread\-Destroy}}
+\index{arb\-\_\-thread\-Destroy@{arb\-\_\-thread\-Destroy}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{arb\-\_\-thread\-Destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-thread\-Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}}]{t\-\_\-thrd\-Handle}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8h_a17dffd38ef45fdb9e53204fbac740a16}
+\hypertarget{arb__thread_8h_a659972226e5e512036a76e47f78a8ca5}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!arb\-\_\-update\-Sleeping\-Threads@{arb\-\_\-update\-Sleeping\-Threads}}
+\index{arb\-\_\-update\-Sleeping\-Threads@{arb\-\_\-update\-Sleeping\-Threads}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{arb\-\_\-update\-Sleeping\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-update\-Sleeping\-Threads (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8h_a659972226e5e512036a76e47f78a8ca5}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__thread_8h_af079a9f620d6d6a9da37efa763af9db3}{\index{arb\-\_\-thread.\-h@{arb\-\_\-thread.\-h}!gt\-\_\-active\-Threads@{gt\-\_\-active\-Threads}}
+\index{gt\-\_\-active\-Threads@{gt\-\_\-active\-Threads}!arb_thread.h@{arb\-\_\-thread.\-h}}
+\subsubsection[{gt\-\_\-active\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} gt\-\_\-active\-Threads}}\label{arb__thread_8h_af079a9f620d6d6a9da37efa763af9db3}

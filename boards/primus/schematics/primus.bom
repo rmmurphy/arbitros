@@ -1,0 +1,26 @@
+Partlist exported from C:/Users/rmmurphy/Documents/eagle/primus/primus.sch at 11/28/2013 8:10:23 AM
+
+Assembly variant: 
+
+Qty Value                  Device           Parts                                                           
+2                          PINHD-2X20       JP1, JP2                                                        
+15  .1uF                   CAP0603-CAP      C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C15, C16, C17, C19, C20
+2   0ZCA0020FF2E           PTCSMD           F1_CNSL, F4_PWR                                                 
+6   100                    RESISTOR0603-RES R1, R4, R5, R8, R9, R10                                         
+1   101-00581-59           USD-SOCKETNEW    U3                                                              
+1   10000                  RESISTOR0603-RES R2                                                              
+1   1761681-3              M05X2SHD         JP_PDI                                                          
+1   ATXMEGA128A1-AURCT-ND  XMEGA-100SMD     U4_XMEGA                                                        
+1   FT232RLSSOP            FT232RLSSOP      U1_CNSL                                                         
+1   LM1117IMP-3.3/NOPB     V_REG_317SMD     U1                                                              
+1   LTST-C150KSKT (YELLOW) LED1206          LED3                                                            
+2   LTST-C230KGKT (GREEN)  LED1206          LED4, LED6                                                      
+3   LTST-C230KRKT (RED)    LED1206          LED1, LED2, LED5                                                
+3   MI1206L501R-10         MI1206L501R-10   L1, L2, L3                                                      
+1   PJ-002BH-SMT-TR        POWER_JACKSMD    JI_PWR_5V                                                       
+1   SMAZ16-13-F            DIODESMA         D1_PWR1                                                         
+2   SS1H10-E3/61T          DIODESMA         D1_PWR, D1_PWR2                                                 
+3   T491A106M020AT         CAP_POL1206      C11, C12, C18                                                   
+2   T491A107M004AT         CAP_POL1206      C13, C14                                                        
+1   UX60A-MB-5ST           USBSMD           X2_CNSL                                                         
+1   ZLDO1117G25TA          V_REG_317SMD     U2                                                              

@@ -1,0 +1,74 @@
+.TH "SoftSPI< MisoPin, MosiPin, SckPin, Mode >" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SoftSPI< MisoPin, MosiPin, SckPin, Mode > \- 
+.PP
+Fast software SPI\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SoftSPI\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "\fB__attribute__\fP ((always_inline)) uint8_t receive()"
+.br
+.ti -1c
+.RI "\fB__attribute__\fP ((always_inline)) void send(uint8_t data)"
+.br
+.ti -1c
+.RI "\fB__attribute__\fP ((always_inline)) uint8_t transfer(uint8_t txData)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+
+.SS "template<uint8_t MisoPin, uint8_t MosiPin, uint8_t SckPin, uint8_t Mode = 0>class SoftSPI< MisoPin, MosiPin, SckPin, Mode >"
+Fast software SPI\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "__attribute__ ((always_inline))\fC [inline]\fP"
+Soft SPI receive byte\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Data byte received\&. 
+.RE
+.PP
+
+.SS "__attribute__ ((always_inline))\fC [inline]\fP"
+Soft SPI send byte\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdata\fP Data byte to send\&. 
+.RE
+.PP
+
+.SS "__attribute__ ((always_inline))\fC [inline]\fP"
+Soft SPI transfer byte\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fItxData\fP Data byte to send\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Data byte received\&. 
+.RE
+.PP
+
+.SS "void begin ()\fC [inline]\fP"
+Initialize \fBSoftSPI\fP pins\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

@@ -1,0 +1,109 @@
+.TH "Print" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Print \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBMinimumSerial\fP, \fBSdFile\fP, \fBServer\fP, and \fBStream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBgetWriteError\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearWriteError\fP ()"
+.br
+.ti -1c
+.RI "virtual size_t \fBwrite\fP (uint8_t)=0"
+.br
+.ti -1c
+.RI "size_t \fBwrite\fP (const char *str)"
+.br
+.ti -1c
+.RI "virtual size_t \fBwrite\fP (const uint8_t *buffer, size_t size)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (const __FlashStringHelper *)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (const String &)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (const char[])"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (char)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (unsigned char, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (int, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (unsigned int, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (long, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (unsigned long, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (double, int=2)"
+.br
+.ti -1c
+.RI "size_t \fBprint\fP (const \fBPrintable\fP &)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (const __FlashStringHelper *)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (const String &s)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (const char[])"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (char)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (unsigned char, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (int, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (unsigned int, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (long, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (unsigned long, int=DEC)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (double, int=2)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (const \fBPrintable\fP &)"
+.br
+.ti -1c
+.RI "size_t \fBprintln\fP (void)"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsetWriteError\fP (int err=1)"
+.br
+.in -1c
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

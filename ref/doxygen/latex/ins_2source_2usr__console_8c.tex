@@ -1,0 +1,74 @@
+\hypertarget{ins_2source_2usr__console_8c}{\section{C\-:/arbitros/trunk/boards/primus/examples/ins/source/usr\-\_\-console.c File Reference}
+\label{ins_2source_2usr__console_8c}\index{C\-:/arbitros/trunk/boards/primus/examples/ins/source/usr\-\_\-console.\-c@{C\-:/arbitros/trunk/boards/primus/examples/ins/source/usr\-\_\-console.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-semaphore.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-sys\-Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-console.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}usr\-\_\-navigation.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-printf.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__console_object}{t\-\_\-console\-Object}
+\begin{DoxyCompactList}\small\item\em Grouping of objects commonly used across all functions within this file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{ins_2source_2usr__console_8c_a30c0b86b4bd44af6eca4c510d4ca4f07}{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}~(200)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{ins_2source_2usr__console_8c_afebc88400459103fbdd827b381255172}{usr\-\_\-console} (\hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-param, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args)
+\item 
+static void \hyperlink{ins_2source_2usr__console_8c_ac3c76e290bf14a0ae17cb2c094290a20}{usr\-\_\-sensor\-Cal} (\hyperlink{usr__navigation_8h_a42b062ee95dee2baf4d98c7e736caa0b}{t\-\_\-nav\-State} t\-\_\-cal\-State)
+\item 
+void \hyperlink{ins_2source_2usr__console_8c_a881f93340adaf38549fe6ba31821a935}{usr\-\_\-console\-Init} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structt__console_object}{t\-\_\-console\-Object} \hyperlink{ins_2source_2usr__console_8c_a1930afd8879584a5e445e09ca3a9b1fc}{gt\-\_\-con\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{ins_2source_2usr__console_8c_a30c0b86b4bd44af6eca4c510d4ca4f07}{\index{ins/source/usr\-\_\-console.\-c@{ins/source/usr\-\_\-console.\-c}!M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}}
+\index{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E@{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}!ins/source/usr_console.c@{ins/source/usr\-\_\-console.\-c}}
+\subsubsection[{M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-C\-O\-N\-S\-O\-L\-E\-\_\-\-B\-U\-F\-F\-\_\-\-S\-I\-Z\-E~(200)}}\label{ins_2source_2usr__console_8c_a30c0b86b4bd44af6eca4c510d4ca4f07}
+
+
+\subsection{Function Documentation}
+\hypertarget{ins_2source_2usr__console_8c_afebc88400459103fbdd827b381255172}{\index{ins/source/usr\-\_\-console.\-c@{ins/source/usr\-\_\-console.\-c}!usr\-\_\-console@{usr\-\_\-console}}
+\index{usr\-\_\-console@{usr\-\_\-console}!ins/source/usr_console.c@{ins/source/usr\-\_\-console.\-c}}
+\subsubsection[{usr\-\_\-console}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-console (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-param, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ins_2source_2usr__console_8c_afebc88400459103fbdd827b381255172}
+\hypertarget{ins_2source_2usr__console_8c_a881f93340adaf38549fe6ba31821a935}{\index{ins/source/usr\-\_\-console.\-c@{ins/source/usr\-\_\-console.\-c}!usr\-\_\-console\-Init@{usr\-\_\-console\-Init}}
+\index{usr\-\_\-console\-Init@{usr\-\_\-console\-Init}!ins/source/usr_console.c@{ins/source/usr\-\_\-console.\-c}}
+\subsubsection[{usr\-\_\-console\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void usr\-\_\-console\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{ins_2source_2usr__console_8c_a881f93340adaf38549fe6ba31821a935}
+\hypertarget{ins_2source_2usr__console_8c_ac3c76e290bf14a0ae17cb2c094290a20}{\index{ins/source/usr\-\_\-console.\-c@{ins/source/usr\-\_\-console.\-c}!usr\-\_\-sensor\-Cal@{usr\-\_\-sensor\-Cal}}
+\index{usr\-\_\-sensor\-Cal@{usr\-\_\-sensor\-Cal}!ins/source/usr_console.c@{ins/source/usr\-\_\-console.\-c}}
+\subsubsection[{usr\-\_\-sensor\-Cal}]{\setlength{\rightskip}{0pt plus 5cm}static void usr\-\_\-sensor\-Cal (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-nav\-State}}]{t\-\_\-cal\-State}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{ins_2source_2usr__console_8c_ac3c76e290bf14a0ae17cb2c094290a20}
+
+
+\subsection{Variable Documentation}
+\hypertarget{ins_2source_2usr__console_8c_a1930afd8879584a5e445e09ca3a9b1fc}{\index{ins/source/usr\-\_\-console.\-c@{ins/source/usr\-\_\-console.\-c}!gt\-\_\-con\-Object@{gt\-\_\-con\-Object}}
+\index{gt\-\_\-con\-Object@{gt\-\_\-con\-Object}!ins/source/usr_console.c@{ins/source/usr\-\_\-console.\-c}}
+\subsubsection[{gt\-\_\-con\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-console\-Object} gt\-\_\-con\-Object\hspace{0.3cm}{\ttfamily [static]}}}\label{ins_2source_2usr__console_8c_a1930afd8879584a5e445e09ca3a9b1fc}

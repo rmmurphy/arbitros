@@ -1,0 +1,246 @@
+\hypertarget{_sd2_card_8h}{\section{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd2\-Card.h File Reference}
+\label{_sd2_card_8h}\index{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd2\-Card.\-h@{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd2\-Card.\-h}}
+}
+
+
+\hyperlink{class_sd2_card}{Sd2\-Card} class for V2 S\-D/\-S\-D\-H\-C cards.  
+
+
+{\ttfamily \#include $<$Arduino.\-h$>$}\\*
+{\ttfamily \#include $<$Sd\-Fat\-Config.\-h$>$}\\*
+{\ttfamily \#include $<$Sd\-Info.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_sd2_card}{Sd2\-Card}
+\begin{DoxyCompactList}\small\item\em Raw access to S\-D and S\-D\-H\-C flash memory cards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a6c091c07d1eb82a94b1c5738f720264b}{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D} = 0
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a5a1200ff5e0c910fdea6eca447d10a19}{S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D} = 1
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_abf126d9da3318e2709bbc3f2ab3cb3d1}{S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D} = 2
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a491576f0359638403febf9289f7e4fbd}{S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D} = 3
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ad6a75e4ff6409fe1305ec6915787458e}{S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D} = 4
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_acf9e8ae5785dfdaa0fa59042e528ea6c}{S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D} = 6
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a792e282c1b86c65d14e3d6e6612ad2d0}{S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D} = 8
+\item 
+const uint8\-\_\-t \hyperlink{_sd2_card_8h_a2d32bcdd4baf13c77aecf1f60d3018a1}{M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D} = 14
+\item 
+uint16\-\_\-t const \hyperlink{_sd2_card_8h_ab7b9920a819e60f97f988ee13b3ddc40}{S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 2000
+\item 
+uint16\-\_\-t const \hyperlink{_sd2_card_8h_afb7454898d781c58caa00f82f0f14f63}{S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 10000
+\item 
+uint16\-\_\-t const \hyperlink{_sd2_card_8h_a02f6ddc876ebab300586940bd111eccd}{S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 300
+\item 
+uint16\-\_\-t const \hyperlink{_sd2_card_8h_a9984cf4ab3088ae5470d56e10e9f23c9}{S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 600
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a3803cc53ecc2b346ba950053f3dced47}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0} = 0\-X1
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a2da93442c11fa58ffd24fe9d7038393d}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8} = 0\-X2
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ae713a04caec74b7a412fc3a4ca7ee8fd}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12} = 0\-X3
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a2e79398dcb2711672e50dc2bea94e141}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17} = 0\-X4
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a15f61426677cddfb1504e4b98900ae05}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18} = 0\-X5
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ade761c5ed037fbe0598f80c5e6d34268}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24} = 0\-X6
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a4840a2a3026b537bf0e6a679715ec734}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25} = 0\-X7
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a0ebfb17cbc424fd2138918aa72307292}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58} = 0\-X8
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_aa69b04c3716e3e9962617e264e7ebe44}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23} = 0\-X9
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a62fdea7af4f09fb98f302bac1bfa17c2}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41} = 0\-X\-A
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a0bbae62f7c90e60614cfa9063101c5e1}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D} = 0\-X\-B
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a7726e63b7a04bc15b70901b418d6dd1e}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E} = 0\-X\-C
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a00e05ddd835d81e0b4d78ededae70a3c}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K} = 0\-X\-D
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a8121967a262a076c5191a0e855531f99}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 0\-X\-E
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_adb9b963e8c54c4daf616cc5fdc4010ac}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D} = 0\-X\-F
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_af1cdb9d8082532f4fe4b7cf1931dddbe}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G} = 0\-X10
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a49c57f2b1d31fe1b0baf73fab5bd469b}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 0\-X11
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a87264e66265e36be6b1428ebacf2e4ed}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N} = 0\-X12
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a98bb1b625b0b9ce99d8494fbb195274c}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E} = 0\-X13
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a376db89ebd1e212110419e3ac7a0c33f}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O} = 0\-X14
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a30bc1de9e3914ace0b9dc30f99a0edea}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E} = 0\-X15
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a06b427dad894918bd33fe2e74c50c2e0}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G} = 0\-X16
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ae6574296ec37c52209c5f2c5664dccdb}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T} = 0\-X17
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_aa4036973d09278197c2949181094e8e2}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E} = 0\-X18
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ab2b7080183030b2cce47b7469e0dde7d}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D} = 0\-X19
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a974f951f7de236ad1bf498344c573b26}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59} = 0\-X1\-A
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_afb7f0b9a1a4ea92107204508c893cc81}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C} = 0\-X1\-B
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ae10703397b36b451e590946497a58867}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A} = 0\-X1\-C
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_af55081a60d333ab063a5da5dd2c3633b}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1} = 1
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a225807c91fc41717b4230d3b7e99c9f7}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2} = 2
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_a39b05691c3bcfffddd5d590589980f44}{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C} = 3
+\item 
+uint8\-\_\-t const \hyperlink{_sd2_card_8h_ae6b17538c14ba6c91ccb513db2c4c29c}{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N} = S\-S
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sd2_card}{Sd2\-Card} class for V2 S\-D/\-S\-D\-H\-C cards. 
+
+\subsection{Variable Documentation}
+\hypertarget{_sd2_card_8h_a2d32bcdd4baf13c77aecf1f60d3018a1}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D@{M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D}}
+\index{M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D@{M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t M\-A\-X\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E\-\_\-\-I\-D = 14}}\label{_sd2_card_8h_a2d32bcdd4baf13c77aecf1f60d3018a1}
+M\-A\-X rate test -\/ see spi\-Init for a given chip for details \hypertarget{_sd2_card_8h_aa69b04c3716e3e9962617e264e7ebe44}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D23 = 0\-X9}}\label{_sd2_card_8h_aa69b04c3716e3e9962617e264e7ebe44}
+S\-E\-T\-\_\-\-W\-R\-\_\-\-B\-L\-K\-\_\-\-E\-R\-A\-S\-E\-\_\-\-C\-O\-U\-N\-T failed \hypertarget{_sd2_card_8h_a62fdea7af4f09fb98f302bac1bfa17c2}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-A\-C\-M\-D41 = 0\-X\-A}}\label{_sd2_card_8h_a62fdea7af4f09fb98f302bac1bfa17c2}
+A\-C\-M\-D41 initialization process timeout \hypertarget{_sd2_card_8h_a0bbae62f7c90e60614cfa9063101c5e1}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-B\-A\-D\-\_\-\-C\-S\-D = 0\-X\-B}}\label{_sd2_card_8h_a0bbae62f7c90e60614cfa9063101c5e1}
+card returned a bad C\-S\-R version field \hypertarget{_sd2_card_8h_a3803cc53ecc2b346ba950053f3dced47}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D0 = 0\-X1}}\label{_sd2_card_8h_a3803cc53ecc2b346ba950053f3dced47}
+timeout error for command C\-M\-D0 (initialize card in S\-P\-I mode) \hypertarget{_sd2_card_8h_ae713a04caec74b7a412fc3a4ca7ee8fd}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D12 = 0\-X3}}\label{_sd2_card_8h_ae713a04caec74b7a412fc3a4ca7ee8fd}
+card returned an error response for C\-M\-D12 (write stop) \hypertarget{_sd2_card_8h_a2e79398dcb2711672e50dc2bea94e141}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D17 = 0\-X4}}\label{_sd2_card_8h_a2e79398dcb2711672e50dc2bea94e141}
+card returned an error response for C\-M\-D17 (read block) \hypertarget{_sd2_card_8h_a15f61426677cddfb1504e4b98900ae05}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D18 = 0\-X5}}\label{_sd2_card_8h_a15f61426677cddfb1504e4b98900ae05}
+card returned an error response for C\-M\-D18 (read multiple block) \hypertarget{_sd2_card_8h_ade761c5ed037fbe0598f80c5e6d34268}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D24 = 0\-X6}}\label{_sd2_card_8h_ade761c5ed037fbe0598f80c5e6d34268}
+card returned an error response for C\-M\-D24 (write block) \hypertarget{_sd2_card_8h_a4840a2a3026b537bf0e6a679715ec734}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D25 = 0\-X7}}\label{_sd2_card_8h_a4840a2a3026b537bf0e6a679715ec734}
+W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E\-\_\-\-B\-L\-O\-C\-K\-S command failed \hypertarget{_sd2_card_8h_a0ebfb17cbc424fd2138918aa72307292}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D58 = 0\-X8}}\label{_sd2_card_8h_a0ebfb17cbc424fd2138918aa72307292}
+card returned an error response for C\-M\-D58 (read O\-C\-R) \hypertarget{_sd2_card_8h_a974f951f7de236ad1bf498344c573b26}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D59 = 0\-X1\-A}}\label{_sd2_card_8h_a974f951f7de236ad1bf498344c573b26}
+card returned an error for C\-M\-D59 (C\-R\-C\-\_\-\-O\-N\-\_\-\-O\-F\-F) \hypertarget{_sd2_card_8h_a2da93442c11fa58ffd24fe9d7038393d}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-C\-M\-D8 = 0\-X2}}\label{_sd2_card_8h_a2da93442c11fa58ffd24fe9d7038393d}
+C\-M\-D8 was not accepted -\/ not a valid S\-D card \hypertarget{_sd2_card_8h_a7726e63b7a04bc15b70901b418d6dd1e}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E = 0\-X\-C}}\label{_sd2_card_8h_a7726e63b7a04bc15b70901b418d6dd1e}
+erase block group command failed \hypertarget{_sd2_card_8h_a00e05ddd835d81e0b4d78ededae70a3c}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-S\-I\-N\-G\-L\-E\-\_\-\-B\-L\-O\-C\-K = 0\-X\-D}}\label{_sd2_card_8h_a00e05ddd835d81e0b4d78ededae70a3c}
+card not capable of single block erase \hypertarget{_sd2_card_8h_a8121967a262a076c5191a0e855531f99}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T = 0\-X\-E}}\label{_sd2_card_8h_a8121967a262a076c5191a0e855531f99}
+Erase sequence timed out \hypertarget{_sd2_card_8h_ab2b7080183030b2cce47b7469e0dde7d}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-I\-N\-I\-T\-\_\-\-N\-O\-T\-\_\-\-C\-A\-L\-L\-E\-D = 0\-X19}}\label{_sd2_card_8h_ab2b7080183030b2cce47b7469e0dde7d}
+init() not called \hypertarget{_sd2_card_8h_adb9b963e8c54c4daf616cc5fdc4010ac}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D = 0\-X\-F}}\label{_sd2_card_8h_adb9b963e8c54c4daf616cc5fdc4010ac}
+card returned an error token instead of read data \hypertarget{_sd2_card_8h_afb7f0b9a1a4ea92107204508c893cc81}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-C\-R\-C = 0\-X1\-B}}\label{_sd2_card_8h_afb7f0b9a1a4ea92107204508c893cc81}
+invalid read C\-R\-C \hypertarget{_sd2_card_8h_af1cdb9d8082532f4fe4b7cf1931dddbe}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-R\-E\-G = 0\-X10}}\label{_sd2_card_8h_af1cdb9d8082532f4fe4b7cf1931dddbe}
+read \hyperlink{struct_c_i_d}{C\-I\-D} or C\-S\-D failed \hypertarget{_sd2_card_8h_a49c57f2b1d31fe1b0baf73fab5bd469b}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T = 0\-X11}}\label{_sd2_card_8h_a49c57f2b1d31fe1b0baf73fab5bd469b}
+timeout while waiting for start of read data \hypertarget{_sd2_card_8h_aa4036973d09278197c2949181094e8e2}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-C\-K\-\_\-\-R\-A\-T\-E = 0\-X18}}\label{_sd2_card_8h_aa4036973d09278197c2949181094e8e2}
+incorrect rate selected \hypertarget{_sd2_card_8h_ae10703397b36b451e590946497a58867}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-P\-I\-\_\-\-D\-M\-A = 0\-X1\-C}}\label{_sd2_card_8h_ae10703397b36b451e590946497a58867}
+S\-P\-I D\-M\-A error \hypertarget{_sd2_card_8h_a87264e66265e36be6b1428ebacf2e4ed}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-S\-T\-O\-P\-\_\-\-T\-R\-A\-N = 0\-X12}}\label{_sd2_card_8h_a87264e66265e36be6b1428ebacf2e4ed}
+card did not accept S\-T\-O\-P\-\_\-\-T\-R\-A\-N\-\_\-\-T\-O\-K\-E\-N \hypertarget{_sd2_card_8h_a98bb1b625b0b9ce99d8494fbb195274c}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E = 0\-X13}}\label{_sd2_card_8h_a98bb1b625b0b9ce99d8494fbb195274c}
+card returned an error token as a response to a write operation \hypertarget{_sd2_card_8h_a376db89ebd1e212110419e3ac7a0c33f}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-B\-L\-O\-C\-K\-\_\-\-Z\-E\-R\-O = 0\-X14}}\label{_sd2_card_8h_a376db89ebd1e212110419e3ac7a0c33f}
+attempt to write protected block zero \hypertarget{_sd2_card_8h_a30bc1de9e3914ace0b9dc30f99a0edea}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-M\-U\-L\-T\-I\-P\-L\-E = 0\-X15}}\label{_sd2_card_8h_a30bc1de9e3914ace0b9dc30f99a0edea}
+card did not go ready for a multiple block write \hypertarget{_sd2_card_8h_a06b427dad894918bd33fe2e74c50c2e0}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-P\-R\-O\-G\-R\-A\-M\-M\-I\-N\-G = 0\-X16}}\label{_sd2_card_8h_a06b427dad894918bd33fe2e74c50c2e0}
+card returned an error to a C\-M\-D13 status check after a write \hypertarget{_sd2_card_8h_ae6574296ec37c52209c5f2c5664dccdb}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-E\-R\-R\-O\-R\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T = 0\-X17}}\label{_sd2_card_8h_ae6574296ec37c52209c5f2c5664dccdb}
+timeout occurred during write programming \hypertarget{_sd2_card_8h_af55081a60d333ab063a5da5dd2c3633b}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D1 = 1}}\label{_sd2_card_8h_af55081a60d333ab063a5da5dd2c3633b}
+Standard capacity V1 S\-D card \hypertarget{_sd2_card_8h_a225807c91fc41717b4230d3b7e99c9f7}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D2 = 2}}\label{_sd2_card_8h_a225807c91fc41717b4230d3b7e99c9f7}
+Standard capacity V2 S\-D card \hypertarget{_sd2_card_8h_a39b05691c3bcfffddd5d590589980f44}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C}}
+\index{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C@{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-A\-R\-D\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-D\-H\-C = 3}}\label{_sd2_card_8h_a39b05691c3bcfffddd5d590589980f44}
+High Capacity S\-D card \hypertarget{_sd2_card_8h_ae6b17538c14ba6c91ccb513db2c4c29c}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N@{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N}}
+\index{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N@{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N = S\-S}}\label{_sd2_card_8h_ae6b17538c14ba6c91ccb513db2c4c29c}
+define S\-O\-F\-T\-W\-A\-R\-E\-\_\-\-S\-P\-I to use bit-\/bang S\-P\-I\-The default chip select pin for the S\-D card is S\-S. \hypertarget{_sd2_card_8h_afb7454898d781c58caa00f82f0f14f63}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const S\-D\-\_\-\-E\-R\-A\-S\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T = 10000}}\label{_sd2_card_8h_afb7454898d781c58caa00f82f0f14f63}
+erase timeout ms \hypertarget{_sd2_card_8h_ab7b9920a819e60f97f988ee13b3ddc40}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const S\-D\-\_\-\-I\-N\-I\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T = 2000}}\label{_sd2_card_8h_ab7b9920a819e60f97f988ee13b3ddc40}
+init timeout ms \hypertarget{_sd2_card_8h_a02f6ddc876ebab300586940bd111eccd}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const S\-D\-\_\-\-R\-E\-A\-D\-\_\-\-T\-I\-M\-E\-O\-U\-T = 300}}\label{_sd2_card_8h_a02f6ddc876ebab300586940bd111eccd}
+read timeout ms \hypertarget{_sd2_card_8h_a9984cf4ab3088ae5470d56e10e9f23c9}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}}
+\index{S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T@{S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const S\-D\-\_\-\-W\-R\-I\-T\-E\-\_\-\-T\-I\-M\-E\-O\-U\-T = 600}}\label{_sd2_card_8h_a9984cf4ab3088ae5470d56e10e9f23c9}
+write time out ms \hypertarget{_sd2_card_8h_a5a1200ff5e0c910fdea6eca447d10a19}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-D\-I\-V3\-\_\-\-S\-P\-E\-E\-D = 1}}\label{_sd2_card_8h_a5a1200ff5e0c910fdea6eca447d10a19}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/3 for Due \hypertarget{_sd2_card_8h_a491576f0359638403febf9289f7e4fbd}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-D\-I\-V6\-\_\-\-S\-P\-E\-E\-D = 3}}\label{_sd2_card_8h_a491576f0359638403febf9289f7e4fbd}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/6 for Due \hypertarget{_sd2_card_8h_acf9e8ae5785dfdaa0fa59042e528ea6c}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-E\-I\-G\-H\-T\-H\-\_\-\-S\-P\-E\-E\-D = 6}}\label{_sd2_card_8h_acf9e8ae5785dfdaa0fa59042e528ea6c}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/16. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{Sd2\-Card\-::set\-Sck\-Rate()}. \hypertarget{_sd2_card_8h_a6c091c07d1eb82a94b1c5738f720264b}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D = 0}}\label{_sd2_card_8h_a6c091c07d1eb82a94b1c5738f720264b}
+Set S\-C\-K to max rate of F\-\_\-\-C\-P\-U/2. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{Sd2\-Card\-::set\-Sck\-Rate()}. \hypertarget{_sd2_card_8h_abf126d9da3318e2709bbc3f2ab3cb3d1}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-H\-A\-L\-F\-\_\-\-S\-P\-E\-E\-D = 2}}\label{_sd2_card_8h_abf126d9da3318e2709bbc3f2ab3cb3d1}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/4. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{Sd2\-Card\-::set\-Sck\-Rate()}. \hypertarget{_sd2_card_8h_ad6a75e4ff6409fe1305ec6915787458e}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-Q\-U\-A\-R\-T\-E\-R\-\_\-\-S\-P\-E\-E\-D = 4}}\label{_sd2_card_8h_ad6a75e4ff6409fe1305ec6915787458e}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/8. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{Sd2\-Card\-::set\-Sck\-Rate()}. \hypertarget{_sd2_card_8h_a792e282c1b86c65d14e3d6e6612ad2d0}{\index{Sd2\-Card.\-h@{Sd2\-Card.\-h}!S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D}}
+\index{S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D@{S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D}!Sd2Card.h@{Sd2\-Card.\-h}}
+\subsubsection[{S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const S\-P\-I\-\_\-\-S\-I\-X\-T\-E\-E\-N\-T\-H\-\_\-\-S\-P\-E\-E\-D = 8}}\label{_sd2_card_8h_a792e282c1b86c65d14e3d6e6612ad2d0}
+Set S\-C\-K rate to F\-\_\-\-C\-P\-U/32. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{Sd2\-Card\-::set\-Sck\-Rate()}. 

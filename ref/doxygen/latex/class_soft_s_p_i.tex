@@ -1,0 +1,80 @@
+\hypertarget{class_soft_s_p_i}{\section{Soft\-S\-P\-I$<$ Miso\-Pin, Mosi\-Pin, Sck\-Pin, Mode $>$ Class Template Reference}
+\label{class_soft_s_p_i}\index{Soft\-S\-P\-I$<$ Miso\-Pin, Mosi\-Pin, Sck\-Pin, Mode $>$@{Soft\-S\-P\-I$<$ Miso\-Pin, Mosi\-Pin, Sck\-Pin, Mode $>$}}
+}
+
+
+Fast software S\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$Soft\-S\-P\-I.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_soft_s_p_i_ab0bdf5cca484fb2ba637c39384b27fb2}{begin} ()
+\item 
+\hyperlink{class_soft_s_p_i_aefaf502baea70d3650ee7a96156ab56f}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) uint8\-\_\-t receive()
+\item 
+\hyperlink{class_soft_s_p_i_a03dd23c0ef3acd4fa3c584fffeefa90f}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void send(uint8\-\_\-t data)
+\item 
+\hyperlink{class_soft_s_p_i_a1bc0f41f05726fc63c49d680e3021301}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) uint8\-\_\-t transfer(uint8\-\_\-t tx\-Data)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$uint8\-\_\-t Miso\-Pin, uint8\-\_\-t Mosi\-Pin, uint8\-\_\-t Sck\-Pin, uint8\-\_\-t Mode = 0$>$class Soft\-S\-P\-I$<$ Miso\-Pin, Mosi\-Pin, Sck\-Pin, Mode $>$}
+
+Fast software S\-P\-I. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_soft_s_p_i_aefaf502baea70d3650ee7a96156ab56f}{\index{Soft\-S\-P\-I@{Soft\-S\-P\-I}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!SoftSPI@{Soft\-S\-P\-I}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_soft_s_p_i_aefaf502baea70d3650ee7a96156ab56f}
+Soft S\-P\-I receive byte. \begin{DoxyReturn}{Returns}
+Data byte received. 
+\end{DoxyReturn}
+\hypertarget{class_soft_s_p_i_a03dd23c0ef3acd4fa3c584fffeefa90f}{\index{Soft\-S\-P\-I@{Soft\-S\-P\-I}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!SoftSPI@{Soft\-S\-P\-I}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_soft_s_p_i_a03dd23c0ef3acd4fa3c584fffeefa90f}
+Soft S\-P\-I send byte. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & Data byte to send. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_soft_s_p_i_a1bc0f41f05726fc63c49d680e3021301}{\index{Soft\-S\-P\-I@{Soft\-S\-P\-I}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!SoftSPI@{Soft\-S\-P\-I}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}\-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_soft_s_p_i_a1bc0f41f05726fc63c49d680e3021301}
+Soft S\-P\-I transfer byte. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tx\-Data} & Data byte to send. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data byte received. 
+\end{DoxyReturn}
+\hypertarget{class_soft_s_p_i_ab0bdf5cca484fb2ba637c39384b27fb2}{\index{Soft\-S\-P\-I@{Soft\-S\-P\-I}!begin@{begin}}
+\index{begin@{begin}!SoftSPI@{Soft\-S\-P\-I}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}void begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_soft_s_p_i_ab0bdf5cca484fb2ba637c39384b27fb2}
+Initialize \hyperlink{class_soft_s_p_i}{Soft\-S\-P\-I} pins. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/utility/\hyperlink{_soft_s_p_i_8h}{Soft\-S\-P\-I.\-h}\end{DoxyCompactItemize}

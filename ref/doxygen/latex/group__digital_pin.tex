@@ -1,0 +1,211 @@
+\hypertarget{group__digital_pin}{\section{Fast Pin I/\-O}
+\label{group__digital_pin}\index{Fast Pin I/\-O@{Fast Pin I/\-O}}
+}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{structpin__map__t}{pin\-\_\-map\-\_\-t}
+\begin{DoxyCompactList}\small\item\em struct for mapping digital pins \end{DoxyCompactList}\item 
+class \hyperlink{class_digital_pin}{Digital\-Pin$<$ Pin\-Number $>$}
+\begin{DoxyCompactList}\small\item\em Fast A\-V\-R digital port I/\-O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__digital_pin_ga6a94475a4246cb2279a1b6d1090f84ac}{bad\-Pin\-Number} (void) \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((error(\char`\"{}Pin number is too large or not a const ant\char`\"{})))
+\item 
+static \hyperlink{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) void bad\-Pin\-Check(uint8\-\_\-t pin)
+\item 
+\hypertarget{group__digital_pin_gad7db1200cb344310c564a5ba81165d94}{{\bfseries if} (address $>$(uint8\-\_\-t $\ast$) 0\-X5\-F)}\label{group__digital_pin_gad7db1200cb344310c564a5ba81165d94}
+
+\item 
+\hypertarget{group__digital_pin_ga4adc306038cf7fb6fd42255194822fb3}{{\bfseries if} (level)}\label{group__digital_pin_ga4adc306038cf7fb6fd42255194822fb3}
+
+\item 
+\hypertarget{group__digital_pin_gad0ab504cdbfd3a66329b31037d9ff281}{{\bfseries fast\-Bit\-Write\-Safe} (pin\-Map\mbox{[}pin\mbox{]}.port, pin\-Map\mbox{[}pin\mbox{]}.bit, level)}\label{group__digital_pin_gad0ab504cdbfd3a66329b31037d9ff281}
+
+\item 
+\hypertarget{group__digital_pin_ga251e643b0e2a8cb7e5925ea6c9181c78}{{\bfseries fast\-Bit\-Write\-Safe} (pin\-Map\mbox{[}pin\mbox{]}.ddr, pin\-Map\mbox{[}pin\mbox{]}.bit, mode)}\label{group__digital_pin_ga251e643b0e2a8cb7e5925ea6c9181c78}
+
+\item 
+\hypertarget{group__digital_pin_ga17778c1e9b0443c03cf406e4dcdcd78e}{{\bfseries fast\-Digital\-Write} (pin, level)}\label{group__digital_pin_ga17778c1e9b0443c03cf406e4dcdcd78e}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\-\_\-t \hyperlink{group__digital_pin_ga3ba5f4d8ff10e60ec2d424722dd9fe92}{digital\-Pin\-Count} = sizeof(pin\-Map)/sizeof(\hyperlink{structpin__map__t}{pin\-\_\-map\-\_\-t})
+\item 
+\hypertarget{group__digital_pin_gad15e9d6879273cee61ab5b915db182a7}{static uint8\-\_\-t {\bfseries bit}}\label{group__digital_pin_gad15e9d6879273cee61ab5b915db182a7}
+
+\item 
+\hypertarget{group__digital_pin_ga3146654bb267c84258ec880e7971e7d4}{static uint8\-\_\-t bool level uint8\-\_\-t {\bfseries old\-S\-R\-E\-G}}\label{group__digital_pin_ga3146654bb267c84258ec880e7971e7d4}
+
+\item 
+{\bfseries else}
+\item 
+static bool {\bfseries level}
+\item 
+static bool {\bfseries mode}
+\item 
+\hyperlink{class_sd_file}{Sd\-File} \hyperlink{group__digital_pin_ga12ab6a6fc3dc79da4f7f0b2b7b066379}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Fast Digital I/\-O functions and template class. 
+
+\subsection{Function Documentation}
+\hypertarget{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static \-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{group__digital_pin_ga5589cd85aa7f8bf2b29ba1541eeb7103}
+Check for valid pin number 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Number of pin to be checked.\\
+\hline
+\end{DoxyParams}
+fast write helper 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & I/\-O register address \\
+\hline
+\mbox{\tt in}  & {\em bit} & bit number to write \\
+\hline
+\mbox{\tt in}  & {\em level} & value for bit\\
+\hline
+\end{DoxyParams}
+read pin value 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value read
+\end{DoxyReturn}
+toggle a pin 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number\\
+\hline
+\end{DoxyParams}
+If the pin is in output mode toggle the pin level. If the pin is in input mode toggle the state of the 20\-K pullup.
+
+Set pin value 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em level} & value to write\\
+\hline
+\end{DoxyParams}
+set pin mode 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em mode} & if true set output mode else input mode\\
+\hline
+\end{DoxyParams}
+fast\-Pin\-Mode does not enable or disable the 20\-K pullup for input mode.
+
+set pin configuration 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em mode} & If true set output mode else input mode \\
+\hline
+\mbox{\tt in}  & {\em level} & If mode is output, set level high/low. If mode is input, enable or disable the pin's 20\-K pullup. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__digital_pin_ga6a94475a4246cb2279a1b6d1090f84ac}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!bad\-Pin\-Number@{bad\-Pin\-Number}}
+\index{bad\-Pin\-Number@{bad\-Pin\-Number}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{bad\-Pin\-Number}]{\setlength{\rightskip}{0pt plus 5cm}void bad\-Pin\-Number (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+) const}}\label{group__digital_pin_ga6a94475a4246cb2279a1b6d1090f84ac}
+generate bad pin number error 
+
+\subsection{Variable Documentation}
+\hypertarget{group__digital_pin_ga12ab6a6fc3dc79da4f7f0b2b7b066379}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static int16\-\_\-t \-\_\-\-\_\-attribute\-\_\-\-\_\-\hspace{0.3cm}{\ttfamily [inline]}}}\label{group__digital_pin_ga12ab6a6fc3dc79da4f7f0b2b7b066379}
+C\-S\-D for version 1.\-00 cards
+
+C\-S\-D for version 2.\-00 cards
+
+fast write helper 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em address} & I/\-O register address \\
+\hline
+\mbox{\tt in}  & {\em bit} & bit number to write \\
+\hline
+\mbox{\tt in}  & {\em level} & value for bit\\
+\hline
+\end{DoxyParams}
+read pin value 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value read
+\end{DoxyReturn}
+toggle a pin 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number\\
+\hline
+\end{DoxyParams}
+If the pin is in output mode toggle the pin level. If the pin is in input mode toggle the state of the 20\-K pullup.
+
+Set pin value 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em level} & value to write\\
+\hline
+\end{DoxyParams}
+set pin mode 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em mode} & if true set output mode else input mode\\
+\hline
+\end{DoxyParams}
+fast\-Pin\-Mode does not enable or disable the 20\-K pullup for input mode.
+
+set pin configuration 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pin} & Arduino pin number \\
+\hline
+\mbox{\tt in}  & {\em mode} & If true set output mode else input mode \\
+\hline
+\mbox{\tt in}  & {\em level} & If mode is output, set level high/low. If mode is input, enable or disable the pin's 20\-K pullup. \\
+\hline
+\end{DoxyParams}
+\hypertarget{group__digital_pin_ga3ba5f4d8ff10e60ec2d424722dd9fe92}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!digital\-Pin\-Count@{digital\-Pin\-Count}}
+\index{digital\-Pin\-Count@{digital\-Pin\-Count}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{digital\-Pin\-Count}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\-\_\-t digital\-Pin\-Count = sizeof(pin\-Map)/sizeof({\bf pin\-\_\-map\-\_\-t})\hspace{0.3cm}{\ttfamily [static]}}}\label{group__digital_pin_ga3ba5f4d8ff10e60ec2d424722dd9fe92}
+count of pins \hypertarget{group__digital_pin_ga0544c3fe466e421738dae463968b70ba}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!else@{else}}
+\index{else@{else}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{else}]{\setlength{\rightskip}{0pt plus 5cm}else}}\label{group__digital_pin_ga0544c3fe466e421738dae463968b70ba}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+    *address &= ~(1 << bit)
+\end{DoxyCode}
+\hypertarget{group__digital_pin_ga1ad37212130d4996d44e5cfa47d053c8}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!level@{level}}
+\index{level@{level}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}static bool bool level}}\label{group__digital_pin_ga1ad37212130d4996d44e5cfa47d053c8}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+  badPinCheck(pin)
+\end{DoxyCode}
+\hypertarget{group__digital_pin_gaa7cb92bda93b62566af3f8a8bbf68b5b}{\index{Fast Pin I/\-O@{Fast Pin I/\-O}!mode@{mode}}
+\index{mode@{mode}!Fast Pin I/O@{Fast Pin I/\-O}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}static bool mode}}\label{group__digital_pin_gaa7cb92bda93b62566af3f8a8bbf68b5b}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+  badPinCheck(pin)
+\end{DoxyCode}

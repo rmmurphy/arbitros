@@ -1,0 +1,222 @@
+\hypertarget{arb__device_8h}{\section{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-device.h File Reference}
+\label{arb__device_8h}\index{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-device.\-h@{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-device.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-semaphore.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linked\-List.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__device_operations}{t\-\_\-device\-Operations}
+\item 
+struct \hyperlink{structt__device}{t\-\_\-device}
+\item 
+struct \hyperlink{structt__dev_handle}{t\-\_\-dev\-Handle}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__device_8h_a60427b60074c506fb35dd18a1d81b363}{arb\-\_\-device\-\_\-h}
+\item 
+\#define \hyperlink{arb__device_8h_af2b487bf5388952cc611a56ee84def41}{A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D}~(0x01) /$\ast$\-Open a file as read only$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a03589aadb5ae62bef2a64ed644441939}{A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E}~(0x02) /$\ast$\-Open as write only$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a49ed286b6ddc871723e60a8bccc8ab26}{A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D}~(0\-X04) /$\ast$\-Set the file offset to end before each write$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a22e52909c2d8ca18309b6c9ca271324b}{A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C}~(0\-X08) /$\ast$\-Synchronize writes with the hard drive$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a0e688346a7a93fe8963296794e604d97}{A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C}~(0\-X10) /$\ast$\-Truncate the file to zero length$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a6fe3888b7cda7a62d8623ab9f7576a5b}{A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D}~(0\-X20) /$\ast$\-Set the initial file position to end$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_af5521698d5aff64390b9902cba2efe69}{A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T}~(0\-X40) /$\ast$\-Create a file if non existent$\ast$/
+\item 
+\#define \hyperlink{arb__device_8h_a6fc686f0fefce390ca35220730ac1c32}{M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S}~(16)
+\item 
+\#define \hyperlink{arb__device_8h_a6bd7905653dd2d64e663461753885e79}{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R}(\hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id})~(uint8\-\_\-t)((\hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id}) $>$$>$ 8)
+\item 
+\#define \hyperlink{arb__device_8h_af33cf68bee9201617c0e1aa25a32432d}{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R}(\hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id})~(uint8\-\_\-t)(0x0000\-F\-F\-F\-F \& (t\-\_\-device\-Id))
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id} \hyperlink{arb__device_8h_aa12b96cc0c265c9c8daed1c2696efbf1}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline)) arb\-\_\-create\-Dev\-Id(uint8\-\_\-t c\-\_\-major
+\item 
+\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} \hyperlink{arb__device_8h_a7bc535a0dab5c541031e45b0abfc96ca}{arb\-\_\-open} (char $\ast$pc\-\_\-name, uint8\-\_\-t c\-\_\-flags)
+\item 
+int16\-\_\-t \hyperlink{arb__device_8h_a6bdef5c38b61ea8b00c0d2bbd84d7d5d}{arb\-\_\-read} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+int16\-\_\-t \hyperlink{arb__device_8h_a3f0c5388b3764c6fa3f6dc74c2ae6dd0}{arb\-\_\-write} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+int32\-\_\-t \hyperlink{arb__device_8h_a23d23db975fc0aee1b1751f3f318ee92}{arb\-\_\-ioctl} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint16\-\_\-t s\-\_\-command, int32\-\_\-t i\-\_\-argument)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__device_8h_a999921ba665353c1ef36345d62af5690}{arb\-\_\-close} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__device_8h_ad3cbf61401f93f5b86e252f4ed41c107}{arb\-\_\-register\-Device} (char $\ast$pc\-\_\-name, \hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id} t\-\_\-dev\-Id, \hyperlink{structt__device_operations}{t\-\_\-device\-Operations} $\ast$pt\-\_\-dev\-Ops)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__device_8h_a287b24098e98c7c52bb97561e4a115be}{arb\-\_\-destroy\-Device} (char $\ast$pc\-\_\-name)
+\item 
+\hyperlink{utl__linkedlist_8h_ae373454ee3f2541fd4664a76b3c7652e}{t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} \hyperlink{arb__device_8h_a7291b7be25b541e6b8320ee55c4090bc}{arb\-\_\-get\-Device\-List} (void)
+\item 
+int8\-\_\-t $\ast$ \hyperlink{arb__device_8h_a4a6423fe5355249c0d4a8439b96b286b}{arb\-\_\-get\-Dev\-Name} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{t\-\_\-device\-Id} uint8\-\_\-t \hyperlink{arb__device_8h_ab1436a22c2491c7f5f158cb0c70e561e}{c\-\_\-minor}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__device_8h_a60427b60074c506fb35dd18a1d81b363}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-device\-\_\-h@{arb\-\_\-device\-\_\-h}}
+\index{arb\-\_\-device\-\_\-h@{arb\-\_\-device\-\_\-h}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-device\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define arb\-\_\-device\-\_\-h}}\label{arb__device_8h_a60427b60074c506fb35dd18a1d81b363}
+\hypertarget{arb__device_8h_a6bd7905653dd2d64e663461753885e79}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R@{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R}}
+\index{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R@{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-A\-J\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf t\-\_\-device\-Id}}
+\end{DoxyParamCaption}
+)~(uint8\-\_\-t)(({\bf t\-\_\-device\-Id}) $>$$>$ 8)}}\label{arb__device_8h_a6bd7905653dd2d64e663461753885e79}
+\hypertarget{arb__device_8h_af33cf68bee9201617c0e1aa25a32432d}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R@{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R}}
+\index{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R@{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-G\-E\-T\-\_\-\-D\-E\-V\-\_\-\-M\-I\-N\-O\-R(
+\begin{DoxyParamCaption}
+\item[{}]{{\bf t\-\_\-device\-Id}}
+\end{DoxyParamCaption}
+)~(uint8\-\_\-t)(0x0000\-F\-F\-F\-F \& (t\-\_\-device\-Id))}}\label{arb__device_8h_af33cf68bee9201617c0e1aa25a32432d}
+\hypertarget{arb__device_8h_a49ed286b6ddc871723e60a8bccc8ab26}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D@{A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D@{A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-A\-P\-P\-E\-N\-D~(0\-X04) /$\ast$\-Set the file offset to end before each write$\ast$/}}\label{arb__device_8h_a49ed286b6ddc871723e60a8bccc8ab26}
+\hypertarget{arb__device_8h_a6fe3888b7cda7a62d8623ab9f7576a5b}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D@{A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D@{A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-A\-T\-\_\-\-E\-N\-D~(0\-X20) /$\ast$\-Set the initial file position to end$\ast$/}}\label{arb__device_8h_a6fe3888b7cda7a62d8623ab9f7576a5b}
+\hypertarget{arb__device_8h_af5521698d5aff64390b9902cba2efe69}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T@{A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T@{A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-C\-R\-E\-A\-T~(0\-X40) /$\ast$\-Create a file if non existent$\ast$/}}\label{arb__device_8h_af5521698d5aff64390b9902cba2efe69}
+\hypertarget{arb__device_8h_af2b487bf5388952cc611a56ee84def41}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D@{A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D@{A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-R\-E\-A\-D~(0x01) /$\ast$\-Open a file as read only$\ast$/}}\label{arb__device_8h_af2b487bf5388952cc611a56ee84def41}
+\hypertarget{arb__device_8h_a22e52909c2d8ca18309b6c9ca271324b}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C@{A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C@{A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-S\-Y\-N\-C~(0\-X08) /$\ast$\-Synchronize writes with the hard drive$\ast$/}}\label{arb__device_8h_a22e52909c2d8ca18309b6c9ca271324b}
+\hypertarget{arb__device_8h_a0e688346a7a93fe8963296794e604d97}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C@{A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C@{A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-T\-R\-U\-N\-C~(0\-X10) /$\ast$\-Truncate the file to zero length$\ast$/}}\label{arb__device_8h_a0e688346a7a93fe8963296794e604d97}
+\hypertarget{arb__device_8h_a03589aadb5ae62bef2a64ed644441939}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E@{A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E}}
+\index{A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E@{A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-O\-\_\-\-W\-R\-I\-T\-E~(0x02) /$\ast$\-Open as write only$\ast$/}}\label{arb__device_8h_a03589aadb5ae62bef2a64ed644441939}
+\hypertarget{arb__device_8h_a6fc686f0fefce390ca35220730ac1c32}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S@{M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S}}
+\index{M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S@{M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-\_\-\-D\-E\-V\-I\-C\-E\-\_\-\-N\-A\-M\-E\-\_\-\-B\-Y\-T\-E\-S~(16)}}\label{arb__device_8h_a6fc686f0fefce390ca35220730ac1c32}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E@{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}
+\index{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E@{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}}\label{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}
+\hypertarget{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!t\-\_\-device\-Id@{t\-\_\-device\-Id}}
+\index{t\-\_\-device\-Id@{t\-\_\-device\-Id}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{t\-\_\-device\-Id}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-device\-Id}}}\label{arb__device_8h_abd777cf201aff6019fab269048a2cf0f}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__device_8h_aa12b96cc0c265c9c8daed1c2696efbf1}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t \-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{arb__device_8h_aa12b96cc0c265c9c8daed1c2696efbf1}
+\hypertarget{arb__device_8h_a999921ba665353c1ef36345d62af5690}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-close@{arb\-\_\-close}}
+\index{arb\-\_\-close@{arb\-\_\-close}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-close}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-close (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a999921ba665353c1ef36345d62af5690}
+\hypertarget{arb__device_8h_a287b24098e98c7c52bb97561e4a115be}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-destroy\-Device@{arb\-\_\-destroy\-Device}}
+\index{arb\-\_\-destroy\-Device@{arb\-\_\-destroy\-Device}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-destroy\-Device}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-destroy\-Device (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pc\-\_\-name}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a287b24098e98c7c52bb97561e4a115be}
+\hypertarget{arb__device_8h_a7291b7be25b541e6b8320ee55c4090bc}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-get\-Device\-List@{arb\-\_\-get\-Device\-List}}
+\index{arb\-\_\-get\-Device\-List@{arb\-\_\-get\-Device\-List}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-get\-Device\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-C\-O\-N\-T\-H\-N\-D\-L} arb\-\_\-get\-Device\-List (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a7291b7be25b541e6b8320ee55c4090bc}
+\hypertarget{arb__device_8h_a4a6423fe5355249c0d4a8439b96b286b}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-get\-Dev\-Name@{arb\-\_\-get\-Dev\-Name}}
+\index{arb\-\_\-get\-Dev\-Name@{arb\-\_\-get\-Dev\-Name}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-get\-Dev\-Name}]{\setlength{\rightskip}{0pt plus 5cm}int8\-\_\-t$\ast$ arb\-\_\-get\-Dev\-Name (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a4a6423fe5355249c0d4a8439b96b286b}
+\hypertarget{arb__device_8h_a23d23db975fc0aee1b1751f3f318ee92}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-ioctl@{arb\-\_\-ioctl}}
+\index{arb\-\_\-ioctl@{arb\-\_\-ioctl}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-ioctl}]{\setlength{\rightskip}{0pt plus 5cm}int32\-\_\-t arb\-\_\-ioctl (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint16\-\_\-t}]{s\-\_\-command, }
+\item[{int32\-\_\-t}]{i\-\_\-argument}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a23d23db975fc0aee1b1751f3f318ee92}
+\hypertarget{arb__device_8h_a7bc535a0dab5c541031e45b0abfc96ca}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-open@{arb\-\_\-open}}
+\index{arb\-\_\-open@{arb\-\_\-open}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} arb\-\_\-open (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pc\-\_\-name, }
+\item[{uint8\-\_\-t}]{c\-\_\-flags}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a7bc535a0dab5c541031e45b0abfc96ca}
+\hypertarget{arb__device_8h_a6bdef5c38b61ea8b00c0d2bbd84d7d5d}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-read@{arb\-\_\-read}}
+\index{arb\-\_\-read@{arb\-\_\-read}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t arb\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a6bdef5c38b61ea8b00c0d2bbd84d7d5d}
+\hypertarget{arb__device_8h_ad3cbf61401f93f5b86e252f4ed41c107}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-register\-Device@{arb\-\_\-register\-Device}}
+\index{arb\-\_\-register\-Device@{arb\-\_\-register\-Device}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-register\-Device}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-register\-Device (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{pc\-\_\-name, }
+\item[{{\bf t\-\_\-device\-Id}}]{t\-\_\-dev\-Id, }
+\item[{{\bf t\-\_\-device\-Operations} $\ast$}]{pt\-\_\-dev\-Ops}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_ad3cbf61401f93f5b86e252f4ed41c107}
+\hypertarget{arb__device_8h_a3f0c5388b3764c6fa3f6dc74c2ae6dd0}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!arb\-\_\-write@{arb\-\_\-write}}
+\index{arb\-\_\-write@{arb\-\_\-write}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{arb\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t arb\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{arb__device_8h_a3f0c5388b3764c6fa3f6dc74c2ae6dd0}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__device_8h_ab1436a22c2491c7f5f158cb0c70e561e}{\index{arb\-\_\-device.\-h@{arb\-\_\-device.\-h}!c\-\_\-minor@{c\-\_\-minor}}
+\index{c\-\_\-minor@{c\-\_\-minor}!arb_device.h@{arb\-\_\-device.\-h}}
+\subsubsection[{c\-\_\-minor}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-device\-Id} uint8\-\_\-t c\-\_\-minor}}\label{arb__device_8h_ab1436a22c2491c7f5f158cb0c70e561e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+\{
+      \textcolor{keywordflow}{return}( ((uint16\_t)c\_major << 8) | (uint16\_t)\hyperlink{arb__device_8h_ab1436a22c2491c7f5f158cb0c70e561e}{c\_minor})
+\end{DoxyCode}

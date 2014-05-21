@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{27f4a7e9-4a52-430f-a684-42fb1c2ddc2c}</ProjectGuid>
+    <avrdevice>ATxmega128A1</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>C</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>arbitros</AssemblyName>
+    <Name>arbitros</Name>
+    <RootNamespace>arbitros</RootNamespace>
+    <ToolchainFlavour>WinAVR</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.1</AsfVersion>
+    <avrtoolinterface>PDI</avrtoolinterface>
+    <avrtool>com.atmel.avrdbg.tool.jtagicemkii</avrtool>
+    <com_atmel_avrdbg_tool_jtagicemkii>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.jtagicemkii</ToolType>
+      <ToolName xmlns="">JTAGICE mkII</ToolName>
+      <ToolNumber xmlns="">00A000402774</ToolNumber>
+      <KeepTimersRunning xmlns="">true</KeepTimersRunning>
+      <OverrideVtor xmlns="">false</OverrideVtor>
+      <OverrideVtorValue xmlns="">
+      </OverrideVtorValue>
+      <Channel xmlns="">
+        <host>127.0.0.1</host>
+        <port>49165</port>
+        <ssl>False</ssl>
+      </Channel>
+      <ToolOptions xmlns="">
+        <InterfaceName>PDI</InterfaceName>
+        <InterfaceProperties>
+          <JtagDbgClock>0</JtagDbgClock>
+          <JtagProgClock>1000000</JtagProgClock>
+          <IspClock>150000</IspClock>
+          <JtagInChain>false</JtagInChain>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDevicesBefore>0</JtagDevicesBefore>
+          <JtagDevicesAfter>0</JtagDevicesAfter>
+          <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
+          <JtagInstrBitsAfter>0</JtagInstrBitsAfter>
+        </InterfaceProperties>
+      </ToolOptions>
+    </com_atmel_avrdbg_tool_jtagicemkii>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../headers</Value>
+      <Value>../../../../../utilities/headers</Value>
+      <Value>../../../../../drivers/headers</Value>
+      <Value>../../../../../hal/headers/xmega128A1</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.general.OmitAllSymbolInformation>True</avrgcc.linker.general.OmitAllSymbolInformation>
+  <avrgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>m</Value>
+    </ListValues>
+  </avrgcc.linker.libraries.Libraries>
+  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\hal\headers\xmega128A1\hal_contextSwitch.h">
+      <SubType>compile</SubType>
+      <Link>hal_contextSwitch.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\hal\headers\xmega128A1\hal_initThreadStack.h">
+      <SubType>compile</SubType>
+      <Link>hal_initThreadStack.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\hal\source\xmega128A1\hal_initThreadStack.c">
+      <SubType>compile</SubType>
+      <Link>hal_initThreadStack.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_console.h">
+      <SubType>compile</SubType>
+      <Link>arb_console.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_device.h">
+      <SubType>compile</SubType>
+      <Link>arb_device.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_error.h">
+      <SubType>compile</SubType>
+      <Link>arb_error.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_idle.h">
+      <SubType>compile</SubType>
+      <Link>arb_idle.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_mailbox.h">
+      <SubType>compile</SubType>
+      <Link>arb_mailbox.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_memory.h">
+      <SubType>compile</SubType>
+      <Link>arb_memory.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_printf.h">
+      <SubType>compile</SubType>
+      <Link>arb_printf.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_scheduler.h">
+      <SubType>compile</SubType>
+      <Link>arb_scheduler.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_semaphore.h">
+      <SubType>compile</SubType>
+      <Link>arb_semaphore.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_sysTimer.h">
+      <SubType>compile</SubType>
+      <Link>arb_sysTimer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\arb_thread.h">
+      <SubType>compile</SubType>
+      <Link>arb_thread.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_console.c">
+      <SubType>compile</SubType>
+      <Link>arb_console.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_device.c">
+      <SubType>compile</SubType>
+      <Link>arb_device.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_error.c">
+      <SubType>compile</SubType>
+      <Link>arb_error.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_idle.c">
+      <SubType>compile</SubType>
+      <Link>arb_idle.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_mailbox.c">
+      <SubType>compile</SubType>
+      <Link>arb_mailbox.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_main.c">
+      <SubType>compile</SubType>
+      <Link>arb_main.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_memory.c">
+      <SubType>compile</SubType>
+      <Link>arb_memory.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_printf.c">
+      <SubType>compile</SubType>
+      <Link>arb_printf.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_scheduler.c">
+      <SubType>compile</SubType>
+      <Link>arb_scheduler.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_semaphore.c">
+      <SubType>compile</SubType>
+      <Link>arb_semaphore.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_sysTimer.c">
+      <SubType>compile</SubType>
+      <Link>arb_sysTimer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\arb_thread.c">
+      <SubType>compile</SubType>
+      <Link>arb_thread.c</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

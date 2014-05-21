@@ -1,0 +1,517 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{c02206a7-591f-4f07-9120-a72042843317}</ProjectGuid>
+    <avrdevice>ATxmega128A1</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>primusEval</AssemblyName>
+    <Name>primusEval</Name>
+    <RootNamespace>primusEval</RootNamespace>
+    <ToolchainFlavour>WinAVR</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.1</AsfVersion>
+    <avrtoolinterface>PDI</avrtoolinterface>
+    <avrtool>com.atmel.avrdbg.tool.jtagicemkii</avrtool>
+    <com_atmel_avrdbg_tool_jtagicemkii>
+      <ToolType xmlns="">com.atmel.avrdbg.tool.jtagicemkii</ToolType>
+      <ToolName xmlns="">JTAGICE mkII</ToolName>
+      <ToolNumber xmlns="">00A000402774</ToolNumber>
+      <KeepTimersRunning xmlns="">true</KeepTimersRunning>
+      <OverrideVtor xmlns="">false</OverrideVtor>
+      <OverrideVtorValue xmlns="">
+      </OverrideVtorValue>
+      <Channel xmlns="">
+        <host>127.0.0.1</host>
+        <port>52831</port>
+        <ssl>False</ssl>
+      </Channel>
+      <ToolOptions xmlns="">
+        <InterfaceName>PDI</InterfaceName>
+        <InterfaceProperties>
+          <JtagDbgClock>200000</JtagDbgClock>
+          <JtagProgClock>1000000</JtagProgClock>
+          <IspClock>150000</IspClock>
+          <JtagInChain>false</JtagInChain>
+          <JtagEnableExtResetOnStartSession>false</JtagEnableExtResetOnStartSession>
+          <JtagDevicesBefore>0</JtagDevicesBefore>
+          <JtagDevicesAfter>0</JtagDevicesAfter>
+          <JtagInstrBitsBefore>0</JtagInstrBitsBefore>
+          <JtagInstrBitsAfter>0</JtagInstrBitsAfter>
+        </InterfaceProperties>
+      </ToolOptions>
+    </com_atmel_avrdbg_tool_jtagicemkii>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcccpp.linker.libraries.Libraries>
+      </AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../../../rtos/headers</Value>
+      <Value>../../../../../../packages/sd/SdFat</Value>
+      <Value>../../../../../../packages/sd/SdFat/arduino</Value>
+      <Value>../../../../../../packages/sd/headers</Value>
+      <Value>../../../../../../drivers/headers</Value>
+      <Value>../../../../../../utilities/headers</Value>
+      <Value>../../headers</Value>
+      <Value>../../../../../../hal/headers/xmega128A1</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../../../rtos/headers</Value>
+      <Value>../../../../../../drivers/headers</Value>
+      <Value>../../../../../../packages/sd/SdFat</Value>
+      <Value>../../../../../../packages/sd/SdFat/arduino</Value>
+      <Value>../../../../../../packages/sd/headers</Value>
+      <Value>../../../../../../utilities/headers</Value>
+      <Value>../../../../../../hal/headers/xmega128A1</Value>
+      <Value>../../headers</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>m</Value>
+      <Value>libprintf_flt.a</Value>
+      <Value>libm.a</Value>
+      <Value>libc.a</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.optimization.GarbageCollectUnusedSections>True</avrgcccpp.linker.optimization.GarbageCollectUnusedSections>
+  <avrgcccpp.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt -lm</avrgcccpp.linker.miscellaneous.LinkerFlags>
+  <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\..\..\drivers\headers\drv_console.h">
+      <SubType>compile</SubType>
+      <Link>drv_console.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\drivers\headers\drv_sd.h">
+      <SubType>compile</SubType>
+      <Link>drv_sd.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\drivers\headers\drv_signal.h">
+      <SubType>compile</SubType>
+      <Link>drv_signal.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\drivers\source\drv_console.c">
+      <SubType>compile</SubType>
+      <Link>drv_console.c</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\..\drivers\source\drv_sd.c">
+      <SubType>compile</SubType>
+      <Link>drv_sd.c</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\..\drivers\source\drv_signal.c">
+      <SubType>compile</SubType>
+      <Link>drv_signal.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\avr_compiler.h">
+      <SubType>compile</SubType>
+      <Link>avr_compiler.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_adc.h">
+      <SubType>compile</SubType>
+      <Link>hal_adc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_clocks.h">
+      <SubType>compile</SubType>
+      <Link>hal_clocks.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_contextSwitch.h">
+      <SubType>compile</SubType>
+      <Link>hal_contextSwitch.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_dma.h">
+      <SubType>compile</SubType>
+      <Link>hal_dma.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_eeprom.h">
+      <SubType>compile</SubType>
+      <Link>hal_eeprom.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_gpio.h">
+      <SubType>compile</SubType>
+      <Link>hal_gpio.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_initThreadStack.h">
+      <SubType>compile</SubType>
+      <Link>hal_initThreadStack.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_pmic.h">
+      <SubType>compile</SubType>
+      <Link>hal_pmic.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_spi.h">
+      <SubType>compile</SubType>
+      <Link>hal_spi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_timer.h">
+      <SubType>compile</SubType>
+      <Link>hal_timer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_twi.h">
+      <SubType>compile</SubType>
+      <Link>hal_twi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_uart.h">
+      <SubType>compile</SubType>
+      <Link>hal_uart.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\headers\xmega128A1\hal_watchDog.h">
+      <SubType>compile</SubType>
+      <Link>hal_watchDog.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_adc.c">
+      <SubType>compile</SubType>
+      <Link>hal_adc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_clocks.c">
+      <SubType>compile</SubType>
+      <Link>hal_clocks.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_dma.c">
+      <SubType>compile</SubType>
+      <Link>hal_dma.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_eeprom.c">
+      <SubType>compile</SubType>
+      <Link>hal_eeprom.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_gpio.c">
+      <SubType>compile</SubType>
+      <Link>hal_gpio.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_initThreadStack.c">
+      <SubType>compile</SubType>
+      <Link>hal_initThreadStack.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_pmic.c">
+      <SubType>compile</SubType>
+      <Link>hal_pmic.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_spi.c">
+      <SubType>compile</SubType>
+      <Link>hal_spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_timer.c">
+      <SubType>compile</SubType>
+      <Link>hal_timer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_twi.c">
+      <SubType>compile</SubType>
+      <Link>hal_twi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_uart.c">
+      <SubType>compile</SubType>
+      <Link>hal_uart.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\hal\source\xmega128A1\hal_watchDog.c">
+      <SubType>compile</SubType>
+      <Link>hal_watchDog.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\headers\sdInterface.h">
+      <SubType>compile</SubType>
+      <Link>sdInterface.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\Arduino.h">
+      <SubType>compile</SubType>
+      <Link>Arduino.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\new.cpp">
+      <SubType>compile</SubType>
+      <Link>new.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\new.h">
+      <SubType>compile</SubType>
+      <Link>new.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\Print.cpp">
+      <SubType>compile</SubType>
+      <Link>Print.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\Print.h">
+      <SubType>compile</SubType>
+      <Link>Print.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\WString.cpp">
+      <SubType>compile</SubType>
+      <Link>WString.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\arduino\WString.h">
+      <SubType>compile</SubType>
+      <Link>WString.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\MinimumSerial.cpp">
+      <SubType>compile</SubType>
+      <Link>MinimumSerial.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\MinimumSerial.h">
+      <SubType>compile</SubType>
+      <Link>MinimumSerial.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\Sd2Card.cpp">
+      <SubType>compile</SubType>
+      <Link>Sd2Card.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\Sd2Card.h">
+      <SubType>compile</SubType>
+      <Link>Sd2Card.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdBaseFile.cpp">
+      <SubType>compile</SubType>
+      <Link>SdBaseFile.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdBaseFile.h">
+      <SubType>compile</SubType>
+      <Link>SdBaseFile.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdFat.cpp">
+      <SubType>compile</SubType>
+      <Link>SdFat.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdFat.h">
+      <SubType>compile</SubType>
+      <Link>SdFat.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdFile.cpp">
+      <SubType>compile</SubType>
+      <Link>SdFile.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdFile.h">
+      <SubType>compile</SubType>
+      <Link>SdFile.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdVolume.cpp">
+      <SubType>compile</SubType>
+      <Link>SdVolume.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\SdFat\SdVolume.h">
+      <SubType>compile</SubType>
+      <Link>SdVolume.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\packages\sd\source\sdInterface.cpp">
+      <SubType>compile</SubType>
+      <Link>sdInterface.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_console.h">
+      <SubType>compile</SubType>
+      <Link>arb_console.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_device.h">
+      <SubType>compile</SubType>
+      <Link>arb_device.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_error.h">
+      <SubType>compile</SubType>
+      <Link>arb_error.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_idle.h">
+      <SubType>compile</SubType>
+      <Link>arb_idle.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_mailbox.h">
+      <SubType>compile</SubType>
+      <Link>arb_mailbox.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_memory.h">
+      <SubType>compile</SubType>
+      <Link>arb_memory.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_printf.h">
+      <SubType>compile</SubType>
+      <Link>arb_printf.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_scheduler.h">
+      <SubType>compile</SubType>
+      <Link>arb_scheduler.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_semaphore.h">
+      <SubType>compile</SubType>
+      <Link>arb_semaphore.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_sysTimer.h">
+      <SubType>compile</SubType>
+      <Link>arb_sysTimer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\headers\arb_thread.h">
+      <SubType>compile</SubType>
+      <Link>arb_thread.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_console.c">
+      <SubType>compile</SubType>
+      <Link>arb_console.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_device.c">
+      <SubType>compile</SubType>
+      <Link>arb_device.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_error.c">
+      <SubType>compile</SubType>
+      <Link>arb_error.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_idle.c">
+      <SubType>compile</SubType>
+      <Link>arb_idle.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_mailbox.c">
+      <SubType>compile</SubType>
+      <Link>arb_mailbox.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_main.c">
+      <SubType>compile</SubType>
+      <Link>arb_main.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_memory.c">
+      <SubType>compile</SubType>
+      <Link>arb_memory.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_printf.c">
+      <SubType>compile</SubType>
+      <Link>arb_printf.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_scheduler.c">
+      <SubType>compile</SubType>
+      <Link>arb_scheduler.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_semaphore.c">
+      <SubType>compile</SubType>
+      <Link>arb_semaphore.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_sysTimer.c">
+      <SubType>compile</SubType>
+      <Link>arb_sysTimer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\rtos\source\arb_thread.c">
+      <SubType>compile</SubType>
+      <Link>arb_thread.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\headers\utl_buffer.h">
+      <SubType>compile</SubType>
+      <Link>utl_buffer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\headers\utl_linkedlist.h">
+      <SubType>compile</SubType>
+      <Link>utl_linkedlist.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\headers\utl_math.h">
+      <SubType>compile</SubType>
+      <Link>utl_math.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\headers\utl_stateMachine.h">
+      <SubType>compile</SubType>
+      <Link>utl_stateMachine.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\source\utl_buffer.c">
+      <SubType>compile</SubType>
+      <Link>utl_buffer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\source\utl_linkedlist.c">
+      <SubType>compile</SubType>
+      <Link>utl_linkedlist.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\source\utl_math.c">
+      <SubType>compile</SubType>
+      <Link>utl_math.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\..\..\utilities\source\utl_stateMachine.c">
+      <SubType>compile</SubType>
+      <Link>utl_stateMachine.c</Link>
+    </Compile>
+    <Compile Include="..\headers\usr_appInit.h">
+      <SubType>compile</SubType>
+      <Link>usr_appInit.h</Link>
+    </Compile>
+    <Compile Include="..\headers\usr_console.h">
+      <SubType>compile</SubType>
+      <Link>usr_console.h</Link>
+    </Compile>
+    <Compile Include="..\headers\usr_platformTest.h">
+      <SubType>compile</SubType>
+      <Link>usr_platformTest.h</Link>
+    </Compile>
+    <Compile Include="..\source\usr_appInit.c">
+      <SubType>compile</SubType>
+      <Link>usr_appInit.c</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">-O0</CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\source\usr_console.c">
+      <SubType>compile</SubType>
+      <Link>usr_console.c</Link>
+    </Compile>
+    <Compile Include="..\source\usr_platformTest.c">
+      <SubType>compile</SubType>
+      <Link>usr_platformTest.c</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Debug'">
+      </CustomCompilationSetting>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

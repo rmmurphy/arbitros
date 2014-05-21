@@ -1,0 +1,527 @@
+.TH "istream" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+istream \- 
+.PP
+Input \fBStream\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <istream\&.h>\fP
+.PP
+Inherits \fBios\fP\&.
+.PP
+Inherited by \fBibufstream\fP, \fBifstream\fP, and \fBiostream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (\fBistream\fP &(*pf)(\fBistream\fP &str))"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (\fBios_base\fP &(*pf)(\fBios_base\fP &str))"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (\fBios\fP &(*pf)(\fBios\fP &str))"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (char *str)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (char &ch)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (signed char *str)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (signed char &ch)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (unsigned char *str)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (unsigned char &ch)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (bool &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (short &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (unsigned short &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (int &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (unsigned int &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (long &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (unsigned long &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (double &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (float &arg)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBoperator>>\fP (void *&arg)"
+.br
+.ti -1c
+.RI "\fBstreamsize\fP \fBgcount\fP () const "
+.br
+.ti -1c
+.RI "int \fBget\fP ()"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBget\fP (char &ch)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBget\fP (char *str, \fBstreamsize\fP n, char delim= '\\n')"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBgetline\fP (char *str, \fBstreamsize\fP count, char delim= '\\n')"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBignore\fP (\fBstreamsize\fP n=1, int delim=-1)"
+.br
+.ti -1c
+.RI "int \fBpeek\fP ()"
+.br
+.ti -1c
+.RI "\fBpos_type\fP \fBtellg\fP ()"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBseekg\fP (\fBpos_type\fP pos)"
+.br
+.ti -1c
+.RI "\fBistream\fP & \fBseekg\fP (\fBoff_type\fP off, \fBseekdir\fP way)"
+.br
+.ti -1c
+.RI "void \fBskipWhite\fP ()"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Input \fBStream\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBstreamsize\fP gcount () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The number of characters extracted by the last unformatted input function\&. 
+.RE
+.PP
+
+.SS "int get ()"
+Extract a character if one is available\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The character or -1 if a failure occurs\&. A failure is indicated by the stream state\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP & get (char &c)"
+Extract a character if one is available\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIc\fP location to receive the extracted character\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+always returns *this\&. A failure is indicated by the stream state\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP & get (char *str, \fBstreamsize\fPn, chardelim = \fC'\\n'\fP)"
+Extract characters\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Location to receive extracted characters\&. 
+.br
+\fIn\fP Size of str\&. 
+.br
+\fIdelim\fP Delimiter
+.RE
+.PP
+Characters are extracted until extraction fails, n is less than 1, n-1 characters are extracted, or the next character equals \fIdelim\fP (delim is not extracted)\&. If no characters are extracted failbit is set\&. If end-of-file occurs the eofbit is set\&.
+.PP
+\fBReturns:\fP
+.RS 4
+always returns *this\&. A failure is indicated by the stream state\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP & getline (char *str, \fBstreamsize\fPn, chardelim = \fC'\\n'\fP)"
+Extract characters
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Location to receive extracted characters\&. 
+.br
+\fIn\fP Size of str\&. 
+.br
+\fIdelim\fP Delimiter
+.RE
+.PP
+Characters are extracted until extraction fails, the next character equals \fIdelim\fP (delim is extracted), or n-1 characters are extracted\&.
+.PP
+The failbit is set if no characters are extracted or n-1 characters are extracted\&. If end-of-file occurs the eofbit is set\&.
+.PP
+\fBReturns:\fP
+.RS 4
+always returns *this\&. A failure is indicated by the stream state\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP & ignore (\fBstreamsize\fPn = \fC1\fP, intdelim = \fC-1\fP)"
+Extract characters and discard them\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIn\fP maximum number of characters to ignore\&. 
+.br
+\fIdelim\fP Delimiter\&.
+.RE
+.PP
+Characters are extracted until extraction fails, \fIn\fP characters are extracted, or the next input character equals \fIdelim\fP (the delimiter is extracted)\&. If end-of-file occurs the eofbit is set\&.
+.PP
+Failures are indicated by the state of the stream\&.
+.PP
+\fBReturns:\fP
+.RS 4
+*this 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (\fBistream\fP &(*)(\fBistream\fP &str)pf)\fC [inline]\fP"
+call manipulator 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpf\fP function to call 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (\fBios_base\fP &(*)(\fBios_base\fP &str)pf)\fC [inline]\fP"
+call manipulator 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpf\fP function to call 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (\fBios\fP &(*)(\fBios\fP &str)pf)\fC [inline]\fP"
+call manipulator 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpf\fP function to call 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (char *str)\fC [inline]\fP"
+Extract a character string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP location to store the string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (char &ch)\fC [inline]\fP"
+Extract a character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP location to store the character\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (signed char *str)\fC [inline]\fP"
+Extract a character string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP location to store the string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (signed char &ch)\fC [inline]\fP"
+Extract a character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP location to store the character\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (unsigned char *str)\fC [inline]\fP"
+Extract a character string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP location to store the string\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (unsigned char &ch)\fC [inline]\fP"
+Extract a character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP location to store the character\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (bool &arg)\fC [inline]\fP"
+Extract a value of type bool\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (short &arg)\fC [inline]\fP"
+Extract a value of type short\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (unsigned short &arg)\fC [inline]\fP"
+Extract a value of type unsigned short\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (int &arg)\fC [inline]\fP"
+Extract a value of type int\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (unsigned int &arg)\fC [inline]\fP"
+Extract a value of type unsigned int\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (long &arg)\fC [inline]\fP"
+Extract a value of type long\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (unsigned long &arg)\fC [inline]\fP"
+Extract a value of type unsigned long\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (double &arg)\fC [inline]\fP"
+Extract a value of type double\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (float &arg)\fC [inline]\fP"
+Extract a value of type float\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& operator>> (void *&arg)\fC [inline]\fP"
+Extract a value of type void*\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP location to store the value\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "int peek (void)"
+Return the next available character without consuming it\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The character if the stream state is good else -1; 
+.RE
+.PP
+
+.SS "\fBistream\fP& seekg (\fBpos_type\fPpos)\fC [inline]\fP"
+Set the stream position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP The absolute position in which to move the read pointer\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBistream\fP& seekg (\fBoff_type\fPoff, \fBseekdir\fPway)\fC [inline]\fP"
+Set the stream position\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoff\fP An offset to move the read pointer relative to way\&. \fIoff\fP is a signed 32-bit int so the offset is limited to +- 2GB\&. 
+.br
+\fIway\fP One of \fBios::beg\fP, \fBios::cur\fP, or \fBios::end\fP\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "void skipWhite ()"
+used to implement \fBws()\fP 
+.SS "\fBpos_type\fP tellg ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+the stream position 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

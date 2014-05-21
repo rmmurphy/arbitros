@@ -1,0 +1,356 @@
+\hypertarget{_sd_base_file_8h}{\section{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Base\-File.h File Reference}
+\label{_sd_base_file_8h}\index{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Base\-File.\-h@{C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\-Sd\-Base\-File.\-h}}
+}
+
+
+\hyperlink{class_sd_base_file}{Sd\-Base\-File} class.  
+
+
+{\ttfamily \#include $<$Sd\-Fat\-Config.\-h$>$}\\*
+{\ttfamily \#include $<$Sd\-Volume.\-h$>$}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_fat_pos__t}{Fat\-Pos\-\_\-t}
+\begin{DoxyCompactList}\small\item\em internal type for istream do not use in user apps \end{DoxyCompactList}\item 
+class \hyperlink{class_sd_base_file}{Sd\-Base\-File}
+\begin{DoxyCompactList}\small\item\em Base class for \hyperlink{class_sd_file}{Sd\-File} with \hyperlink{class_print}{Print} and C++ streams. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_sd_base_file_8h_a963f816fc88a5d8479c285ed4c630229}{P\-G\-M\-\_\-\-P}~const char$\ast$
+\item 
+\#define \hyperlink{_sd_base_file_8h_a9c00057fd19e916cc1aa0a5949336beb}{P\-S\-T\-R}(x)~(x)
+\item 
+\#define \hyperlink{_sd_base_file_8h_a48c60b057902adf805797f183286728d}{pgm\-\_\-read\-\_\-byte}(addr)~($\ast$(const unsigned char$\ast$)(addr))
+\item 
+\#define \hyperlink{_sd_base_file_8h_a910fb5f01313d339d3b835d45e1e5ad0}{pgm\-\_\-read\-\_\-word}(addr)~($\ast$(const uint16\-\_\-t$\ast$)(addr))
+\item 
+\#define \hyperlink{_sd_base_file_8h_a75acaba9e781937468d0911423bc0c35}{P\-R\-O\-G\-M\-E\-M}~const
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static uint16\-\_\-t \hyperlink{_sd_base_file_8h_a44899ad42ddf32ff1c1a73b5251b304a}{F\-A\-T\-\_\-\-D\-A\-T\-E} (uint16\-\_\-t year, uint8\-\_\-t month, uint8\-\_\-t day)
+\item 
+static uint16\-\_\-t \hyperlink{_sd_base_file_8h_a279a75f907dd2603543c7bdad00ff603}{F\-A\-T\-\_\-\-Y\-E\-A\-R} (uint16\-\_\-t fat\-Date)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_base_file_8h_a429bc2d96f5bc26dc3bd6cc2bd535b84}{F\-A\-T\-\_\-\-M\-O\-N\-T\-H} (uint16\-\_\-t fat\-Date)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_base_file_8h_a4cc8bc105529bf9e9c11e8ef099d68b0}{F\-A\-T\-\_\-\-D\-A\-Y} (uint16\-\_\-t fat\-Date)
+\item 
+static uint16\-\_\-t \hyperlink{_sd_base_file_8h_a375720927be5a39475d48b2d75dae29a}{F\-A\-T\-\_\-\-T\-I\-M\-E} (uint8\-\_\-t hour, uint8\-\_\-t minute, uint8\-\_\-t second)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_base_file_8h_ae7c733d49a5570054f6db3bd53332ba1}{F\-A\-T\-\_\-\-H\-O\-U\-R} (uint16\-\_\-t fat\-Time)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_base_file_8h_a1b09676a41ae6c9e19664bdcd5b1d34e}{F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E} (uint16\-\_\-t fat\-Time)
+\item 
+static uint8\-\_\-t \hyperlink{_sd_base_file_8h_a4d553e2088d42e01d6c08ee84e611b00}{F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D} (uint16\-\_\-t fat\-Time)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{O\-\_\-\-R\-E\-A\-D} = 0\-X01
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ac13ca62d7e6f8f6d657d4607474652bf}{O\-\_\-\-R\-D\-O\-N\-L\-Y} = \hyperlink{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{O\-\_\-\-R\-E\-A\-D}
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}{O\-\_\-\-W\-R\-I\-T\-E} = 0\-X02
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a782767ee2580bb1566048017b254281d}{O\-\_\-\-W\-R\-O\-N\-L\-Y} = \hyperlink{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}{O\-\_\-\-W\-R\-I\-T\-E}
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ad79c5a45cb5e4855b771629fc15d78f6}{O\-\_\-\-R\-D\-W\-R} = (\hyperlink{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{O\-\_\-\-R\-E\-A\-D} $|$ \hyperlink{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}{O\-\_\-\-W\-R\-I\-T\-E})
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a4efda39151f5ef2dc7fbd138be51336a}{O\-\_\-\-A\-C\-C\-M\-O\-D\-E} = (\hyperlink{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{O\-\_\-\-R\-E\-A\-D} $|$ \hyperlink{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}{O\-\_\-\-W\-R\-I\-T\-E})
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a4242b37e810af3a6485adda0e08a9a2b}{O\-\_\-\-A\-P\-P\-E\-N\-D} = 0\-X04
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a3066c471d52b056dec13fa567f7bbd9d}{O\-\_\-\-S\-Y\-N\-C} = 0\-X08
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a9dc438ff90d0c8af452331c339dbc08e}{O\-\_\-\-T\-R\-U\-N\-C} = 0\-X10
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a409d6381c7eafaf7d8978e53b736b966}{O\-\_\-\-A\-T\-\_\-\-E\-N\-D} = 0\-X20
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a20d0ef801486dd02de6ee482de731193}{O\-\_\-\-C\-R\-E\-A\-T} = 0\-X40
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ab5635d4288cb294c1ed000fa183e072b}{O\-\_\-\-E\-X\-C\-L} = 0\-X80
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ac78cfe032599ef1f5723c62106017fcd}{L\-S\-\_\-\-D\-A\-T\-E} = 1
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a8170e56f2df0139f3acd73c35636fa7f}{L\-S\-\_\-\-S\-I\-Z\-E} = 2
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_af90ecd4124f4c2563b37174be91e76f9}{L\-S\-\_\-\-R} = 4
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a5f34ce6e95713d872ca6a640c8783462}{T\-\_\-\-A\-C\-C\-E\-S\-S} = 1
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a533dc316f5a59209ac5e9c630d2df4c4}{T\-\_\-\-C\-R\-E\-A\-T\-E} = 2
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a2a6192fd0f5847783868deed6de53d1e}{T\-\_\-\-W\-R\-I\-T\-E} = 4
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a4da8c96e256b06356321e81705494010}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D} = 0
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a666774999b9afd627fdad75471101581}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L} = 1
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a1bb2e8f6b6f90bbf4d02608cd267af42}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D} = 2
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_a9a1a07cb1d09cfdb3cc53183c6e5dc57}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32} = 3
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_ac301b0465fdd7953c6e110b9896cc9fd}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R} = 4
+\item 
+uint8\-\_\-t const \hyperlink{_sd_base_file_8h_abc9b0906aeeedfe122b0ca629bac889b}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R} = \hyperlink{_sd_base_file_8h_a1bb2e8f6b6f90bbf4d02608cd267af42}{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D}
+\item 
+uint16\-\_\-t const \hyperlink{_sd_base_file_8h_a441bb1bc5f52d512656de3b86a279948}{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E} = ((2000 -\/ 1980) $<$$<$ 9) $|$ (1 $<$$<$ 5) $|$ 1
+\item 
+uint16\-\_\-t const \hyperlink{_sd_base_file_8h_a00451fc2d3563a2255797bd1f40507fb}{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E} = (1 $<$$<$ 11)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_sd_base_file}{Sd\-Base\-File} class. 
+
+\subsection{Macro Definition Documentation}
+\hypertarget{_sd_base_file_8h_a963f816fc88a5d8479c285ed4c630229}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!P\-G\-M\-\_\-\-P@{P\-G\-M\-\_\-\-P}}
+\index{P\-G\-M\-\_\-\-P@{P\-G\-M\-\_\-\-P}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{P\-G\-M\-\_\-\-P}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-G\-M\-\_\-\-P~const char$\ast$}}\label{_sd_base_file_8h_a963f816fc88a5d8479c285ed4c630229}
+pointer to flash for A\-R\-M \hypertarget{_sd_base_file_8h_a48c60b057902adf805797f183286728d}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!pgm\-\_\-read\-\_\-byte@{pgm\-\_\-read\-\_\-byte}}
+\index{pgm\-\_\-read\-\_\-byte@{pgm\-\_\-read\-\_\-byte}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{pgm\-\_\-read\-\_\-byte}]{\setlength{\rightskip}{0pt plus 5cm}\#define pgm\-\_\-read\-\_\-byte(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~($\ast$(const unsigned char$\ast$)(addr))}}\label{_sd_base_file_8h_a48c60b057902adf805797f183286728d}
+read 8-\/bits from flash for A\-R\-M \hypertarget{_sd_base_file_8h_a910fb5f01313d339d3b835d45e1e5ad0}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!pgm\-\_\-read\-\_\-word@{pgm\-\_\-read\-\_\-word}}
+\index{pgm\-\_\-read\-\_\-word@{pgm\-\_\-read\-\_\-word}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{pgm\-\_\-read\-\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}\#define pgm\-\_\-read\-\_\-word(
+\begin{DoxyParamCaption}
+\item[{}]{addr}
+\end{DoxyParamCaption}
+)~($\ast$(const uint16\-\_\-t$\ast$)(addr))}}\label{_sd_base_file_8h_a910fb5f01313d339d3b835d45e1e5ad0}
+read 16-\/bits from flash for A\-R\-M \hypertarget{_sd_base_file_8h_a75acaba9e781937468d0911423bc0c35}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!P\-R\-O\-G\-M\-E\-M@{P\-R\-O\-G\-M\-E\-M}}
+\index{P\-R\-O\-G\-M\-E\-M@{P\-R\-O\-G\-M\-E\-M}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{P\-R\-O\-G\-M\-E\-M}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-R\-O\-G\-M\-E\-M~const}}\label{_sd_base_file_8h_a75acaba9e781937468d0911423bc0c35}
+store in flash for A\-R\-M \hypertarget{_sd_base_file_8h_a9c00057fd19e916cc1aa0a5949336beb}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!P\-S\-T\-R@{P\-S\-T\-R}}
+\index{P\-S\-T\-R@{P\-S\-T\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{P\-S\-T\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define P\-S\-T\-R(
+\begin{DoxyParamCaption}
+\item[{}]{x}
+\end{DoxyParamCaption}
+)~(x)}}\label{_sd_base_file_8h_a9c00057fd19e916cc1aa0a5949336beb}
+store literal string in flash for A\-R\-M 
+
+\subsection{Function Documentation}
+\hypertarget{_sd_base_file_8h_a44899ad42ddf32ff1c1a73b5251b304a}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-D\-A\-T\-E@{F\-A\-T\-\_\-\-D\-A\-T\-E}}
+\index{F\-A\-T\-\_\-\-D\-A\-T\-E@{F\-A\-T\-\_\-\-D\-A\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-D\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\-\_\-t F\-A\-T\-\_\-\-D\-A\-T\-E (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{year, }
+\item[{uint8\-\_\-t}]{month, }
+\item[{uint8\-\_\-t}]{day}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a44899ad42ddf32ff1c1a73b5251b304a}
+date field for F\-A\-T directory entry 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em year} & \mbox{[}1980,2107\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em month} & \mbox{[}1,12\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em day} & \mbox{[}1,31\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Packed date for dir\-\_\-t entry. 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a4cc8bc105529bf9e9c11e8ef099d68b0}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-D\-A\-Y@{F\-A\-T\-\_\-\-D\-A\-Y}}
+\index{F\-A\-T\-\_\-\-D\-A\-Y@{F\-A\-T\-\_\-\-D\-A\-Y}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-D\-A\-Y}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t F\-A\-T\-\_\-\-D\-A\-Y (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a4cc8bc105529bf9e9c11e8ef099d68b0}
+day part of F\-A\-T directory date field 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Date} & Date in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted day \mbox{[}1,31\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_ae7c733d49a5570054f6db3bd53332ba1}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-H\-O\-U\-R@{F\-A\-T\-\_\-\-H\-O\-U\-R}}
+\index{F\-A\-T\-\_\-\-H\-O\-U\-R@{F\-A\-T\-\_\-\-H\-O\-U\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-H\-O\-U\-R}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t F\-A\-T\-\_\-\-H\-O\-U\-R (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_ae7c733d49a5570054f6db3bd53332ba1}
+hour part of F\-A\-T directory time field 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Time} & Time in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted hour \mbox{[}0,23\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a1b09676a41ae6c9e19664bdcd5b1d34e}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E@{F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E}}
+\index{F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E@{F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t F\-A\-T\-\_\-\-M\-I\-N\-U\-T\-E (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a1b09676a41ae6c9e19664bdcd5b1d34e}
+minute part of F\-A\-T directory time field 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Time} & Time in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted minute \mbox{[}0,59\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a429bc2d96f5bc26dc3bd6cc2bd535b84}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-M\-O\-N\-T\-H@{F\-A\-T\-\_\-\-M\-O\-N\-T\-H}}
+\index{F\-A\-T\-\_\-\-M\-O\-N\-T\-H@{F\-A\-T\-\_\-\-M\-O\-N\-T\-H}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-M\-O\-N\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t F\-A\-T\-\_\-\-M\-O\-N\-T\-H (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a429bc2d96f5bc26dc3bd6cc2bd535b84}
+month part of F\-A\-T directory date field 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Date} & Date in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted month \mbox{[}1,12\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a4d553e2088d42e01d6c08ee84e611b00}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D@{F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D}}
+\index{F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D@{F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t F\-A\-T\-\_\-\-S\-E\-C\-O\-N\-D (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a4d553e2088d42e01d6c08ee84e611b00}
+second part of F\-A\-T directory time field Note second/2 is stored in packed time.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Time} & Time in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted second \mbox{[}0,58\mbox{]} 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a375720927be5a39475d48b2d75dae29a}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-T\-I\-M\-E@{F\-A\-T\-\_\-\-T\-I\-M\-E}}
+\index{F\-A\-T\-\_\-\-T\-I\-M\-E@{F\-A\-T\-\_\-\-T\-I\-M\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\-\_\-t F\-A\-T\-\_\-\-T\-I\-M\-E (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{hour, }
+\item[{uint8\-\_\-t}]{minute, }
+\item[{uint8\-\_\-t}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a375720927be5a39475d48b2d75dae29a}
+time field for F\-A\-T directory entry 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em hour} & \mbox{[}0,23\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em minute} & \mbox{[}0,59\mbox{]} \\
+\hline
+\mbox{\tt in}  & {\em second} & \mbox{[}0,59\mbox{]}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Packed time for dir\-\_\-t entry. 
+\end{DoxyReturn}
+\hypertarget{_sd_base_file_8h_a279a75f907dd2603543c7bdad00ff603}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-Y\-E\-A\-R@{F\-A\-T\-\_\-\-Y\-E\-A\-R}}
+\index{F\-A\-T\-\_\-\-Y\-E\-A\-R@{F\-A\-T\-\_\-\-Y\-E\-A\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-Y\-E\-A\-R}]{\setlength{\rightskip}{0pt plus 5cm}static uint16\-\_\-t F\-A\-T\-\_\-\-Y\-E\-A\-R (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{fat\-Date}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{_sd_base_file_8h_a279a75f907dd2603543c7bdad00ff603}
+year part of F\-A\-T directory date field 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em fat\-Date} & Date in packed dir format.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Extracted year \mbox{[}1980,2107\mbox{]} 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\hypertarget{_sd_base_file_8h_a441bb1bc5f52d512656de3b86a279948}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E@{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E}}
+\index{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E@{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-D\-A\-T\-E = ((2000 -\/ 1980) $<$$<$ 9) $|$ (1 $<$$<$ 5) $|$ 1}}\label{_sd_base_file_8h_a441bb1bc5f52d512656de3b86a279948}
+Default date for file timestamps is 1 Jan 2000 \hypertarget{_sd_base_file_8h_a00451fc2d3563a2255797bd1f40507fb}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E@{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E}}
+\index{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E@{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t const F\-A\-T\-\_\-\-D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E = (1 $<$$<$ 11)}}\label{_sd_base_file_8h_a00451fc2d3563a2255797bd1f40507fb}
+Default time for file timestamp is 1 am \hypertarget{_sd_base_file_8h_a4da8c96e256b06356321e81705494010}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-C\-L\-O\-S\-E\-D = 0}}\label{_sd_base_file_8h_a4da8c96e256b06356321e81705494010}
+This file has not been opened. \hypertarget{_sd_base_file_8h_abc9b0906aeeedfe122b0ca629bac889b}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-M\-I\-N\-\_\-\-D\-I\-R = {\bf F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D}}}\label{_sd_base_file_8h_abc9b0906aeeedfe122b0ca629bac889b}
+Test value for directory type \hypertarget{_sd_base_file_8h_a666774999b9afd627fdad75471101581}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-N\-O\-R\-M\-A\-L = 1}}\label{_sd_base_file_8h_a666774999b9afd627fdad75471101581}
+A normal file \hypertarget{_sd_base_file_8h_a9a1a07cb1d09cfdb3cc53183c6e5dc57}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T32 = 3}}\label{_sd_base_file_8h_a9a1a07cb1d09cfdb3cc53183c6e5dc57}
+A F\-A\-T32 root directory \hypertarget{_sd_base_file_8h_a1bb2e8f6b6f90bbf4d02608cd267af42}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-R\-O\-O\-T\-\_\-\-F\-I\-X\-E\-D = 2}}\label{_sd_base_file_8h_a1bb2e8f6b6f90bbf4d02608cd267af42}
+A F\-A\-T12 or F\-A\-T16 root directory \hypertarget{_sd_base_file_8h_ac301b0465fdd7953c6e110b9896cc9fd}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R}}
+\index{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R@{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const F\-A\-T\-\_\-\-F\-I\-L\-E\-\_\-\-T\-Y\-P\-E\-\_\-\-S\-U\-B\-D\-I\-R = 4}}\label{_sd_base_file_8h_ac301b0465fdd7953c6e110b9896cc9fd}
+A subdirectory file \hypertarget{_sd_base_file_8h_ac78cfe032599ef1f5723c62106017fcd}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!L\-S\-\_\-\-D\-A\-T\-E@{L\-S\-\_\-\-D\-A\-T\-E}}
+\index{L\-S\-\_\-\-D\-A\-T\-E@{L\-S\-\_\-\-D\-A\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{L\-S\-\_\-\-D\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const L\-S\-\_\-\-D\-A\-T\-E = 1}}\label{_sd_base_file_8h_ac78cfe032599ef1f5723c62106017fcd}
+ls() flag to print modify date \hypertarget{_sd_base_file_8h_af90ecd4124f4c2563b37174be91e76f9}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!L\-S\-\_\-\-R@{L\-S\-\_\-\-R}}
+\index{L\-S\-\_\-\-R@{L\-S\-\_\-\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{L\-S\-\_\-\-R}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const L\-S\-\_\-\-R = 4}}\label{_sd_base_file_8h_af90ecd4124f4c2563b37174be91e76f9}
+ls() flag for recursive list of subdirectories \hypertarget{_sd_base_file_8h_a8170e56f2df0139f3acd73c35636fa7f}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!L\-S\-\_\-\-S\-I\-Z\-E@{L\-S\-\_\-\-S\-I\-Z\-E}}
+\index{L\-S\-\_\-\-S\-I\-Z\-E@{L\-S\-\_\-\-S\-I\-Z\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{L\-S\-\_\-\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const L\-S\-\_\-\-S\-I\-Z\-E = 2}}\label{_sd_base_file_8h_a8170e56f2df0139f3acd73c35636fa7f}
+ls() flag to print file size \hypertarget{_sd_base_file_8h_a4efda39151f5ef2dc7fbd138be51336a}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-A\-C\-C\-M\-O\-D\-E@{O\-\_\-\-A\-C\-C\-M\-O\-D\-E}}
+\index{O\-\_\-\-A\-C\-C\-M\-O\-D\-E@{O\-\_\-\-A\-C\-C\-M\-O\-D\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-A\-C\-C\-M\-O\-D\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-A\-C\-C\-M\-O\-D\-E = ({\bf O\-\_\-\-R\-E\-A\-D} $|$ {\bf O\-\_\-\-W\-R\-I\-T\-E})}}\label{_sd_base_file_8h_a4efda39151f5ef2dc7fbd138be51336a}
+open() oflag mask for access modes \hypertarget{_sd_base_file_8h_a4242b37e810af3a6485adda0e08a9a2b}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-A\-P\-P\-E\-N\-D@{O\-\_\-\-A\-P\-P\-E\-N\-D}}
+\index{O\-\_\-\-A\-P\-P\-E\-N\-D@{O\-\_\-\-A\-P\-P\-E\-N\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-A\-P\-P\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-A\-P\-P\-E\-N\-D = 0\-X04}}\label{_sd_base_file_8h_a4242b37e810af3a6485adda0e08a9a2b}
+The file offset shall be set to the end of the file prior to each write. \hypertarget{_sd_base_file_8h_a409d6381c7eafaf7d8978e53b736b966}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-A\-T\-\_\-\-E\-N\-D@{O\-\_\-\-A\-T\-\_\-\-E\-N\-D}}
+\index{O\-\_\-\-A\-T\-\_\-\-E\-N\-D@{O\-\_\-\-A\-T\-\_\-\-E\-N\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-A\-T\-\_\-\-E\-N\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-A\-T\-\_\-\-E\-N\-D = 0\-X20}}\label{_sd_base_file_8h_a409d6381c7eafaf7d8978e53b736b966}
+set the initial position at the end of the file \hypertarget{_sd_base_file_8h_a20d0ef801486dd02de6ee482de731193}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-C\-R\-E\-A\-T@{O\-\_\-\-C\-R\-E\-A\-T}}
+\index{O\-\_\-\-C\-R\-E\-A\-T@{O\-\_\-\-C\-R\-E\-A\-T}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-C\-R\-E\-A\-T}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-C\-R\-E\-A\-T = 0\-X40}}\label{_sd_base_file_8h_a20d0ef801486dd02de6ee482de731193}
+create the file if nonexistent \hypertarget{_sd_base_file_8h_ab5635d4288cb294c1ed000fa183e072b}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-E\-X\-C\-L@{O\-\_\-\-E\-X\-C\-L}}
+\index{O\-\_\-\-E\-X\-C\-L@{O\-\_\-\-E\-X\-C\-L}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-E\-X\-C\-L}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-E\-X\-C\-L = 0\-X80}}\label{_sd_base_file_8h_ab5635d4288cb294c1ed000fa183e072b}
+If O\-\_\-\-C\-R\-E\-A\-T and O\-\_\-\-E\-X\-C\-L are set, open() shall fail if the file exists \hypertarget{_sd_base_file_8h_ac13ca62d7e6f8f6d657d4607474652bf}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-R\-D\-O\-N\-L\-Y@{O\-\_\-\-R\-D\-O\-N\-L\-Y}}
+\index{O\-\_\-\-R\-D\-O\-N\-L\-Y@{O\-\_\-\-R\-D\-O\-N\-L\-Y}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-R\-D\-O\-N\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-R\-D\-O\-N\-L\-Y = {\bf O\-\_\-\-R\-E\-A\-D}}}\label{_sd_base_file_8h_ac13ca62d7e6f8f6d657d4607474652bf}
+open() oflag -\/ same as O\-\_\-\-I\-N \hypertarget{_sd_base_file_8h_ad79c5a45cb5e4855b771629fc15d78f6}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-R\-D\-W\-R@{O\-\_\-\-R\-D\-W\-R}}
+\index{O\-\_\-\-R\-D\-W\-R@{O\-\_\-\-R\-D\-W\-R}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-R\-D\-W\-R}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-R\-D\-W\-R = ({\bf O\-\_\-\-R\-E\-A\-D} $|$ {\bf O\-\_\-\-W\-R\-I\-T\-E})}}\label{_sd_base_file_8h_ad79c5a45cb5e4855b771629fc15d78f6}
+open() oflag for reading and writing \hypertarget{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-R\-E\-A\-D@{O\-\_\-\-R\-E\-A\-D}}
+\index{O\-\_\-\-R\-E\-A\-D@{O\-\_\-\-R\-E\-A\-D}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-R\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-R\-E\-A\-D = 0\-X01}}\label{_sd_base_file_8h_ac5a1c3e543273b0374ba114c496e662e}
+open() oflag for reading \hypertarget{_sd_base_file_8h_a3066c471d52b056dec13fa567f7bbd9d}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-S\-Y\-N\-C@{O\-\_\-\-S\-Y\-N\-C}}
+\index{O\-\_\-\-S\-Y\-N\-C@{O\-\_\-\-S\-Y\-N\-C}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-S\-Y\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-S\-Y\-N\-C = 0\-X08}}\label{_sd_base_file_8h_a3066c471d52b056dec13fa567f7bbd9d}
+synchronous writes -\/ call sync() after each write \hypertarget{_sd_base_file_8h_a9dc438ff90d0c8af452331c339dbc08e}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-T\-R\-U\-N\-C@{O\-\_\-\-T\-R\-U\-N\-C}}
+\index{O\-\_\-\-T\-R\-U\-N\-C@{O\-\_\-\-T\-R\-U\-N\-C}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-T\-R\-U\-N\-C}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-T\-R\-U\-N\-C = 0\-X10}}\label{_sd_base_file_8h_a9dc438ff90d0c8af452331c339dbc08e}
+truncate the file to zero length \hypertarget{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-W\-R\-I\-T\-E@{O\-\_\-\-W\-R\-I\-T\-E}}
+\index{O\-\_\-\-W\-R\-I\-T\-E@{O\-\_\-\-W\-R\-I\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-W\-R\-I\-T\-E = 0\-X02}}\label{_sd_base_file_8h_a44c1620ada13f6318ab39b9fa38ef55a}
+open() oflag for write \hypertarget{_sd_base_file_8h_a782767ee2580bb1566048017b254281d}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!O\-\_\-\-W\-R\-O\-N\-L\-Y@{O\-\_\-\-W\-R\-O\-N\-L\-Y}}
+\index{O\-\_\-\-W\-R\-O\-N\-L\-Y@{O\-\_\-\-W\-R\-O\-N\-L\-Y}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{O\-\_\-\-W\-R\-O\-N\-L\-Y}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const O\-\_\-\-W\-R\-O\-N\-L\-Y = {\bf O\-\_\-\-W\-R\-I\-T\-E}}}\label{_sd_base_file_8h_a782767ee2580bb1566048017b254281d}
+open() oflag -\/ same as O\-\_\-\-W\-R\-I\-T\-E \hypertarget{_sd_base_file_8h_a5f34ce6e95713d872ca6a640c8783462}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!T\-\_\-\-A\-C\-C\-E\-S\-S@{T\-\_\-\-A\-C\-C\-E\-S\-S}}
+\index{T\-\_\-\-A\-C\-C\-E\-S\-S@{T\-\_\-\-A\-C\-C\-E\-S\-S}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{T\-\_\-\-A\-C\-C\-E\-S\-S}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const T\-\_\-\-A\-C\-C\-E\-S\-S = 1}}\label{_sd_base_file_8h_a5f34ce6e95713d872ca6a640c8783462}
+set the file's last access date \hypertarget{_sd_base_file_8h_a533dc316f5a59209ac5e9c630d2df4c4}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!T\-\_\-\-C\-R\-E\-A\-T\-E@{T\-\_\-\-C\-R\-E\-A\-T\-E}}
+\index{T\-\_\-\-C\-R\-E\-A\-T\-E@{T\-\_\-\-C\-R\-E\-A\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{T\-\_\-\-C\-R\-E\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const T\-\_\-\-C\-R\-E\-A\-T\-E = 2}}\label{_sd_base_file_8h_a533dc316f5a59209ac5e9c630d2df4c4}
+set the file's creation date and time \hypertarget{_sd_base_file_8h_a2a6192fd0f5847783868deed6de53d1e}{\index{Sd\-Base\-File.\-h@{Sd\-Base\-File.\-h}!T\-\_\-\-W\-R\-I\-T\-E@{T\-\_\-\-W\-R\-I\-T\-E}}
+\index{T\-\_\-\-W\-R\-I\-T\-E@{T\-\_\-\-W\-R\-I\-T\-E}!SdBaseFile.h@{Sd\-Base\-File.\-h}}
+\subsubsection[{T\-\_\-\-W\-R\-I\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t const T\-\_\-\-W\-R\-I\-T\-E = 4}}\label{_sd_base_file_8h_a2a6192fd0f5847783868deed6de53d1e}
+Set the file's write date and time 

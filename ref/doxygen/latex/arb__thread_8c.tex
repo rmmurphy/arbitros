@@ -1,0 +1,122 @@
+\hypertarget{arb__thread_8c}{\section{C\-:/arbitros/trunk/rtos/source/xmega128a1/arb\-\_\-thread.c File Reference}
+\label{arb__thread_8c}\index{C\-:/arbitros/trunk/rtos/source/xmega128a1/arb\-\_\-thread.\-c@{C\-:/arbitros/trunk/rtos/source/xmega128a1/arb\-\_\-thread.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-scheduler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linkedlist.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arb__thread_8c_a845ea99c2ff4a333b1de626af4a7c0a5}{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R} (\hyperlink{arb__thread_8h_af079a9f620d6d6a9da37efa763af9db3}{gt\-\_\-active\-Threads})
+\item 
+static void \hyperlink{arb__thread_8c_a7c2cf1d82fc001ac012a8add9159e415}{arb\-\_\-init\-Thread\-Stack} (void $\ast$pt\-\_\-function, \hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-parms, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args, uint8\-\_\-t $\ast$pc\-\_\-stack\-Ptr, uint16\-\_\-t s\-\_\-end\-Of\-Stack\-Add, uint16\-\_\-t $\ast$ps\-\_\-s\-P)
+\item 
+static void \hyperlink{arb__thread_8c_a9742d344623c159d1b72fa7e6d49248f}{arb\-\_\-thread\-Init} (\hyperlink{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}{t\-\_\-tcb} $\ast$$\ast$pt\-\_\-new\-Tcb, void $\ast$pt\-\_\-function, \hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-parms, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args, \hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} t\-\_\-stack, \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio} t\-\_\-priority)
+\item 
+static void \hyperlink{arb__thread_8c_afbdc50819c82bb90089524aabfdbb681}{arb\-\_\-yield\-From\-Sleep\-Ints\-On} (static void \hyperlink{arb__thread_8c_a7d57128234f3b228f42e2831e83adfc7}{arb\-\_\-yield\-From\-Sleep\-Ints\-Off} void)
+\item 
+static void \hyperlink{arb__thread_8c_a7d57128234f3b228f42e2831e83adfc7}{arb\-\_\-yield\-From\-Sleep\-Ints\-Off} (void)
+\item 
+void \hyperlink{arb__thread_8c_a659972226e5e512036a76e47f78a8ca5}{arb\-\_\-update\-Sleeping\-Threads} (void)
+\item 
+void \hyperlink{arb__thread_8c_a1a2554165c8046a09880e1f11c98c2b3}{arb\-\_\-sleep} (const uint16\-\_\-t s\-\_\-quantum)
+\item 
+\hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} \hyperlink{arb__thread_8c_a92da7f756af74c1063c6b9e93b4f7078}{arb\-\_\-thread\-Create} (void $\ast$pt\-\_\-function, \hyperlink{arb__thread_8h_ab4a010450e394dc881f9ee413ea02689}{t\-\_\-parameters} t\-\_\-parms, \hyperlink{arb__thread_8h_af34f0869283e556ad3baf131ac4a0b2d}{t\-\_\-arguments} t\-\_\-args, \hyperlink{arb__thread_8h_a5be6a4e9ef9a3f790c822a34a49c8e81}{t\-\_\-stack\-Size} t\-\_\-stack, \hyperlink{arb__thread_8h_a37a67521dc13f279ecc539989ec104be}{t\-\_\-thrd\-Prio} t\-\_\-priority)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__thread_8c_a17dffd38ef45fdb9e53204fbac740a16}{arb\-\_\-thread\-Destroy} (\hyperlink{arb__thread_8h_aaef05f41fd7e9307f0bcf3f9fb99b0d4}{t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} t\-\_\-thrd\-Handle)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}{t\-\_\-tcb} $\ast$ \hyperlink{arb__thread_8c_a5b9d34c3fa13d391150b96cbb44d83af}{gpt\-\_\-temp}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__thread_8c_a7c2cf1d82fc001ac012a8add9159e415}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-init\-Thread\-Stack@{arb\-\_\-init\-Thread\-Stack}}
+\index{arb\-\_\-init\-Thread\-Stack@{arb\-\_\-init\-Thread\-Stack}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-init\-Thread\-Stack}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-init\-Thread\-Stack (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pt\-\_\-function, }
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-parms, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-stack\-Ptr, }
+\item[{uint16\-\_\-t}]{s\-\_\-end\-Of\-Stack\-Add, }
+\item[{uint16\-\_\-t $\ast$}]{ps\-\_\-s\-P}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__thread_8c_a7c2cf1d82fc001ac012a8add9159e415}
+\hypertarget{arb__thread_8c_a1a2554165c8046a09880e1f11c98c2b3}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-sleep@{arb\-\_\-sleep}}
+\index{arb\-\_\-sleep@{arb\-\_\-sleep}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-sleep}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-sleep (
+\begin{DoxyParamCaption}
+\item[{const uint16\-\_\-t}]{s\-\_\-quantum}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8c_a1a2554165c8046a09880e1f11c98c2b3}
+\hypertarget{arb__thread_8c_a92da7f756af74c1063c6b9e93b4f7078}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-thread\-Create@{arb\-\_\-thread\-Create}}
+\index{arb\-\_\-thread\-Create@{arb\-\_\-thread\-Create}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-thread\-Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E} arb\-\_\-thread\-Create (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{pt\-\_\-function, }
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-parms, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args, }
+\item[{{\bf t\-\_\-stack\-Size}}]{t\-\_\-stack, }
+\item[{{\bf t\-\_\-thrd\-Prio}}]{t\-\_\-priority}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8c_a92da7f756af74c1063c6b9e93b4f7078}
+\hypertarget{arb__thread_8c_a17dffd38ef45fdb9e53204fbac740a16}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-thread\-Destroy@{arb\-\_\-thread\-Destroy}}
+\index{arb\-\_\-thread\-Destroy@{arb\-\_\-thread\-Destroy}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-thread\-Destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-thread\-Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-T\-H\-R\-D\-H\-A\-N\-D\-L\-E}}]{t\-\_\-thrd\-Handle}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8c_a17dffd38ef45fdb9e53204fbac740a16}
+\hypertarget{arb__thread_8c_a9742d344623c159d1b72fa7e6d49248f}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-thread\-Init@{arb\-\_\-thread\-Init}}
+\index{arb\-\_\-thread\-Init@{arb\-\_\-thread\-Init}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-thread\-Init}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-thread\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-tcb} $\ast$$\ast$}]{pt\-\_\-new\-Tcb, }
+\item[{void $\ast$}]{pt\-\_\-function, }
+\item[{{\bf t\-\_\-parameters}}]{t\-\_\-parms, }
+\item[{{\bf t\-\_\-arguments}}]{t\-\_\-args, }
+\item[{{\bf t\-\_\-stack\-Size}}]{t\-\_\-stack, }
+\item[{{\bf t\-\_\-thrd\-Prio}}]{t\-\_\-priority}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__thread_8c_a9742d344623c159d1b72fa7e6d49248f}
+\hypertarget{arb__thread_8c_a659972226e5e512036a76e47f78a8ca5}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-update\-Sleeping\-Threads@{arb\-\_\-update\-Sleeping\-Threads}}
+\index{arb\-\_\-update\-Sleeping\-Threads@{arb\-\_\-update\-Sleeping\-Threads}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-update\-Sleeping\-Threads}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-update\-Sleeping\-Threads (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8c_a659972226e5e512036a76e47f78a8ca5}
+\hypertarget{arb__thread_8c_a7d57128234f3b228f42e2831e83adfc7}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-yield\-From\-Sleep\-Ints\-Off@{arb\-\_\-yield\-From\-Sleep\-Ints\-Off}}
+\index{arb\-\_\-yield\-From\-Sleep\-Ints\-Off@{arb\-\_\-yield\-From\-Sleep\-Ints\-Off}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-yield\-From\-Sleep\-Ints\-Off}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-yield\-From\-Sleep\-Ints\-Off (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__thread_8c_a7d57128234f3b228f42e2831e83adfc7}
+\hypertarget{arb__thread_8c_afbdc50819c82bb90089524aabfdbb681}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!arb\-\_\-yield\-From\-Sleep\-Ints\-On@{arb\-\_\-yield\-From\-Sleep\-Ints\-On}}
+\index{arb\-\_\-yield\-From\-Sleep\-Ints\-On@{arb\-\_\-yield\-From\-Sleep\-Ints\-On}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{arb\-\_\-yield\-From\-Sleep\-Ints\-On}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-yield\-From\-Sleep\-Ints\-On (
+\begin{DoxyParamCaption}
+\item[{static void {\bf arb\-\_\-yield\-From\-Sleep\-Ints\-Off}}]{void}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__thread_8c_afbdc50819c82bb90089524aabfdbb681}
+\hypertarget{arb__thread_8c_a845ea99c2ff4a333b1de626af4a7c0a5}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R@{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}}
+\index{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R@{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R (
+\begin{DoxyParamCaption}
+\item[{{\bf gt\-\_\-active\-Threads}}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__thread_8c_a845ea99c2ff4a333b1de626af4a7c0a5}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__thread_8c_a5b9d34c3fa13d391150b96cbb44d83af}{\index{arb\-\_\-thread.\-c@{arb\-\_\-thread.\-c}!gpt\-\_\-temp@{gpt\-\_\-temp}}
+\index{gpt\-\_\-temp@{gpt\-\_\-temp}!arb_thread.c@{arb\-\_\-thread.\-c}}
+\subsubsection[{gpt\-\_\-temp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-tcb}$\ast$ gpt\-\_\-temp\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__thread_8c_a5b9d34c3fa13d391150b96cbb44d83af}

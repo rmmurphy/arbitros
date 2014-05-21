@@ -1,0 +1,57 @@
+.TH "C:/arbitros/trunk/libraries/sd/SdFat/SdFatUtil.h" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+C:/arbitros/trunk/libraries/sd/SdFat/SdFatUtil.h \- 
+.PP
+Useful utility functions\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <SdFat\&.h>\fP
+.br
+
+.SS "Macros"
+
+.in +1c
+.ti -1c
+.RI "#define \fBPgmPrint\fP(x)   SerialPrint_P(\fBPSTR\fP(x))"
+.br
+.ti -1c
+.RI "#define \fBPgmPrintln\fP(x)   SerialPrintln_P(\fBPSTR\fP(x))"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBFreeRam\fP ()"
+.br
+.ti -1c
+.RI "void \fBprint_P\fP (\fBPrint\fP *pr, \fBPGM_P\fP str)"
+.br
+.ti -1c
+.RI "void \fBprintln_P\fP (\fBPrint\fP *pr, \fBPGM_P\fP str)"
+.br
+.ti -1c
+.RI "void \fBSerialPrint_P\fP (\fBPGM_P\fP str)"
+.br
+.ti -1c
+.RI "void \fBSerialPrintln_P\fP (\fBPGM_P\fP str)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Useful utility functions\&. 
+
+
+.SH "Macro Definition Documentation"
+.PP 
+.SS "#define PgmPrint(x)   SerialPrint_P(\fBPSTR\fP(x))"
+Store and print a string in flash memory\&. 
+.SS "#define PgmPrintln(x)   SerialPrintln_P(\fBPSTR\fP(x))"
+Store and print a string in flash memory followed by a CR/LF\&. 
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

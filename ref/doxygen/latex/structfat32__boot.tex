@@ -1,0 +1,176 @@
+\hypertarget{structfat32__boot}{\section{fat32\-\_\-boot Struct Reference}
+\label{structfat32__boot}\index{fat32\-\_\-boot@{fat32\-\_\-boot}}
+}
+
+
+Boot sector for a F\-A\-T32 volume.  
+
+
+
+
+{\ttfamily \#include $<$Sd\-Fat\-Structs.\-h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a61b95cffdd449d10352cfd0288b23287}{jump} \mbox{[}3\mbox{]}
+\item 
+char \hyperlink{structfat32__boot_adff248465625d1fa3583bfcf2838620d}{oem\-Id} \mbox{[}8\mbox{]}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_adb2ddeae74baf681103d21d724814a63}{bytes\-Per\-Sector}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a3ce07376c286acd8393a18a32d7ca4c0}{sectors\-Per\-Cluster}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a16c854faf567331bbbfb383e6c8df6f5}{reserved\-Sector\-Count}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a624e9eb125b4fc8aeaebcccf79e17aa8}{fat\-Count}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_aabe25e54b9c06a9a7393fc6c475d9fa1}{root\-Dir\-Entry\-Count}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_ad717f5b9af13f8ec9d0d6d1337174dfa}{total\-Sectors16}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_ab88738f9cb91c882cb91d5e83a19a73f}{media\-Type}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_abf85d1c57b01c8901a0cdcd0ac1babc2}{sectors\-Per\-Fat16}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a42886f9109ee1759d5972e871f0689a8}{sectors\-Per\-Track}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a57cb7e16b9969fa87c9f1ca43a87d217}{head\-Count}
+\item 
+uint32\-\_\-t \hyperlink{structfat32__boot_a454fd6cc3f063c86b7fe65c367da7cdd}{hiddden\-Sectors}
+\item 
+uint32\-\_\-t \hyperlink{structfat32__boot_a64d5902f9e900ecc745b1c0b325d875f}{total\-Sectors32}
+\item 
+uint32\-\_\-t \hyperlink{structfat32__boot_a687653b3b71ab0de1f27f8ab8f331a1c}{sectors\-Per\-Fat32}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a4f864cefb7f1b004d5739ffab9a65ae1}{fat32\-Flags}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a8f27235fa3dee48a4b4e099135fc81d6}{fat32\-Version}
+\item 
+uint32\-\_\-t \hyperlink{structfat32__boot_a58249ed4ed0f92d5768f2342f248af82}{fat32\-Root\-Cluster}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_aad3222ea255af06d09734e96a93c82ed}{fat32\-F\-S\-Info}
+\item 
+uint16\-\_\-t \hyperlink{structfat32__boot_a1914baf34756efd18072059dccfcf40f}{fat32\-Back\-Boot\-Block}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_ae31dc7ad96aec8e0d184fd7e5a97f30d}{fat32\-Reserved} \mbox{[}12\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_aa7c65fdb4f759fca094105d1c870bcb2}{drive\-Number}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a2a2556147677ece60b8aadf4a0d608ed}{reserved1}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_acc4a4e4c22b630d12c1b2c2b8c7eb366}{boot\-Signature}
+\item 
+uint32\-\_\-t \hyperlink{structfat32__boot_a7c9ffcee12051cefe1724e8024af25f8}{volume\-Serial\-Number}
+\item 
+char \hyperlink{structfat32__boot_a253960050a38d2bfb2f57e86769aca62}{volume\-Label} \mbox{[}11\mbox{]}
+\item 
+char \hyperlink{structfat32__boot_adf80bb044ef7c8ac6d371268aa338e23}{file\-System\-Type} \mbox{[}8\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a5d683c906867f4e0122d2ce3462de292}{boot\-Code} \mbox{[}420\mbox{]}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_abdaf2cc75b74800944ede557442ca5bd}{boot\-Sector\-Sig0}
+\item 
+uint8\-\_\-t \hyperlink{structfat32__boot_a44983e94ecddbdcb7ab691e493a13d94}{boot\-Sector\-Sig1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Boot sector for a F\-A\-T32 volume. 
+
+\subsection{Field Documentation}
+\hypertarget{structfat32__boot_a5d683c906867f4e0122d2ce3462de292}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!boot\-Code@{boot\-Code}}
+\index{boot\-Code@{boot\-Code}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{boot\-Code}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Code\mbox{[}420\mbox{]}}}\label{structfat32__boot_a5d683c906867f4e0122d2ce3462de292}
+X86 boot code \hypertarget{structfat32__boot_abdaf2cc75b74800944ede557442ca5bd}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!boot\-Sector\-Sig0@{boot\-Sector\-Sig0}}
+\index{boot\-Sector\-Sig0@{boot\-Sector\-Sig0}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{boot\-Sector\-Sig0}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Sector\-Sig0}}\label{structfat32__boot_abdaf2cc75b74800944ede557442ca5bd}
+must be 0\-X55 \hypertarget{structfat32__boot_a44983e94ecddbdcb7ab691e493a13d94}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!boot\-Sector\-Sig1@{boot\-Sector\-Sig1}}
+\index{boot\-Sector\-Sig1@{boot\-Sector\-Sig1}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{boot\-Sector\-Sig1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Sector\-Sig1}}\label{structfat32__boot_a44983e94ecddbdcb7ab691e493a13d94}
+must be 0\-X\-A\-A \hypertarget{structfat32__boot_acc4a4e4c22b630d12c1b2c2b8c7eb366}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!boot\-Signature@{boot\-Signature}}
+\index{boot\-Signature@{boot\-Signature}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{boot\-Signature}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t boot\-Signature}}\label{structfat32__boot_acc4a4e4c22b630d12c1b2c2b8c7eb366}
+0\-X29 if next three fields are valid \hypertarget{structfat32__boot_adb2ddeae74baf681103d21d724814a63}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!bytes\-Per\-Sector@{bytes\-Per\-Sector}}
+\index{bytes\-Per\-Sector@{bytes\-Per\-Sector}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{bytes\-Per\-Sector}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t bytes\-Per\-Sector}}\label{structfat32__boot_adb2ddeae74baf681103d21d724814a63}
+The size of a hardware sector. Valid decimal values for this field are 512, 1024, 2048, and 4096. For most disks used in the United States, the value of this field is 512. \hypertarget{structfat32__boot_aa7c65fdb4f759fca094105d1c870bcb2}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!drive\-Number@{drive\-Number}}
+\index{drive\-Number@{drive\-Number}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{drive\-Number}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t drive\-Number}}\label{structfat32__boot_aa7c65fdb4f759fca094105d1c870bcb2}
+Related to the B\-I\-O\-S physical drive number. Floppy drives are identified as 0x00 and physical hard disks are identified as 0x80, regardless of the number of physical disk drives. Typically, this value is set prior to issuing an I\-N\-T 13h B\-I\-O\-S call to specify the device to access. The value is only relevant if the device is a boot device. \hypertarget{structfat32__boot_a1914baf34756efd18072059dccfcf40f}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-Back\-Boot\-Block@{fat32\-Back\-Boot\-Block}}
+\index{fat32\-Back\-Boot\-Block@{fat32\-Back\-Boot\-Block}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-Back\-Boot\-Block}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Back\-Boot\-Block}}\label{structfat32__boot_a1914baf34756efd18072059dccfcf40f}
+If nonzero, indicates the sector number in the reserved area of the volume of a copy of the boot record. Usually 6. No value other than 6 is recommended. \hypertarget{structfat32__boot_a4f864cefb7f1b004d5739ffab9a65ae1}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-Flags@{fat32\-Flags}}
+\index{fat32\-Flags@{fat32\-Flags}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-Flags}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Flags}}\label{structfat32__boot_a4f864cefb7f1b004d5739ffab9a65ae1}
+This field is only defined for F\-A\-T32 media and does not exist on F\-A\-T12 and F\-A\-T16 media. Bits 0-\/3 -- Zero-\/based number of active F\-A\-T. Only valid if mirroring is disabled. Bits 4-\/6 -- Reserved. Bit 7 -- 0 means the F\-A\-T is mirrored at runtime into all F\-A\-Ts. -- 1 means only one F\-A\-T is active; it is the one referenced in bits 0-\/3. Bits 8-\/15 -- Reserved. \hypertarget{structfat32__boot_aad3222ea255af06d09734e96a93c82ed}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-F\-S\-Info@{fat32\-F\-S\-Info}}
+\index{fat32\-F\-S\-Info@{fat32\-F\-S\-Info}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-F\-S\-Info}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-F\-S\-Info}}\label{structfat32__boot_aad3222ea255af06d09734e96a93c82ed}
+Sector number of F\-S\-I\-N\-F\-O structure in the reserved area of the F\-A\-T32 volume. Usually 1. \hypertarget{structfat32__boot_ae31dc7ad96aec8e0d184fd7e5a97f30d}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-Reserved@{fat32\-Reserved}}
+\index{fat32\-Reserved@{fat32\-Reserved}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-Reserved}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t fat32\-Reserved\mbox{[}12\mbox{]}}}\label{structfat32__boot_ae31dc7ad96aec8e0d184fd7e5a97f30d}
+Reserved for future expansion. Code that formats F\-A\-T32 volumes should always set all of the bytes of this field to 0. \hypertarget{structfat32__boot_a58249ed4ed0f92d5768f2342f248af82}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-Root\-Cluster@{fat32\-Root\-Cluster}}
+\index{fat32\-Root\-Cluster@{fat32\-Root\-Cluster}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-Root\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t fat32\-Root\-Cluster}}\label{structfat32__boot_a58249ed4ed0f92d5768f2342f248af82}
+Cluster number of the first cluster of the root directory for F\-A\-T32. This usually 2 but not required to be 2. \hypertarget{structfat32__boot_a8f27235fa3dee48a4b4e099135fc81d6}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat32\-Version@{fat32\-Version}}
+\index{fat32\-Version@{fat32\-Version}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat32\-Version}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t fat32\-Version}}\label{structfat32__boot_a8f27235fa3dee48a4b4e099135fc81d6}
+F\-A\-T32 version. High byte is major revision number. Low byte is minor revision number. Only 0.\-0 define. \hypertarget{structfat32__boot_a624e9eb125b4fc8aeaebcccf79e17aa8}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!fat\-Count@{fat\-Count}}
+\index{fat\-Count@{fat\-Count}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{fat\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t fat\-Count}}\label{structfat32__boot_a624e9eb125b4fc8aeaebcccf79e17aa8}
+The number of copies of the F\-A\-T on the volume. The value of this field is always 2. \hypertarget{structfat32__boot_adf80bb044ef7c8ac6d371268aa338e23}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!file\-System\-Type@{file\-System\-Type}}
+\index{file\-System\-Type@{file\-System\-Type}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{file\-System\-Type}]{\setlength{\rightskip}{0pt plus 5cm}char file\-System\-Type\mbox{[}8\mbox{]}}}\label{structfat32__boot_adf80bb044ef7c8ac6d371268aa338e23}
+A text field with a value of F\-A\-T32. \hypertarget{structfat32__boot_a57cb7e16b9969fa87c9f1ca43a87d217}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!head\-Count@{head\-Count}}
+\index{head\-Count@{head\-Count}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{head\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t head\-Count}}\label{structfat32__boot_a57cb7e16b9969fa87c9f1ca43a87d217}
+Number of heads for interrupt 0x13. Not used otherwise. \hypertarget{structfat32__boot_a454fd6cc3f063c86b7fe65c367da7cdd}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!hiddden\-Sectors@{hiddden\-Sectors}}
+\index{hiddden\-Sectors@{hiddden\-Sectors}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{hiddden\-Sectors}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t hiddden\-Sectors}}\label{structfat32__boot_a454fd6cc3f063c86b7fe65c367da7cdd}
+Count of hidden sectors preceding the partition that contains this F\-A\-T volume. This field is generally only relevant for media visible on interrupt 0x13. \hypertarget{structfat32__boot_a61b95cffdd449d10352cfd0288b23287}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!jump@{jump}}
+\index{jump@{jump}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{jump}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t jump\mbox{[}3\mbox{]}}}\label{structfat32__boot_a61b95cffdd449d10352cfd0288b23287}
+The first three bytes of the boot sector must be valid, executable x 86-\/based C\-P\-U instructions. This includes a jump instruction that skips the next nonexecutable bytes. \hypertarget{structfat32__boot_ab88738f9cb91c882cb91d5e83a19a73f}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!media\-Type@{media\-Type}}
+\index{media\-Type@{media\-Type}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{media\-Type}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t media\-Type}}\label{structfat32__boot_ab88738f9cb91c882cb91d5e83a19a73f}
+This dates back to the old M\-S-\/\-D\-O\-S 1.\-x media determination and is no longer usually used for anything. 0x\-F8 is the standard value for fixed (nonremovable) media. For removable media, 0x\-F0 is frequently used. Legal values are 0x\-F0 or 0x\-F8-\/0x\-F\-F. \hypertarget{structfat32__boot_adff248465625d1fa3583bfcf2838620d}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!oem\-Id@{oem\-Id}}
+\index{oem\-Id@{oem\-Id}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{oem\-Id}]{\setlength{\rightskip}{0pt plus 5cm}char oem\-Id\mbox{[}8\mbox{]}}}\label{structfat32__boot_adff248465625d1fa3583bfcf2838620d}
+This is typically a string of characters that identifies the operating system that formatted the volume. \hypertarget{structfat32__boot_a2a2556147677ece60b8aadf4a0d608ed}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!reserved1@{reserved1}}
+\index{reserved1@{reserved1}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{reserved1}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t reserved1}}\label{structfat32__boot_a2a2556147677ece60b8aadf4a0d608ed}
+used by Windows N\-T -\/ should be zero for F\-A\-T \hypertarget{structfat32__boot_a16c854faf567331bbbfb383e6c8df6f5}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!reserved\-Sector\-Count@{reserved\-Sector\-Count}}
+\index{reserved\-Sector\-Count@{reserved\-Sector\-Count}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{reserved\-Sector\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t reserved\-Sector\-Count}}\label{structfat32__boot_a16c854faf567331bbbfb383e6c8df6f5}
+The number of sectors preceding the start of the first F\-A\-T, including the boot sector. Must not be zero \hypertarget{structfat32__boot_aabe25e54b9c06a9a7393fc6c475d9fa1}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!root\-Dir\-Entry\-Count@{root\-Dir\-Entry\-Count}}
+\index{root\-Dir\-Entry\-Count@{root\-Dir\-Entry\-Count}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{root\-Dir\-Entry\-Count}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t root\-Dir\-Entry\-Count}}\label{structfat32__boot_aabe25e54b9c06a9a7393fc6c475d9fa1}
+F\-A\-T12/\-F\-A\-T16 only. For F\-A\-T32 volumes, this field must be set to 0. \hypertarget{structfat32__boot_a3ce07376c286acd8393a18a32d7ca4c0}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!sectors\-Per\-Cluster@{sectors\-Per\-Cluster}}
+\index{sectors\-Per\-Cluster@{sectors\-Per\-Cluster}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{sectors\-Per\-Cluster}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t sectors\-Per\-Cluster}}\label{structfat32__boot_a3ce07376c286acd8393a18a32d7ca4c0}
+Number of sectors per allocation unit. This value must be a power of 2 that is greater than 0. The legal values are 1, 2, 4, 8, 16, 32, 64, and 128. 128 should be avoided. \hypertarget{structfat32__boot_abf85d1c57b01c8901a0cdcd0ac1babc2}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!sectors\-Per\-Fat16@{sectors\-Per\-Fat16}}
+\index{sectors\-Per\-Fat16@{sectors\-Per\-Fat16}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{sectors\-Per\-Fat16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sectors\-Per\-Fat16}}\label{structfat32__boot_abf85d1c57b01c8901a0cdcd0ac1babc2}
+On F\-A\-T32 volumes this field must be 0, and sectors\-Per\-Fat32 contains the F\-A\-T size count. \hypertarget{structfat32__boot_a687653b3b71ab0de1f27f8ab8f331a1c}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!sectors\-Per\-Fat32@{sectors\-Per\-Fat32}}
+\index{sectors\-Per\-Fat32@{sectors\-Per\-Fat32}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{sectors\-Per\-Fat32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t sectors\-Per\-Fat32}}\label{structfat32__boot_a687653b3b71ab0de1f27f8ab8f331a1c}
+Count of sectors occupied by one F\-A\-T on F\-A\-T32 volumes. \hypertarget{structfat32__boot_a42886f9109ee1759d5972e871f0689a8}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!sectors\-Per\-Track@{sectors\-Per\-Track}}
+\index{sectors\-Per\-Track@{sectors\-Per\-Track}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{sectors\-Per\-Track}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t sectors\-Per\-Track}}\label{structfat32__boot_a42886f9109ee1759d5972e871f0689a8}
+Sectors per track for interrupt 0x13. Not used otherwise. \hypertarget{structfat32__boot_ad717f5b9af13f8ec9d0d6d1337174dfa}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!total\-Sectors16@{total\-Sectors16}}
+\index{total\-Sectors16@{total\-Sectors16}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{total\-Sectors16}]{\setlength{\rightskip}{0pt plus 5cm}uint16\-\_\-t total\-Sectors16}}\label{structfat32__boot_ad717f5b9af13f8ec9d0d6d1337174dfa}
+For F\-A\-T32 volumes, this field must be 0. \hypertarget{structfat32__boot_a64d5902f9e900ecc745b1c0b325d875f}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!total\-Sectors32@{total\-Sectors32}}
+\index{total\-Sectors32@{total\-Sectors32}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{total\-Sectors32}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t total\-Sectors32}}\label{structfat32__boot_a64d5902f9e900ecc745b1c0b325d875f}
+Contains the total number of sectors in the F\-A\-T32 volume. \hypertarget{structfat32__boot_a253960050a38d2bfb2f57e86769aca62}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!volume\-Label@{volume\-Label}}
+\index{volume\-Label@{volume\-Label}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{volume\-Label}]{\setlength{\rightskip}{0pt plus 5cm}char volume\-Label\mbox{[}11\mbox{]}}}\label{structfat32__boot_a253960050a38d2bfb2f57e86769aca62}
+A field once used to store the volume label. The volume label is now stored as a special file in the root directory. \hypertarget{structfat32__boot_a7c9ffcee12051cefe1724e8024af25f8}{\index{fat32\-\_\-boot@{fat32\-\_\-boot}!volume\-Serial\-Number@{volume\-Serial\-Number}}
+\index{volume\-Serial\-Number@{volume\-Serial\-Number}!fat32_boot@{fat32\-\_\-boot}}
+\subsubsection[{volume\-Serial\-Number}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t volume\-Serial\-Number}}\label{structfat32__boot_a7c9ffcee12051cefe1724e8024af25f8}
+A random serial number created when formatting a disk, which helps to distinguish between disks. Usually generated by combining date and time. 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd_fat_structs_8h}{Sd\-Fat\-Structs.\-h}\end{DoxyCompactItemize}

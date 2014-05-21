@@ -1,0 +1,387 @@
+\hypertarget{class_sd2_card}{\section{Sd2\-Card Class Reference}
+\label{class_sd2_card}\index{Sd2\-Card@{Sd2\-Card}}
+}
+
+
+Raw access to S\-D and S\-D\-H\-C flash memory cards.  
+
+
+
+
+{\ttfamily \#include $<$Sd2\-Card.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sd2_card_a1f49fb22b3890260d2b8672010b17f49}{Sd2\-Card} ()
+\item 
+uint32\-\_\-t \hyperlink{class_sd2_card_a5ee7bcd3bda0173fa477efa86eaeab1a}{card\-Size} ()
+\item 
+bool \hyperlink{class_sd2_card_a9d1aea769c0e71a39d5bcd1c5d8ce446}{erase} (uint32\-\_\-t first\-Block, uint32\-\_\-t last\-Block)
+\item 
+bool \hyperlink{class_sd2_card_ae780c9bffb14b9fbf7077d97fb810976}{erase\-Single\-Block\-Enable} ()
+\item 
+void \hyperlink{class_sd2_card_aeca83c66edec1c068e687051abe76635}{error} (uint8\-\_\-t code)
+\item 
+int \hyperlink{class_sd2_card_ad8be6f07f86730f2b2fed4bb34b10f33}{error\-Code} () const 
+\item 
+int \hyperlink{class_sd2_card_a6f85fee8f55dfe119a47647cd4dfbcb9}{error\-Data} () const 
+\item 
+bool \hyperlink{class_sd2_card_a008934b78ad099ce978883287b320b47}{init} (uint8\-\_\-t sck\-Rate\-I\-D=\hyperlink{_sd2_card_8h_a6c091c07d1eb82a94b1c5738f720264b}{S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D}, uint8\-\_\-t chip\-Select\-Pin=\hyperlink{_sd2_card_8h_ae6b17538c14ba6c91ccb513db2c4c29c}{S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N})
+\item 
+bool \hyperlink{class_sd2_card_a2d3c126910c2c0c9d6ac468a459eec39}{read\-Block} (uint32\-\_\-t block, uint8\-\_\-t $\ast$dst)
+\item 
+bool \hyperlink{class_sd2_card_ac2a262a5e6c508ec5d5b312f01b54e67}{read\-C\-I\-D} (cid\-\_\-t $\ast$cid)
+\item 
+bool \hyperlink{class_sd2_card_a4a73b4acf0416c0edd9ced858ad37656}{read\-C\-S\-D} (\hyperlink{unioncsd__t}{csd\-\_\-t} $\ast$csd)
+\item 
+bool \hyperlink{class_sd2_card_ace9c999f7d24d3382bb6a32ac1f271d1}{read\-Data} (uint8\-\_\-t $\ast$dst)
+\item 
+bool \hyperlink{class_sd2_card_a2d7e430e3cb4a8509b356b94481ea3bd}{read\-Start} (uint32\-\_\-t block\-Number)
+\item 
+bool \hyperlink{class_sd2_card_a0d8e8db6267dc686d0de12986f432684}{read\-Stop} ()
+\item 
+bool \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{set\-Sck\-Rate} (uint8\-\_\-t sck\-Rate\-I\-D)
+\item 
+int \hyperlink{class_sd2_card_a4609e33962a63a3b71f17de25e8745aa}{type} () const 
+\item 
+bool \hyperlink{class_sd2_card_af3f9516d0822ed675bf92a56c96ebf71}{write\-Block} (uint32\-\_\-t block\-Number, const uint8\-\_\-t $\ast$src)
+\item 
+bool \hyperlink{class_sd2_card_a29c4fb0721e5ef10b73dfc2d44ae080a}{write\-Data} (const uint8\-\_\-t $\ast$src)
+\item 
+bool \hyperlink{class_sd2_card_acb9f3776c0a7041e1bf2250a6b8dffbe}{write\-Start} (uint32\-\_\-t block\-Number, uint32\-\_\-t erase\-Count)
+\item 
+bool \hyperlink{class_sd2_card_ac4d108c05f53df893d53b7848fc364d8}{write\-Stop} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Raw access to S\-D and S\-D\-H\-C flash memory cards. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sd2_card_a1f49fb22b3890260d2b8672010b17f49}{\index{Sd2\-Card@{Sd2\-Card}!Sd2\-Card@{Sd2\-Card}}
+\index{Sd2\-Card@{Sd2\-Card}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{Sd2\-Card}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Sd2\-Card} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_a1f49fb22b3890260d2b8672010b17f49}
+Construct an instance of \hyperlink{class_sd2_card}{Sd2\-Card}. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sd2_card_a5ee7bcd3bda0173fa477efa86eaeab1a}{\index{Sd2\-Card@{Sd2\-Card}!card\-Size@{card\-Size}}
+\index{card\-Size@{card\-Size}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{card\-Size}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t card\-Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a5ee7bcd3bda0173fa477efa86eaeab1a}
+Determine the size of an S\-D flash memory card.
+
+\begin{DoxyReturn}{Returns}
+The number of 512 byte data blocks in the card or zero if an error occurs. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a9d1aea769c0e71a39d5bcd1c5d8ce446}{\index{Sd2\-Card@{Sd2\-Card}!erase@{erase}}
+\index{erase@{erase}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}bool erase (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{first\-Block, }
+\item[{uint32\-\_\-t}]{last\-Block}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a9d1aea769c0e71a39d5bcd1c5d8ce446}
+Erase a range of blocks.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first\-Block} & The address of the first block in the range. \\
+\hline
+\mbox{\tt in}  & {\em last\-Block} & The address of the last block in the range.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function requests the S\-D card to do a flash erase for a range of blocks. The data on the card after an erase operation is either 0 or 1, depends on the card vendor. The card must support single block erase.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_ae780c9bffb14b9fbf7077d97fb810976}{\index{Sd2\-Card@{Sd2\-Card}!erase\-Single\-Block\-Enable@{erase\-Single\-Block\-Enable}}
+\index{erase\-Single\-Block\-Enable@{erase\-Single\-Block\-Enable}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{erase\-Single\-Block\-Enable}]{\setlength{\rightskip}{0pt plus 5cm}bool erase\-Single\-Block\-Enable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_ae780c9bffb14b9fbf7077d97fb810976}
+Determine if card supports single block erase.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned if single block erase is supported. The value zero, false, is returned if single block erase is not supported. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_aeca83c66edec1c068e687051abe76635}{\index{Sd2\-Card@{Sd2\-Card}!error@{error}}
+\index{error@{error}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{error}]{\setlength{\rightskip}{0pt plus 5cm}void error (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{code}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_aeca83c66edec1c068e687051abe76635}
+Set S\-D error code. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em code} & value for error code. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_sd2_card_ad8be6f07f86730f2b2fed4bb34b10f33}{\index{Sd2\-Card@{Sd2\-Card}!error\-Code@{error\-Code}}
+\index{error\-Code@{error\-Code}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{error\-Code}]{\setlength{\rightskip}{0pt plus 5cm}int error\-Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_ad8be6f07f86730f2b2fed4bb34b10f33}
+\begin{DoxyReturn}{Returns}
+error code for last error. See \hyperlink{_sd2_card_8h}{Sd2\-Card.\-h} for a list of error codes. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a6f85fee8f55dfe119a47647cd4dfbcb9}{\index{Sd2\-Card@{Sd2\-Card}!error\-Data@{error\-Data}}
+\index{error\-Data@{error\-Data}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{error\-Data}]{\setlength{\rightskip}{0pt plus 5cm}int error\-Data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_a6f85fee8f55dfe119a47647cd4dfbcb9}
+\begin{DoxyReturn}{Returns}
+error data for last error. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a008934b78ad099ce978883287b320b47}{\index{Sd2\-Card@{Sd2\-Card}!init@{init}}
+\index{init@{init}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}bool init (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{sck\-Rate\-I\-D = {\ttfamily {\bf S\-P\-I\-\_\-\-F\-U\-L\-L\-\_\-\-S\-P\-E\-E\-D}}, }
+\item[{uint8\-\_\-t}]{chip\-Select\-Pin = {\ttfamily {\bf S\-D\-\_\-\-C\-H\-I\-P\-\_\-\-S\-E\-L\-E\-C\-T\-\_\-\-P\-I\-N}}}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a008934b78ad099ce978883287b320b47}
+Initialize an S\-D flash memory card with default clock rate and chip select pin. See sd2\-Card\-::init(uint8\-\_\-t sck\-Rate\-I\-D, uint8\-\_\-t chip\-Select\-Pin).
+
+\begin{DoxyReturn}{Returns}
+true for success or false for failure.
+\end{DoxyReturn}
+Initialize an S\-D flash memory card.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sck\-Rate\-I\-D} & S\-P\-I clock rate selector. See \hyperlink{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{set\-Sck\-Rate()}. \\
+\hline
+\mbox{\tt in}  & {\em chip\-Select\-Pin} & S\-D chip select pin number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. The reason for failure can be determined by calling \hyperlink{class_sd2_card_ad8be6f07f86730f2b2fed4bb34b10f33}{error\-Code()} and \hyperlink{class_sd2_card_a6f85fee8f55dfe119a47647cd4dfbcb9}{error\-Data()}. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a2d3c126910c2c0c9d6ac468a459eec39}{\index{Sd2\-Card@{Sd2\-Card}!read\-Block@{read\-Block}}
+\index{read\-Block@{read\-Block}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-Block}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-Block (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-Number, }
+\item[{uint8\-\_\-t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a2d3c126910c2c0c9d6ac468a459eec39}
+Read a 512 byte block from an S\-D card.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em block\-Number} & Logical block to be read. \\
+\hline
+\mbox{\tt out}  & {\em dst} & Pointer to the location that will receive the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_ac2a262a5e6c508ec5d5b312f01b54e67}{\index{Sd2\-Card@{Sd2\-Card}!read\-C\-I\-D@{read\-C\-I\-D}}
+\index{read\-C\-I\-D@{read\-C\-I\-D}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-C\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-C\-I\-D (
+\begin{DoxyParamCaption}
+\item[{cid\-\_\-t $\ast$}]{cid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_ac2a262a5e6c508ec5d5b312f01b54e67}
+Read a card's \hyperlink{struct_c_i_d}{C\-I\-D} register. The \hyperlink{struct_c_i_d}{C\-I\-D} contains card identification information such as Manufacturer I\-D, Product name, Product serial number and Manufacturing date.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em cid} & pointer to area for returned data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a4a73b4acf0416c0edd9ced858ad37656}{\index{Sd2\-Card@{Sd2\-Card}!read\-C\-S\-D@{read\-C\-S\-D}}
+\index{read\-C\-S\-D@{read\-C\-S\-D}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-C\-S\-D}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-C\-S\-D (
+\begin{DoxyParamCaption}
+\item[{{\bf csd\-\_\-t} $\ast$}]{csd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_a4a73b4acf0416c0edd9ced858ad37656}
+Read a card's C\-S\-D register. The C\-S\-D contains Card-\/\-Specific Data that provides information regarding access to the card's contents.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt out}  & {\em csd} & pointer to area for returned data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for success or false for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_ace9c999f7d24d3382bb6a32ac1f271d1}{\index{Sd2\-Card@{Sd2\-Card}!read\-Data@{read\-Data}}
+\index{read\-Data@{read\-Data}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-Data (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{dst}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_ace9c999f7d24d3382bb6a32ac1f271d1}
+Read one data block in a multiple block read sequence
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dst} & Pointer to the location for the data to be read.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a2d7e430e3cb4a8509b356b94481ea3bd}{\index{Sd2\-Card@{Sd2\-Card}!read\-Start@{read\-Start}}
+\index{read\-Start@{read\-Start}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-Start (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-Number}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a2d7e430e3cb4a8509b356b94481ea3bd}
+Start a read multiple blocks sequence.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em block\-Number} & Address of first block in sequence.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is used with \hyperlink{class_sd2_card_ace9c999f7d24d3382bb6a32ac1f271d1}{read\-Data()} and \hyperlink{class_sd2_card_a0d8e8db6267dc686d0de12986f432684}{read\-Stop()} for optimized multiple block reads. S\-P\-I chip\-Select must be low for the entire sequence.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a0d8e8db6267dc686d0de12986f432684}{\index{Sd2\-Card@{Sd2\-Card}!read\-Stop@{read\-Stop}}
+\index{read\-Stop@{read\-Stop}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{read\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}bool read\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a0d8e8db6267dc686d0de12986f432684}
+End a read multiple blocks sequence.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a990e65b665bf8b131c864c6aba983141}{\index{Sd2\-Card@{Sd2\-Card}!set\-Sck\-Rate@{set\-Sck\-Rate}}
+\index{set\-Sck\-Rate@{set\-Sck\-Rate}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{set\-Sck\-Rate}]{\setlength{\rightskip}{0pt plus 5cm}bool set\-Sck\-Rate (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{sck\-Rate\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a990e65b665bf8b131c864c6aba983141}
+Set the S\-P\-I clock rate.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sck\-Rate\-I\-D} & A value in the range \mbox{[}0, 14\mbox{]}.\\
+\hline
+\end{DoxyParams}
+The S\-P\-I clock divisor will be set to approximately
+
+(2 + (sck\-Rate\-I\-D \& 1)) $<$$<$ ( sck\-Rate\-I\-D/2)
+
+The maximum S\-P\-I rate is F\-\_\-\-C\-P\-U/2 for {\itshape sck\-Rate\-I\-D} = 0 and the rate is F\-\_\-\-C\-P\-U/128 for {\itshape scs\-Rate\-I\-D} = 12.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for an invalid value of {\itshape sck\-Rate\-I\-D}. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a4609e33962a63a3b71f17de25e8745aa}{\index{Sd2\-Card@{Sd2\-Card}!type@{type}}
+\index{type@{type}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}int type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_sd2_card_a4609e33962a63a3b71f17de25e8745aa}
+Return the card type\-: S\-D V1, S\-D V2 or S\-D\-H\-C \begin{DoxyReturn}{Returns}
+0 -\/ S\-D V1, 1 -\/ S\-D V2, or 3 -\/ S\-D\-H\-C. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_af3f9516d0822ed675bf92a56c96ebf71}{\index{Sd2\-Card@{Sd2\-Card}!write\-Block@{write\-Block}}
+\index{write\-Block@{write\-Block}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{write\-Block}]{\setlength{\rightskip}{0pt plus 5cm}bool write\-Block (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-Number, }
+\item[{const uint8\-\_\-t $\ast$}]{src}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_af3f9516d0822ed675bf92a56c96ebf71}
+Writes a 512 byte block to an S\-D card.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em block\-Number} & Logical block to be written. \\
+\hline
+\mbox{\tt in}  & {\em src} & Pointer to the location of the data to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_a29c4fb0721e5ef10b73dfc2d44ae080a}{\index{Sd2\-Card@{Sd2\-Card}!write\-Data@{write\-Data}}
+\index{write\-Data@{write\-Data}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{write\-Data}]{\setlength{\rightskip}{0pt plus 5cm}bool write\-Data (
+\begin{DoxyParamCaption}
+\item[{const uint8\-\_\-t $\ast$}]{src}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_a29c4fb0721e5ef10b73dfc2d44ae080a}
+Write one data block in a multiple block write sequence 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em src} & Pointer to the location of the data to be written. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_acb9f3776c0a7041e1bf2250a6b8dffbe}{\index{Sd2\-Card@{Sd2\-Card}!write\-Start@{write\-Start}}
+\index{write\-Start@{write\-Start}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{write\-Start}]{\setlength{\rightskip}{0pt plus 5cm}bool write\-Start (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{block\-Number, }
+\item[{uint32\-\_\-t}]{erase\-Count}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_acb9f3776c0a7041e1bf2250a6b8dffbe}
+Start a write multiple blocks sequence.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em block\-Number} & Address of first block in sequence. \\
+\hline
+\mbox{\tt in}  & {\em erase\-Count} & The number of blocks to be pre-\/erased.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+This function is used with \hyperlink{class_sd2_card_a29c4fb0721e5ef10b73dfc2d44ae080a}{write\-Data()} and \hyperlink{class_sd2_card_ac4d108c05f53df893d53b7848fc364d8}{write\-Stop()} for optimized multiple block writes.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+\hypertarget{class_sd2_card_ac4d108c05f53df893d53b7848fc364d8}{\index{Sd2\-Card@{Sd2\-Card}!write\-Stop@{write\-Stop}}
+\index{write\-Stop@{write\-Stop}!Sd2Card@{Sd2\-Card}}
+\subsubsection[{write\-Stop}]{\setlength{\rightskip}{0pt plus 5cm}bool write\-Stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_sd2_card_ac4d108c05f53df893d53b7848fc364d8}
+End a write multiple blocks sequence.
+
+\begin{DoxyReturn}{Returns}
+The value one, true, is returned for success and the value zero, false, is returned for failure. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/\hyperlink{_sd2_card_8h}{Sd2\-Card.\-h}\item 
+C\-:/arbitros/trunk/libraries/sd/\-Sd\-Fat/Sd2\-Card.\-cpp\end{DoxyCompactItemize}

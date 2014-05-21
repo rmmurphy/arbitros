@@ -1,0 +1,125 @@
+\hypertarget{utl__state_machine_8h}{\section{C\-:/arbitros/trunk/utilities/headers/common/utl\-\_\-state\-Machine.h File Reference}
+\label{utl__state_machine_8h}\index{C\-:/arbitros/trunk/utilities/headers/common/utl\-\_\-state\-Machine.\-h@{C\-:/arbitros/trunk/utilities/headers/common/utl\-\_\-state\-Machine.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utl__state_machine_8h_adb1f7f6578ce0b87f94741f96d53cde8}{utl\-\_\-state\-Machine\-\_\-h}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \{ \\*
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a980ebcd3004cb30c025ef87a202353d9}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E} = -\/4, 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a4bfea3e384954d1fc3917818ea14058a}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S} = -\/3, 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789aab8ab2360ef82dd3e5e1beddd7c1ebd4}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E} = -\/2, 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a389cbf5b6ca7b612075d05e968db541e}{S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P} = -\/1, 
+\\*
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a495075c06efefefca4726f49d32b39ee}{S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D} = 0
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \hyperlink{utl__state_machine_8h_a2a67fb4870c6faee711b3de276c53f72}{utl\-\_\-st\-Mn\-Change\-State} (\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} t\-\_\-handle, int8\-\_\-t c\-\_\-new\-State, int32\-\_\-t i\-\_\-state\-Data)
+\item 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \hyperlink{utl__state_machine_8h_a1f666ec2946391cba542ad655527c12a}{utl\-\_\-st\-Mn\-Engine} (\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} t\-\_\-handle)
+\item 
+\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} \hyperlink{utl__state_machine_8h_a16e207b30769f51ba63fd8b35f6e3b26}{utl\-\_\-request\-St\-Mn\-Object} (uint8\-\_\-t c\-\_\-num\-States, uint8\-\_\-t c\-\_\-starting\-State)
+\item 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \hyperlink{utl__state_machine_8h_a1a5ddeaeaa7d7e7d2bdf4814a1b24877}{utl\-\_\-release\-St\-Mn\-Object} (\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} t\-\_\-handle)
+\item 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \hyperlink{utl__state_machine_8h_ac275e47ec2b4a378f166e1ab29835a10}{utl\-\_\-st\-Mn\-Pop\-Fun\-Map} (\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} t\-\_\-handle, void($\ast$pf\-\_\-fun\-Ptr)(int32\-\_\-t, uint8\-\_\-t), uint8\-\_\-t c\-\_\-state)
+\item 
+\hyperlink{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{t\-\_\-stmn\-Error} \hyperlink{utl__state_machine_8h_ac4f52582eb63b2dd4ffa5b5f9220e3e6}{utl\-\_\-st\-Mn\-Pop\-Trans\-Map} (\hyperlink{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} t\-\_\-handle, uint8\-\_\-t $\ast$pc\-\_\-trans\-Map)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{utl__state_machine_8h_adb1f7f6578ce0b87f94741f96d53cde8}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-state\-Machine\-\_\-h@{utl\-\_\-state\-Machine\-\_\-h}}
+\index{utl\-\_\-state\-Machine\-\_\-h@{utl\-\_\-state\-Machine\-\_\-h}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-state\-Machine\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define utl\-\_\-state\-Machine\-\_\-h}}\label{utl__state_machine_8h_adb1f7f6578ce0b87f94741f96d53cde8}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L@{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}
+\index{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L@{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}}\label{utl__state_machine_8h_ac2f96cf66e28df1bb95833af44e01622}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!t\-\_\-stmn\-Error@{t\-\_\-stmn\-Error}}
+\index{t\-\_\-stmn\-Error@{t\-\_\-stmn\-Error}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{t\-\_\-stmn\-Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-stmn\-Error}}}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E}!utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}}\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E}}\item[{\em 
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a980ebcd3004cb30c025ef87a202353d9}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-S\-T\-A\-T\-E}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a980ebcd3004cb30c025ef87a202353d9}
+}]\index{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S}!utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}}\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S}}\item[{\em 
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a4bfea3e384954d1fc3917818ea14058a}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-T\-R\-A\-N\-S}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a4bfea3e384954d1fc3917818ea14058a}
+}]\index{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}!utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}}\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E@{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}}\item[{\em 
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789aab8ab2360ef82dd3e5e1beddd7c1ebd4}{S\-T\-M\-N\-\_\-\-I\-N\-V\-A\-L\-I\-D\-\_\-\-H\-A\-N\-D\-L\-E}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789aab8ab2360ef82dd3e5e1beddd7c1ebd4}
+}]\index{S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}!utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}}\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P@{S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}}\item[{\em 
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a389cbf5b6ca7b612075d05e968db541e}{S\-T\-M\-N\-\_\-\-O\-U\-T\-\_\-\-O\-F\-\_\-\-H\-E\-A\-P}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a389cbf5b6ca7b612075d05e968db541e}
+}]\index{S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D@{S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D}!utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}}\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D@{S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D}}\item[{\em 
+\hypertarget{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a495075c06efefefca4726f49d32b39ee}{S\-T\-M\-N\-\_\-\-P\-A\-S\-S\-E\-D}\label{utl__state_machine_8h_a9b672c7eb62048bfce726a36b0adc789a495075c06efefefca4726f49d32b39ee}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{utl__state_machine_8h_a1a5ddeaeaa7d7e7d2bdf4814a1b24877}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-release\-St\-Mn\-Object@{utl\-\_\-release\-St\-Mn\-Object}}
+\index{utl\-\_\-release\-St\-Mn\-Object@{utl\-\_\-release\-St\-Mn\-Object}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-release\-St\-Mn\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-stmn\-Error} utl\-\_\-release\-St\-Mn\-Object (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_a1a5ddeaeaa7d7e7d2bdf4814a1b24877}
+\hypertarget{utl__state_machine_8h_a16e207b30769f51ba63fd8b35f6e3b26}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-request\-St\-Mn\-Object@{utl\-\_\-request\-St\-Mn\-Object}}
+\index{utl\-\_\-request\-St\-Mn\-Object@{utl\-\_\-request\-St\-Mn\-Object}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-request\-St\-Mn\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L} utl\-\_\-request\-St\-Mn\-Object (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-num\-States, }
+\item[{uint8\-\_\-t}]{c\-\_\-starting\-State}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_a16e207b30769f51ba63fd8b35f6e3b26}
+\hypertarget{utl__state_machine_8h_a2a67fb4870c6faee711b3de276c53f72}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-st\-Mn\-Change\-State@{utl\-\_\-st\-Mn\-Change\-State}}
+\index{utl\-\_\-st\-Mn\-Change\-State@{utl\-\_\-st\-Mn\-Change\-State}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-st\-Mn\-Change\-State}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-stmn\-Error} utl\-\_\-st\-Mn\-Change\-State (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t}]{c\-\_\-new\-State, }
+\item[{int32\-\_\-t}]{i\-\_\-state\-Data}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_a2a67fb4870c6faee711b3de276c53f72}
+\hypertarget{utl__state_machine_8h_a1f666ec2946391cba542ad655527c12a}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-st\-Mn\-Engine@{utl\-\_\-st\-Mn\-Engine}}
+\index{utl\-\_\-st\-Mn\-Engine@{utl\-\_\-st\-Mn\-Engine}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-st\-Mn\-Engine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-stmn\-Error} utl\-\_\-st\-Mn\-Engine (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_a1f666ec2946391cba542ad655527c12a}
+\hypertarget{utl__state_machine_8h_ac275e47ec2b4a378f166e1ab29835a10}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-st\-Mn\-Pop\-Fun\-Map@{utl\-\_\-st\-Mn\-Pop\-Fun\-Map}}
+\index{utl\-\_\-st\-Mn\-Pop\-Fun\-Map@{utl\-\_\-st\-Mn\-Pop\-Fun\-Map}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-st\-Mn\-Pop\-Fun\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-stmn\-Error} utl\-\_\-st\-Mn\-Pop\-Fun\-Map (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}]{t\-\_\-handle, }
+\item[{void($\ast$)(int32\-\_\-t, uint8\-\_\-t)}]{pf\-\_\-fun\-Ptr, }
+\item[{uint8\-\_\-t}]{c\-\_\-state}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_ac275e47ec2b4a378f166e1ab29835a10}
+\hypertarget{utl__state_machine_8h_ac4f52582eb63b2dd4ffa5b5f9220e3e6}{\index{utl\-\_\-state\-Machine.\-h@{utl\-\_\-state\-Machine.\-h}!utl\-\_\-st\-Mn\-Pop\-Trans\-Map@{utl\-\_\-st\-Mn\-Pop\-Trans\-Map}}
+\index{utl\-\_\-st\-Mn\-Pop\-Trans\-Map@{utl\-\_\-st\-Mn\-Pop\-Trans\-Map}!utl_stateMachine.h@{utl\-\_\-state\-Machine.\-h}}
+\subsubsection[{utl\-\_\-st\-Mn\-Pop\-Trans\-Map}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-stmn\-Error} utl\-\_\-st\-Mn\-Pop\-Trans\-Map (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-T\-M\-N\-H\-N\-D\-L}}]{t\-\_\-handle, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-trans\-Map}
+\end{DoxyParamCaption}
+)}}\label{utl__state_machine_8h_ac4f52582eb63b2dd4ffa5b5f9220e3e6}

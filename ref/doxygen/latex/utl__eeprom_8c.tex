@@ -1,0 +1,317 @@
+\hypertarget{utl__eeprom_8c}{\section{C\-:/arbitros/trunk/utilities/source/xmega128\-A1/utl\-\_\-eeprom.c File Reference}
+\label{utl__eeprom_8c}\index{C\-:/arbitros/trunk/utilities/source/xmega128\-A1/utl\-\_\-eeprom.\-c@{C\-:/arbitros/trunk/utilities/source/xmega128\-A1/utl\-\_\-eeprom.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-memory.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-eeprom.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structeeprom}{eeprom}
+\item 
+struct \hyperlink{structt__eeprom_list}{t\-\_\-eeprom\-List}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{utl__eeprom_8c_a31abeea8d51612a6d84704a0eeba9ace}{E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E}~(32)
+\item 
+\#define \hyperlink{utl__eeprom_8c_ab5c3d2d745d2a94c1f9937a440aa2ae9}{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}~(0x1000)
+\item 
+\#define \hyperlink{utl__eeprom_8c_acc74e674e6d9a8aa8c5586073acec510}{E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S}~(64)
+\item 
+\#define \hyperlink{utl__eeprom_8c_aa48524b57f287a62653c0046c807276c}{E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R}~(0x\-B\-E\-E\-F)
+\item 
+\#define \hyperlink{utl__eeprom_8c_a333b559d912b5cc583e07e90ff81d24d}{E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}~(7)
+\item 
+\#define \hyperlink{utl__eeprom_8c_a80038b2d05dafd7d6dbbb51d651f4fdf}{E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}~(2)
+\item 
+\#define \hyperlink{utl__eeprom_8c_a88d283877ac60a1b6cd72c0e217e3014}{E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T}~(0x\-F\-F)
+\item 
+\#define \hyperlink{utl__eeprom_8c_a01b4e293fa536307d215f8b9e9125537}{N\-V\-M\-\_\-\-E\-X\-E\-C}()
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structeeprom}{eeprom} \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{utl__eeprom_8c_a5152052546cb62ff6966a312215ce5e1}{eeprom\-List\-Insert} (\hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$$\ast$pt\-\_\-new, \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$$\ast$pt\-\_\-head, \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$$\ast$pt\-\_\-tail)
+\item 
+static \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$ \hyperlink{utl__eeprom_8c_a59867cf0002b3127340ed2c214ee13c9}{utl\-\_\-find\-Handle} (\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+static \hyperlink{utl__eeprom_8h_a8b46b2a798382472df5fce7beaa300ff}{t\-\_\-eeprom\-Error} \hyperlink{utl__eeprom_8c_ad07623bd6410b8136614fc82d4b20a68}{utl\-\_\-eeprom\-Build\-List} (void)
+\item 
+static void \hyperlink{utl__eeprom_8c_a5358d8d78d22718c0ea5c34054d09246}{eeprom\-Wait\-For\-Nvm} (void)
+\item 
+static \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$ \hyperlink{utl__eeprom_8c_a99befa840208fe897c37f28bfd401ab7}{eeprom\-Create\-List\-Member} (uint8\-\_\-t c\-\_\-user\-Id, int16\-\_\-t s\-\_\-size\-Bytes, uint8\-\_\-t c\-\_\-start\-Page\-Addr)
+\item 
+static void \hyperlink{utl__eeprom_8c_a723d221d514d080ce5efa6dc3cbae3a1}{eeprom\-Enable\-Mem\-Mapping} (void)
+\item 
+static uint8\-\_\-t \hyperlink{utl__eeprom_8c_ab1ad697e6f29170cefd3b680182092d1}{eeprom\-Bytes\-To\-Pages} (uint16\-\_\-t s\-\_\-size\-Bytes)
+\item 
+static \hyperlink{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{t\-\_\-eeprom\-Handle} $\ast$ \hyperlink{utl__eeprom_8c_a057f65663787b3f54fc99df60e99a38d}{utl\-\_\-find\-Handle\-From\-Id} (uint8\-\_\-t c\-\_\-user\-Id)
+\item 
+static uint8\-\_\-t \hyperlink{utl__eeprom_8c_a30ad7c5a5cf6ef3ea3e460042a8b20ea}{utl\-\_\-get\-Free\-Page\-Count} (void)
+\item 
+static void \hyperlink{utl__eeprom_8c_ae83facc281213dad3e84c4495ddf72a2}{eeprom\-Write\-Page} (uint8\-\_\-t c\-\_\-page, uint8\-\_\-t c\-\_\-starting\-Index, uint8\-\_\-t $\ast$pc\-\_\-data, uint8\-\_\-t s\-\_\-size)
+\item 
+static uint8\-\_\-t \hyperlink{utl__eeprom_8c_a791c944d2671c7460c1bb3c687060abd}{eeprom\-Get\-Open\-Page} (void)
+\item 
+static void \hyperlink{utl__eeprom_8c_ace82c291fc71cc0f9305f91725924f38}{utl\-\_\-eeprom\-Erase\-Page} (uint8\-\_\-t c\-\_\-page\-Add)
+\item 
+static void \hyperlink{utl__eeprom_8c_aede4b6c2f539c90fcf4f5094268d8099}{utl\-\_\-eeprom\-Reset\-Block} (uint8\-\_\-t c\-\_\-start\-Page\-Addr)
+\item 
+static void \hyperlink{utl__eeprom_8c_ae71f8cb4d169b83c37c4538df99165e8}{eeprom\-Read\-Page} (uint8\-\_\-t c\-\_\-page\-Index, uint8\-\_\-t c\-\_\-starting\-Index, uint8\-\_\-t $\ast$pc\-\_\-data, uint8\-\_\-t s\-\_\-size)
+\item 
+static uint8\-\_\-t \hyperlink{utl__eeprom_8c_a128fb21c6cd805cd1bca87e9bdafa75e}{eeprom\-Compute\-Checksum} (uint8\-\_\-t $\ast$pc\-\_\-input, int16\-\_\-t s\-\_\-size)
+\item 
+\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} \hyperlink{utl__eeprom_8c_a99e6ce76af24626e6bfec85ec086da04}{utl\-\_\-request\-Eeprom\-Block} (uint8\-\_\-t c\-\_\-user\-Id, int16\-\_\-t s\-\_\-size\-Bytes)
+\item 
+\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} \hyperlink{utl__eeprom_8c_a4b94326034032dc46f7ef086e77a690f}{utl\-\_\-get\-Eeprom\-Handle} (uint8\-\_\-t c\-\_\-user\-Id)
+\item 
+\hyperlink{utl__eeprom_8h_a8b46b2a798382472df5fce7beaa300ff}{t\-\_\-eeprom\-Error} \hyperlink{utl__eeprom_8c_ae03c5aebf9c2488f9a9bbc46e85b4d42}{utl\-\_\-destroy\-Eeprom\-Block} (\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+\hyperlink{utl__eeprom_8h_a8b46b2a798382472df5fce7beaa300ff}{t\-\_\-eeprom\-Error} \hyperlink{utl__eeprom_8c_a798b3d4f0319819eca6b877688d7635a}{utl\-\_\-write\-Eeprom} (\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint8\-\_\-t $\ast$pc\-\_\-data, uint16\-\_\-t s\-\_\-size\-Bytes)
+\item 
+\hyperlink{utl__eeprom_8h_a8b46b2a798382472df5fce7beaa300ff}{t\-\_\-eeprom\-Error} \hyperlink{utl__eeprom_8c_a6a7edc7ec35c982246041e46b5df0b09}{utl\-\_\-read\-Eeprom} (\hyperlink{utl__eeprom_8h_ac616524d24b7312e9e2a068d97bf5955}{t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint8\-\_\-t $\ast$pc\-\_\-data, uint16\-\_\-t s\-\_\-size\-Bytes)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{structt__eeprom_list}{t\-\_\-eeprom\-List} \hyperlink{utl__eeprom_8c_aaff67f3ae03476a26e049d08c9f3b47c}{gt\-\_\-eeprom\-List}
+\item 
+static bool \hyperlink{utl__eeprom_8c_aa3a8314f8f9cef9ab5ef7218f7b49dab}{gb\-\_\-eeprom\-List\-Populated} = false
+\item 
+static uint8\-\_\-t $\ast$ \hyperlink{utl__eeprom_8c_a48363da3cadb1780ba6a46cab65d118c}{gpc\-\_\-eeprom\-Addr} = (uint8\-\_\-t $\ast$)\hyperlink{utl__eeprom_8c_ab5c3d2d745d2a94c1f9937a440aa2ae9}{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{utl__eeprom_8c_a88d283877ac60a1b6cd72c0e217e3014}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T@{E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T@{E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-E\-E\-P\-R\-O\-M\-\_\-\-V\-A\-L\-U\-E\-\_\-\-A\-T\-\_\-\-R\-E\-S\-E\-T~(0x\-F\-F)}}\label{utl__eeprom_8c_a88d283877ac60a1b6cd72c0e217e3014}
+\hypertarget{utl__eeprom_8c_a333b559d912b5cc583e07e90ff81d24d}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-F\-I\-R\-S\-T\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D~(7)}}\label{utl__eeprom_8c_a333b559d912b5cc583e07e90ff81d24d}
+\hypertarget{utl__eeprom_8c_aa48524b57f287a62653c0046c807276c}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R@{E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R@{E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-H\-E\-A\-D\-E\-R~(0x\-B\-E\-E\-F)}}\label{utl__eeprom_8c_aa48524b57f287a62653c0046c807276c}
+\hypertarget{utl__eeprom_8c_a80038b2d05dafd7d6dbbb51d651f4fdf}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D@{E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-N\-O\-M\-I\-N\-A\-L\-\_\-\-P\-A\-G\-E\-\_\-\-O\-V\-E\-R\-H\-E\-A\-D~(2)}}\label{utl__eeprom_8c_a80038b2d05dafd7d6dbbb51d651f4fdf}
+\hypertarget{utl__eeprom_8c_acc74e674e6d9a8aa8c5586073acec510}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S@{E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S@{E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-N\-U\-M\-\_\-\-P\-A\-G\-E\-S~(64)}}\label{utl__eeprom_8c_acc74e674e6d9a8aa8c5586073acec510}
+\hypertarget{utl__eeprom_8c_a31abeea8d51612a6d84704a0eeba9ace}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E@{E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E@{E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-P\-A\-G\-E\-S\-I\-Z\-E~(32)}}\label{utl__eeprom_8c_a31abeea8d51612a6d84704a0eeba9ace}
+\hypertarget{utl__eeprom_8c_ab5c3d2d745d2a94c1f9937a440aa2ae9}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R@{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}}
+\index{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R@{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R~(0x1000)}}\label{utl__eeprom_8c_ab5c3d2d745d2a94c1f9937a440aa2ae9}
+\hypertarget{utl__eeprom_8c_a01b4e293fa536307d215f8b9e9125537}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!N\-V\-M\-\_\-\-E\-X\-E\-C@{N\-V\-M\-\_\-\-E\-X\-E\-C}}
+\index{N\-V\-M\-\_\-\-E\-X\-E\-C@{N\-V\-M\-\_\-\-E\-X\-E\-C}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{N\-V\-M\-\_\-\-E\-X\-E\-C}]{\setlength{\rightskip}{0pt plus 5cm}\#define N\-V\-M\-\_\-\-E\-X\-E\-C(
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_a01b4e293fa536307d215f8b9e9125537}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+\textcolor{keyword}{asm}(\textcolor{stringliteral}{"push r30"}      \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"push r31"}      \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                        \textcolor{stringliteral}{"push r16"}      \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                        \textcolor{stringliteral}{"push r18"}      \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"ldi r30, 0xCB"} \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"ldi r31, 0x01"} \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"ldi r16, 0xD8"} \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"ldi r18, 0x01"} \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"out 0x34, r16"} \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"st Z, r18"}       \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                        \textcolor{stringliteral}{"pop r18"}       \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"pop r16"}       \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"pop r31"}       \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"}   \(\backslash\)
+                       \textcolor{stringliteral}{"pop r30"}       \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)t"})
+\end{DoxyCode}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!t\-\_\-eeprom\-Handle@{t\-\_\-eeprom\-Handle}}
+\index{t\-\_\-eeprom\-Handle@{t\-\_\-eeprom\-Handle}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{t\-\_\-eeprom\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf eeprom} {\bf t\-\_\-eeprom\-Handle}}}\label{utl__eeprom_8c_a2996d30510961085424696d7a1d3c2f3}
+
+
+\subsection{Function Documentation}
+\hypertarget{utl__eeprom_8c_ab1ad697e6f29170cefd3b680182092d1}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Bytes\-To\-Pages@{eeprom\-Bytes\-To\-Pages}}
+\index{eeprom\-Bytes\-To\-Pages@{eeprom\-Bytes\-To\-Pages}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Bytes\-To\-Pages}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t eeprom\-Bytes\-To\-Pages (
+\begin{DoxyParamCaption}
+\item[{uint16\-\_\-t}]{s\-\_\-size\-Bytes}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_ab1ad697e6f29170cefd3b680182092d1}
+\hypertarget{utl__eeprom_8c_a128fb21c6cd805cd1bca87e9bdafa75e}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Compute\-Checksum@{eeprom\-Compute\-Checksum}}
+\index{eeprom\-Compute\-Checksum@{eeprom\-Compute\-Checksum}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Compute\-Checksum}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t eeprom\-Compute\-Checksum (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-input, }
+\item[{int16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a128fb21c6cd805cd1bca87e9bdafa75e}
+\hypertarget{utl__eeprom_8c_a99befa840208fe897c37f28bfd401ab7}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Create\-List\-Member@{eeprom\-Create\-List\-Member}}
+\index{eeprom\-Create\-List\-Member@{eeprom\-Create\-List\-Member}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Create\-List\-Member}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-eeprom\-Handle} $\ast$ eeprom\-Create\-List\-Member (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-user\-Id, }
+\item[{int16\-\_\-t}]{s\-\_\-size\-Bytes, }
+\item[{uint8\-\_\-t}]{c\-\_\-start\-Page\-Addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a99befa840208fe897c37f28bfd401ab7}
+\hypertarget{utl__eeprom_8c_a723d221d514d080ce5efa6dc3cbae3a1}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Enable\-Mem\-Mapping@{eeprom\-Enable\-Mem\-Mapping}}
+\index{eeprom\-Enable\-Mem\-Mapping@{eeprom\-Enable\-Mem\-Mapping}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Enable\-Mem\-Mapping}]{\setlength{\rightskip}{0pt plus 5cm}static void eeprom\-Enable\-Mem\-Mapping (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a723d221d514d080ce5efa6dc3cbae3a1}
+\hypertarget{utl__eeprom_8c_a791c944d2671c7460c1bb3c687060abd}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Get\-Open\-Page@{eeprom\-Get\-Open\-Page}}
+\index{eeprom\-Get\-Open\-Page@{eeprom\-Get\-Open\-Page}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Get\-Open\-Page}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t eeprom\-Get\-Open\-Page (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a791c944d2671c7460c1bb3c687060abd}
+\hypertarget{utl__eeprom_8c_a5152052546cb62ff6966a312215ce5e1}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-List\-Insert@{eeprom\-List\-Insert}}
+\index{eeprom\-List\-Insert@{eeprom\-List\-Insert}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-List\-Insert}]{\setlength{\rightskip}{0pt plus 5cm}static void eeprom\-List\-Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-eeprom\-Handle} $\ast$$\ast$}]{pt\-\_\-new, }
+\item[{{\bf t\-\_\-eeprom\-Handle} $\ast$$\ast$}]{pt\-\_\-head, }
+\item[{{\bf t\-\_\-eeprom\-Handle} $\ast$$\ast$}]{pt\-\_\-tail}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a5152052546cb62ff6966a312215ce5e1}
+\hypertarget{utl__eeprom_8c_ae71f8cb4d169b83c37c4538df99165e8}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Read\-Page@{eeprom\-Read\-Page}}
+\index{eeprom\-Read\-Page@{eeprom\-Read\-Page}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Read\-Page}]{\setlength{\rightskip}{0pt plus 5cm}static void eeprom\-Read\-Page (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-page\-Index, }
+\item[{uint8\-\_\-t}]{c\-\_\-starting\-Index, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-data, }
+\item[{uint8\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_ae71f8cb4d169b83c37c4538df99165e8}
+\hypertarget{utl__eeprom_8c_a5358d8d78d22718c0ea5c34054d09246}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Wait\-For\-Nvm@{eeprom\-Wait\-For\-Nvm}}
+\index{eeprom\-Wait\-For\-Nvm@{eeprom\-Wait\-For\-Nvm}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Wait\-For\-Nvm}]{\setlength{\rightskip}{0pt plus 5cm}static void eeprom\-Wait\-For\-Nvm (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a5358d8d78d22718c0ea5c34054d09246}
+\hypertarget{utl__eeprom_8c_ae83facc281213dad3e84c4495ddf72a2}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!eeprom\-Write\-Page@{eeprom\-Write\-Page}}
+\index{eeprom\-Write\-Page@{eeprom\-Write\-Page}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{eeprom\-Write\-Page}]{\setlength{\rightskip}{0pt plus 5cm}static void eeprom\-Write\-Page (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-page, }
+\item[{uint8\-\_\-t}]{c\-\_\-starting\-Index, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-data, }
+\item[{uint8\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_ae83facc281213dad3e84c4495ddf72a2}
+\hypertarget{utl__eeprom_8c_ae03c5aebf9c2488f9a9bbc46e85b4d42}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-destroy\-Eeprom\-Block@{utl\-\_\-destroy\-Eeprom\-Block}}
+\index{utl\-\_\-destroy\-Eeprom\-Block@{utl\-\_\-destroy\-Eeprom\-Block}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-destroy\-Eeprom\-Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-eeprom\-Error} utl\-\_\-destroy\-Eeprom\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_ae03c5aebf9c2488f9a9bbc46e85b4d42}
+\hypertarget{utl__eeprom_8c_ad07623bd6410b8136614fc82d4b20a68}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-eeprom\-Build\-List@{utl\-\_\-eeprom\-Build\-List}}
+\index{utl\-\_\-eeprom\-Build\-List@{utl\-\_\-eeprom\-Build\-List}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-eeprom\-Build\-List}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-eeprom\-Error} utl\-\_\-eeprom\-Build\-List (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_ad07623bd6410b8136614fc82d4b20a68}
+\hypertarget{utl__eeprom_8c_ace82c291fc71cc0f9305f91725924f38}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-eeprom\-Erase\-Page@{utl\-\_\-eeprom\-Erase\-Page}}
+\index{utl\-\_\-eeprom\-Erase\-Page@{utl\-\_\-eeprom\-Erase\-Page}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-eeprom\-Erase\-Page}]{\setlength{\rightskip}{0pt plus 5cm}static void utl\-\_\-eeprom\-Erase\-Page (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-page\-Add}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_ace82c291fc71cc0f9305f91725924f38}
+\hypertarget{utl__eeprom_8c_aede4b6c2f539c90fcf4f5094268d8099}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-eeprom\-Reset\-Block@{utl\-\_\-eeprom\-Reset\-Block}}
+\index{utl\-\_\-eeprom\-Reset\-Block@{utl\-\_\-eeprom\-Reset\-Block}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-eeprom\-Reset\-Block}]{\setlength{\rightskip}{0pt plus 5cm}static void utl\-\_\-eeprom\-Reset\-Block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-start\-Page\-Addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_aede4b6c2f539c90fcf4f5094268d8099}
+\hypertarget{utl__eeprom_8c_a59867cf0002b3127340ed2c214ee13c9}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-find\-Handle@{utl\-\_\-find\-Handle}}
+\index{utl\-\_\-find\-Handle@{utl\-\_\-find\-Handle}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-find\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-eeprom\-Handle} $\ast$ utl\-\_\-find\-Handle (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a59867cf0002b3127340ed2c214ee13c9}
+\hypertarget{utl__eeprom_8c_a057f65663787b3f54fc99df60e99a38d}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-find\-Handle\-From\-Id@{utl\-\_\-find\-Handle\-From\-Id}}
+\index{utl\-\_\-find\-Handle\-From\-Id@{utl\-\_\-find\-Handle\-From\-Id}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-find\-Handle\-From\-Id}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-eeprom\-Handle} $\ast$ utl\-\_\-find\-Handle\-From\-Id (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-user\-Id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a057f65663787b3f54fc99df60e99a38d}
+\hypertarget{utl__eeprom_8c_a4b94326034032dc46f7ef086e77a690f}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-get\-Eeprom\-Handle@{utl\-\_\-get\-Eeprom\-Handle}}
+\index{utl\-\_\-get\-Eeprom\-Handle@{utl\-\_\-get\-Eeprom\-Handle}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-get\-Eeprom\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} utl\-\_\-get\-Eeprom\-Handle (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-user\-Id}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_a4b94326034032dc46f7ef086e77a690f}
+\hypertarget{utl__eeprom_8c_a30ad7c5a5cf6ef3ea3e460042a8b20ea}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-get\-Free\-Page\-Count@{utl\-\_\-get\-Free\-Page\-Count}}
+\index{utl\-\_\-get\-Free\-Page\-Count@{utl\-\_\-get\-Free\-Page\-Count}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-get\-Free\-Page\-Count}]{\setlength{\rightskip}{0pt plus 5cm}static uint8\-\_\-t utl\-\_\-get\-Free\-Page\-Count (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a30ad7c5a5cf6ef3ea3e460042a8b20ea}
+\hypertarget{utl__eeprom_8c_a6a7edc7ec35c982246041e46b5df0b09}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-read\-Eeprom@{utl\-\_\-read\-Eeprom}}
+\index{utl\-\_\-read\-Eeprom@{utl\-\_\-read\-Eeprom}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-read\-Eeprom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-eeprom\-Error} utl\-\_\-read\-Eeprom (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-data, }
+\item[{uint16\-\_\-t}]{s\-\_\-size\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_a6a7edc7ec35c982246041e46b5df0b09}
+\hypertarget{utl__eeprom_8c_a99e6ce76af24626e6bfec85ec086da04}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-request\-Eeprom\-Block@{utl\-\_\-request\-Eeprom\-Block}}
+\index{utl\-\_\-request\-Eeprom\-Block@{utl\-\_\-request\-Eeprom\-Block}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-request\-Eeprom\-Block}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E} utl\-\_\-request\-Eeprom\-Block (
+\begin{DoxyParamCaption}
+\item[{uint8\-\_\-t}]{c\-\_\-user\-Id, }
+\item[{int16\-\_\-t}]{s\-\_\-size\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_a99e6ce76af24626e6bfec85ec086da04}
+\hypertarget{utl__eeprom_8c_a798b3d4f0319819eca6b877688d7635a}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!utl\-\_\-write\-Eeprom@{utl\-\_\-write\-Eeprom}}
+\index{utl\-\_\-write\-Eeprom@{utl\-\_\-write\-Eeprom}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{utl\-\_\-write\-Eeprom}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-eeprom\-Error} utl\-\_\-write\-Eeprom (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-E\-E\-P\-R\-O\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint8\-\_\-t $\ast$}]{pc\-\_\-data, }
+\item[{uint16\-\_\-t}]{s\-\_\-size\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{utl__eeprom_8c_a798b3d4f0319819eca6b877688d7635a}
+
+
+\subsection{Variable Documentation}
+\hypertarget{utl__eeprom_8c_aa3a8314f8f9cef9ab5ef7218f7b49dab}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!gb\-\_\-eeprom\-List\-Populated@{gb\-\_\-eeprom\-List\-Populated}}
+\index{gb\-\_\-eeprom\-List\-Populated@{gb\-\_\-eeprom\-List\-Populated}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{gb\-\_\-eeprom\-List\-Populated}]{\setlength{\rightskip}{0pt plus 5cm}bool gb\-\_\-eeprom\-List\-Populated = false\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_aa3a8314f8f9cef9ab5ef7218f7b49dab}
+\hypertarget{utl__eeprom_8c_a48363da3cadb1780ba6a46cab65d118c}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!gpc\-\_\-eeprom\-Addr@{gpc\-\_\-eeprom\-Addr}}
+\index{gpc\-\_\-eeprom\-Addr@{gpc\-\_\-eeprom\-Addr}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{gpc\-\_\-eeprom\-Addr}]{\setlength{\rightskip}{0pt plus 5cm}uint8\-\_\-t$\ast$ gpc\-\_\-eeprom\-Addr = (uint8\-\_\-t $\ast$){\bf E\-E\-P\-R\-O\-M\-\_\-\-S\-T\-A\-R\-T\-\_\-\-A\-D\-D\-R}\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_a48363da3cadb1780ba6a46cab65d118c}
+\hypertarget{utl__eeprom_8c_aaff67f3ae03476a26e049d08c9f3b47c}{\index{utl\-\_\-eeprom.\-c@{utl\-\_\-eeprom.\-c}!gt\-\_\-eeprom\-List@{gt\-\_\-eeprom\-List}}
+\index{gt\-\_\-eeprom\-List@{gt\-\_\-eeprom\-List}!utl_eeprom.c@{utl\-\_\-eeprom.\-c}}
+\subsubsection[{gt\-\_\-eeprom\-List}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-eeprom\-List} gt\-\_\-eeprom\-List\hspace{0.3cm}{\ttfamily [static]}}}\label{utl__eeprom_8c_aaff67f3ae03476a26e049d08c9f3b47c}

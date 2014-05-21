@@ -1,0 +1,132 @@
+\hypertarget{arb__semaphore_8h}{\section{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-semaphore.h File Reference}
+\label{arb__semaphore_8h}\index{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-semaphore.\-h@{C\-:/arbitros/trunk/rtos/headers/common/arb\-\_\-semaphore.\-h}}
+}
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-error.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linked\-List.\-h\char`\"{}}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__semaphore_8h_ae45a9969e811cec2b30b578ac2c4de5b}{arb\-\_\-semaphore\-\_\-h}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{utl__clocks_8h_a6f7871827c487d81513ad73e9c5f140a}{volatile} int16\-\_\-t \hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9}{t\-\_\-sem\-Type} \{ \hyperlink{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9aceae44f0ce8284b8a154151dfcb28ab1}{C\-O\-U\-N\-T\-I\-N\-G}, 
+\hyperlink{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a480882f626731b7fa7fc7caf12d8cb66}{S\-I\-G\-N\-A\-L}, 
+\hyperlink{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a4dafd8278fc1148c6fe371aa5904ab4f}{M\-U\-T\-E\-X}
+ \}
+\item 
+enum \hyperlink{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6}{t\-\_\-sem\-Mode} \{ \hyperlink{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a854a1cd6e3a98db9e290dddea29725e7}{B\-L\-O\-C\-K\-I\-N\-G} = 0, 
+\hyperlink{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a3447f3e3ebde640d858abc7b67625c24}{N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} \hyperlink{arb__semaphore_8h_a027d87d46208c6b75fd2ee3d1ce39790}{arb\-\_\-semaphore\-Create} (\hyperlink{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9}{t\-\_\-sem\-Type} t\-\_\-type)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__semaphore_8h_ad3efbc2cc55412edd79f6a345e7e475e}{arb\-\_\-semaphore\-Destroy} (\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} t\-\_\-sem\-Handle)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__semaphore_8h_a1ba1bc10d851146048c4b75390701ac8}{arb\-\_\-wait} (\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} t\-\_\-sem\-Handle, \hyperlink{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6}{t\-\_\-sem\-Mode} t\-\_\-mode) \hyperlink{utl__math_8c_a4a1aa33e217e3ab6cc6f8a4126e6a705}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((noinline))
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__semaphore_8h_a32c9c725db8a1a6074d7bc5c5955c0e0}{arb\-\_\-signal} (\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} t\-\_\-sem\-Handle) \hyperlink{utl__math_8c_a4a1aa33e217e3ab6cc6f8a4126e6a705}{\-\_\-\-\_\-attribute\-\_\-\-\_\-}((noinline))
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{arb__semaphore_8h_a44f797ecc7515848abfba6f84f186f88}{arb\-\_\-semaphore\-Init} (\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} t\-\_\-sem\-Handle, int16\-\_\-t s\-\_\-value)
+\item 
+int16\-\_\-t \hyperlink{arb__semaphore_8h_a168019baace8492c878a56e94fcd23a7}{arb\-\_\-semaphore\-Get\-Count} (\hyperlink{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} t\-\_\-sem\-Handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__semaphore_8h_ae45a9969e811cec2b30b578ac2c4de5b}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-semaphore\-\_\-h@{arb\-\_\-semaphore\-\_\-h}}
+\index{arb\-\_\-semaphore\-\_\-h@{arb\-\_\-semaphore\-\_\-h}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-semaphore\-\_\-h}]{\setlength{\rightskip}{0pt plus 5cm}\#define arb\-\_\-semaphore\-\_\-h}}\label{arb__semaphore_8h_ae45a9969e811cec2b30b578ac2c4de5b}
+
+
+\subsection{Typedef Documentation}
+\hypertarget{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E@{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}
+\index{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E@{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf volatile} int16\-\_\-t {\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}}\label{arb__semaphore_8h_a3751005cc41fdde2a93aa7be598187af}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!t\-\_\-sem\-Mode@{t\-\_\-sem\-Mode}}
+\index{t\-\_\-sem\-Mode@{t\-\_\-sem\-Mode}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{t\-\_\-sem\-Mode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-sem\-Mode}}}\label{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{B\-L\-O\-C\-K\-I\-N\-G@{B\-L\-O\-C\-K\-I\-N\-G}!arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}}\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!B\-L\-O\-C\-K\-I\-N\-G@{B\-L\-O\-C\-K\-I\-N\-G}}\item[{\em 
+\hypertarget{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a854a1cd6e3a98db9e290dddea29725e7}{B\-L\-O\-C\-K\-I\-N\-G}\label{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a854a1cd6e3a98db9e290dddea29725e7}
+}]\index{N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G@{N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G}!arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}}\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G@{N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G}}\item[{\em 
+\hypertarget{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a3447f3e3ebde640d858abc7b67625c24}{N\-O\-N\-B\-L\-O\-C\-K\-I\-N\-G}\label{arb__semaphore_8h_a58e177e743efe6f46a92dd9fe13e6fb6a3447f3e3ebde640d858abc7b67625c24}
+}]\end{description}
+\end{Desc}
+\hypertarget{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!t\-\_\-sem\-Type@{t\-\_\-sem\-Type}}
+\index{t\-\_\-sem\-Type@{t\-\_\-sem\-Type}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{t\-\_\-sem\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\-\_\-sem\-Type}}}\label{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{C\-O\-U\-N\-T\-I\-N\-G@{C\-O\-U\-N\-T\-I\-N\-G}!arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}}\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!C\-O\-U\-N\-T\-I\-N\-G@{C\-O\-U\-N\-T\-I\-N\-G}}\item[{\em 
+\hypertarget{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9aceae44f0ce8284b8a154151dfcb28ab1}{C\-O\-U\-N\-T\-I\-N\-G}\label{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9aceae44f0ce8284b8a154151dfcb28ab1}
+}]\index{S\-I\-G\-N\-A\-L@{S\-I\-G\-N\-A\-L}!arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}}\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!S\-I\-G\-N\-A\-L@{S\-I\-G\-N\-A\-L}}\item[{\em 
+\hypertarget{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a480882f626731b7fa7fc7caf12d8cb66}{S\-I\-G\-N\-A\-L}\label{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a480882f626731b7fa7fc7caf12d8cb66}
+}]\index{M\-U\-T\-E\-X@{M\-U\-T\-E\-X}!arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}}\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!M\-U\-T\-E\-X@{M\-U\-T\-E\-X}}\item[{\em 
+\hypertarget{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a4dafd8278fc1148c6fe371aa5904ab4f}{M\-U\-T\-E\-X}\label{arb__semaphore_8h_a198fd960807270071939a933fdcd54f9a4dafd8278fc1148c6fe371aa5904ab4f}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__semaphore_8h_a027d87d46208c6b75fd2ee3d1ce39790}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-semaphore\-Create@{arb\-\_\-semaphore\-Create}}
+\index{arb\-\_\-semaphore\-Create@{arb\-\_\-semaphore\-Create}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-semaphore\-Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E} arb\-\_\-semaphore\-Create (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-sem\-Type}}]{t\-\_\-type}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_a027d87d46208c6b75fd2ee3d1ce39790}
+\hypertarget{arb__semaphore_8h_ad3efbc2cc55412edd79f6a345e7e475e}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-semaphore\-Destroy@{arb\-\_\-semaphore\-Destroy}}
+\index{arb\-\_\-semaphore\-Destroy@{arb\-\_\-semaphore\-Destroy}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-semaphore\-Destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-semaphore\-Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-sem\-Handle}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_ad3efbc2cc55412edd79f6a345e7e475e}
+\hypertarget{arb__semaphore_8h_a168019baace8492c878a56e94fcd23a7}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-semaphore\-Get\-Count@{arb\-\_\-semaphore\-Get\-Count}}
+\index{arb\-\_\-semaphore\-Get\-Count@{arb\-\_\-semaphore\-Get\-Count}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-semaphore\-Get\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t arb\-\_\-semaphore\-Get\-Count (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-sem\-Handle}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_a168019baace8492c878a56e94fcd23a7}
+\hypertarget{arb__semaphore_8h_a44f797ecc7515848abfba6f84f186f88}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-semaphore\-Init@{arb\-\_\-semaphore\-Init}}
+\index{arb\-\_\-semaphore\-Init@{arb\-\_\-semaphore\-Init}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-semaphore\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-semaphore\-Init (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-sem\-Handle, }
+\item[{int16\-\_\-t}]{s\-\_\-value}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_a44f797ecc7515848abfba6f84f186f88}
+\hypertarget{arb__semaphore_8h_a32c9c725db8a1a6074d7bc5c5955c0e0}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-signal@{arb\-\_\-signal}}
+\index{arb\-\_\-signal@{arb\-\_\-signal}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-signal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-signal (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-sem\-Handle}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_a32c9c725db8a1a6074d7bc5c5955c0e0}
+\hypertarget{arb__semaphore_8h_a1ba1bc10d851146048c4b75390701ac8}{\index{arb\-\_\-semaphore.\-h@{arb\-\_\-semaphore.\-h}!arb\-\_\-wait@{arb\-\_\-wait}}
+\index{arb\-\_\-wait@{arb\-\_\-wait}!arb_semaphore.h@{arb\-\_\-semaphore.\-h}}
+\subsubsection[{arb\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} arb\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-S\-E\-M\-H\-A\-N\-D\-L\-E}}]{t\-\_\-sem\-Handle, }
+\item[{{\bf t\-\_\-sem\-Mode}}]{t\-\_\-mode}
+\end{DoxyParamCaption}
+)}}\label{arb__semaphore_8h_a1ba1bc10d851146048c4b75390701ac8}

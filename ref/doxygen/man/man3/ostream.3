@@ -1,0 +1,448 @@
+.TH "ostream" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ostream \- 
+.PP
+Output \fBStream\fP\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ostream\&.h>\fP
+.PP
+Inherits \fBios\fP\&.
+.PP
+Inherited by \fBArduinoOutStream\fP, \fBiostream\fP, \fBobufstream\fP, and \fBofstream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (\fBostream\fP &(*pf)(\fBostream\fP &str))"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (\fBios_base\fP &(*pf)(\fBios_base\fP &str))"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (bool arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (const char *arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (const signed char *arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (const unsigned char *arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (char arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (signed char arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (unsigned char arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (double arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (float arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (short arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (unsigned short arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (int arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (unsigned int arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (long arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (unsigned long arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (const void *arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (\fBpgm\fP arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBoperator<<\fP (const __FlashStringHelper *arg)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBput\fP (char ch)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBflush\fP ()"
+.br
+.ti -1c
+.RI "\fBpos_type\fP \fBtellp\fP ()"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBseekp\fP (\fBpos_type\fP pos)"
+.br
+.ti -1c
+.RI "\fBostream\fP & \fBseekp\fP (\fBoff_type\fP off, \fBseekdir\fP way)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Output \fBStream\fP\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBostream\fP& flush (void)\fC [inline]\fP"
+Flushes the buffer associated with this stream\&. The flush function calls the sync function of the associated file\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+A reference to the ostream object\&. 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (\fBostream\fP &(*)(\fBostream\fP &str)pf)\fC [inline]\fP"
+call manipulator 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpf\fP function to call 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (\fBios_base\fP &(*)(\fBios_base\fP &str)pf)\fC [inline]\fP"
+call manipulator 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpf\fP function to call 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (boolarg)\fC [inline]\fP"
+Output bool 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (const char *arg)\fC [inline]\fP"
+Output string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP string to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (const signed char *arg)\fC [inline]\fP"
+Output string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP string to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (const unsigned char *arg)\fC [inline]\fP"
+Output string 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP string to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (chararg)\fC [inline]\fP"
+Output character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP character to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (signed chararg)\fC [inline]\fP"
+Output character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP character to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (unsigned chararg)\fC [inline]\fP"
+Output character 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP character to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (doublearg)\fC [inline]\fP"
+Output double 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (floatarg)\fC [inline]\fP"
+Output float 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (shortarg)\fC [inline]\fP"
+Output signed short 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (unsigned shortarg)\fC [inline]\fP"
+Output unsigned short 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (intarg)\fC [inline]\fP"
+Output signed int 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (unsigned intarg)\fC [inline]\fP"
+Output unsigned int 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (longarg)\fC [inline]\fP"
+Output signed long 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (unsigned longarg)\fC [inline]\fP"
+Output unsigned long 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (const void *arg)\fC [inline]\fP"
+Output pointer 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP value to output 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (\fBpgm\fParg)\fC [inline]\fP"
+Output a string from flash using the \fBpstr()\fP macro 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP pgm struct pointing to string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& operator<< (const __FlashStringHelper *arg)\fC [inline]\fP"
+Output a string from flash using the Arduino F() macro\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIarg\fP pointing to flash string 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the stream 
+.RE
+.PP
+
+.SS "\fBostream\fP& put (charch)\fC [inline]\fP"
+Puts a character in a stream\&.
+.PP
+The unformatted output function inserts the element \fIch\fP\&. It returns *this\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIch\fP The character 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A reference to the ostream object\&. 
+.RE
+.PP
+
+.SS "\fBostream\fP& seekp (\fBpos_type\fPpos)\fC [inline]\fP"
+Set the stream position 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP The absolute position in which to move the write pointer\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBostream\fP& seekp (\fBoff_type\fPoff, \fBseekdir\fPway)\fC [inline]\fP"
+Set the stream position\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoff\fP An offset to move the write pointer relative to way\&. \fIoff\fP is a signed 32-bit int so the offset is limited to +- 2GB\&. 
+.br
+\fIway\fP One of \fBios::beg\fP, \fBios::cur\fP, or \fBios::end\fP\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+Is always *this\&. Failure is indicated by the state of *this\&. 
+.RE
+.PP
+
+.SS "\fBpos_type\fP tellp ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+the stream position 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

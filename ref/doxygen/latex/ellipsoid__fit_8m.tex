@@ -1,0 +1,287 @@
+\hypertarget{ellipsoid__fit_8m}{\section{C\-:/arbitros/trunk/drivers/matlab/ins/ellipsoid\-\_\-fit.m File Reference}
+\label{ellipsoid__fit_8m}\index{C\-:/arbitros/trunk/drivers/matlab/ins/ellipsoid\-\_\-fit.\-m@{C\-:/arbitros/trunk/drivers/matlab/ins/ellipsoid\-\_\-fit.\-m}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+default \hyperlink{ellipsoid__fit_8m_a07b64b421fcb5fd741269a84274c9535}{Output\-:} (id xc)
+\item 
+id \hyperlink{ellipsoid__fit_8m_a44f09445f90540f74824a1839982d0de}{a} ()
+\item 
+id \hyperlink{ellipsoid__fit_8m_adbf9383c606651e15e09c54090912b7a}{algebraically\-:\-Author\-:} (id Iz,\mbox{[}Author\mbox{]} nargchk(1, 3, \hyperlink{ellipsoid__fit_8m_ab6fea90bda7927780bc9570cc71d94e7}{nargin} \hyperlink{dcm_normalize_8m_a5ee817c076587e88884910406497df94}{error})
+\item 
+\hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} \hyperlink{utl__clocks_8h_a4fcd6b27605b68d39da73efe9e419533}{if} \hyperlink{ellipsoid__fit_8m_aa065ba21b8173a1c556034f3a132d481}{size} (X, 2)$\sim$
+\item 
+\hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} need nine or more \hyperlink{mag_plot_8m_a319265c6545ca1709d9d77b54665cf1b}{data} \\*
+points \hyperlink{utl__clocks_8h_a4fcd6b27605b68d39da73efe9e419533}{if} \hyperlink{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{length} (\hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x})$<$ 9 \&\&\hyperlink{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}{flag}
+\item 
+\hyperlink{phase_error_8m_a4cc4b1d72ae49fdca5b03af2438ce359}{elseif} \hyperlink{ellipsoid__fit_8m_af611b42a8f351ed9560184a26b08151c}{strcmp} (equals, 'xz')$|$$|$strcmp(equals
+\item 
+\hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} else fit sphere in the form \hyperlink{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{A} (\hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}$^\wedge$2+\hyperlink{mag_plot_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}$^\wedge$2+\hyperlink{mag_plot_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{z}$^\wedge$2)+2\-Gx+2\-Hy+2\-Iz
+\item 
+\hyperlink{ellipsoid__fit_8m_af12d7ecf628e55ff2e12a271b75b1acf}{v} (4) v(2) v(6) v(8)
+\item 
+\hyperlink{ellipsoid__fit_8m_a5a9784a67f047b62822c8991f25f8bf0}{v} (5) v(6) v(3) v(9)
+\item 
+\hyperlink{ellipsoid__fit_8m_a988d11420ec91ef1f5246db735632200}{v} (7) v(8) v(9)-\/1\mbox{]}
+\item 
+\hyperlink{ellipsoid__fit_8m_a899a885ae457ff40c54870f2f044b8f8}{v} (8)
+\item 
+\hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v} (9)\mbox{]}
+\item 
+\hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T} (4, 1\-:3)
+\item 
+\hyperlink{phase_error_8m_a4cc4b1d72ae49fdca5b03af2438ce359}{elseif} \hyperlink{ellipsoid__fit_8m_a398b5954bd43bd085c255f7780367cb7}{strcmp} (equals, 'yz')$|$$|$strcmp(equals
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{ellipsoid__fit_8m_a5b12ae7bf9711d77978408243043d7f2}{function} \mbox{[}\hyperlink{ellipsoid__fit_8m_aded1d98bab231dedd1e85ecf5f1aeca3}{center}, \hyperlink{ellipsoid__fit_8m_a5c11ff4f5370dcd098585cf3d47702a4}{radii}, \hyperlink{ellipsoid__fit_8m_a7de95afff3150493c5595c8c887be60c}{evecs}, \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}\mbox{]}
+\item 
+Parameters \hyperlink{ellipsoid__fit_8m_aec601a0ce44addd8c6ebd83a46ee5f50}{\-\_\-\-\_\-pad0\-\_\-\-\_\-} = ellipsoid\-\_\-fit( X, 3 )
+\item 
+\hyperlink{ellipsoid__fit_8m_a0e08ab12f8d3e0060bf3754da5b0c4df}{yc}
+\item 
+\hyperlink{ellipsoid__fit_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{b}
+\item 
+check input arguments \hyperlink{utl__clocks_8h_a4fcd6b27605b68d39da73efe9e419533}{if} \hyperlink{ellipsoid__fit_8m_ab6fea90bda7927780bc9570cc71d94e7}{nargin}
+\item 
+default to \hyperlink{ellipsoid__fit_8m_a44f09445f90540f74824a1839982d0de}{a} free ellipsoid \hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} \hyperlink{utl__clocks_8h_a4fcd6b27605b68d39da73efe9e419533}{if} \hyperlink{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}{flag}
+\item 
+else \hyperlink{ellipsoid__fit_8m_a597100035d0b6607f5a0e6fbce27a43e}{x} = X( \-:, 1 )
+\item 
+\hyperlink{ellipsoid__fit_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} = X( \-:, 2 )
+\item 
+\hyperlink{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{z} = X( \-:, 3 )
+\item 
+ndatapoints \hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x} ellipsoid \\*
+\hyperlink{error_state_kalman_8m_a6f49ba65e7284089292d629f9f8763e0}{parameters} \hyperlink{phase_error_8m_a4cc4b1d72ae49fdca5b03af2438ce359}{elseif} where \hyperlink{ellipsoid__fit_8m_a3ae9080a0eed9bb18395ac4ce4548364}{A}
+\item 
+\hyperlink{phase_error_8m_a4cc4b1d72ae49fdca5b03af2438ce359}{elseif} zx \hyperlink{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{D}
+\item 
+ndatapoints \hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x} sphere \\*
+\hyperlink{error_state_kalman_8m_a6f49ba65e7284089292d629f9f8763e0}{parameters} \hyperlink{error_state_kalman_8m_afb358f48b1646c750fb9da6c6585be2b}{end} solve the \\*
+normal system of equations \hyperlink{ellipsoid__fit_8m_ad89a7fd19b370101b0ffd846590ff83b}{v} = (( \hyperlink{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{D}' $\ast$ \hyperlink{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{D} )$^\wedge$-\/1)$\ast$( \hyperlink{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{D}' $\ast$ (ones( \hyperlink{ellipsoid__fit_8m_aa065ba21b8173a1c556034f3a132d481}{size}( \hyperlink{mag_plot_8m_a9336ebf25087d91c818ee6e9ec29f8c1}{x}, 1 ), 1 )$\ast$1) )
+\item 
+find the center of the ellipsoid \hyperlink{ellipsoid__fit_8m_aded1d98bab231dedd1e85ecf5f1aeca3}{center} = -\/\hyperlink{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{A}( 1\-:3, 1\-:3 ) \textbackslash{} \mbox{[} \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(7)
+\item 
+\hyperlink{ellipsoid__fit_8m_a905c521e05ec8042631a912b71d0454e}{temp} = -\/\hyperlink{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{A}( 1\-:3, 1\-:3 )
+\item 
+form the corresponding \\*
+translation matrix \hyperlink{ellipsoid__fit_8m_a09ebe28e0d7d63f91fd29006142e2d2c}{T} = \hyperlink{error_state_kalman_8m_a24f0512dd7bb7dba2d43c1a914a36b58}{eye}( 4 )
+\item 
+translate to the \hyperlink{ellipsoid__fit_8m_aded1d98bab231dedd1e85ecf5f1aeca3}{center} \hyperlink{ellipsoid__fit_8m_a0068887ae91b4d52177f72ed707e6981}{R} = \hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T} $\ast$ \hyperlink{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{A} $\ast$ \hyperlink{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{T}'
+\item 
+solve the \hyperlink{ellipsoid__fit_8m_aa7a6de6b1b8509bbe4b66809853be68b}{eigenproblem} \mbox{[}\hyperlink{ellipsoid__fit_8m_a7de95afff3150493c5595c8c887be60c}{evecs} evals\mbox{]} = eig( \hyperlink{error_state_kalman_8m_ae52152646cd1253bb5c435fea475bdfa}{R}( 1\-:3, 1\-:3 ) / -\/\hyperlink{error_state_kalman_8m_ae52152646cd1253bb5c435fea475bdfa}{R}( 4, 4 ) )
+\item 
+\hyperlink{ellipsoid__fit_8m_a5c11ff4f5370dcd098585cf3d47702a4}{radii} = sqrt( 1 ./ diag( evals ) )
+\item 
+\hyperlink{ellipsoid__fit_8m_a98cce130115e6c04f0a3508bdf447497}{gam} = 1 + ( \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(7)$^\wedge$2 / \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(1) + \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(8)$^\wedge$2 / \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(2) + \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(9)$^\wedge$2 / \hyperlink{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{v}(3) )
+\item 
+\hyperlink{ellipsoid__fit_8m_a7de95afff3150493c5595c8c887be60c}{evecs} = \hyperlink{error_state_kalman_8m_a24f0512dd7bb7dba2d43c1a914a36b58}{eye}( 3 )
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{ellipsoid__fit_8m_a44f09445f90540f74824a1839982d0de}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!a@{a}}
+\index{a@{a}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{a}]{\setlength{\rightskip}{0pt plus 5cm}id a (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{ellipsoid__fit_8m_a44f09445f90540f74824a1839982d0de}
+\hypertarget{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!A@{A}}
+\index{A@{A}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{A}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} else fit sphere in the form A (
+\begin{DoxyParamCaption}
+\item[{{\bf x}$^\wedge$2+{\bf y}$^\wedge$2+{\bf z}$^\wedge$}]{2}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a180403dc34475c99f7c847a0f1e9aab1}
+\hypertarget{ellipsoid__fit_8m_adbf9383c606651e15e09c54090912b7a}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!algebraically\-:\-Author\-:@{algebraically\-:\-Author\-:}}
+\index{algebraically\-:\-Author\-:@{algebraically\-:\-Author\-:}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{algebraically\-:\-Author\-:}]{\setlength{\rightskip}{0pt plus 5cm}id algebraically\-:\-Author\-: (
+\begin{DoxyParamCaption}
+\item[{id}]{Iz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{ellipsoid__fit_8m_adbf9383c606651e15e09c54090912b7a}
+\hypertarget{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!length@{length}}
+\index{length@{length}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} need nine or more {\bf data} points {\bf if} length (
+\begin{DoxyParamCaption}
+\item[{{\bf x}}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_adbe82fbdee2dbaf2ade7a33fd2bc582a}
+\hypertarget{ellipsoid__fit_8m_a07b64b421fcb5fd741269a84274c9535}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!Output\-:@{Output\-:}}
+\index{Output\-:@{Output\-:}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{Output\-:}]{\setlength{\rightskip}{0pt plus 5cm}default Output\-: (
+\begin{DoxyParamCaption}
+\item[{id}]{xc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{ellipsoid__fit_8m_a07b64b421fcb5fd741269a84274c9535}
+\hypertarget{ellipsoid__fit_8m_aa065ba21b8173a1c556034f3a132d481}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!size@{size}}
+\index{size@{size}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} {\bf if} size (
+\begin{DoxyParamCaption}
+\item[{X}]{, }
+\item[{2}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_aa065ba21b8173a1c556034f3a132d481}
+\hypertarget{ellipsoid__fit_8m_af611b42a8f351ed9560184a26b08151c}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!strcmp@{strcmp}}
+\index{strcmp@{strcmp}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{strcmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elseif} strcmp (
+\begin{DoxyParamCaption}
+\item[{equals}]{, }
+\item[{'xz'}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_af611b42a8f351ed9560184a26b08151c}
+\hypertarget{ellipsoid__fit_8m_a398b5954bd43bd085c255f7780367cb7}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!strcmp@{strcmp}}
+\index{strcmp@{strcmp}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{strcmp}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elseif} strcmp (
+\begin{DoxyParamCaption}
+\item[{equals}]{, }
+\item[{'yz'}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a398b5954bd43bd085c255f7780367cb7}
+\hypertarget{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!T@{T}}
+\index{T@{T}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{T}]{\setlength{\rightskip}{0pt plus 5cm}T (
+\begin{DoxyParamCaption}
+\item[{4}]{, }
+\item[{1\-:3}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a44c839a25ba626f40774e3db6423edf3}
+\hypertarget{ellipsoid__fit_8m_af12d7ecf628e55ff2e12a271b75b1acf}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}v (
+\begin{DoxyParamCaption}
+\item[{4}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_af12d7ecf628e55ff2e12a271b75b1acf}
+\hypertarget{ellipsoid__fit_8m_a5a9784a67f047b62822c8991f25f8bf0}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}v (
+\begin{DoxyParamCaption}
+\item[{5}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a5a9784a67f047b62822c8991f25f8bf0}
+\hypertarget{ellipsoid__fit_8m_a988d11420ec91ef1f5246db735632200}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}v (
+\begin{DoxyParamCaption}
+\item[{7}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a988d11420ec91ef1f5246db735632200}
+\hypertarget{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}v (
+\begin{DoxyParamCaption}
+\item[{9}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_acc4a0efce1aac171b5728dd09160ddbf}
+\hypertarget{ellipsoid__fit_8m_a899a885ae457ff40c54870f2f044b8f8}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}v (
+\begin{DoxyParamCaption}
+\item[{8}]{}
+\end{DoxyParamCaption}
+)}}\label{ellipsoid__fit_8m_a899a885ae457ff40c54870f2f044b8f8}
+
+
+\subsection{Variable Documentation}
+\hypertarget{ellipsoid__fit_8m_aec601a0ce44addd8c6ebd83a46ee5f50}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!\-\_\-\-\_\-pad0\-\_\-\-\_\-@{\-\_\-\-\_\-pad0\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-pad0\-\_\-\-\_\-@{\-\_\-\-\_\-pad0\-\_\-\-\_\-}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{\-\_\-\-\_\-pad0\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}Parameters \-\_\-\-\_\-pad0\-\_\-\-\_\- = ellipsoid\-\_\-fit( X, 3 )}}\label{ellipsoid__fit_8m_aec601a0ce44addd8c6ebd83a46ee5f50}
+\hypertarget{ellipsoid__fit_8m_a3ae9080a0eed9bb18395ac4ce4548364}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!A@{A}}
+\index{A@{A}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{A}]{\setlength{\rightskip}{0pt plus 5cm}ndatapoints {\bf x} ellipsoid {\bf parameters} {\bf elseif} where A}}\label{ellipsoid__fit_8m_a3ae9080a0eed9bb18395ac4ce4548364}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= \hyperlink{mag_plot_8m_a4f0c7a864c82ecffdd637358f88fa57d}{B} or \hyperlink{mag_plot_8m_a4f0c7a864c82ecffdd637358f88fa57d}{B} = C or \hyperlink{ellipsoid__fit_8m_a3ae9080a0eed9bb18395ac4ce4548364}{A} = C
+    \textcolor{keywordflow}{if} \hyperlink{ellipsoid__fit_8m_af611b42a8f351ed9560184a26b08151c}{strcmp}( equals, \textcolor{stringliteral}{'yz'} ) || \hyperlink{ellipsoid__fit_8m_af611b42a8f351ed9560184a26b08151c}{strcmp}( equals, \textcolor{stringliteral}{'zy'} )
+        \hyperlink{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{D} = [ \hyperlink{namespacearbitros_ahrs_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} .* \hyperlink{namespacearbitros_ahrs_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} + \hyperlink{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{z} .* \hyperlink{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{z}, ...
+            \hyperlink{namespacearbitros_ahrs_a9336ebf25087d91c818ee6e9ec29f8c1}{x} .* \hyperlink{namespacearbitros_ahrs_a9336ebf25087d91c818ee6e9ec29f8c1}{x}, ...
+            2 * x, ...
+            2 * \hyperlink{namespacearbitros_ahrs_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y}, ...
+            2 * z ]
+\end{DoxyCode}
+\hypertarget{ellipsoid__fit_8m_a21ad0bd836b90d08f4cf640b4c298e7c}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!b@{b}}
+\index{b@{b}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{b}]{\setlength{\rightskip}{0pt plus 5cm}b}}\label{ellipsoid__fit_8m_a21ad0bd836b90d08f4cf640b4c298e7c}
+\hypertarget{ellipsoid__fit_8m_aded1d98bab231dedd1e85ecf5f1aeca3}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!center@{center}}
+\index{center@{center}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{center}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} center = -\/{\bf A}( 1\-:3, 1\-:3 ) \textbackslash{} \mbox{[} {\bf v}(7)}}\label{ellipsoid__fit_8m_aded1d98bab231dedd1e85ecf5f1aeca3}
+\hypertarget{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!D@{D}}
+\index{D@{D}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{D}]{\setlength{\rightskip}{0pt plus 5cm}else D}}\label{ellipsoid__fit_8m_a56b369eb77b7dbd81a6f5ad6e4aa2ec4}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= [ x .* x + z .* z, ...
+            y .* y, ...
+            2 * x, ...
+            2 * y, ...
+            2 * z ]
+\end{DoxyCode}
+\hypertarget{ellipsoid__fit_8m_aa7a6de6b1b8509bbe4b66809853be68b}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!eigenproblem@{eigenproblem}}
+\index{eigenproblem@{eigenproblem}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{eigenproblem}]{\setlength{\rightskip}{0pt plus 5cm}solve the eigenproblem\mbox{[}{\bf evecs} evals\mbox{]} = eig( {\bf R}( 1\-:3, 1\-:3 ) / -\/{\bf R}( 4, 4 ) )}}\label{ellipsoid__fit_8m_aa7a6de6b1b8509bbe4b66809853be68b}
+\hypertarget{ellipsoid__fit_8m_a7de95afff3150493c5595c8c887be60c}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!evecs@{evecs}}
+\index{evecs@{evecs}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{evecs}]{\setlength{\rightskip}{0pt plus 5cm}evecs = {\bf eye}( 3 )}}\label{ellipsoid__fit_8m_a7de95afff3150493c5595c8c887be60c}
+\hypertarget{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!flag@{flag}}
+\index{flag@{flag}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{flag}]{\setlength{\rightskip}{0pt plus 5cm}{\bf elseif} flag}}\label{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+== 2 && \hyperlink{ellipsoid__fit_8m_ab6fea90bda7927780bc9570cc71d94e7}{nargin} == 2
+    equals = \textcolor{stringliteral}{'xy'}
+\end{DoxyCode}
+\hypertarget{ellipsoid__fit_8m_a5b12ae7bf9711d77978408243043d7f2}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!function@{function}}
+\index{function@{function}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}function\mbox{[}{\bf center}, {\bf radii}, {\bf evecs}, {\bf v}\mbox{]}}}\label{ellipsoid__fit_8m_a5b12ae7bf9711d77978408243043d7f2}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= ellipsoid\_fit( X, \hyperlink{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}{flag}, equals )
+%
+% Fit an ellispoid/sphere to \hyperlink{ellipsoid__fit_8m_a44f09445f90540f74824a1839982d0de}{a} \textcolor{keyword}{set} of xyz \hyperlink{mag_plot_8m_a319265c6545ca1709d9d77b54665cf1b}{data} points:
+%
+%   [center, radii, evecs, pars ] = ellipsoid\_fit( X )
+%   [center, radii, evecs, pars ] = ellipsoid\_fit( [\hyperlink{namespacearbitros_ahrs_a9336ebf25087d91c818ee6e9ec29f8c1}{x} \hyperlink{namespacearbitros_ahrs_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{y} \hyperlink{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{z}] )
+\end{DoxyCode}
+\hypertarget{ellipsoid__fit_8m_a98cce130115e6c04f0a3508bdf447497}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!gam@{gam}}
+\index{gam@{gam}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{gam}]{\setlength{\rightskip}{0pt plus 5cm}gam = 1 + ( {\bf v}(7)$^\wedge$2 / {\bf v}(1) + {\bf v}(8)$^\wedge$2 / {\bf v}(2) + {\bf v}(9)$^\wedge$2 / {\bf v}(3) )}}\label{ellipsoid__fit_8m_a98cce130115e6c04f0a3508bdf447497}
+\hypertarget{ellipsoid__fit_8m_ab6fea90bda7927780bc9570cc71d94e7}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!nargin@{nargin}}
+\index{nargin@{nargin}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{nargin}]{\setlength{\rightskip}{0pt plus 5cm}check input arguments {\bf if} nargin}}\label{ellipsoid__fit_8m_ab6fea90bda7927780bc9570cc71d94e7}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+== 1
+    \hyperlink{ellipsoid__fit_8m_a6689d00d673e8ceddacae3af532b424e}{flag} = 0
+\end{DoxyCode}
+\hypertarget{ellipsoid__fit_8m_a0068887ae91b4d52177f72ed707e6981}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!R@{R}}
+\index{R@{R}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{R}]{\setlength{\rightskip}{0pt plus 5cm}id R = {\bf T} $\ast$ {\bf A} $\ast$ {\bf T}'}}\label{ellipsoid__fit_8m_a0068887ae91b4d52177f72ed707e6981}
+\hypertarget{ellipsoid__fit_8m_a5c11ff4f5370dcd098585cf3d47702a4}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!radii@{radii}}
+\index{radii@{radii}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{radii}]{\setlength{\rightskip}{0pt plus 5cm}radii = sqrt( 1 ./ diag( evals ) )}}\label{ellipsoid__fit_8m_a5c11ff4f5370dcd098585cf3d47702a4}
+\hypertarget{ellipsoid__fit_8m_a09ebe28e0d7d63f91fd29006142e2d2c}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!T@{T}}
+\index{T@{T}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{T}]{\setlength{\rightskip}{0pt plus 5cm}form the corresponding translation matrix T = {\bf eye}( 4 )}}\label{ellipsoid__fit_8m_a09ebe28e0d7d63f91fd29006142e2d2c}
+\hypertarget{ellipsoid__fit_8m_a905c521e05ec8042631a912b71d0454e}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!temp@{temp}}
+\index{temp@{temp}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{temp}]{\setlength{\rightskip}{0pt plus 5cm}temp = -\/{\bf A}( 1\-:3, 1\-:3 )}}\label{ellipsoid__fit_8m_a905c521e05ec8042631a912b71d0454e}
+\hypertarget{ellipsoid__fit_8m_ad89a7fd19b370101b0ffd846590ff83b}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!v@{v}}
+\index{v@{v}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{v}]{\setlength{\rightskip}{0pt plus 5cm}{\bf end} else v = (( {\bf D}' $\ast$ {\bf D} )$^\wedge$-\/1)$\ast$( {\bf D}' $\ast$ (ones( {\bf size}( {\bf x}, 1 ), 1 )$\ast$1) )}}\label{ellipsoid__fit_8m_ad89a7fd19b370101b0ffd846590ff83b}
+\hypertarget{ellipsoid__fit_8m_a597100035d0b6607f5a0e6fbce27a43e}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!x@{x}}
+\index{x@{x}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{x}]{\setlength{\rightskip}{0pt plus 5cm}else x = X( \-:, 1 )}}\label{ellipsoid__fit_8m_a597100035d0b6607f5a0e6fbce27a43e}
+\hypertarget{ellipsoid__fit_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!y@{y}}
+\index{y@{y}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{y}]{\setlength{\rightskip}{0pt plus 5cm}y = X( \-:, 2 )}}\label{ellipsoid__fit_8m_a2fb1c5cf58867b5bbc9a1b145a86f3a0}
+\hypertarget{ellipsoid__fit_8m_a0e08ab12f8d3e0060bf3754da5b0c4df}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!yc@{yc}}
+\index{yc@{yc}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{yc}]{\setlength{\rightskip}{0pt plus 5cm}yc}}\label{ellipsoid__fit_8m_a0e08ab12f8d3e0060bf3754da5b0c4df}
+\hypertarget{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}{\index{ellipsoid\-\_\-fit.\-m@{ellipsoid\-\_\-fit.\-m}!z@{z}}
+\index{z@{z}!ellipsoid_fit.m@{ellipsoid\-\_\-fit.\-m}}
+\subsubsection[{z}]{\setlength{\rightskip}{0pt plus 5cm}z = X( \-:, 3 )}}\label{ellipsoid__fit_8m_a25ed1bcb423b0b7200f485fc5ff71c8e}

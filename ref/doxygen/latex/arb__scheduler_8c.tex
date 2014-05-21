@@ -1,0 +1,138 @@
+\hypertarget{arb__scheduler_8c}{\section{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-scheduler.c File Reference}
+\label{arb__scheduler_8c}\index{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-scheduler.\-c@{C\-:/arbitros/trunk/rtos/source/common/arb\-\_\-scheduler.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-thread.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-scheduler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-idle.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-sys\-Timer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-printf.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linkedlist.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-clocks.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__sched_object}{t\-\_\-sched\-Object}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{arb__scheduler_8c_a11f8f417c2fe343483c9a0371b415fea}{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E}~((uint16\-\_\-t)\hyperlink{arb__sys_timer_8h_a97e9d8d3f003167354a2c06eb356051a}{A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}$\ast$(uint16\-\_\-t)5)
+\item 
+\#define \hyperlink{arb__scheduler_8c_a80726b1b22ab9cb18ad24700d25a324a}{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}
+\item 
+\#define \hyperlink{arb__scheduler_8c_aae151ba6716f92638b5c7120e3d96aa1}{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{arb__scheduler_8c_a02dd3b03215cfecb670473d15eed14c2}{arb\-\_\-round\-Robin\-Scheduler} (void)
+\item 
+static void \hyperlink{arb__scheduler_8c_a2076a4d88d52e1e233738de31163ad36}{arb\-\_\-priority\-Scheduler} (void)
+\item 
+static void \hyperlink{arb__scheduler_8c_ac37b3bc36f0fb7db6188b16179af5701}{\-\_\-\-\_\-attribute\-\_\-\-\_\-} ((always\-\_\-inline))
+\item 
+void \hyperlink{arb__scheduler_8c_ad637c7732363b9a24349db33659a79aa}{arb\-\_\-scheduler\-Start} (void)
+\item 
+uint32\-\_\-t \hyperlink{arb__scheduler_8c_a62f5a930c206187372e0bc87a8b0a9bd}{arb\-\_\-get\-One\-Min\-Loading\-Est} (void)
+\item 
+uint32\-\_\-t \hyperlink{arb__scheduler_8c_af78474aeb1ea34783e9cabcbe2962d8a}{arb\-\_\-get\-Five\-Min\-Loading\-Est} (void)
+\item 
+void \hyperlink{arb__scheduler_8c_aede480b65958c0237e01fb405ceddbdb}{arb\-\_\-update\-Loading\-Est} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void($\ast$ \hyperlink{arb__scheduler_8c_a38ef35e0813c4e30797ec7508b082cb3}{gpt\-\_\-scheduler} )(void)
+\item 
+\hyperlink{arb__thread_8h_a4fa26533990b779a4bb34450c4ffcd9b}{t\-\_\-tcb} $\ast$ \hyperlink{arb__scheduler_8c_ada85dac81a0e46427193f58980e8fd89}{gpt\-\_\-active\-Thread} = N\-U\-L\-L
+\item 
+static \hyperlink{structt__sched_object}{t\-\_\-sched\-Object} \hyperlink{arb__scheduler_8c_ac79b471f03ca4bcb4ef0d6aaf80c2bb6}{gt\-\_\-sched\-Object}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{arb__scheduler_8c_aae151ba6716f92638b5c7120e3d96aa1}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}}
+\index{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-F\-I\-V\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}}\label{arb__scheduler_8c_aae151ba6716f92638b5c7120e3d96aa1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(uint16\_t)((1.0f - 5.0f/300.0f)*\(\backslash\)
+(float)\hyperlink{arb__scheduler_8h_ab2a97ca079be6cf08ed520bc140da1fc}{ARB\_LOAD\_EST\_ONE})
+\end{DoxyCode}
+\hypertarget{arb__scheduler_8c_a80726b1b22ab9cb18ad24700d25a324a}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}}
+\index{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-O\-N\-E\-\_\-\-M\-I\-N\-\_\-\-A\-L\-P\-H\-A}}\label{arb__scheduler_8c_a80726b1b22ab9cb18ad24700d25a324a}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+(uint16\_t)((1.0f - 5.0f/60.0f)*\(\backslash\)
+(float)\hyperlink{arb__scheduler_8h_ab2a97ca079be6cf08ed520bc140da1fc}{ARB\_LOAD\_EST\_ONE})
+\end{DoxyCode}
+\hypertarget{arb__scheduler_8c_a11f8f417c2fe343483c9a0371b415fea}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E}}
+\index{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E@{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define A\-R\-B\-\_\-\-L\-O\-A\-D\-\_\-\-U\-P\-D\-A\-T\-E\-\_\-\-R\-A\-T\-E~((uint16\-\_\-t){\bf A\-R\-B\-\_\-\-T\-I\-C\-K\-S\-\_\-\-P\-E\-R\-\_\-\-S\-E\-C\-O\-N\-D}$\ast$(uint16\-\_\-t)5)}}\label{arb__scheduler_8c_a11f8f417c2fe343483c9a0371b415fea}
+
+
+\subsection{Function Documentation}
+\hypertarget{arb__scheduler_8c_ac37b3bc36f0fb7db6188b16179af5701}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}}
+\index{\-\_\-\-\_\-attribute\-\_\-\-\_\-@{\-\_\-\-\_\-attribute\-\_\-\-\_\-}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{\-\_\-\-\_\-attribute\-\_\-\-\_\-}]{\setlength{\rightskip}{0pt plus 5cm}static void \-\_\-\-\_\-attribute\-\_\-\-\_\- (
+\begin{DoxyParamCaption}
+\item[{(always\-\_\-inline)}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}}\label{arb__scheduler_8c_ac37b3bc36f0fb7db6188b16179af5701}
+\hypertarget{arb__scheduler_8c_af78474aeb1ea34783e9cabcbe2962d8a}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-get\-Five\-Min\-Loading\-Est@{arb\-\_\-get\-Five\-Min\-Loading\-Est}}
+\index{arb\-\_\-get\-Five\-Min\-Loading\-Est@{arb\-\_\-get\-Five\-Min\-Loading\-Est}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-get\-Five\-Min\-Loading\-Est}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t arb\-\_\-get\-Five\-Min\-Loading\-Est (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__scheduler_8c_af78474aeb1ea34783e9cabcbe2962d8a}
+\hypertarget{arb__scheduler_8c_a62f5a930c206187372e0bc87a8b0a9bd}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-get\-One\-Min\-Loading\-Est@{arb\-\_\-get\-One\-Min\-Loading\-Est}}
+\index{arb\-\_\-get\-One\-Min\-Loading\-Est@{arb\-\_\-get\-One\-Min\-Loading\-Est}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-get\-One\-Min\-Loading\-Est}]{\setlength{\rightskip}{0pt plus 5cm}uint32\-\_\-t arb\-\_\-get\-One\-Min\-Loading\-Est (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__scheduler_8c_a62f5a930c206187372e0bc87a8b0a9bd}
+\hypertarget{arb__scheduler_8c_a2076a4d88d52e1e233738de31163ad36}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-priority\-Scheduler@{arb\-\_\-priority\-Scheduler}}
+\index{arb\-\_\-priority\-Scheduler@{arb\-\_\-priority\-Scheduler}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-priority\-Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-priority\-Scheduler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__scheduler_8c_a2076a4d88d52e1e233738de31163ad36}
+\hypertarget{arb__scheduler_8c_a02dd3b03215cfecb670473d15eed14c2}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-round\-Robin\-Scheduler@{arb\-\_\-round\-Robin\-Scheduler}}
+\index{arb\-\_\-round\-Robin\-Scheduler@{arb\-\_\-round\-Robin\-Scheduler}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-round\-Robin\-Scheduler}]{\setlength{\rightskip}{0pt plus 5cm}static void arb\-\_\-round\-Robin\-Scheduler (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__scheduler_8c_a02dd3b03215cfecb670473d15eed14c2}
+\hypertarget{arb__scheduler_8c_ad637c7732363b9a24349db33659a79aa}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-scheduler\-Start@{arb\-\_\-scheduler\-Start}}
+\index{arb\-\_\-scheduler\-Start@{arb\-\_\-scheduler\-Start}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-scheduler\-Start}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-scheduler\-Start (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__scheduler_8c_ad637c7732363b9a24349db33659a79aa}
+\hypertarget{arb__scheduler_8c_aede480b65958c0237e01fb405ceddbdb}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!arb\-\_\-update\-Loading\-Est@{arb\-\_\-update\-Loading\-Est}}
+\index{arb\-\_\-update\-Loading\-Est@{arb\-\_\-update\-Loading\-Est}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{arb\-\_\-update\-Loading\-Est}]{\setlength{\rightskip}{0pt plus 5cm}void arb\-\_\-update\-Loading\-Est (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{arb__scheduler_8c_aede480b65958c0237e01fb405ceddbdb}
+
+
+\subsection{Variable Documentation}
+\hypertarget{arb__scheduler_8c_ada85dac81a0e46427193f58980e8fd89}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!gpt\-\_\-active\-Thread@{gpt\-\_\-active\-Thread}}
+\index{gpt\-\_\-active\-Thread@{gpt\-\_\-active\-Thread}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{gpt\-\_\-active\-Thread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-tcb}$\ast$ gpt\-\_\-active\-Thread = N\-U\-L\-L}}\label{arb__scheduler_8c_ada85dac81a0e46427193f58980e8fd89}
+\hypertarget{arb__scheduler_8c_a38ef35e0813c4e30797ec7508b082cb3}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!gpt\-\_\-scheduler@{gpt\-\_\-scheduler}}
+\index{gpt\-\_\-scheduler@{gpt\-\_\-scheduler}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{gpt\-\_\-scheduler}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ gpt\-\_\-scheduler)(void)}}\label{arb__scheduler_8c_a38ef35e0813c4e30797ec7508b082cb3}
+\hypertarget{arb__scheduler_8c_ac79b471f03ca4bcb4ef0d6aaf80c2bb6}{\index{arb\-\_\-scheduler.\-c@{arb\-\_\-scheduler.\-c}!gt\-\_\-sched\-Object@{gt\-\_\-sched\-Object}}
+\index{gt\-\_\-sched\-Object@{gt\-\_\-sched\-Object}!arb_scheduler.c@{arb\-\_\-scheduler.\-c}}
+\subsubsection[{gt\-\_\-sched\-Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-sched\-Object} gt\-\_\-sched\-Object\hspace{0.3cm}{\ttfamily [static]}}}\label{arb__scheduler_8c_ac79b471f03ca4bcb4ef0d6aaf80c2bb6}

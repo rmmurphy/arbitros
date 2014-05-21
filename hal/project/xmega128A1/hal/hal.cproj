@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{ab0a5a3e-4738-4ecd-bf06-7be3dbcb3843}</ProjectGuid>
+    <avrdevice>ATxmega128A1</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>C</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>hal</AssemblyName>
+    <Name>hal</Name>
+    <RootNamespace>hal</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.1</AsfVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../headers/xmega128A1</Value>
+      <Value>../../../../../rtos/headers</Value>
+      <Value>../../../../../utilities/headers</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.OtherDebuggingFlags>-Wno-unused-but-set-variable</avrgcc.compiler.optimization.OtherDebuggingFlags>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.general.OmitAllSymbolInformation>True</avrgcc.linker.general.OmitAllSymbolInformation>
+  <avrgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>m</Value>
+    </ListValues>
+  </avrgcc.linker.libraries.Libraries>
+  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../../../headers/xmega128A1</Value>
+            <Value>../../../../../rtos/headers</Value>
+            <Value>../../../../../utilities/headers</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.general.OmitAllSymbolInformation>True</avrgcc.linker.general.OmitAllSymbolInformation>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\headers\xmega128A1\avr_compiler.h">
+      <SubType>compile</SubType>
+      <Link>avr_compiler.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_adc.h">
+      <SubType>compile</SubType>
+      <Link>hal_adc.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_clocks.h">
+      <SubType>compile</SubType>
+      <Link>hal_clocks.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_dma.h">
+      <SubType>compile</SubType>
+      <Link>hal_dma.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_eeprom.h">
+      <SubType>compile</SubType>
+      <Link>hal_eeprom.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_gpio.h">
+      <SubType>compile</SubType>
+      <Link>hal_gpio.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_pmic.h">
+      <SubType>compile</SubType>
+      <Link>hal_pmic.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_spi.h">
+      <SubType>compile</SubType>
+      <Link>hal_spi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_timer.h">
+      <SubType>compile</SubType>
+      <Link>hal_timer.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_twi.h">
+      <SubType>compile</SubType>
+      <Link>hal_twi.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_uart.h">
+      <SubType>compile</SubType>
+      <Link>hal_uart.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\headers\xmega128A1\hal_watchDog.h">
+      <SubType>compile</SubType>
+      <Link>hal_watchDog.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_adc.c">
+      <SubType>compile</SubType>
+      <Link>hal_adc.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_clocks.c">
+      <SubType>compile</SubType>
+      <Link>hal_clocks.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_dma.c">
+      <SubType>compile</SubType>
+      <Link>hal_dma.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_eeprom.c">
+      <SubType>compile</SubType>
+      <Link>hal_eeprom.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_gpio.c">
+      <SubType>compile</SubType>
+      <Link>hal_gpio.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_pmic.c">
+      <SubType>compile</SubType>
+      <Link>hal_pmic.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_spi.c">
+      <SubType>compile</SubType>
+      <Link>hal_spi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_timer.c">
+      <SubType>compile</SubType>
+      <Link>hal_timer.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_twi.c">
+      <SubType>compile</SubType>
+      <Link>hal_twi.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_uart.c">
+      <SubType>compile</SubType>
+      <Link>hal_uart.c</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\xmega128A1\hal_watchDog.c">
+      <SubType>compile</SubType>
+      <Link>hal_watchDog.c</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

@@ -1,0 +1,83 @@
+.TH "CID" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CID \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdInfo\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBmid\fP"
+.br
+.ti -1c
+.RI "char \fBoid\fP [2]"
+.br
+.ti -1c
+.RI "char \fBpnm\fP [5]"
+.br
+.ti -1c
+.RI "unsigned char \fBprv_m\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBprv_n\fP: 4"
+.br
+.ti -1c
+.RI "uint32_t \fBpsn\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBmdt_year_high\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBmdt_month\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBmdt_year_low\fP:4"
+.br
+.ti -1c
+.RI "unsigned char \fBalways1\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBcrc\fP: 7"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Card IDentification (\fBCID\fP) register 
+.SH "Field Documentation"
+.PP 
+.SS "unsigned char always1"
+not used always 1 
+.SS "unsigned char crc"
+CRC7 checksum 
+.SS "unsigned char mdt_month"
+Manufacturing date month 
+.SS "unsigned char mdt_year_high"
+Manufacturing date year low digit 
+.SS "unsigned char mdt_year_low"
+Manufacturing date year low digit 
+.SS "unsigned char mid"
+Manufacturer ID 
+.SS "char oid[2]"
+OEM/Application ID 
+.SS "char pnm[5]"
+Product name 
+.SS "unsigned char prv_m"
+Product revision least significant digit 
+.SS "unsigned char prv_n"
+Product revision most significant digit 
+.SS "uint32_t psn"
+Product serial number 
+.SS "unsigned char reserved"
+not used 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

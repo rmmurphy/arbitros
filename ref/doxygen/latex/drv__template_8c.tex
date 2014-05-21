@@ -1,0 +1,133 @@
+\hypertarget{drv__template_8c}{\section{C\-:/arbitros/trunk/drivers/source/drv\-\_\-template.c File Reference}
+\label{drv__template_8c}\index{C\-:/arbitros/trunk/drivers/source/drv\-\_\-template.\-c@{C\-:/arbitros/trunk/drivers/source/drv\-\_\-template.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}avr\-\_\-compiler.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-device.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}arb\-\_\-semaphore.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}drv\-\_\-template.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__template_dev}{t\-\_\-template\-Dev}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{drv__template_8c_a13bd376085ae92e5f0c2ee374cb4af80}{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}~(3)
+\item 
+\#define \hyperlink{drv__template_8c_a7710d436d5390cc43e1dbc8fd954c4c0}{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}~(1)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__template_8c_a996520401d23e0934bfedc2c781d9c66}{template\-Open} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+static int16\-\_\-t \hyperlink{drv__template_8c_a50d6d249e5db75eb3234d4280c629fdc}{template\-Read} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+static int16\-\_\-t \hyperlink{drv__template_8c_a66bdce154be56682a7b40b6f141008eb}{template\-Write} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+static int32\-\_\-t \hyperlink{drv__template_8c_a9631e754d7282e600552fb95a7e3d73d}{template\-Ioctl} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint16\-\_\-t s\-\_\-command, int32\-\_\-t i\-\_\-arguments)
+\item 
+static \hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__template_8c_a85642616ccedd665043ecba37995869f}{template\-Close} (\hyperlink{arb__device_8h_aa7158d40d49e62e2afd7f91fa0c0b4d6}{t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+\hyperlink{arb__error_8h_a623033dbf06d6649e8716824dff23b4a}{t\-\_\-error} \hyperlink{drv__template_8c_a58762482022ac26accce2a36bb527b4c}{template\-Init} (void)
+\item 
+void \hyperlink{drv__template_8c_a0265139b4f7de468018fe792f8214b1f}{template\-Exit} (void)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structt__device_operations}{t\-\_\-device\-Operations} \hyperlink{drv__template_8c_a3f7ca4fe1bc42b9a2d804f30ccd9e3df}{gt\-\_\-template\-Dev\-Ops}
+\item 
+static \hyperlink{structt__template_dev}{t\-\_\-template\-Dev} \hyperlink{drv__template_8c_a8679fcef2f4e4cebff0d988c2a97df25}{gat\-\_\-template\-Dev} \mbox{[}\hyperlink{drv__template_8c_a7710d436d5390cc43e1dbc8fd954c4c0}{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{drv__template_8c_a13bd376085ae92e5f0c2ee374cb4af80}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R@{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}}
+\index{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R@{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-J\-O\-R\-\_\-\-N\-U\-M\-B\-E\-R~(3)}}\label{drv__template_8c_a13bd376085ae92e5f0c2ee374cb4af80}
+\hypertarget{drv__template_8c_a7710d436d5390cc43e1dbc8fd954c4c0}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S@{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}}
+\index{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S@{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S~(1)}}\label{drv__template_8c_a7710d436d5390cc43e1dbc8fd954c4c0}
+
+
+\subsection{Function Documentation}
+\hypertarget{drv__template_8c_a85642616ccedd665043ecba37995869f}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Close@{template\-Close}}
+\index{template\-Close@{template\-Close}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Close}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-error} template\-Close (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a85642616ccedd665043ecba37995869f}
+\hypertarget{drv__template_8c_a0265139b4f7de468018fe792f8214b1f}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Exit@{template\-Exit}}
+\index{template\-Exit@{template\-Exit}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Exit}]{\setlength{\rightskip}{0pt plus 5cm}void template\-Exit (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{drv__template_8c_a0265139b4f7de468018fe792f8214b1f}
+\hypertarget{drv__template_8c_a58762482022ac26accce2a36bb527b4c}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Init@{template\-Init}}
+\index{template\-Init@{template\-Init}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Init}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-error} template\-Init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{drv__template_8c_a58762482022ac26accce2a36bb527b4c}
+\hypertarget{drv__template_8c_a9631e754d7282e600552fb95a7e3d73d}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Ioctl@{template\-Ioctl}}
+\index{template\-Ioctl@{template\-Ioctl}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Ioctl}]{\setlength{\rightskip}{0pt plus 5cm}static int32\-\_\-t template\-Ioctl (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint16\-\_\-t}]{s\-\_\-command, }
+\item[{int32\-\_\-t}]{i\-\_\-arguments}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a9631e754d7282e600552fb95a7e3d73d}
+\hypertarget{drv__template_8c_a996520401d23e0934bfedc2c781d9c66}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Open@{template\-Open}}
+\index{template\-Open@{template\-Open}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Open}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf t\-\_\-error} template\-Open (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a996520401d23e0934bfedc2c781d9c66}
+\hypertarget{drv__template_8c_a50d6d249e5db75eb3234d4280c629fdc}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Read@{template\-Read}}
+\index{template\-Read@{template\-Read}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Read}]{\setlength{\rightskip}{0pt plus 5cm}static int16\-\_\-t template\-Read (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a50d6d249e5db75eb3234d4280c629fdc}
+\hypertarget{drv__template_8c_a66bdce154be56682a7b40b6f141008eb}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!template\-Write@{template\-Write}}
+\index{template\-Write@{template\-Write}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{template\-Write}]{\setlength{\rightskip}{0pt plus 5cm}static int16\-\_\-t template\-Write (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-D\-E\-V\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a66bdce154be56682a7b40b6f141008eb}
+
+
+\subsection{Variable Documentation}
+\hypertarget{drv__template_8c_a8679fcef2f4e4cebff0d988c2a97df25}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!gat\-\_\-template\-Dev@{gat\-\_\-template\-Dev}}
+\index{gat\-\_\-template\-Dev@{gat\-\_\-template\-Dev}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{gat\-\_\-template\-Dev}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-template\-Dev} gat\-\_\-template\-Dev\mbox{[}{\bf T\-E\-M\-P\-L\-A\-T\-E\-\_\-\-M\-A\-X\-\_\-\-M\-I\-N\-O\-R\-S}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}}\label{drv__template_8c_a8679fcef2f4e4cebff0d988c2a97df25}
+\hypertarget{drv__template_8c_a3f7ca4fe1bc42b9a2d804f30ccd9e3df}{\index{drv\-\_\-template.\-c@{drv\-\_\-template.\-c}!gt\-\_\-template\-Dev\-Ops@{gt\-\_\-template\-Dev\-Ops}}
+\index{gt\-\_\-template\-Dev\-Ops@{gt\-\_\-template\-Dev\-Ops}!drv_template.c@{drv\-\_\-template.\-c}}
+\subsubsection[{gt\-\_\-template\-Dev\-Ops}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-device\-Operations} gt\-\_\-template\-Dev\-Ops}}\label{drv__template_8c_a3f7ca4fe1bc42b9a2d804f30ccd9e3df}
+{\bfseries Initial value\-:}
+\begin{DoxyCode}
+= 
+\{
+    \hyperlink{drv__template_8c_a996520401d23e0934bfedc2c781d9c66}{templateOpen},
+    \hyperlink{drv__template_8c_a50d6d249e5db75eb3234d4280c629fdc}{templateRead},
+    \hyperlink{drv__template_8c_a66bdce154be56682a7b40b6f141008eb}{templateWrite},
+    \hyperlink{drv__template_8c_a9631e754d7282e600552fb95a7e3d73d}{templateIoctl},
+    \hyperlink{drv__template_8c_a85642616ccedd665043ecba37995869f}{templateClose}
+
+\}
+\end{DoxyCode}

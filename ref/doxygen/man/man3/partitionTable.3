@@ -1,0 +1,88 @@
+.TH "partitionTable" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+partitionTable \- 
+.PP
+MBR partition table entry\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdFatStructs\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "uint8_t \fBboot\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBbeginHead\fP"
+.br
+.ti -1c
+.RI "unsigned \fBbeginSector\fP: 6"
+.br
+.ti -1c
+.RI "unsigned \fBbeginCylinderHigh\fP: 2"
+.br
+.ti -1c
+.RI "uint8_t \fBbeginCylinderLow\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBtype\fP"
+.br
+.ti -1c
+.RI "uint8_t \fBendHead\fP"
+.br
+.ti -1c
+.RI "unsigned \fBendSector\fP: 6"
+.br
+.ti -1c
+.RI "unsigned \fBendCylinderHigh\fP: 2"
+.br
+.ti -1c
+.RI "uint8_t \fBendCylinderLow\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBfirstSector\fP"
+.br
+.ti -1c
+.RI "uint32_t \fBtotalSectors\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+MBR partition table entry\&. 
+
+A partition table entry for a MBR formatted storage device\&. The MBR partition table has four entries\&. 
+.SH "Field Documentation"
+.PP 
+.SS "unsigned beginCylinderHigh"
+High bits cylinder for first block in partition\&. 
+.SS "uint8_t beginCylinderLow"
+Combine beginCylinderLow with beginCylinderHigh\&. Legal values are 0-1023\&. Only used in old PC BIOS\&. 
+.SS "uint8_t beginHead"
+Head part of Cylinder-head-sector address of the first block in the partition\&. Legal values are 0-255\&. Only used in old PC BIOS\&. 
+.SS "unsigned beginSector"
+Sector part of Cylinder-head-sector address of the first block in the partition\&. Legal values are 1-63\&. Only used in old PC BIOS\&. 
+.SS "uint8_t boot"
+Boot Indicator \&. Indicates whether the volume is the active partition\&. Legal values include: 0X00\&. Do not use for booting\&. 0X80 Active partition\&. 
+.SS "unsigned endCylinderHigh"
+High bits of end cylinder 
+.SS "uint8_t endCylinderLow"
+Combine endCylinderLow with endCylinderHigh\&. Legal values are 0-1023\&. Only used in old PC BIOS\&. 
+.SS "uint8_t endHead"
+head part of cylinder-head-sector address of the last sector in the partition\&. Legal values are 0-255\&. Only used in old PC BIOS\&. 
+.SS "unsigned endSector"
+Sector part of cylinder-head-sector address of the last sector in the partition\&. Legal values are 1-63\&. Only used in old PC BIOS\&. 
+.SS "uint32_t firstSector"
+Logical block address of the first block in the partition\&. 
+.SS "uint32_t totalSectors"
+Length of the partition, in blocks\&. 
+.SS "uint8_t type"
+Partition type\&. See defines that begin with PART_TYPE_ for some Microsoft partition types\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

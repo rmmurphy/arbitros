@@ -1,0 +1,92 @@
+.TH "ArduinoInStream" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArduinoInStream \- 
+.PP
+Input stream for Arduino \fBStream\fP objects\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <ArduinoStream\&.h>\fP
+.PP
+Inherits \fBibufstream\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBArduinoInStream\fP (\fBStream\fP &hws, char *buf, size_t size)"
+.br
+.ti -1c
+.RI "void \fBreadline\fP ()"
+.br
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBseekoff\fP (\fBoff_type\fP off, \fBseekdir\fP way)"
+.br
+.ti -1c
+.RI "bool \fBseekpos\fP (\fBpos_type\fP pos)"
+.br
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+Input stream for Arduino \fBStream\fP objects\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBArduinoInStream\fP (\fBStream\fP &hws, char *buf, size_tsize)\fC [inline]\fP"
+Constructor 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIhws\fP hardware stream 
+.br
+\fIbuf\fP buffer for input line 
+.br
+\fIsize\fP size of input buffer 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void readline ()\fC [inline]\fP"
+read a line\&. 
+.SS "bool seekoff (\fBoff_type\fPoff, \fBseekdir\fPway)\fC [inline]\fP, \fC [protected]\fP"
+Internal - do not use\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoff\fP 
+.br
+\fIway\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true/false\&. 
+.RE
+.PP
+
+.SS "bool seekpos (\fBpos_type\fPpos)\fC [inline]\fP, \fC [protected]\fP"
+Internal - do not use\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true/false\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

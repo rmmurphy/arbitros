@@ -1,0 +1,215 @@
+\hypertarget{utl__buffer_8c}{\section{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-buffer.c File Reference}
+\label{utl__buffer_8c}\index{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-buffer.\-c@{C\-:/arbitros/trunk/utilities/source/common/utl\-\_\-buffer.\-c}}
+}
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-linked\-List.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-buffer.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}utl\-\_\-pmic.\-h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__buffer_handle}{t\-\_\-buffer\-Handle}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{utl__buffer_8c_a98933cb23660cebd020d23a6e01ea3c3}{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R} (gt\-\_\-buffer\-List)
+\item 
+int16\-\_\-t \hyperlink{utl__buffer_8c_ac75c04f8123bd36a9574fd2da5e23f19}{utl\-\_\-get\-Buffer\-Full\-Level} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+int16\-\_\-t \hyperlink{utl__buffer_8c_a9c3656a1b216c1cb7bc33158aa9d7b6b}{utl\-\_\-get\-Buffer\-Empty\-Level} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+int16\-\_\-t \hyperlink{utl__buffer_8c_a03835971ec9a7f48307b7cf4439817fe}{utl\-\_\-get\-Buffer\-Size} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+bool \hyperlink{utl__buffer_8c_a7ca4c2dca79bf59542aa3114482b567a}{utl\-\_\-is\-Buffer\-Full} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+bool \hyperlink{utl__buffer_8c_a76fc5ea53ebaf35703c5c80935e25482}{utl\-\_\-is\-Buffer\-Empty} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+bool \hyperlink{utl__buffer_8c_a2db35610409d9045e7af97f8d9940c94}{utl\-\_\-has\-Buffer\-Overflowed} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+bool \hyperlink{utl__buffer_8c_a2d01ad0a4b7e370954136b6260258570}{utl\-\_\-has\-Buffer\-Underflowed} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+int8\-\_\-t $\ast$ \hyperlink{utl__buffer_8c_a2580fa42029d3fdaa65a3f51358cf816}{utl\-\_\-get\-Buffer\-Ptr} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+void \hyperlink{utl__buffer_8c_a6718996b7ac98ddf80dddf24823a2283}{utl\-\_\-write\-Byte} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t c\-\_\-byte)
+\item 
+void \hyperlink{utl__buffer_8c_adf7443a8539000b4a99931b765cc2c1a}{utl\-\_\-incr\-Buf\-Wrt\-Ptr} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint16\-\_\-t s\-\_\-size)
+\item 
+void \hyperlink{utl__buffer_8c_a3b5d69a2fe4474238d9f9960531a7c35}{utl\-\_\-incr\-Buf\-Rd\-Ptr} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle, uint16\-\_\-t s\-\_\-size)
+\item 
+int16\-\_\-t \hyperlink{utl__buffer_8c_ae1bf77547f43aef89feff98a07e4e1d5}{utl\-\_\-get\-Buf\-Rd\-Ptr} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+int16\-\_\-t \hyperlink{utl__buffer_8c_a06332e421ed039243e5eff5d97a0aed4}{utl\-\_\-get\-Buf\-Wrt\-Ptr} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+void \hyperlink{utl__buffer_8c_a6d453b577be32dcae08a1edb2b5095e5}{utl\-\_\-write\-Block} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+int8\-\_\-t \hyperlink{utl__buffer_8c_a0bf8e544c82bdc68a7556c1e0497f953}{utl\-\_\-read\-Byte} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+void \hyperlink{utl__buffer_8c_ae542ecbc8a17410781decebbc1b11fc7}{utl\-\_\-buff\-Erase\-Tail\-Byte} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+void \hyperlink{utl__buffer_8c_a064da1b7a4c32c6930a6a526d17cfd3f}{utl\-\_\-read\-Block} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle, int8\-\_\-t $\ast$pc\-\_\-buff, uint16\-\_\-t s\-\_\-size)
+\item 
+void \hyperlink{utl__buffer_8c_aad044e9d90fe52c54908924788ed985a}{ult\-\_\-reset\-Buffer} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\item 
+\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} \hyperlink{utl__buffer_8c_a6b130415f95d7e097006b813bb7efc61}{utl\-\_\-create\-Buffer} (int16\-\_\-t s\-\_\-size\-Bytes)
+\item 
+\hyperlink{utl__buffer_8h_a3310dde470eaae3042b88988803cabf2}{t\-\_\-buffer\-Error} \hyperlink{utl__buffer_8c_ae11281dd83adb5887e266342f2409417}{utl\-\_\-destroy\-Buffer} (\hyperlink{utl__buffer_8h_a7db1a8df14835d15b139fb21b975a35a}{t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} t\-\_\-handle)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{utl__buffer_8c_aad044e9d90fe52c54908924788ed985a}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!ult\-\_\-reset\-Buffer@{ult\-\_\-reset\-Buffer}}
+\index{ult\-\_\-reset\-Buffer@{ult\-\_\-reset\-Buffer}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{ult\-\_\-reset\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}void ult\-\_\-reset\-Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_aad044e9d90fe52c54908924788ed985a}
+\hypertarget{utl__buffer_8c_ae542ecbc8a17410781decebbc1b11fc7}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-buff\-Erase\-Tail\-Byte@{utl\-\_\-buff\-Erase\-Tail\-Byte}}
+\index{utl\-\_\-buff\-Erase\-Tail\-Byte@{utl\-\_\-buff\-Erase\-Tail\-Byte}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-buff\-Erase\-Tail\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-buff\-Erase\-Tail\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_ae542ecbc8a17410781decebbc1b11fc7}
+\hypertarget{utl__buffer_8c_a98933cb23660cebd020d23a6e01ea3c3}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R@{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}}
+\index{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R@{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}U\-T\-L\-\_\-\-C\-R\-E\-A\-T\-E\-\_\-\-C\-O\-N\-T\-A\-I\-N\-E\-R (
+\begin{DoxyParamCaption}
+\item[{gt\-\_\-buffer\-List}]{}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a98933cb23660cebd020d23a6e01ea3c3}
+\hypertarget{utl__buffer_8c_a6b130415f95d7e097006b813bb7efc61}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-create\-Buffer@{utl\-\_\-create\-Buffer}}
+\index{utl\-\_\-create\-Buffer@{utl\-\_\-create\-Buffer}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-create\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E} utl\-\_\-create\-Buffer (
+\begin{DoxyParamCaption}
+\item[{int16\-\_\-t}]{s\-\_\-size\-Bytes}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a6b130415f95d7e097006b813bb7efc61}
+\hypertarget{utl__buffer_8c_ae11281dd83adb5887e266342f2409417}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-destroy\-Buffer@{utl\-\_\-destroy\-Buffer}}
+\index{utl\-\_\-destroy\-Buffer@{utl\-\_\-destroy\-Buffer}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-destroy\-Buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf t\-\_\-buffer\-Error} utl\-\_\-destroy\-Buffer (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_ae11281dd83adb5887e266342f2409417}
+\hypertarget{utl__buffer_8c_a9c3656a1b216c1cb7bc33158aa9d7b6b}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buffer\-Empty\-Level@{utl\-\_\-get\-Buffer\-Empty\-Level}}
+\index{utl\-\_\-get\-Buffer\-Empty\-Level@{utl\-\_\-get\-Buffer\-Empty\-Level}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buffer\-Empty\-Level}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t utl\-\_\-get\-Buffer\-Empty\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a9c3656a1b216c1cb7bc33158aa9d7b6b}
+\hypertarget{utl__buffer_8c_ac75c04f8123bd36a9574fd2da5e23f19}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buffer\-Full\-Level@{utl\-\_\-get\-Buffer\-Full\-Level}}
+\index{utl\-\_\-get\-Buffer\-Full\-Level@{utl\-\_\-get\-Buffer\-Full\-Level}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buffer\-Full\-Level}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t utl\-\_\-get\-Buffer\-Full\-Level (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_ac75c04f8123bd36a9574fd2da5e23f19}
+\hypertarget{utl__buffer_8c_a2580fa42029d3fdaa65a3f51358cf816}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buffer\-Ptr@{utl\-\_\-get\-Buffer\-Ptr}}
+\index{utl\-\_\-get\-Buffer\-Ptr@{utl\-\_\-get\-Buffer\-Ptr}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buffer\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}int8\-\_\-t$\ast$ utl\-\_\-get\-Buffer\-Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a2580fa42029d3fdaa65a3f51358cf816}
+\hypertarget{utl__buffer_8c_a03835971ec9a7f48307b7cf4439817fe}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buffer\-Size@{utl\-\_\-get\-Buffer\-Size}}
+\index{utl\-\_\-get\-Buffer\-Size@{utl\-\_\-get\-Buffer\-Size}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buffer\-Size}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t utl\-\_\-get\-Buffer\-Size (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a03835971ec9a7f48307b7cf4439817fe}
+\hypertarget{utl__buffer_8c_ae1bf77547f43aef89feff98a07e4e1d5}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buf\-Rd\-Ptr@{utl\-\_\-get\-Buf\-Rd\-Ptr}}
+\index{utl\-\_\-get\-Buf\-Rd\-Ptr@{utl\-\_\-get\-Buf\-Rd\-Ptr}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buf\-Rd\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t utl\-\_\-get\-Buf\-Rd\-Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_ae1bf77547f43aef89feff98a07e4e1d5}
+\hypertarget{utl__buffer_8c_a06332e421ed039243e5eff5d97a0aed4}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-get\-Buf\-Wrt\-Ptr@{utl\-\_\-get\-Buf\-Wrt\-Ptr}}
+\index{utl\-\_\-get\-Buf\-Wrt\-Ptr@{utl\-\_\-get\-Buf\-Wrt\-Ptr}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-get\-Buf\-Wrt\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}int16\-\_\-t utl\-\_\-get\-Buf\-Wrt\-Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a06332e421ed039243e5eff5d97a0aed4}
+\hypertarget{utl__buffer_8c_a2db35610409d9045e7af97f8d9940c94}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-has\-Buffer\-Overflowed@{utl\-\_\-has\-Buffer\-Overflowed}}
+\index{utl\-\_\-has\-Buffer\-Overflowed@{utl\-\_\-has\-Buffer\-Overflowed}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-has\-Buffer\-Overflowed}]{\setlength{\rightskip}{0pt plus 5cm}bool utl\-\_\-has\-Buffer\-Overflowed (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a2db35610409d9045e7af97f8d9940c94}
+\hypertarget{utl__buffer_8c_a2d01ad0a4b7e370954136b6260258570}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-has\-Buffer\-Underflowed@{utl\-\_\-has\-Buffer\-Underflowed}}
+\index{utl\-\_\-has\-Buffer\-Underflowed@{utl\-\_\-has\-Buffer\-Underflowed}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-has\-Buffer\-Underflowed}]{\setlength{\rightskip}{0pt plus 5cm}bool utl\-\_\-has\-Buffer\-Underflowed (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a2d01ad0a4b7e370954136b6260258570}
+\hypertarget{utl__buffer_8c_a3b5d69a2fe4474238d9f9960531a7c35}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-incr\-Buf\-Rd\-Ptr@{utl\-\_\-incr\-Buf\-Rd\-Ptr}}
+\index{utl\-\_\-incr\-Buf\-Rd\-Ptr@{utl\-\_\-incr\-Buf\-Rd\-Ptr}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-incr\-Buf\-Rd\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-incr\-Buf\-Rd\-Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a3b5d69a2fe4474238d9f9960531a7c35}
+\hypertarget{utl__buffer_8c_adf7443a8539000b4a99931b765cc2c1a}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-incr\-Buf\-Wrt\-Ptr@{utl\-\_\-incr\-Buf\-Wrt\-Ptr}}
+\index{utl\-\_\-incr\-Buf\-Wrt\-Ptr@{utl\-\_\-incr\-Buf\-Wrt\-Ptr}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-incr\-Buf\-Wrt\-Ptr}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-incr\-Buf\-Wrt\-Ptr (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_adf7443a8539000b4a99931b765cc2c1a}
+\hypertarget{utl__buffer_8c_a76fc5ea53ebaf35703c5c80935e25482}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-is\-Buffer\-Empty@{utl\-\_\-is\-Buffer\-Empty}}
+\index{utl\-\_\-is\-Buffer\-Empty@{utl\-\_\-is\-Buffer\-Empty}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-is\-Buffer\-Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool utl\-\_\-is\-Buffer\-Empty (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a76fc5ea53ebaf35703c5c80935e25482}
+\hypertarget{utl__buffer_8c_a7ca4c2dca79bf59542aa3114482b567a}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-is\-Buffer\-Full@{utl\-\_\-is\-Buffer\-Full}}
+\index{utl\-\_\-is\-Buffer\-Full@{utl\-\_\-is\-Buffer\-Full}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-is\-Buffer\-Full}]{\setlength{\rightskip}{0pt plus 5cm}bool utl\-\_\-is\-Buffer\-Full (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a7ca4c2dca79bf59542aa3114482b567a}
+\hypertarget{utl__buffer_8c_a064da1b7a4c32c6930a6a526d17cfd3f}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-read\-Block@{utl\-\_\-read\-Block}}
+\index{utl\-\_\-read\-Block@{utl\-\_\-read\-Block}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-read\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-read\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a064da1b7a4c32c6930a6a526d17cfd3f}
+\hypertarget{utl__buffer_8c_a0bf8e544c82bdc68a7556c1e0497f953}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-read\-Byte@{utl\-\_\-read\-Byte}}
+\index{utl\-\_\-read\-Byte@{utl\-\_\-read\-Byte}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-read\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}int8\-\_\-t utl\-\_\-read\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a0bf8e544c82bdc68a7556c1e0497f953}
+\hypertarget{utl__buffer_8c_a6d453b577be32dcae08a1edb2b5095e5}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-write\-Block@{utl\-\_\-write\-Block}}
+\index{utl\-\_\-write\-Block@{utl\-\_\-write\-Block}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-write\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-write\-Block (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t $\ast$}]{pc\-\_\-buff, }
+\item[{uint16\-\_\-t}]{s\-\_\-size}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a6d453b577be32dcae08a1edb2b5095e5}
+\hypertarget{utl__buffer_8c_a6718996b7ac98ddf80dddf24823a2283}{\index{utl\-\_\-buffer.\-c@{utl\-\_\-buffer.\-c}!utl\-\_\-write\-Byte@{utl\-\_\-write\-Byte}}
+\index{utl\-\_\-write\-Byte@{utl\-\_\-write\-Byte}!utl_buffer.c@{utl\-\_\-buffer.\-c}}
+\subsubsection[{utl\-\_\-write\-Byte}]{\setlength{\rightskip}{0pt plus 5cm}void utl\-\_\-write\-Byte (
+\begin{DoxyParamCaption}
+\item[{{\bf t\-\_\-\-B\-U\-F\-F\-H\-A\-N\-D\-L\-E}}]{t\-\_\-handle, }
+\item[{int8\-\_\-t}]{c\-\_\-byte}
+\end{DoxyParamCaption}
+)}}\label{utl__buffer_8c_a6718996b7ac98ddf80dddf24823a2283}

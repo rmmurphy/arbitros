@@ -1,0 +1,184 @@
+.TH "CSDV2" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+CSDV2 \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdInfo\&.h>\fP
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "unsigned char \fBreserved1\fP: 6"
+.br
+.ti -1c
+.RI "unsigned char \fBcsd_ver\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBtaac\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBnsac\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBtran_speed\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBccc_high\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBread_bl_len\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBccc_low\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved2\fP: 4"
+.br
+.ti -1c
+.RI "unsigned char \fBdsr_imp\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBread_blk_misalign\fP:1"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_blk_misalign\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBread_bl_partial\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBc_size_high\fP: 6"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved3\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBc_size_mid\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBc_size_low\fP"
+.br
+.ti -1c
+.RI "unsigned char \fBsector_size_high\fP: 6"
+.br
+.ti -1c
+.RI "unsigned char \fBerase_blk_en\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved4\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBwp_grp_size\fP: 7"
+.br
+.ti -1c
+.RI "unsigned char \fBsector_size_low\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_bl_len_high\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBr2w_factor\fP: 3"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved5\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBwp_grp_enable\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved6\fP: 5"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_partial\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBwrite_bl_len_low\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBreserved7\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBfile_format\fP: 2"
+.br
+.ti -1c
+.RI "unsigned char \fBtmp_write_protect\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBperm_write_protect\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBcopy\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBfile_format_grp\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBalways1\fP: 1"
+.br
+.ti -1c
+.RI "unsigned char \fBcrc\fP: 7"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+CSD for version 2\&.00 cards 
+.SH "Field Documentation"
+.PP 
+.SS "unsigned char always1"
+not used always 1 
+.SS "unsigned char c_size_high"
+high part of card size 
+.SS "unsigned char c_size_low"
+low part of card size 
+.SS "unsigned char c_size_mid"
+middle part of card size 
+.SS "unsigned char crc"
+checksum 
+.SS "unsigned char erase_blk_en"
+fixed to 1 - erase single is supported 
+.SS "unsigned char file_format"
+Do not use always 0 
+.SS "unsigned char file_format_grp"
+Do not use always 0 
+.SS "unsigned char nsac"
+fixed to 0 
+.SS "unsigned char r2w_factor"
+fixed value of 2 
+.SS "unsigned char read_bl_len"
+This field is fixed to 9h, which indicates READ_BL_LEN=512 Byte 
+.SS "unsigned char read_bl_partial"
+fixed to 0 - no partial read 
+.SS "unsigned char read_blk_misalign"
+fixed to 0 
+.SS "unsigned char reserved2"
+not used 
+.SS "unsigned char reserved3"
+not used 
+.SS "unsigned char reserved4"
+not used 
+.SS "unsigned char reserved5"
+not used 
+.SS "unsigned char sector_size_high"
+sector size is fixed at 64 KB 
+.SS "unsigned char sector_size_low"
+sector size is fixed at 64 KB 
+.SS "unsigned char taac"
+fixed to 0X0E 
+.SS "unsigned char wp_grp_enable"
+fixed value of 0 - no write protect groups 
+.SS "unsigned char write_bl_len_high"
+write_bl_len fixed for 512 byte blocks 
+.SS "unsigned char write_bl_len_low"
+write_bl_len fixed for 512 byte blocks 
+.SS "unsigned char write_blk_misalign"
+fixed to 0 
+.SS "unsigned char write_partial"
+always zero - no partial block read 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

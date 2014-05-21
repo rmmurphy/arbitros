@@ -1,0 +1,1220 @@
+.TH "SdBaseFile" 3 "Sun Mar 2 2014" "My Project" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+SdBaseFile \- 
+.PP
+Base class for \fBSdFile\fP with \fBPrint\fP and C++ streams\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <SdBaseFile\&.h>\fP
+.PP
+Inherited by \fBSdFile\fP, and \fBSdStreamBase\fP\fC [protected]\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBSdBaseFile\fP ()"
+.br
+.ti -1c
+.RI "\fBSdBaseFile\fP (const char *path, uint8_t oflag)"
+.br
+.ti -1c
+.RI "bool \fBgetWriteError\fP ()"
+.br
+.ti -1c
+.RI "void \fBclearWriteError\fP ()"
+.br
+.ti -1c
+.RI "void \fBgetpos\fP (\fBFatPos_t\fP *pos)"
+.br
+.ti -1c
+.RI "void \fBsetpos\fP (\fBFatPos_t\fP *pos)"
+.br
+.ti -1c
+.RI "uint32_t \fBavailable\fP ()"
+.br
+.ti -1c
+.RI "bool \fBclose\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcontiguousRange\fP (uint32_t *bgnBlock, uint32_t *endBlock)"
+.br
+.ti -1c
+.RI "bool \fBcreateContiguous\fP (\fBSdBaseFile\fP *dirFile, const char *path, uint32_t size)"
+.br
+.ti -1c
+.RI "uint32_t \fBcurCluster\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBcurPosition\fP () const "
+.br
+.ti -1c
+.RI "bool \fBdirEntry\fP (\fBdir_t\fP *dir)"
+.br
+.ti -1c
+.RI "bool \fBexists\fP (const char *\fBname\fP)"
+.br
+.ti -1c
+.RI "int16_t \fBfgets\fP (char *str, int16_t num, char *delim=0)"
+.br
+.ti -1c
+.RI "uint32_t \fBfileSize\fP () const "
+.br
+.ti -1c
+.RI "uint32_t \fBfirstCluster\fP () const "
+.br
+.ti -1c
+.RI "bool \fBgetFilename\fP (char *\fBname\fP)"
+.br
+.ti -1c
+.RI "bool \fBisDir\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisFile\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisOpen\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisSubDir\fP () const "
+.br
+.ti -1c
+.RI "bool \fBisRoot\fP () const "
+.br
+.ti -1c
+.RI "void \fBls\fP (\fBPrint\fP *pr, uint8_t flags=0, uint8_t indent=0)"
+.br
+.ti -1c
+.RI "void \fBls\fP (uint8_t flags=0)"
+.br
+.ti -1c
+.RI "bool \fBmkdir\fP (\fBSdBaseFile\fP *dir, const char *path, bool pFlag=true)"
+.br
+.ti -1c
+.RI "bool \fBmakeDir\fP (\fBSdBaseFile\fP *dir, const char *path)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBSdBaseFile\fP *dirFile, uint16_t index, uint8_t oflag)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBSdBaseFile\fP *dirFile, const char *path, uint8_t oflag)"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (const char *path, uint8_t oflag=\fBO_READ\fP)"
+.br
+.ti -1c
+.RI "bool \fBopenNext\fP (\fBSdBaseFile\fP *dirFile, uint8_t oflag)"
+.br
+.ti -1c
+.RI "bool \fBopenRoot\fP (\fBSdVolume\fP *vol)"
+.br
+.ti -1c
+.RI "int \fBpeek\fP ()"
+.br
+.ti -1c
+.RI "bool \fBprintCreateDateTime\fP (\fBPrint\fP *pr)"
+.br
+.ti -1c
+.RI "int \fBprintField\fP (int16_t value, char term)"
+.br
+.ti -1c
+.RI "int \fBprintField\fP (uint16_t value, char term)"
+.br
+.ti -1c
+.RI "int \fBprintField\fP (int32_t value, char term)"
+.br
+.ti -1c
+.RI "int \fBprintField\fP (uint32_t value, char term)"
+.br
+.ti -1c
+.RI "bool \fBprintModifyDateTime\fP (\fBPrint\fP *pr)"
+.br
+.ti -1c
+.RI "bool \fBprintName\fP ()"
+.br
+.ti -1c
+.RI "bool \fBprintName\fP (\fBPrint\fP *pr)"
+.br
+.ti -1c
+.RI "int16_t \fBread\fP ()"
+.br
+.ti -1c
+.RI "int \fBread\fP (void *buf, size_t nbyte)"
+.br
+.ti -1c
+.RI "int8_t \fBreadDir\fP (\fBdir_t\fP *dir)"
+.br
+.ti -1c
+.RI "bool \fBremove\fP ()"
+.br
+.ti -1c
+.RI "void \fBrewind\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrename\fP (\fBSdBaseFile\fP *dirFile, const char *newPath)"
+.br
+.ti -1c
+.RI "bool \fBrmdir\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrmDir\fP ()"
+.br
+.ti -1c
+.RI "bool \fBrmRfStar\fP ()"
+.br
+.ti -1c
+.RI "bool \fBseekCur\fP (int32_t offset)"
+.br
+.ti -1c
+.RI "bool \fBseekEnd\fP (int32_t offset=0)"
+.br
+.ti -1c
+.RI "bool \fBseekSet\fP (uint32_t pos)"
+.br
+.ti -1c
+.RI "bool \fBsync\fP ()"
+.br
+.ti -1c
+.RI "bool \fBtimestamp\fP (\fBSdBaseFile\fP *file)"
+.br
+.ti -1c
+.RI "bool \fBtimestamp\fP (uint8_t flag, uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second)"
+.br
+.ti -1c
+.RI "uint8_t \fBtype\fP () const "
+.br
+.ti -1c
+.RI "bool \fBtruncate\fP (uint32_t size)"
+.br
+.ti -1c
+.RI "\fBSdVolume\fP * \fBvolume\fP () const "
+.br
+.ti -1c
+.RI "int \fBwrite\fP (const void *buf, size_t nbyte)"
+.br
+.ti -1c
+.RI "bool \fBcontiguousRange\fP (uint32_t &bgnBlock, uint32_t &endBlock) \fB__attribute__\fP((error('use contiguousRange(&bgnBlock"
+.br
+.ti -1c
+.RI "bool \fBcreateContiguous\fP (\fBSdBaseFile\fP &dirFile, const char *path, uint32_t size) \fB__attribute__\fP((error('use createContiguous(&bgnBlock"
+.br
+.ti -1c
+.RI "bool \fBdirEntry\fP (\fBdir_t\fP &dir) \fB__attribute__\fP((error('use dirEntry(&dir)')))"
+.br
+.ti -1c
+.RI "bool \fBmkdir\fP (\fBSdBaseFile\fP &dir, const char *path) \fB__attribute__\fP((error('use mkdir(&dir"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBSdBaseFile\fP &dirFile, const char *path, uint8_t oflag) \fB__attribute__\fP((error('use open(&dirFile"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBSdBaseFile\fP &dirFile, const char *path) \fB__attribute__\fP((error('use open(&dirFile"
+.br
+.ti -1c
+.RI "bool \fBopen\fP (\fBSdBaseFile\fP &dirFile, uint16_t index, uint8_t oflag) \fB__attribute__\fP((error('use open(&dirFile"
+.br
+.ti -1c
+.RI "bool \fBopenRoot\fP (\fBSdVolume\fP &vol) \fB__attribute__\fP((error('use openRoot(&vol)')))"
+.br
+.ti -1c
+.RI "int8_t \fBreadDir\fP (\fBdir_t\fP &dir) \fB__attribute__\fP((error('use readDir(&dir)')))"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBSdBaseFile\fP * \fBcwd\fP ()"
+.br
+.ti -1c
+.RI "static void \fBdateTimeCallback\fP (void(*dateTime)(uint16_t *date, uint16_t *time))"
+.br
+.ti -1c
+.RI "static void \fBdateTimeCallbackCancel\fP ()"
+.br
+.ti -1c
+.RI "static void \fBdirName\fP (const \fBdir_t\fP &dir, char *\fBname\fP)"
+.br
+.ti -1c
+.RI "static void \fBprintFatDate\fP (uint16_t fatDate)"
+.br
+.ti -1c
+.RI "static void \fBprintFatDate\fP (\fBPrint\fP *pr, uint16_t fatDate)"
+.br
+.ti -1c
+.RI "static void \fBprintFatTime\fP (uint16_t fatTime)"
+.br
+.ti -1c
+.RI "static void \fBprintFatTime\fP (\fBPrint\fP *pr, uint16_t fatTime)"
+.br
+.ti -1c
+.RI "static bool \fBremove\fP (\fBSdBaseFile\fP *dirFile, const char *path)"
+.br
+.ti -1c
+.RI "static void \fBdateTimeCallback\fP (void(*dateTime)(uint16_t &date, uint16_t &time)) \fB__attribute__\fP((error('use void dateTimeCallback(''void (*dateTime)(uint16_t* date"
+.br
+.ti -1c
+.RI "static bool \fBremove\fP (\fBSdBaseFile\fP &dirFile, const char *path) \fB__attribute__\fP((error('use remove(&dirFile"
+.br
+.in -1c
+.SS "Data Fields"
+
+.in +1c
+.ti -1c
+.RI "bool \fBwriteError\fP"
+.br
+.ti -1c
+.RI "bool & \fBendBlock\fP"
+.br
+.ti -1c
+.RI "static void uint16_t * \fBtime\fP"
+.br
+.ti -1c
+.RI "bool \fBpath\fP"
+.br
+.ti -1c
+.RI "bool \fBoflag\fP"
+.br
+.ti -1c
+.RI "bool \fBO_RDWR\fP"
+.br
+.ti -1c
+.RI "bool \fBindex\fP"
+.br
+.ti -1c
+.RI "static bool \fBpath\fP"
+.br
+.in -1c
+.SS "Friends"
+
+.in +1c
+.ti -1c
+.RI "class \fBSdFat\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Base class for \fBSdFile\fP with \fBPrint\fP and C++ streams\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "\fBSdBaseFile\fP ()\fC [inline]\fP"
+Create an instance\&. 
+.SS "\fBSdBaseFile\fP (const char *path, uint8_toflag)"
+Create a file object and open it in the current working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for a file to be opened\&.
+.br
+\fIoflag\fP Values for \fIoflag\fP are constructed by a bitwise-inclusive OR of open flags\&. see \fBSdBaseFile::open(SdBaseFile*, const char*, uint8_t)\fP\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "uint32_t available (void)\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+number of bytes available from yhe current position to EOF 
+.RE
+.PP
+
+.SS "void clearWriteError ()\fC [inline]\fP"
+Set writeError to zero 
+.SS "bool close ()"
+Close a file and force cached data and directory information to be written to the storage device\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include no file is open or an I/O error\&. 
+.RE
+.PP
+
+.SS "bool contiguousRange (uint32_t *bgnBlock, uint32_t *endBlock)"
+Check for contiguous file and return its raw block range\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbgnBlock\fP the first block address for the file\&. 
+.br
+\fIendBlock\fP the last block address for the file\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include file is not contiguous, file has zero length or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "bool createContiguous (\fBSdBaseFile\fP *dirFile, const char *path, uint32_tsize)"
+Create and open a new contiguous file of a specified size\&.
+.PP
+\fBNote:\fP
+.RS 4
+This function only supports short DOS 8\&.3 names\&. See \fBopen()\fP for more information\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP The directory where the file will be created\&. 
+.br
+\fIpath\fP A path with a valid DOS 8\&.3 file name\&. 
+.br
+\fIsize\fP The desired file size\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include \fIpath\fP contains an invalid DOS 8\&.3 file name, the FAT volume has not been initialized, a file is already open, the file already exists, the root directory is full or an I/O error\&. 
+.RE
+.PP
+
+.SS "uint32_t curCluster () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The current cluster number for a file or directory\&. 
+.RE
+.PP
+
+.SS "uint32_t curPosition () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The current position for a file or directory\&. 
+.RE
+.PP
+
+.SS "static \fBSdBaseFile\fP* cwd ()\fC [inline]\fP, \fC [static]\fP"
+\fBReturns:\fP
+.RS 4
+Current working directory 
+.RE
+.PP
+
+.SS "static void dateTimeCallback (void(*)(uint16_t *date, uint16_t *time)dateTime)\fC [inline]\fP, \fC [static]\fP"
+Set the date/time callback function
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdateTime\fP The user's call back function\&. The callback function is of the form:
+.RE
+.PP
+.PP
+.nf
+void dateTime(uint16_t* date, uint16_t* time) {
+  uint16_t year;
+  uint8_t month, day, hour, minute, second;
+
+  // User gets date and time from GPS or real-time clock here
+
+  // return date using FAT_DATE macro to format fields
+  *date = FAT_DATE(year, month, day);
+
+  // return time using FAT_TIME macro to format fields
+  *time = FAT_TIME(hour, minute, second);
+}
+.fi
+.PP
+.PP
+Sets the function that is called when a file is created or when a file's directory entry is modified by \fBsync()\fP\&. All timestamps, access, creation, and modify, are set when a file is created\&. \fBsync()\fP maintains the last access date and last modify date/time\&.
+.PP
+See the \fBtimestamp()\fP function\&. 
+.SS "static void dateTimeCallbackCancel ()\fC [inline]\fP, \fC [static]\fP"
+Cancel the date/time callback function\&. 
+.SS "bool dirEntry (\fBdir_t\fP *dir)"
+Return a file's directory entry\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP Location for return of the file's directory entry\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "void dirName (const \fBdir_t\fP &dir, char *name)\fC [static]\fP"
+Format the name field of \fIdir\fP into the 13 byte array \fIname\fP in standard 8\&.3 short name format\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP The directory structure containing the name\&. 
+.br
+\fIname\fP A 13 byte char array for the formatted name\&. 
+.RE
+.PP
+
+.SS "bool exists (const char *name)"
+Test for the existence of a file in a directory
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP Name of the file to be tested for\&.
+.RE
+.PP
+The calling instance must be an open directory file\&.
+.PP
+dirFile\&.exists('TOFIND\&.TXT') searches for 'TOFIND\&.TXT' in the directory dirFile\&.
+.PP
+\fBReturns:\fP
+.RS 4
+true if the file exists else false\&. 
+.RE
+.PP
+
+.SS "int16_t fgets (char *str, int16_tnum, char *delim = \fC0\fP)"
+Get a string from a file\&.
+.PP
+\fBfgets()\fP reads bytes from a file into the array pointed to by \fIstr\fP, until \fInum\fP - 1 bytes are read, or a delimiter is read and transferred to \fIstr\fP, or end-of-file is encountered\&. The string is then terminated with a null byte\&.
+.PP
+\fBfgets()\fP deletes CR, '\\r', from the string\&. This insures only a '\\n' terminates the string for Windows text files which use CRLF for newline\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIstr\fP Pointer to the array where the string is stored\&. 
+.br
+\fInum\fP Maximum number of characters to be read (including the final null byte)\&. Usually the length of the array \fIstr\fP is used\&. 
+.br
+\fIdelim\fP Optional set of delimiters\&. The default is '\\n'\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+For success \fBfgets()\fP returns the length of the string in \fIstr\fP\&. If no data is read, \fBfgets()\fP returns zero for EOF or -1 if an error occurred\&. 
+.RE
+.PP
+
+.SS "uint32_t fileSize () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The total number of bytes in a file or directory\&. 
+.RE
+.PP
+
+.SS "uint32_t firstCluster () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+The first cluster number for a file or directory\&. 
+.RE
+.PP
+
+.SS "bool getFilename (char *name)"
+Get a file's name
+.PP
+\fBParameters:\fP
+.RS 4
+\fIname\fP An array of 13 characters for the file's name\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "void getpos (\fBFatPos_t\fP *pos)"
+get position for streams 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP struct to receive position 
+.RE
+.PP
+
+.SS "bool getWriteError ()\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+value of writeError 
+.RE
+.PP
+
+.SS "bool isDir () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if this is a directory else false\&. 
+.RE
+.PP
+
+.SS "bool isFile () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if this is a normal file else false\&. 
+.RE
+.PP
+
+.SS "bool isOpen () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if this is an open file/directory else false\&. 
+.RE
+.PP
+
+.SS "bool isRoot () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if this is the root directory\&. 
+.RE
+.PP
+
+.SS "bool isSubDir () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+True if this is a subdirectory else false\&. 
+.RE
+.PP
+
+.SS "void ls (\fBPrint\fP *pr, uint8_tflags = \fC0\fP, uint8_tindent = \fC0\fP)"
+List directory contents\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for list\&.
+.br
+\fIflags\fP The inclusive OR of
+.RE
+.PP
+LS_DATE - Print file modification date
+.PP
+LS_SIZE - Print file size\&.
+.PP
+LS_R - Recursive list of subdirectories\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIindent\fP Amount of space before file name\&. Used for recursive list to indicate subdirectory level\&. 
+.RE
+.PP
+
+.SS "void ls (uint8_tflags = \fC0\fP)"
+List directory contents to stdOut\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflags\fP The inclusive OR of
+.RE
+.PP
+LS_DATE - Print file modification date
+.PP
+LS_SIZE - Print file size\&.
+.PP
+LS_R - Recursive list of subdirectories\&. 
+.SS "bool mkdir (\fBSdBaseFile\fP *parent, const char *path, boolpFlag = \fCtrue\fP)"
+Make a new directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIparent\fP An open \fBSdFat\fP instance for the directory that will contain the new directory\&.
+.br
+\fIpath\fP A path with a valid 8\&.3 DOS name for the new directory\&.
+.br
+\fIpFlag\fP Create missing parent directories if true\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include this file is already open, \fIparent\fP is not a directory, \fIpath\fP is invalid or already exists in \fIparent\fP\&. 
+.RE
+.PP
+
+.SS "bool open (\fBSdBaseFile\fP *dirFile, uint16_tindex, uint8_toflag)"
+Open a file by index\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP An open \fBSdFat\fP instance for the directory\&.
+.br
+\fIindex\fP The \fIindex\fP of the directory entry for the file to be opened\&. The value for \fIindex\fP is (directory file position)/32\&.
+.br
+\fIoflag\fP Values for \fIoflag\fP are constructed by a bitwise-inclusive OR of flags O_READ, O_WRITE, O_TRUNC, and O_SYNC\&.
+.RE
+.PP
+See \fBopen()\fP by path for definition of flags\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool open (\fBSdBaseFile\fP *dirFile, const char *path, uint8_toflag)"
+Open a file or directory by name\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP An open \fBSdFat\fP instance for the directory containing the file to be opened\&.
+.br
+\fIpath\fP A path with a valid 8\&.3 DOS name for a file to be opened\&.
+.br
+\fIoflag\fP Values for \fIoflag\fP are constructed by a bitwise-inclusive OR of flags from the following list
+.RE
+.PP
+O_READ - Open for reading\&.
+.PP
+O_RDONLY - Same as O_READ\&.
+.PP
+O_WRITE - Open for writing\&.
+.PP
+O_WRONLY - Same as O_WRITE\&.
+.PP
+O_RDWR - Open for reading and writing\&.
+.PP
+O_APPEND - If set, the file offset shall be set to the end of the file prior to each write\&.
+.PP
+O_AT_END - Set the initial position at the end of the file\&.
+.PP
+O_CREAT - If the file exists, this flag has no effect except as noted under O_EXCL below\&. Otherwise, the file shall be created
+.PP
+O_EXCL - If O_CREAT and O_EXCL are set, \fBopen()\fP shall fail if the file exists\&.
+.PP
+O_SYNC - Call \fBsync()\fP after each write\&. This flag should not be used with write(uint8_t), write_P(PGM_P), writeln_P(PGM_P), or the Arduino \fBPrint\fP class\&. These functions do character at a time writes so \fBsync()\fP will be called after each byte\&.
+.PP
+O_TRUNC - If the file exists and is a regular file, and the file is successfully opened and is not read only, its length shall be truncated to 0\&.
+.PP
+WARNING: A given file must not be opened by more than one \fBSdBaseFile\fP object of file corruption may occur\&.
+.PP
+\fBNote:\fP
+.RS 4
+Directory files must be opened read only\&. Write and truncation is not allowed for directory files\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include this file is already open, \fIdirFile\fP is not a directory, \fIpath\fP is invalid, the file does not exist or can't be opened in the access mode specified by oflag\&. 
+.RE
+.PP
+
+.SS "bool open (const char *path, uint8_toflag = \fC\fBO_READ\fP\fP)"
+Open a file in the current working directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpath\fP A path with a valid 8\&.3 DOS name for a file to be opened\&.
+.br
+\fIoflag\fP Values for \fIoflag\fP are constructed by a bitwise-inclusive OR of open flags\&. see \fBSdBaseFile::open(SdBaseFile*, const char*, uint8_t)\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool openNext (\fBSdBaseFile\fP *dirFile, uint8_toflag)"
+Open the next file or subdirectory in a directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP An open \fBSdFat\fP instance for the directory containing the file to be opened\&.
+.br
+\fIoflag\fP Values for \fIoflag\fP are constructed by a bitwise-inclusive OR of flags O_READ, O_WRITE, O_TRUNC, and O_SYNC\&.
+.RE
+.PP
+See \fBopen()\fP by path for definition of flags\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool openRoot (\fBSdVolume\fP *vol)"
+Open a volume's root directory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvol\fP The FAT volume containing the root directory to be opened\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include the file is already open, the FAT volume has not been initialized or it a FAT12 volume\&. 
+.RE
+.PP
+
+.SS "int peek (void)"
+Return the next available byte without consuming it\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The byte if no error and not at eof else -1; 
+.RE
+.PP
+
+.SS "bool printCreateDateTime (\fBPrint\fP *pr)"
+\fBPrint\fP a file's creation date and time
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for output\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "void printFatDate (uint16_tfatDate)\fC [static]\fP"
+Print a directory date field to stdOut\&.
+.PP
+Format is yyyy-mm-dd\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfatDate\fP The date field from a directory entry\&. 
+.RE
+.PP
+
+.SS "void printFatDate (\fBPrint\fP *pr, uint16_tfatDate)\fC [static]\fP"
+Print a directory date field\&.
+.PP
+Format is yyyy-mm-dd\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for output\&. 
+.br
+\fIfatDate\fP The date field from a directory entry\&. 
+.RE
+.PP
+
+.SS "void printFatTime (uint16_tfatTime)\fC [static]\fP"
+Print a directory time field to stdOut\&.
+.PP
+Format is hh:mm:ss\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfatTime\fP The time field from a directory entry\&. 
+.RE
+.PP
+
+.SS "void printFatTime (\fBPrint\fP *pr, uint16_tfatTime)\fC [static]\fP"
+Print a directory time field\&.
+.PP
+Format is hh:mm:ss\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for output\&. 
+.br
+\fIfatTime\fP The time field from a directory entry\&. 
+.RE
+.PP
+
+.SS "int printField (int16_tvalue, charterm)"
+\fBPrint\fP a number followed by a field terminator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The number to be printed\&. 
+.br
+\fIterm\fP The field terminator\&. Use '\\n' for CR LF\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes written or -1 if an error occurs\&. 
+.RE
+.PP
+
+.SS "int printField (uint16_tvalue, charterm)"
+\fBPrint\fP a number followed by a field terminator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The number to be printed\&. 
+.br
+\fIterm\fP The field terminator\&. Use '\\n' for CR LF\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes written or -1 if an error occurs\&. 
+.RE
+.PP
+
+.SS "int printField (int32_tvalue, charterm)"
+\fBPrint\fP a number followed by a field terminator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The number to be printed\&. 
+.br
+\fIterm\fP The field terminator\&. Use '\\n' for CR LF\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes written or -1 if an error occurs\&. 
+.RE
+.PP
+
+.SS "int printField (uint32_tvalue, charterm)"
+\fBPrint\fP a number followed by a field terminator\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIvalue\fP The number to be printed\&. 
+.br
+\fIterm\fP The field terminator\&. Use '\\n' for CR LF\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The number of bytes written or -1 if an error occurs\&. 
+.RE
+.PP
+
+.SS "bool printModifyDateTime (\fBPrint\fP *pr)"
+\fBPrint\fP a file's modify date and time
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for output\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool printName ()"
+\fBPrint\fP a file's name to stdOut
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool printName (\fBPrint\fP *pr)"
+\fBPrint\fP a file's name
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpr\fP \fBPrint\fP stream for output\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "int16_t read (void)"
+Read the next byte from a file\&.
+.PP
+\fBReturns:\fP
+.RS 4
+For success read returns the next byte in the file as an int\&. If an error occurs or end of file is reached -1 is returned\&. 
+.RE
+.PP
+
+.SS "int read (void *buf, size_tnbyte)"
+Read data from a file starting at the current position\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP Pointer to the location that will receive the data\&.
+.br
+\fInbyte\fP Maximum number of bytes to read\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+For success \fBread()\fP returns the number of bytes read\&. A value less than \fInbyte\fP, including zero, will be returned if end of file is reached\&. If an error occurs, \fBread()\fP returns -1\&. Possible errors include \fBread()\fP called before a file has been opened, corrupt file system or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "int8_t readDir (\fBdir_t\fP *dir)"
+Read the next directory entry from a directory file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdir\fP The dir_t struct that will receive the data\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+For success \fBreadDir()\fP returns the number of bytes read\&. A value of zero will be returned if end of file is reached\&. If an error occurs, \fBreadDir()\fP returns -1\&. Possible errors include \fBreadDir()\fP called before a directory has been opened, this is not a directory file or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "bool remove (\fBSdBaseFile\fP *dirFile, const char *path)\fC [static]\fP"
+Remove a file\&.
+.PP
+The directory entry and all data for the file are deleted\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP The directory that contains the file\&. 
+.br
+\fIpath\fP Path for the file to be removed\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+This function should not be used to delete the 8\&.3 version of a file that has a long name\&. For example if a file has the long name 'New Text Document\&.txt' you should not delete the 8\&.3 name 'NEWTEX~1\&.TXT'\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include the file is a directory, is read only, \fIdirFile\fP is not a directory, \fIpath\fP is not found or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "bool remove ()"
+Remove a file\&.
+.PP
+The directory entry and all data for the file are deleted\&.
+.PP
+\fBNote:\fP
+.RS 4
+This function should not be used to delete the 8\&.3 version of a file that has a long name\&. For example if a file has the long name 'New Text Document\&.txt' you should not delete the 8\&.3 name 'NEWTEX~1\&.TXT'\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include the file read-only, is a directory, or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "bool rename (\fBSdBaseFile\fP *dirFile, const char *newPath)"
+Rename a file or subdirectory\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIdirFile\fP Directory for the new path\&. 
+.br
+\fInewPath\fP New path name for the file/directory\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include \fIdirFile\fP is not open or is not a directory file, newPath is invalid or already exists, or an I/O error occurs\&. 
+.RE
+.PP
+
+.SS "void rewind ()\fC [inline]\fP"
+Set the file's current position to zero\&. 
+.SS "bool rmdir ()"
+Remove a directory file\&.
+.PP
+The directory file will be removed only if it is empty and is not the root directory\&. \fBrmdir()\fP follows DOS and Windows and ignores the read-only attribute for the directory\&.
+.PP
+\fBNote:\fP
+.RS 4
+This function should not be used to delete the 8\&.3 version of a directory that has a long name\&. For example if a directory has the long name 'New folder' you should not delete the 8\&.3 name 'NEWFOL~1'\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include the file is not a directory, is the root directory, is not empty, or an I/O error occurred\&. 
+.RE
+.PP
+
+.SS "bool rmRfStar ()"
+Recursively delete a directory and all contained files\&.
+.PP
+This is like the Unix/Linux 'rm -rf *' if called with the root directory hence the name\&.
+.PP
+Warning - This will remove all contents of the directory including subdirectories\&. The directory will then be removed if it is not root\&. The read-only attribute for files will be ignored\&.
+.PP
+\fBNote:\fP
+.RS 4
+This function should not be used to delete the 8\&.3 version of a directory that has a long name\&. See \fBremove()\fP and \fBrmdir()\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool seekCur (int32_toffset)\fC [inline]\fP"
+Set the files position to current position + \fIpos\fP\&. See \fBseekSet()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoffset\fP The new position in bytes from the current position\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool seekEnd (int32_toffset = \fC0\fP)\fC [inline]\fP"
+Set the files position to end-of-file + \fIoffset\fP\&. See \fBseekSet()\fP\&. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoffset\fP The new position in bytes from end-of-file\&. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+true for success or false for failure\&. 
+.RE
+.PP
+
+.SS "bool seekSet (uint32_tpos)"
+Sets a file's position\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP The new position in bytes from the beginning of the file\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "void setpos (\fBFatPos_t\fP *pos)"
+set position for streams 
+.PP
+\fBParameters:\fP
+.RS 4
+\fIpos\fP struct with value for new position 
+.RE
+.PP
+
+.SS "bool sync ()"
+The \fBsync()\fP call causes all modified data and directory fields to be written to the storage device\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include a call to \fBsync()\fP before a file has been opened or an I/O error\&. 
+.RE
+.PP
+
+.SS "bool timestamp (\fBSdBaseFile\fP *file)"
+Copy a file's timestamps
+.PP
+\fBParameters:\fP
+.RS 4
+\fIfile\fP \fBFile\fP to copy timestamps from\&.
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+Modify and access timestamps may be overwritten if a date time callback function has been set by \fBdateTimeCallback()\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool timestamp (uint8_tflags, uint16_tyear, uint8_tmonth, uint8_tday, uint8_thour, uint8_tminute, uint8_tsecond)"
+Set a file's timestamps in its directory entry\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIflags\fP Values for \fIflags\fP are constructed by a bitwise-inclusive OR of flags from the following list
+.RE
+.PP
+T_ACCESS - Set the file's last access date\&.
+.PP
+T_CREATE - Set the file's creation date and time\&.
+.PP
+T_WRITE - Set the file's last write/modification date and time\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIyear\fP Valid range 1980 - 2107 inclusive\&.
+.br
+\fImonth\fP Valid range 1 - 12 inclusive\&.
+.br
+\fIday\fP Valid range 1 - 31 inclusive\&.
+.br
+\fIhour\fP Valid range 0 - 23 inclusive\&.
+.br
+\fIminute\fP Valid range 0 - 59 inclusive\&.
+.br
+\fIsecond\fP Valid range 0 - 59 inclusive
+.RE
+.PP
+\fBNote:\fP
+.RS 4
+It is possible to set an invalid date since there is no check for the number of days in a month\&.
+.PP
+Modify and access timestamps may be overwritten if a date time callback function has been set by \fBdateTimeCallback()\fP\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. 
+.RE
+.PP
+
+.SS "bool truncate (uint32_tlength)"
+Truncate a file to a specified length\&. The current file position will be maintained if it is less than or equal to \fIlength\fP otherwise it will be set to end of file\&.
+.PP
+\fBParameters:\fP
+.RS 4
+\fIlength\fP The desired length for the file\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value one, true, is returned for success and the value zero, false, is returned for failure\&. Reasons for failure include file is read only, file is a directory, \fIlength\fP is greater than the current file size or an I/O error occurs\&. 
+.RE
+.PP
+
+.SS "uint8_t type () const\fC [inline]\fP"
+Type of file\&. You should use \fBisFile()\fP or \fBisDir()\fP instead of \fBtype()\fP if possible\&.
+.PP
+\fBReturns:\fP
+.RS 4
+The file or directory type\&. 
+.RE
+.PP
+
+.SS "\fBSdVolume\fP* volume () const\fC [inline]\fP"
+\fBReturns:\fP
+.RS 4
+\fBSdVolume\fP that contains this file\&. 
+.RE
+.PP
+
+.SS "int write (const void *buf, size_tnbyte)"
+Write data to an open file\&.
+.PP
+\fBNote:\fP
+.RS 4
+Data is moved to the cache but may not be written to the storage device until \fBsync()\fP is called\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIbuf\fP Pointer to the location of the data to be written\&.
+.br
+\fInbyte\fP Number of bytes to write\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+For success \fBwrite()\fP returns the number of bytes written, always \fInbyte\fP\&. If an error occurs, \fBwrite()\fP returns -1\&. Possible errors include \fBwrite()\fP is called before a file has been opened, write is called for a read-only file, device is full, a corrupt file system or an I/O error\&. 
+.RE
+.PP
+
+.SH "Field Documentation"
+.PP 
+.SS "bool writeError"
+writeError is set to true if an error occurs during a \fBwrite()\fP\&. Set writeError to false before calling print() and/or \fBwrite()\fP and check for true after calls to print() and/or \fBwrite()\fP\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for My Project from the source code\&.

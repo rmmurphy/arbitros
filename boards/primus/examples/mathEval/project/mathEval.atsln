@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "mathEval", "mathEval.cproj", "{80DC8F0B-425D-4E8D-A902-2A66EC6358EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80DC8F0B-425D-4E8D-A902-2A66EC6358EC}.Debug|AVR.ActiveCfg = Debug|AVR
+		{80DC8F0B-425D-4E8D-A902-2A66EC6358EC}.Debug|AVR.Build.0 = Debug|AVR
+		{80DC8F0B-425D-4E8D-A902-2A66EC6358EC}.Release|AVR.ActiveCfg = Release|AVR
+		{80DC8F0B-425D-4E8D-A902-2A66EC6358EC}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

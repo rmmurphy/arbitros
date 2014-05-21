@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{a9dcb7ac-afb4-4a8f-b5a2-524be0d57396}</ProjectGuid>
+    <avrdevice>ATxmega128A1</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>StaticLibrary</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>lib$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.a</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AvrGccProjectExtensions>
+    </AvrGccProjectExtensions>
+    <AssemblyName>sd</AssemblyName>
+    <Name>sd</Name>
+    <RootNamespace>sd</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>3.5.1</AsfVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../../../hal/headers/xmega128A1</Value>
+      <Value>../../../../../../drivers/headers</Value>
+      <Value>../../../../../../rtos/headers</Value>
+      <Value>../../../../../../utilities/headers</Value>
+      <Value>../../../../headers</Value>
+      <Value>../../../../SdFat</Value>
+      <Value>../../../../SdFat/arduino</Value>
+      <Value>../../../../SdFat/utility</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcccpp.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../../../../../hal/headers/xmega128A1</Value>
+      <Value>../../../../../../drivers/headers</Value>
+      <Value>../../../../../../rtos/headers</Value>
+      <Value>../../../../../../utilities/headers</Value>
+      <Value>../../../../headers</Value>
+      <Value>../../../../SdFat</Value>
+      <Value>../../../../SdFat/arduino</Value>
+      <Value>../../../../SdFat/utility</Value>
+    </ListValues>
+  </avrgcccpp.compiler.directories.IncludePaths>
+  <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+  <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+  <avrgcccpp.linker.general.OmitAllSymbolInformation>True</avrgcccpp.linker.general.OmitAllSymbolInformation>
+  <avrgcccpp.linker.libraries.Libraries>
+    <ListValues>
+      <Value>m</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.Libraries>
+  <avrgcccpp.linker.optimization.GarbageCollectUnusedSections>True</avrgcccpp.linker.optimization.GarbageCollectUnusedSections>
+</AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGccCpp>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../../../../../drivers/headers</Value>
+            <Value>../../../../../../rtos/headers/common</Value>
+            <Value>../../../../../../rtos/headers/xmega128a1</Value>
+            <Value>../../../../../../utilities/headers/common</Value>
+            <Value>../../../../../../utilities/headers/xmega128A1</Value>
+            <Value>../../../../headers</Value>
+            <Value>../../../../SdFat</Value>
+            <Value>../../../../SdFat/arduino</Value>
+            <Value>../../../../SdFat/utility</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcccpp.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../../../../../drivers/headers</Value>
+            <Value>../../../../../../rtos/headers/common</Value>
+            <Value>../../../../../../rtos/headers/xmega128a1</Value>
+            <Value>../../../../../../utilities/headers/common</Value>
+            <Value>../../../../../../utilities/headers/xmega128A1</Value>
+            <Value>../../../../headers</Value>
+            <Value>../../../../SdFat</Value>
+            <Value>../../../../SdFat/arduino</Value>
+            <Value>../../../../SdFat/utility</Value>
+          </ListValues>
+        </avrgcccpp.compiler.directories.IncludePaths>
+        <avrgcccpp.compiler.optimization.level>Optimize for size (-Os)</avrgcccpp.compiler.optimization.level>
+        <avrgcccpp.compiler.optimization.PackStructureMembers>True</avrgcccpp.compiler.optimization.PackStructureMembers>
+        <avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcccpp.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcccpp.compiler.optimization.DebugLevel>Default (-g2)</avrgcccpp.compiler.optimization.DebugLevel>
+        <avrgcccpp.compiler.warnings.AllWarnings>True</avrgcccpp.compiler.warnings.AllWarnings>
+        <avrgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+            <Value>libprintf_flt.a</Value>
+            <Value>libm.a</Value>
+            <Value>libc.a</Value>
+          </ListValues>
+        </avrgcccpp.linker.libraries.Libraries>
+        <avrgcccpp.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt -lm</avrgcccpp.linker.miscellaneous.LinkerFlags>
+        <avrgcccpp.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcccpp.assembler.debugging.DebugLevel>
+      </AvrGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\headers\sdInterface.h">
+      <SubType>compile</SubType>
+      <Link>sdInterface.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\Arduino.h">
+      <SubType>compile</SubType>
+      <Link>Arduino.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\new.cpp">
+      <SubType>compile</SubType>
+      <Link>new.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\new.h">
+      <SubType>compile</SubType>
+      <Link>new.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\Print.cpp">
+      <SubType>compile</SubType>
+      <Link>Print.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\Print.h">
+      <SubType>compile</SubType>
+      <Link>Print.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\WString.cpp">
+      <SubType>compile</SubType>
+      <Link>WString.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\arduino\WString.h">
+      <SubType>compile</SubType>
+      <Link>WString.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\MinimumSerial.cpp">
+      <SubType>compile</SubType>
+      <Link>MinimumSerial.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\MinimumSerial.h">
+      <SubType>compile</SubType>
+      <Link>MinimumSerial.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\Sd2Card.cpp">
+      <SubType>compile</SubType>
+      <Link>Sd2Card.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Release'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\Sd2Card.h">
+      <SubType>compile</SubType>
+      <Link>Sd2Card.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdBaseFile.cpp">
+      <SubType>compile</SubType>
+      <Link>SdBaseFile.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Release'">
+      </CustomCompilationSetting>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdBaseFile.h">
+      <SubType>compile</SubType>
+      <Link>SdBaseFile.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdFat.cpp">
+      <SubType>compile</SubType>
+      <Link>SdFat.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdFat.h">
+      <SubType>compile</SubType>
+      <Link>SdFat.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdFile.cpp">
+      <SubType>compile</SubType>
+      <Link>SdFile.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdFile.h">
+      <SubType>compile</SubType>
+      <Link>SdFile.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdVolume.cpp">
+      <SubType>compile</SubType>
+      <Link>SdVolume.cpp</Link>
+    </Compile>
+    <Compile Include="..\..\..\SdFat\SdVolume.h">
+      <SubType>compile</SubType>
+      <Link>SdVolume.h</Link>
+    </Compile>
+    <Compile Include="..\..\..\source\sdInterface.cpp">
+      <SubType>compile</SubType>
+      <Link>sdInterface.cpp</Link>
+      <CustomCompilationSetting Condition="'$(Configuration)' == 'Release'">
+      </CustomCompilationSetting>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
