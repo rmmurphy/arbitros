@@ -29,6 +29,8 @@ External open source libraries such as libfat32, modified to operate within the 
 
 Although _arbitros_ currently works with the Atmel atxmega128A1, the software was designed to be completely portable—simply modify the contents of the ‘HAL’ layer in order to port the core components to a multitude of processor architectures.
 
+# Why was _arbitros_ Created?
+
 ## Easy to use and rich in capability
 
 _Abitros_ was created to fit a gap in the hobbyist market. Development platforms such as Arduino were originally designed for individuals with minimal or no programming experience. As a result, their monolithic software architecture is limiting—lacking many of the features of a higher level multi-threaded operating environment. Conversely, single board computers like Raspberry Pi’s were intended for experienced programmers providing a richer set of capability; however, setting up the build environment (installing the root file system and cross compilation tools) to run Linux is a daunting task—even for seasoned professionals. 
@@ -41,6 +43,14 @@ Unlike Arduino, _arbitros_ incorporates Linux inspired function calls such as op
 
 <img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/arbdeviceTopLevel.png width=600 height=200>
 
+# What Runs _arbitros_?
+## Sparkfun XMega100 Breakout, Atmel XMEGA-A1 Xplained and Primus Development Board
+
+In order to highlight the capability of _arbitros_ a development board named _Primus_ was created. As seen in the picture, _Primus_ evolved from Sparkfun’s XMega100 Breakout board (https://www.sparkfun.com/products/9546) and the architecture was designed using Sparkfun’s design rules and Eagle parts library. Although _Primus_ is a more robust solution (offering PDI debugging, USB console, and a fat32 filesystem) _arbitros_ can still operate on Sparkfun's XMega100 Breakout and Atmel's XMEGA-A1 Xplained (http://www.atmel.com/tools/XMEGA-A1XPLAINED.aspx).
+
+<img src=https://github.com/rmmurphy/arbitros/raw/master/ref/images/primusTopLevel.png>
+
+# What can _arbitros_ do?
 ## Console with Fat32 File System
 
 As seen in the putty window, _abitros_ offers a rich set of Linux inspired console commands. The first directive ’ls’, outputs a list of all directories and files currently stored on the SD card. In this example, only the 'LOGS' directory with the file 'DMSG.TXT' is present. These particular files are created during system initialization and used by the kernel for logging debug ‘printf’ messages. Looking closely at the terminal output, one can see that directories are traversed in a familiar way via the ‘cd’ command. In order to promote readability, the root directory is highlighted green and all subsequent directories are highlighted red. The third directive ’help’ tells the system to display a list of the sytem commands recognized by the kernel. Finally, the instruction ’dev’, displays a list of device drivers registered with the kernel and their corresponding number of open handles. In this example only the  status (LED controller), console, and SD drivers have been registered.
