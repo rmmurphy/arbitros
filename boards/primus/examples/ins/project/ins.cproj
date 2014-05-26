@@ -14,7 +14,7 @@
     <OutputFileName>ins</OutputFileName>
     <OutputFileExtension>.elf</OutputFileExtension>
     <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
-    <ToolchainFlavour>WinAVR</ToolchainFlavour>
+    <ToolchainFlavour>Native</ToolchainFlavour>
     <avrtool>com.atmel.avrdbg.tool.jtagicemkii</avrtool>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>

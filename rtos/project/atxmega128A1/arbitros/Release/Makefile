@@ -158,14 +158,14 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 ./%.o: ../../../../../hal/source/xmega128A1/%.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../headers" -I"../../../../../utilities/headers" -I"../../../../../drivers/headers" -I"../../../../../hal/headers/xmega128A1"  -Os -ffunction-sections -fpack-struct -fshort-enums -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../headers" -I"../../../../../utilities/headers" -I"../../../../../drivers/headers" -I"../../../../../hal/headers/xmega128A1"  -Os -ffunction-sections -fpack-struct -fshort-enums -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
 	@echo Finished building: $<
 
 ./%.o: ../../../../source/%.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../headers" -I"../../../../../utilities/headers" -I"../../../../../drivers/headers" -I"../../../../../hal/headers/xmega128A1"  -Os -ffunction-sections -fpack-struct -fshort-enums -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -I"../../../../headers" -I"../../../../../utilities/headers" -I"../../../../../drivers/headers" -I"../../../../../hal/headers/xmega128A1"  -Os -ffunction-sections -fpack-struct -fshort-enums -Wall -c -std=gnu99 -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
 	@echo Finished building: $<
 
 
@@ -193,8 +193,8 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 	@echo Building target: $@
-	@echo Invoking: AVR/GNU Archiver : GNU ar (WinAVR 20100110) 2.19
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-ar.exe$(QUOTE) -r  -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS)
+	@echo Invoking: AVR/GNU Archiver : GNU ar (AVR_8_bit_GNU_Toolchain_3.4.1_830) 2.22
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-ar.exe$(QUOTE) -r  -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS)
 	@echo Finished building target: $@
 	
 

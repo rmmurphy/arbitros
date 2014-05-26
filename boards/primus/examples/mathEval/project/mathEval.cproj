@@ -15,7 +15,7 @@
     <AssemblyName>mathEval</AssemblyName>
     <Name>mathEval</Name>
     <RootNamespace>mathEval</RootNamespace>
-    <ToolchainFlavour>WinAVR</ToolchainFlavour>
+    <ToolchainFlavour>Native</ToolchainFlavour>
     <KeepTimersRunning>true</KeepTimersRunning>
     <OverrideVtor>false</OverrideVtor>
     <OverrideVtorValue />
@@ -76,53 +76,53 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
       <AvrGcc>
-  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
-  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
-  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
-  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
-  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
-  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
-  <avrgcc.compiler.directories.IncludePaths>
-    <ListValues>
-      <Value>../../headers</Value>
-      <Value>../../../../../../hal/headers/xmega128A1</Value>
-      <Value>../../../../../../drivers/headers</Value>
-      <Value>../../../../../../rtos/headers</Value>
-      <Value>../../../../../../utilities/headers</Value>
-      <Value>../../../../../../packages/sd/headers</Value>
-      <Value>../../../../../../packages/sd/SdFat</Value>
-      <Value>../../../../../../packages/sd/SdFat/arduino</Value>
-      <Value>../../../../../../packages/sd/SdFat/utility</Value>
-    </ListValues>
-  </avrgcc.compiler.directories.IncludePaths>
-  <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
-  <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
-  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
-  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
-  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
-  <avrgcc.linker.libraries.Libraries>
-    <ListValues>
-      <Value>hal</Value>
-      <Value>arbitros</Value>
-      <Value>utilities</Value>
-      <Value>sd</Value>
-      <Value>libprintf_flt.a</Value>
-      <Value>libm.a</Value>
-      <Value>libc.a</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.Libraries>
-  <avrgcc.linker.libraries.LibrarySearchPaths>
-    <ListValues>
-      <Value>../../../../../../rtos/project/atxmega128A1/arbitros/Release</Value>
-      <Value>../../../../../../utilities/project/atxmega128A1/utilities/Release</Value>
-      <Value>../../../../../../packages/sd/project/atxmega128A1/sd/Release</Value>
-      <Value>../../../../../../hal/project/xmega128A1/hal/Release</Value>
-    </ListValues>
-  </avrgcc.linker.libraries.LibrarySearchPaths>
-  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
-  <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt -lm</avrgcc.linker.miscellaneous.LinkerFlags>
-  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
-</AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>../../headers</Value>
+            <Value>../../../../../../hal/headers/xmega128A1</Value>
+            <Value>../../../../../../drivers/headers</Value>
+            <Value>../../../../../../rtos/headers</Value>
+            <Value>../../../../../../utilities/headers</Value>
+            <Value>../../../../../../packages/sd/headers</Value>
+            <Value>../../../../../../packages/sd/SdFat</Value>
+            <Value>../../../../../../packages/sd/SdFat/arduino</Value>
+            <Value>../../../../../../packages/sd/SdFat/utility</Value>
+          </ListValues>
+        </avrgcc.compiler.directories.IncludePaths>
+        <avrgcc.compiler.optimization.level>Optimize most (-O3)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>hal</Value>
+            <Value>arbitros</Value>
+            <Value>utilities</Value>
+            <Value>sd</Value>
+            <Value>libprintf_flt.a</Value>
+            <Value>libm.a</Value>
+            <Value>libc.a</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+        <avrgcc.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../../../../../../rtos/project/atxmega128A1/arbitros/Release</Value>
+            <Value>../../../../../../utilities/project/atxmega128A1/utilities/Release</Value>
+            <Value>../../../../../../packages/sd/project/atxmega128A1/sd/Release</Value>
+            <Value>../../../../../../hal/project/xmega128A1/hal/Release</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.LibrarySearchPaths>
+        <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+        <avrgcc.linker.miscellaneous.LinkerFlags>-Wl,-u,vfprintf -lprintf_flt -lm</avrgcc.linker.miscellaneous.LinkerFlags>
+        <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+      </AvrGcc>
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>

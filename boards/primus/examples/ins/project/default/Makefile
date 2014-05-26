@@ -98,8 +98,8 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 ./drv_ins.o: ../../../../../../drivers/source/drv_ins.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1  -O0 -o"$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1  -O0 -o"$@" "$<" 
 	@echo Finished building: $<
 
 
@@ -113,14 +113,14 @@ OUTPUT_FILE_DEP:= ./makedep.mk
 
 ./%.o: ../../../../../../drivers/source/%.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
 	@echo Finished building: $<
 
 ./%.o: ../../source/%.c
 	@echo Building file: $<
-	@echo Invoking: AVR/GNU C Compiler : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
+	@echo Invoking: AVR/GNU C Compiler : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -funsigned-char -funsigned-bitfields -DF_CPU=32000000UL  -I"../../headers" -I"../../../../../../hal/headers/xmega128A1" -I"../../../../../../drivers/headers" -I"../../../../../../rtos/headers" -I"../../../../../../utilities/headers" -I"../../../../../../packages/sd/headers" -I"../../../../../../packages/sd/SdFat" -I"../../../../../../packages/sd/SdFat/arduino" -I"../../../../../../packages/sd/SdFat/utility"  -Os -ffunction-sections -fpack-struct -fshort-enums -g2 -Wall -c -gdwarf-2 -std=gnu99 -fomit-frame-pointer -MD -MP -MF "$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)"  -mmcu=atxmega128a1   -o"$@" "$<" 
 	@echo Finished building: $<
 
 
@@ -147,14 +147,14 @@ all: $(OUTPUT_FILE_PATH) $(ADDITIONAL_DEPENDENCIES)
 
 $(OUTPUT_FILE_PATH): $(OBJS) $(USER_OBJS) $(OUTPUT_FILE_DEP)
 	@echo Building target: $@
-	@echo Invoking: AVR/GNU Linker : (WinAVR 20100110) 4.3.3
-	$(QUOTE)C:\WinAVR-20100110\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="ins.map" -Wl,--start-group -Wl,-lhal -Wl,-larbitros -Wl,-lutilities -Wl,-lsd -Wl,-lprintf_flt -Wl,-lm -Wl,-lc  -Wl,--end-group -Wl,-L"../../../../../../hal/project/xmega128A1/hal/Release" -Wl,-L"../../../../../../rtos/project/atxmega128A1/arbitros/Release" -Wl,-L"../../../../../../utilities/project/atxmega128A1/utilities/Release" -Wl,-L"../../../../../../rtos/packages/sd/project/atxmega128A1/sd/Release" -Wl,-L"../../../../../../rtos/hal/project/xmega128A1/hal/Release" -Wl,-L"../../../../../../packages/sd/project/atxmega128A1/sd/Release"  -Wl,--gc-sections -Wl,-u,vfprintf -lprintf_flt -lm  -mmcu=atxmega128a1  
+	@echo Invoking: AVR/GNU Linker : (AVR_8_bit_GNU_Toolchain_3.4.1_830) 4.6.2
+	$(QUOTE)C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-gcc.exe$(QUOTE) -o$(OUTPUT_FILE_PATH_AS_ARGS) $(OBJS_AS_ARGS) $(USER_OBJS) $(LIBS) -Wl,-Map="ins.map" -Wl,--start-group -Wl,-lhal -Wl,-larbitros -Wl,-lutilities -Wl,-lsd -Wl,-lprintf_flt -Wl,-lm -Wl,-lc  -Wl,--end-group -Wl,-L"../../../../../../hal/project/xmega128A1/hal/Release" -Wl,-L"../../../../../../rtos/project/atxmega128A1/arbitros/Release" -Wl,-L"../../../../../../utilities/project/atxmega128A1/utilities/Release" -Wl,-L"../../../../../../rtos/packages/sd/project/atxmega128A1/sd/Release" -Wl,-L"../../../../../../rtos/hal/project/xmega128A1/hal/Release" -Wl,-L"../../../../../../packages/sd/project/atxmega128A1/sd/Release"  -Wl,--gc-sections -Wl,-u,vfprintf -lprintf_flt -lm  -mmcu=atxmega128a1  
 	@echo Finished building target: $@
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "ins.elf" "ins.hex"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "ins.elf" "ins.eep" || exit 0
-	"C:\WinAVR-20100110\bin\avr-objdump.exe" -h -S "ins.elf" > "ins.lss"
-	"C:\WinAVR-20100110\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature  "ins.elf" "ins.srec"
-	"C:\WinAVR-20100110\bin\avr-size.exe" "ins.elf"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O ihex -R .eeprom -R .fuse -R .lock -R .signature  "ins.elf" "ins.hex"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -j .eeprom  --set-section-flags=.eeprom=alloc,load --change-section-lma .eeprom=0  --no-change-warnings -O ihex "ins.elf" "ins.eep" || exit 0
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objdump.exe" -h -S "ins.elf" > "ins.lss"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-objcopy.exe" -O srec -R .eeprom -R .fuse -R .lock -R .signature  "ins.elf" "ins.srec"
+	"C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRGCC\3.4.1.95\AVRToolchain\bin\avr-size.exe" "ins.elf"
 	
 
 
